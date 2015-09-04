@@ -30,8 +30,8 @@ public class Config {
     private void setDefaults() {
 
         mseVersion = "3.0.0";
-        workingDir = "/home/michael/Dropbox/MSE/WorkingDir/res/";
-        prepareDir = "/home/michael/Dropbox/MSE/WorkingDir/PrepareRes/";
+        workingDir = "";
+        prepareDir = "PrepareRes" + File.separator;
         defaultBrowser = "/usr/bin/firefox";
         resultsFileName = "search_results.htm";
         searchString = "";
