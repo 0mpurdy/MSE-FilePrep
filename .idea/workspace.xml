@@ -2,841 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8333ef69-41d0-4129-8cc9-40327beb6890" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/CD labels.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/Neil/Collected Writings - diffs.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/Neil/Collected Writings Volume 1 - diffs.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/Neil/Collected Writings Volume 4 - diffs.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/other/Copy (2) of kbt.dic" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/other/Copy of kbt.dic" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/French Script Label.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/other/KINGSTON BIBLE TRUST.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/Ministry Search Engine.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/Morrish Bible Dictionary (Draft - April 2007 for IEP).pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/other/Refs.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/ajg/best/ajg1.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/ajg/best/ajg10.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/ajg/best/ajg11.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/ajg/best/ajg2.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/ajg/best/ajg3.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/ajg/best/ajg4.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/ajg/best/ajg5.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/ajg/best/ajg6.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/ajg/best/ajg7.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/ajg/best/ajg8.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/ajg/best/ajg9.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible01" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible02" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible03" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible04" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible05" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible06" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible07" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible08" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible09" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible1.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible10.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible10" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible11.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible11" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible12.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible12" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible13.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible13" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible14.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible14" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible15.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible15" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible16.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible16" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible17.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible17" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible18.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible18" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible19.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible19" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible2.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible20.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible20" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible21.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible21" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible22.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible22" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible23.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible23" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible24.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible24" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible25.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible25" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible26.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible26" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible27.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible27" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible28.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible28" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible29.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible29" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible3.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible30.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible30" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible31.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible31" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible32.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible32" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible33.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible33" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible34.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible34" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible35.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible35" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible36.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible36" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible37.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible37" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible38.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible38" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible39.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible39" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible4.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible40.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible40" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible41.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible41" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible42.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible42" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible43.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible43" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible44.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible44" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible45.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible45" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible46.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible46" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible47.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible47" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible48.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible48" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible49.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible49" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible5.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible50.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible50" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible51.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible51" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible52.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible52" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible53.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible53" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible54.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible54" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible55.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible55" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible56.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible56" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible57.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible57" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible58.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible58" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible59.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible59" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible6.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible60.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible60" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible61.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible61" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible62.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible62" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible63.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible63" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible64.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible64" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible65.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible65" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible66.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bibleText/bible66" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible7.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible8.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible9.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac1.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac10.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac11.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac12.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac13.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac14.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac15.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac16.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac17.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac18.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac19.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac2.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac20.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac21.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac22.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac23.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac24.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac25.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac26.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac27.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac28.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac29.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac3.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac30.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac31.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac32.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac33.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac34.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac35.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac36.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac37.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac4.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac5.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac6.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac7.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac8.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac9.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/other/cd_jc_front.ntp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/other/cd_jc_tray.ntp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/other/cd_label.ntp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/ch1959.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/ch1959.pub" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/chm.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/chm/best/chm1.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/chm/best/chm10.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/chm/best/chm11.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/chm/best/chm12.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/chm/best/chm13.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/chm/best/chm14.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/chm/best/chm15.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/chm/best/chm16.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/chm/best/chm17.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/chm/best/chm18.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/chm/best/chm2.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/chm/best/chm3.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/chm/best/chm4.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/chm/best/chm5.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/chm/best/chm6.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/chm/best/chm7.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/chm/best/chm8.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/chm/best/chm9.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/chronmap.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/earlybrethren.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/earlybrethren.pub" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer1.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer10.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer11.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer12.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer13.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer14.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer15.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer16.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer17.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer18.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer19.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer2.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer20.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer21.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer3.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer4.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer5.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer6.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer7.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer8.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer9.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/fer_photo.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc1.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc10.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc11.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc12.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc13.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc14.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc15.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc16.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc17.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc18.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc19.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc2.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc20.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc21.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc22.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc23.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc24.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc25.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc26.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc27.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc28.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc29.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc3.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc30.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc31.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc32.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc33.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc34.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc35.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc36.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc37.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc38.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc39.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc4.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc40.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc41.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc42.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc43.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc44.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc45.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc46.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc47.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc48.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc49.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc5.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc50.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc51.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc52.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc53.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc54.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc55.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc56.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc57.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc58.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc59.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc6.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc60.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc61.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc62.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc63.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc64.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc65.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc66.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc67.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc68.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc69.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc7.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc70.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc71.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc72.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc73.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc74.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc75.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc76.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc77.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc78.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc79.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc8.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc80.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc81.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc82.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc83.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc84.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc85.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc86.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc87.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc88.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/grc/best/grc9.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/hymns/best/hymns1.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/hymns/best/hymns10.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/hymns/best/hymns11.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/hymns/best/hymns12.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/hymns/best/hymns13.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/hymns/best/hymns14.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/hymns/best/hymns2.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/hymns/best/hymns3.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/hymns/best/hymns4.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/hymns/best/hymns5.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/hymns/best/hymns6.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/hymns/best/hymns7.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/hymns/best/hymns8.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/hymns/best/hymns9.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jbs/best/jbs1.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jbs/best/jbs10.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jbs/best/jbs11.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jbs/best/jbs12.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jbs/best/jbs13.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jbs/best/jbs14.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jbs/best/jbs15.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jbs/best/jbs16.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jbs/best/jbs17.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jbs/best/jbs2.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jbs/best/jbs3.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jbs/best/jbs4.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jbs/best/jbs5.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jbs/best/jbs6.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jbs/best/jbs7.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jbs/best/jbs8.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jbs/best/jbs9.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/jbs_photo.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd1.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd1.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd10.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd11.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd12.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd13.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd14.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd15.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd16.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd17.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd18.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd19.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd2.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd2.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd20.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd21.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd22.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd23.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd24.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd25.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd26.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd27.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd28.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd29.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd3.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd3.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd30.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd31.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd32.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd33.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd34.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd35.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/jnd35_218.psp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd36.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/jnd36_106.psp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/jnd36_107.psp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/jnd36_193.psp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd37.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd38.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd39.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd4.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd4.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd40.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd41.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd42.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd43.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd44.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd45.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd46.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd47.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd48.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd49.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd5.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd50.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd51.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd52.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd6.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd7.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd8.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd9.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt1.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt10.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt100.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt101.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt102.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt103.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt11.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt12.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt13.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt14.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt15.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt16.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt17.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt18.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt19.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt2.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt20.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt21.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt22.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt23.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt24.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt25.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt26.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt27.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt28.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt29.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt3.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt30.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt31.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt32.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt33.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt34.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt35.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt36.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt37.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt38.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt39.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt4.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt40.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt41.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt42.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt43.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt44.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt45.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt46.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt47.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt48.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt49.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt5.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt50.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt51.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt52.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt53.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt54.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt55.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt56.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt57.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt58.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt59.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt6.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt60.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt61.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt62.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt63.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt64.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt65.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt66.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt67.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt68.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt69.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt7.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt70.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt71.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt72.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt73.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt74.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt75.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt76.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt77.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt78.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt79.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt8.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt80.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt81.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt82.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt83.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt84.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt85.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt86.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt87.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt88.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt89.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt9.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt90.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt91.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt92.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt93.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt94.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt95.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt96.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt97.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt98.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt99.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/other/kbt.dic" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/med_ne.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/med_nw.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/med_se.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/med_sw.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc1.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc10.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc11.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc12.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc13.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc14.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc15.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc16.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc17.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc18.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc19.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc2.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc20.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc21.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc22.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc23.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc24.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc25.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc26.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc3.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc4.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc5.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc6.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc7.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc8.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc9.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/palestineNT.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/palestine_n.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/palestine_se.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/palestine_sw.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/paul1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/paul2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/paul3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/paulrome.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/romanempire.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/smc/best/smc1.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/smc/best/smc10.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/smc/best/smc2.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/smc/best/smc3.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/smc/best/smc4.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/smc/best/smc5.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/smc/best/smc6.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/smc/best/smc7.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/smc/best/smc8.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/smc/best/smc9.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/splash.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/superindex.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/test.psp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/title.psp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/images/water.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/1 Chronicles.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/1 Corinthians.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/1 John.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/1 Kings.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/1 Peter.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/1 Samuel.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/1 Thessalonians.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/1 Timothy.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/2 Chronicles.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/2 Corinthians.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/2 John.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/2 Kings.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/2 Peter.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/2 Samuel.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/2 Thessalonians.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/2 Timothy.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/3 John.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/other/50 changes.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/AUTORUN.INF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Acts.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/src/Alert.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Amos.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/src/BrowserGUI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Colossians.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/src/ComponentHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/src/Constants.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Daniel.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Deuteronomy.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Ecclesiastes.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Ephesians.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Esther.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Exdodus.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Ezekiel.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Ezra.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Galatians.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Genesis.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Habbakkuk.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Haggai.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Hebrews.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Hosea.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/src/Index.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/src/IndexGUI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Isaiah.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/James.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Jeremiah.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Job.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Joel.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/John.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Jonah.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Joshua.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Jude.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Judges.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Lamentations.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Leviticus.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/src/Log.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Luke.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Malachi.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Mark.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Matthew.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/src/MemoryGUI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Micah.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/other/Ministry Search Engine.lax" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Nahum.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Nehemiah.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Numbers.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Obadiah.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/src/Options.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/src/OptionsGUI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Philemon.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Phillipians.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/src/Prepare.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/src/Progress.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kbtlocales/ProjectLocalizationInfo.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/mselocales/ProjectLocalizationInfo.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Proverbs.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Psalms.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/src/ResultsSearch.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Revelation.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Romans.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Ruth.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/src/SearchEngine.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/src/SearchGUI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Song of Songs.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/src/SortedWordsTableModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/src/Splash.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/src/StopException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Titus.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/src/Utils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/Neil/Vol1 - final.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/Neil/Vol4 - final.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/src/VolumeSearch.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/src/WordsTableModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Zechariah.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Zephaniah.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible1.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible10.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible11.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible12.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible13.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible14.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible15.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible16.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible17.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible18.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible19.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible2.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible20.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible21.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible22.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible23.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible24.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible25.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible26.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible27.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible28.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible29.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible3.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible30.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible31.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible32.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible33.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible34.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible35.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible36.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible37.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible38.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible39.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible4.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible40.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible41.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible42.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible43.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible44.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible45.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible46.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible47.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible48.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible49.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible5.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible50.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible51.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible52.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible53.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible54.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible55.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible56.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible57.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible58.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible59.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible6.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible60.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible61.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible62.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible63.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible64.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible65.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible66.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible7.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible8.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible9.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/bible_idx.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/txt/bible_idx.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/cac/best/cac_idx.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/other/checklist.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kbtlocales/custom_en" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/mselocales/custom_en" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/fer/best/fer_idx.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/hymns/best/hymns1.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/hymns/best/hymns2.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/hymns/best/hymns_idx.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/other/jbs_fer_cac.iap_xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jbs/best/jbs_idx.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jnd/best/jnd_idx.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/jt/best/jt_idx.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/other/kbt.iap_xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/kbt.jpr.local" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/java/kbt.jpr" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/other/kbt.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/other/keys.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv1.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv10.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv11.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv12.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv13.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv14.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv15.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv16.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv17.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv18.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv19.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv2.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv20.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv21.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv22.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv23.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv24.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv25.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv26.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv27.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv28.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv29.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv3.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv30.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv31.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv32.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv33.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv34.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv35.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv36.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv37.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv38.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv39.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv4.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv40.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv41.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv42.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv43.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv44.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv45.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv46.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv47.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv48.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv49.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv5.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv50.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv51.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv52.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv53.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv54.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv55.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv56.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv57.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv58.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv59.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv6.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv60.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv61.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv62.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv63.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv64.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv65.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv66.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv7.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv8.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/kjv/best/kjv9.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/other/macros old.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/other/macros.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/misc/best/misc_idx.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/other/mse.iap_xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/mseStyle.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/oldPages.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/bible/best/pages.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrepareRes/other/shortcuts.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Config.java" afterPath="$PROJECT_DIR$/src/com/company/Config.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/HymnBook.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns4.doc" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Main.java" afterPath="$PROJECT_DIR$/src/com/company/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MSE-FilePrep.iws" />
@@ -862,10 +31,39 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18063112">
-              <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.79651797">
+              <caret line="416" column="8" selection-start-line="416" selection-start-column="8" selection-end-line="416" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
+                <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
+                <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
+                <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
+                <element signature="method#prepareHymnsHtml#0;class#Main#0" expanded="false" />
+                <element signature="method#getSynopsisPages#0;class#Main#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HymnBook.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/HymnBook.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding>
+                <element signature="e#907#908#0" expanded="true" />
+                <element signature="e#943#944#0" expanded="true" />
+                <element signature="e#1001#1002#0" expanded="true" />
+                <element signature="e#1051#1052#0" expanded="true" />
+                <element signature="e#1082#1083#0" expanded="true" />
+                <element signature="e#1109#1110#0" expanded="true" />
+                <element signature="e#1149#1150#0" expanded="true" />
+                <element signature="e#1181#1182#0" expanded="true" />
+                <element signature="e#1222#1223#0" expanded="true" />
+                <element signature="e#1259#1260#0" expanded="true" />
+                <element signature="e#1319#1320#0" expanded="true" />
+                <element signature="e#1371#1372#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1006,6 +204,8 @@
         <option value="$PROJECT_DIR$/src/com/company/Author.java" />
         <option value="$PROJECT_DIR$/src/com/company/BibleBook.java" />
         <option value="$PROJECT_DIR$/src/com/company/Config.java" />
+        <option value="$PROJECT_DIR$/src/com/company/HymnBooks.java" />
+        <option value="$PROJECT_DIR$/src/com/company/HymnBook.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
       </list>
     </option>
@@ -1270,10 +470,10 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915523" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3347413" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14739583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14739583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1291,7 +491,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1368,19 +568,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/BibleBook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#2117#2118#0" expanded="true" />
-            <element signature="e#2144#2145#0" expanded="true" />
-            <element signature="e#2179#2180#0" expanded="true" />
-            <element signature="e#2213#2214#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Author.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1406,12 +593,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/BibleBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="e#2117#2118#0" expanded="true" />
+            <element signature="e#2144#2145#0" expanded="true" />
+            <element signature="e#2179#2180#0" expanded="true" />
+            <element signature="e#2213#2214#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/HymnBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#907#908#0" expanded="true" />
+            <element signature="e#943#944#0" expanded="true" />
+            <element signature="e#1001#1002#0" expanded="true" />
+            <element signature="e#1051#1052#0" expanded="true" />
+            <element signature="e#1082#1083#0" expanded="true" />
+            <element signature="e#1109#1110#0" expanded="true" />
+            <element signature="e#1149#1150#0" expanded="true" />
+            <element signature="e#1181#1182#0" expanded="true" />
+            <element signature="e#1222#1223#0" expanded="true" />
+            <element signature="e#1259#1260#0" expanded="true" />
+            <element signature="e#1319#1320#0" expanded="true" />
+            <element signature="e#1371#1372#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18063112">
-          <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.79651797">
+          <caret line="416" column="8" selection-start-line="416" selection-start-column="8" selection-end-line="416" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
+            <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
+            <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
+            <element signature="method#prepareHymnsHtml#0;class#Main#0" expanded="false" />
+            <element signature="method#getSynopsisPages#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>

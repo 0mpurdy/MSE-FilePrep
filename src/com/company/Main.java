@@ -12,9 +12,6 @@ import java.util.Scanner;
 
 public class Main {
 
-    private String[] AuthorCodes
-            = {"Bible", "JND", "JBS", "CHM", "FER", "CAC", "JT", "GRC", "AJG", "SMC", "Misc", "Hymns"};
-
     /**
      * @param args the command line arguments
      */
@@ -35,7 +32,10 @@ public class Main {
 
         switch (mainMenuChoice) {
             case 0:
-                System.out.println("Not implemented");
+                System.out.println();
+                prepareBibleHtml(cfg);
+                System.out.println();
+                prepareHymnsHtml(cfg);
                 break;
             case 1:
                 System.out.println("\nWhich author do you wish to prepare?");
@@ -45,8 +45,10 @@ public class Main {
 
                 switch (authorChoice) {
                     case 0:
-                        System.out.println("\nPreparing " + Author.values()[authorChoice].getName());
                         prepareBibleHtml(cfg);
+                        break;
+                    case 1:
+                        prepareHymnsHtml(cfg);
                         break;
                     default:
                         System.out.println("\nOption " + authorChoice + " is not available at the moment");
@@ -91,6 +93,8 @@ public class Main {
 
     private static void prepareBibleHtml(Config cfg) {
 
+        System.out.println("Preparing Bible");
+
         try {
 
             // create file for outputting where the files are being read/written
@@ -116,11 +120,10 @@ public class Main {
 
             String jndLine; //line read from JND file
             String kjvLine; //line read from KJV file
-            String bookName = null;
             String chapter = "1";
             String synopsisLink;
             String verseNum;
-            String jndVerse = null;
+            String jndVerse;
             String kjvVerse;
             String bufferString;
             String bufferTxt;
@@ -128,8 +131,6 @@ public class Main {
 
             // get the synopsis pages map
             HashMap<String, String> synopsisPages = getSynopsisPages(jndBiblePath + "pages.txt");
-
-            System.out.println("\nPreparing Bible...\n");
 
             int bookNumber = 0;
             // for each book in the bible
@@ -180,6 +181,7 @@ public class Main {
                 if (kjvLine == null) {
                     System.out.println("\n!!! No kjv lines found");
                 }
+
                 // while there are more lines
                 while (!finished) {
 
@@ -203,7 +205,7 @@ public class Main {
                                 synopsisLink = "";
                             }
                             // add the chapter title row for the html output
-                            bufferString = String.format("\t\t<tr>\n\t\t\t<td colspan=\"3\" class=\"chapterTitle\"><a name=%s>%s %s</a></td>\n\t\t</tr>\n", chapter, nextBook.getName(), chapter);
+                            bufferString = String.format("\n\t</table>\n\t<table class=\"bible\">\n\t\t<tr>\n\t\t\t<td colspan=\"3\" class=\"chapterTitle\"><a name=%s>%s %s</a></td>\n\t\t</tr>\n", chapter, nextBook.getName(), chapter);
                             // add the translation and synopsis for the html output
                             bufferString += String.format("\t\t<tr>\n\t\t\t<td></td>\n\t\t\t<td><strong>Darby Translation (1889)</strong> %s</td>\n\t\t\t<td><strong>Authorised (King James) Version (1796)</strong></td>\n\t\t</tr>", synopsisLink);
                             // add the text for the text output
@@ -217,16 +219,23 @@ public class Main {
                             kjvVerse = kjvLine.substring(kjvLine.indexOf(" ")).trim();
 
                             // create the html output
-                            bufferString = String.format("\t\t<tr>\n\t\t\t<td><a name=%s:%s>%s</a></td>\n", chapter, verseNum, verseNum);
+                            bufferString = String.format("\t\t<tr");
+
+                            // verse is odd make the class of <td> odd
+                            if ((Integer.parseInt(verseNum) % 2) != 0) {
+                                bufferString += " class=\"odd\"";
+                            }
+
+                            bufferString += String.format(">\n\t\t\t<td><a name=%s:%s>%s</a></td>\n", chapter, verseNum, verseNum);
                             bufferString += String.format("\t\t\t<td>%s</td>\n\t\t\t<td>%s</td>\n\t\t</tr>", jndVerse, kjvVerse);
 
                             // create the text output
                             bufferTxt = verseNum + " " + jndVerse + " " + kjvVerse;
 
-//                        // legacy logging of short verses to find paragraph problems
-//                        if (jndVerse.length() < 5) {
-//                            System.out.println("Short verse: " + bufferString);
-//                        }
+//                            // legacy logging of short verses to find paragraph problems
+//                            if (jndVerse.length() < 5) {
+//                                System.out.println("Short verse: " + bufferString);
+//                            }
 
                             // insert italics
                             while (bufferString.indexOf("*") != -1) {
@@ -279,6 +288,464 @@ public class Main {
 
     }
 
+    private static void prepareHymnsHtml(Config cfg) {
+
+        System.out.println("Preparing Hymns");
+
+        try {
+
+            File f;
+
+            // the path of the input
+            String hymnsPath = cfg.getPrepareDir() + File.separator + "hymns" + File.separator + "best" + File.separator;
+            f = new File(hymnsPath);
+            System.out.println("Reading Hymns from: " + f.getCanonicalPath());
+
+            // the path of the output
+            String hymnsOutPath = cfg.getPrepareDir()+ File.separator + "target" + File.separator + "hymns" + File.separator;
+            f = new File(hymnsOutPath);
+            System.out.println("Writing Hymns to: " + f.getCanonicalPath());
+
+            // set up buffers
+            String hymnLine;
+            String hymnNumber = "0";
+            String verseNumber;
+            String bufferOutHtml;
+            String bufferOutTxt;
+
+            // prepare html for each hymn book
+            for (HymnBook nextHymnBook : HymnBook.values()) {
+
+                System.out.print("Preparing " + nextHymnBook.getName() + " ");
+                String inputFileName = hymnsPath + nextHymnBook.getInputFilename();
+
+                // make the reader and writer
+                BufferedReader brHymns = new BufferedReader(new FileReader(inputFileName));
+                PrintWriter pwHymns = new PrintWriter(new FileWriter(hymnsOutPath + nextHymnBook.getOutputFilename()));
+
+                // read the first line of the hymn book
+                hymnLine = brHymns.readLine();
+
+                // print the html header
+                pwHymns.println("<html>");
+                pwHymns.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"mseStyle.css\">\n");
+                pwHymns.println("<head>\n\t<title>"
+                        + nextHymnBook.getName()
+                        + "</title>\n</head>\n\n<body>");
+
+                // read the second line of the hymn book
+                hymnLine = brHymns.readLine();
+
+                // if there are still more lines
+                while (hymnLine != null) {
+
+                    // if it is a new hymn
+                    if (hymnLine.indexOf("{") == 0) {
+
+                        // get the hymn number
+                        hymnNumber = hymnLine.substring(1, hymnLine.length() - 1);
+
+                        if ((Integer.parseInt(hymnNumber) % 10) == 1) {
+                            System.out.print(".");
+                        }
+
+                        // if it's not the first hymn end the last table
+                        if (!hymnNumber.equals("1")) {
+                            bufferOutHtml = "\t\t\t</td>\n\t\t</tr>\n\t</table>\n\t<hr>\n";
+                        } else {
+                            bufferOutHtml = "";
+                        }
+
+                        // add the hymn number
+                        bufferOutHtml += String.format("\t<a name=%s:0></a>\n\t<table class=\"hymn-table\">\n\t\t<tr>\n\t\t\t<td class=\"hymn-number\">\n\t\t\t\t<a name=%s></a>%s\n\t\t\t</td>", hymnNumber, hymnNumber, hymnNumber);
+                        hymnLine = brHymns.readLine();
+
+
+                        String authorEtc = "";
+                        String metre = "";
+
+                        // split the line by the comma and extract the info
+                        String[] info = hymnLine.split(",");
+                        if (info.length >0) {
+                            authorEtc = info[0];
+                            if (info.length >1) {
+                                metre = info[1].substring(1);
+                            }
+                        }
+
+                        // add the author and metre info
+                        bufferOutHtml += String.format("\n\t\t\t<td class=\"authoretc\">%s</td>\n\t\t\t<td class=\"metre\">\n\t\t\t\t<a href=\"..\\tunes\\tunes.htm#%s\">%s</a>", authorEtc, metre, metre);
+
+                    } else if (hymnLine.indexOf("|") == 0) {
+                        // if it is a new verse
+
+                        // get the verse number
+                        verseNumber = hymnLine.substring(1, hymnLine.length() - 1);
+
+                        // add the verse number html
+                        bufferOutHtml = String.format("\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td class=\"verse-number\">\n\t\t\t\t<a name=%s:%s></a>%s\n\t\t\t</td>\n\t\t\t<td>", hymnNumber, verseNumber, verseNumber);
+                    } else {
+                        // if it is a verse line
+                        bufferOutHtml = "\t\t\t\t" + hymnLine + "<br>";
+                    }
+
+                    // write the next line of html
+                    pwHymns.println(bufferOutHtml);
+
+                    // read the next line of the hymn
+                    hymnLine = brHymns.readLine();
+
+                }
+
+                pwHymns.println("</body>\n\n</html>");
+
+                // close the reader and writer
+                brHymns.close();
+                pwHymns.close();
+
+                System.out.println("Finished " + nextHymnBook.getName());
+            }
+
+        } catch (IOException ioe) {
+            System.out.println("!*** Error preparing hymns ***!");
+            System.out.println(ioe.getMessage());
+        }
+
+    }
+
+    private static void prepareMinistry(Config cfg, Author author) {
+        
+    }
+
+//    private void prepare(String strAuth) {
+//        PrintWriter pwLog = null;
+//        BufferedReader brLog = null;
+//        StringBuffer sbLine = new StringBuffer();
+//        StringBuffer sbPageNum = new StringBuffer();
+//        int intVol = 0;
+//        int intSection = 1;
+//
+//        // MJP 2x 15/3/15
+//        String strVolsPath = Constants.BASIC_FILE_PATH + "src" + File.separator + strAuth + File.separator + "best" + File.separator;
+//        String strVolsDestPath = Constants.BASIC_FILE_PATH + "target" + File.separator + strAuth + File.separator;
+//
+//        try {
+//            String strInfo; //line read from file
+//            int intFootnotes = 0;
+//            int intActualFootnotes = 0;
+//            int intMaxFootnotes = 0;
+//            String strFootnotes = "";
+//            String strActualFootnotes = "";
+//            int intLineCount = 0;
+//            int intCharPos = 0;
+//            int intTempCharPos = 0;
+//            int intEndRef = 0;
+//            int intBookNamePos = 0;
+//            StringBuffer sbBookName = new StringBuffer();
+//            StringBuffer sbChapter = new StringBuffer();
+//            StringBuffer sbHymn = new StringBuffer();
+//            StringBuffer sbVerse = new StringBuffer();
+//            boolean bStartedItalic = false;
+//            String strBookName;
+//            String strCompressedBookName = "";
+//            String strReference;
+//            String strUCLine;
+//            boolean finished;
+//            boolean bFinishedVols = false;
+//            int intPageNum;
+//            int intKeepPageNum;
+//
+//            intVol = 1;
+//            if (strAuth.equals("hymns")) {
+//                intVol = Constants.LAST_HYMNBOOK + 1;
+//            }
+//            while (!bFinishedVols) {
+//
+//                File fVolTxt = new File(strVolsPath + strAuth + intVol + ".doc");
+//                if (!fVolTxt.exists()) {
+//                    bFinishedVols = true;
+//                } else if (taFilename.getText().equals("") || taFilename.getText().equals("" + intVol)) {
+//                    intPageNum = 0;
+//                    intKeepPageNum = 0;
+//                    taOutput.append(NEW_LINE + "*** Preparing " + strAuth + intVol + ".htm ***");
+//                    tfProgress.setText(strAuth + intVol);
+//                    brLog = new BufferedReader(new FileReader(strVolsPath + strAuth + intVol + ".doc"));
+//                    pwLog = new PrintWriter(new FileWriter(strVolsDestPath + strAuth + intVol + ".htm", false));
+//                    pwLog.println("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\"><style>a:hover{background-color:yellow;}</style>");
+//                    pwLog.println("<title>" + strAuth.toUpperCase() + " Volume " + intVol + "</title></head><body bgcolor=\"#FFFFFF\" link=\"#0000FF\" vlink=\"#0000FF\" alink=\"#0000FF\">");
+//                    while ((strInfo = brLog.readLine()) != null) {//still more lines
+//                        sbLine.replace(0, sbLine.length(), strInfo);
+//
+//                        if ((sbLine.length() < 400) && (sbLine.charAt(0) != '{')) {//probable heading
+//                            strUCLine = sbLine.toString().toUpperCase();
+//                            if (strUCLine.equals(sbLine.toString()) && (sbLine.charAt(0) != ' ')) {
+//                                taOutput.append(NEW_LINE + "<a href=\"" + strAuth + intVol + ".htm#" + sbPageNum + "\"><font size=4>" + sbLine.toString() + "</font></a><br>~");
+//                                sbLine.insert(0, "<h2>");
+//                                sbLine.append("</h2>");
+//                            } else {
+//                                //                            taOutput.append(NEW_LINE + "SHORT PARA - " + sbLine.toString());
+//                            }
+//                        }
+//
+//                        int intCharsInSection = 0;
+//                        intCharPos = 0;
+//                        if ((sbLine.charAt(0) != '?') && (sbLine.charAt(0) != '{') && (intActualFootnotes != 0)) {
+//                            taOutput.append(NEW_LINE + "FOOTNOTE not at foot of page - " + sbPageNum);
+//                        }
+//
+//                        while (intCharPos < sbLine.length()) {
+//                            char charCurr = sbLine.charAt(intCharPos);
+//                            if (charCurr == '*') {//italics
+//                                if (bStartedItalic) {
+//                                    sbLine.replace(intCharPos, intCharPos + 1, "</i>");
+//                                } else {
+//                                    sbLine.replace(intCharPos, intCharPos + 1, "<i>");
+//                                }
+//                                bStartedItalic = !bStartedItalic;
+//                            } else if (charCurr == '{') {//start page number
+//                                intTempCharPos = intCharPos + 1;
+////                                    sbPageNum.replace(0, sbLine.length(), "");
+//                                StringBuffer sbPageNumTmp = new StringBuffer();
+//                                while (sbLine.charAt(intTempCharPos) != '}') {
+//                                    sbPageNumTmp.append(sbLine.charAt(intTempCharPos));
+//                                    intTempCharPos++;
+//                                }
+//                                if (sbPageNumTmp.charAt(0) != '#') {
+//                                    sbPageNum = sbPageNumTmp;
+//                                    intPageNum = Integer.parseInt(sbPageNum.toString());
+//                                    if (intPageNum != intKeepPageNum + 1) {
+//                                        taOutput.append(NEW_LINE + "Missing page: " + (intKeepPageNum + 1));
+//                                    }
+//                                    intKeepPageNum = intPageNum;
+//                                    sbLine.replace(intCharPos, intCharPos + 1, "<a name=" + sbPageNum + "><center>[Page ");
+//                                    intCharPos = intCharPos + 23;
+//
+//                                    if (intMaxFootnotes != 0) {
+//                                        intMaxFootnotes = 0;
+//                                        pwLog.println("</font>");
+//                                    }
+//                                    if (intFootnotes != intActualFootnotes) {
+//                                        taOutput.append(NEW_LINE + "Mismatch of actual footnotes: " + sbPageNum +
+//                                                ", expected = " + intFootnotes + ", found = " + intActualFootnotes);
+//                                    }
+//                                    strFootnotes = "";
+//                                    strActualFootnotes = "";
+//                                    intFootnotes = 0;
+//                                    intActualFootnotes = 0;
+//                                } else {
+//                                    sbLine.replace(intCharPos, intTempCharPos + 1, "");
+//                                }
+//                                taOutput.append(" " + sbPageNum.toString());
+//                            } else if (charCurr == '}') {//end page number
+//                                sbLine.replace(intCharPos, intCharPos + 1, "]</center>");
+//                                intSection = 1;
+//                            } else if (charCurr == '~') {//footnote
+//                                sbLine.replace(intCharPos, intCharPos + 1, "<i>see <a href=\"" + strAuth + "_footnotes.htm#" + intVol + ":" + sbPageNum.toString() + "\">footnote</a></i>");
+//                                intCharPos = intCharPos + 40;
+//                            } else if (charCurr == '?') {//possessive apostrophe
+//                                sbLine.replace(intCharPos, intCharPos + 1, "'");
+//                            } else if ((charCurr == '.') || (charCurr == '?') || (charCurr == '!')) {//new sentence
+//                                if (intCharsInSection > 1) {
+//                                    sbLine.insert(intCharPos + 1, "<a name=" + sbPageNum.toString() + ":" + intSection + "></a>");
+//                                    intSection++;
+//                                }
+//                                intCharsInSection = 0;
+//                            } else if (charCurr == '?') {
+//                                sbLine.replace(intCharPos, intCharPos + 1, ".");
+//                            } else if (charCurr == '?') {//footnote
+//                                if (intCharPos == 0) {
+//                                    if (intActualFootnotes == 0) {
+////                                        strFootnotes = "";
+//                                        pwLog.println("<font size=\"-1\" color=\"#00A000\">");
+//                                    }
+//                                    intActualFootnotes++;
+//                                    strActualFootnotes = strActualFootnotes + "+";
+//                                    sbLine.replace(intCharPos, intCharPos + 1, "<a id=\"footnote\" name=\"#" + sbPageNum.toString() + ":f" + intActualFootnotes + "\"><sup>" + strActualFootnotes + "</sup></a>");
+//                                } else {
+//                                    intFootnotes++;
+//                                    if (intFootnotes > intMaxFootnotes) {
+//                                        intMaxFootnotes = intFootnotes;
+//                                    }
+//                                    strFootnotes = strFootnotes + "+";
+//                                    sbLine.replace(intCharPos, intCharPos + 1, "<a href=\"#" + sbPageNum.toString() + ":f" + intFootnotes + "\"><font size=\"-1\" color=\"#00A000\"><sup>" + strFootnotes + "</sup></font></a>");
+//                                }
+//                            } else if (charCurr == '@') {//start of scripture reference
+//
+//                                //find book name
+//                                sbBookName.replace(0, sbBookName.length(), "");
+//                                intTempCharPos = intCharPos + 1;
+//                                while (((intTempCharPos - intCharPos) < 4) || (!Character.isDigit(sbLine.charAt(intTempCharPos)))) {
+//                                    sbBookName.append(sbLine.charAt(intTempCharPos));
+//                                    intTempCharPos++;
+//                                }
+//
+//                                //strip white space
+//                                intBookNamePos = sbBookName.length() - 1;
+//                                while (sbBookName.charAt(intBookNamePos) == ' ') {
+//                                    sbBookName.deleteCharAt(intBookNamePos);
+//                                    intBookNamePos--;
+//                                }
+//
+//                                //find chapter
+//                                sbChapter.replace(0, sbChapter.length(), "");
+//                                finished = false;
+//                                while (!finished) {
+//                                    if (intTempCharPos >= sbLine.length()) {
+//                                        finished = true;
+//                                    } else if (Character.isDigit(sbLine.charAt(intTempCharPos))) {
+//                                        sbChapter.append(sbLine.charAt(intTempCharPos));
+//                                        intTempCharPos++;
+//                                    } else {
+//                                        finished = true;
+//                                    }
+//                                }
+//                                intEndRef = intTempCharPos;
+//
+//                                //skip white space
+//                                finished = false;
+//                                while (!finished) {
+//                                    if (intTempCharPos >= sbLine.length()) {
+//                                        finished = true;
+//                                    } else if (sbLine.charAt(intTempCharPos) == ' ') {
+//                                        intTempCharPos++;
+//                                    } else {
+//                                        finished = true;
+//                                    }
+//                                }
+//
+//                                sbVerse.replace(0, sbVerse.length(), "");
+//                                if (intTempCharPos < sbLine.length()) {
+//                                    if (sbLine.charAt(intTempCharPos) == ':') {//find verse
+//                                        intTempCharPos++;
+//                                        //skip white space
+//                                        finished = false;
+//                                        while (!finished) {
+//                                            if (intTempCharPos >= sbLine.length()) {
+//                                                finished = true;
+//                                            } else if (sbLine.charAt(intTempCharPos) == ' ') {
+//                                                intTempCharPos++;
+//                                            } else {
+//                                                finished = true;
+//                                            }
+//                                        }
+//
+//                                        finished = false;
+//                                        while (!finished) {
+//                                            if (intTempCharPos >= sbLine.length()) {
+//                                                finished = true;
+//                                            } else if (Character.isDigit(sbLine.charAt(intTempCharPos))) {
+//                                                sbVerse.append(sbLine.charAt(intTempCharPos));
+//                                                intTempCharPos++;
+//                                            } else {
+//                                                finished = true;
+//                                            }
+//                                        }
+//                                        intEndRef = intTempCharPos;
+//                                    }
+//                                }
+//
+//                                strBookName = sbBookName.toString();
+//
+//                                //strip white space from book name
+//                                intBookNamePos = sbBookName.length() - 1;
+//                                while (intBookNamePos >= 0) {
+//                                    if (sbBookName.charAt(intBookNamePos) == ' ') {
+//                                        sbBookName.deleteCharAt(intBookNamePos);
+//                                    }
+//                                    intBookNamePos--;
+//                                }
+//                                strCompressedBookName = sbBookName.toString();
+//
+//                                if (sbVerse.length() > 0) {
+//                                    strReference = "<a href=\"../bible/" + strCompressedBookName + ".htm#" + sbChapter.toString() + ":" + sbVerse.toString() + "\">" + strBookName + " " + sbChapter.toString() + ":" + sbVerse.toString() + "</a>";
+//                                } else {
+//                                    strReference = "<a href=\"../bible/" + strCompressedBookName + ".htm#" + sbChapter.toString() + "\">" + strBookName + " " + sbChapter.toString() + "</a>";
+//                                }
+//                                sbLine.replace(intCharPos, intEndRef, strReference);
+//                                intCharPos = intCharPos + strReference.length() - (intEndRef - intCharPos);
+//                            } else if (charCurr == '`') {//start of hymn reference
+//                                //find hymn number
+//                                intTempCharPos = intCharPos + 1;
+//                                sbHymn.replace(0, sbHymn.length(), "");
+//                                finished = false;
+//                                while (!finished) {
+//                                    if (intTempCharPos >= sbLine.length()) {
+//                                        finished = true;
+//                                    } else if (Character.isDigit(sbLine.charAt(intTempCharPos))) {
+//                                        sbHymn.append(sbLine.charAt(intTempCharPos));
+//                                        intTempCharPos++;
+//                                    } else {
+//                                        finished = true;
+//                                    }
+//                                }
+//                                //taOutput.append(NEW_LINE + "sbHymn:" + sbHymn.toString());
+//                                sbVerse.replace(0, sbVerse.length(), "");
+//                                if (intTempCharPos < sbLine.length()) {
+//                                    if (sbLine.charAt(intTempCharPos) == ':') {//find verse
+//                                        intTempCharPos++;
+//                                        finished = false;
+//                                        while (!finished) {
+//                                            if (intTempCharPos >= sbLine.length()) {
+//                                                finished = true;
+//                                            } else if (Character.isDigit(sbLine.charAt(intTempCharPos))) {
+//                                                sbVerse.append(sbLine.charAt(intTempCharPos));
+//                                                intTempCharPos++;
+//                                            } else {
+//                                                finished = true;
+//                                            }
+//                                        }
+//                                    }
+//                                }
+//                                //taOutput.append(NEW_LINE + "sbVerse:" + sbVerse.toString());
+//                                if (Constants.bHymnPointers == true) {
+//                                    strReference = "<a href=\"..\\hymns\\hymns1.htm#" + sbHymn.toString() + ":" + sbVerse.toString() + "\">Hymn " + sbHymn.toString() + "</a>";
+//                                } else {
+//                                    strReference = "Hymn " + sbHymn.toString();
+//                                }
+//                                sbLine.replace(intCharPos, intTempCharPos, strReference);
+//                                intCharPos = intCharPos + strReference.length() - (intTempCharPos - intCharPos);
+//                            }
+//                            intCharPos++;
+//                            intCharsInSection++;
+//                        }
+//                        if (sbLine.length() > 0) {
+//                            sbLine.append("<p>");
+//                        }
+//
+//                        pwLog.println(sbLine.toString());
+//                        if (bStartedItalic) {
+//                            taOutput.append(NEW_LINE + "ITALICS - " + sbLine.toString());
+//                        }
+//
+//                        intLineCount = intLineCount + 1;
+//                    }
+//
+//
+//                    pwLog.println("</body></html>");
+//                    taOutput.append(NEW_LINE + "*** Finished " + strAuth + intVol + ".htm ***");
+//                    pwLog.close();
+//                    brLog.close();
+//                }
+//                intVol = intVol + 1;
+//            }
+//            tfProgress.setText("Done");
+//        } catch (Exception e) {
+//            taOutput.append(NEW_LINE + "*** Problem in volume " + taFilename.getText() + " ***");
+//            taOutput.append(NEW_LINE + "PageNum: " + sbPageNum.toString());
+//            taOutput.append(" Section: " + intSection);
+//            taOutput.append(" Line: '" + sbLine.toString() + "'");
+//            taOutput.append(NEW_LINE + e);
+//        }
+//
+//        try {
+//            pwLog.close();
+//            brLog.close();
+//        } catch (Exception e) {
+//            taOutput.append(NEW_LINE + "*** Problem in volume " + taFilename.getText() + " ***");
+//            taOutput.append(NEW_LINE + "Can't close files");
+//        }
+//    }//prepare
+
     private static HashMap<String, String> getSynopsisPages(String filename) {
         // this gets a map of the corresponding synopsis page in jnd's ministry for
         // each book of the bible
@@ -312,7 +779,7 @@ public class Main {
                 }
             }
         } catch (IOException ex) {
-            System.out.println("!***Error creating synopsis hashmap***!");
+            System.out.println("!***Error creating synopsis hash map***!");
         } finally {
             if (brPages != null) {
                 try {
