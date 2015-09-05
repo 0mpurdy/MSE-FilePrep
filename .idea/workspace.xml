@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/com/company/Main.java" line="473" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="8333ef69-41d0-4129-8cc9-40327beb6890" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/HymnBook.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns4.doc" afterPath="" />
+      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns1.doc" afterPath="" />
+      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns1.htm" afterPath="" />
+      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns10.doc" afterPath="" />
+      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns11.doc" afterPath="" />
+      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns12.doc" afterPath="" />
+      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns13.doc" afterPath="" />
+      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns14.doc" afterPath="" />
+      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns2.doc" afterPath="" />
+      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns2.htm" afterPath="" />
+      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns3.doc" afterPath="" />
+      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns5.doc" afterPath="" />
+      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns6.doc" afterPath="" />
+      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns7.doc" afterPath="" />
+      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns8.doc" afterPath="" />
+      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns9.doc" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Main.java" afterPath="$PROJECT_DIR$/src/com/company/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -31,16 +46,15 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.79651797">
-              <caret line="416" column="8" selection-start-line="416" selection-start-column="8" selection-end-line="416" selection-end-column="8" />
+            <state vertical-scroll-proportion="-0.7692308">
+              <caret line="320" column="0" selection-start-line="320" selection-start-column="0" selection-end-line="320" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
                 <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
                 <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
                 <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
-                <element signature="method#prepareHymnsHtml#0;class#Main#0" expanded="false" />
-                <element signature="method#getSynopsisPages#0;class#Main#0" expanded="false" />
+                <element signature="method#prepareMinistry#0;class#Main#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -143,7 +157,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/company/Author.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
               <folding>
                 <element signature="e#1208#1209#0" expanded="true" />
                 <element signature="e#1235#1236#0" expanded="true" />
@@ -214,10 +228,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -458,7 +471,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -486,12 +499,20 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -568,31 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Author.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#1208#1209#0" expanded="true" />
-            <element signature="e#1235#1236#0" expanded="true" />
-            <element signature="e#1266#1267#0" expanded="true" />
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#1326#1327#0" expanded="true" />
-            <element signature="e#1355#1356#0" expanded="true" />
-            <element signature="e#1394#1395#0" expanded="true" />
-            <element signature="e#1438#1439#0" expanded="true" />
-            <element signature="e#1477#1478#0" expanded="true" />
-            <element signature="e#1547#1548#0" expanded="true" />
-            <element signature="e#1583#1584#0" expanded="true" />
-            <element signature="e#1627#1628#0" expanded="true" />
-            <element signature="e#1663#1664#0" expanded="true" />
-            <element signature="e#1733#1734#0" expanded="true" />
-            <element signature="e#1770#1771#0" expanded="true" />
-            <element signature="e#1803#1804#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/BibleBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -627,18 +623,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Author.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+          <folding>
+            <element signature="e#1208#1209#0" expanded="true" />
+            <element signature="e#1235#1236#0" expanded="true" />
+            <element signature="e#1266#1267#0" expanded="true" />
+            <element signature="e#1293#1294#0" expanded="true" />
+            <element signature="e#1326#1327#0" expanded="true" />
+            <element signature="e#1355#1356#0" expanded="true" />
+            <element signature="e#1394#1395#0" expanded="true" />
+            <element signature="e#1438#1439#0" expanded="true" />
+            <element signature="e#1477#1478#0" expanded="true" />
+            <element signature="e#1547#1548#0" expanded="true" />
+            <element signature="e#1583#1584#0" expanded="true" />
+            <element signature="e#1627#1628#0" expanded="true" />
+            <element signature="e#1663#1664#0" expanded="true" />
+            <element signature="e#1733#1734#0" expanded="true" />
+            <element signature="e#1770#1771#0" expanded="true" />
+            <element signature="e#1803#1804#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79651797">
-          <caret line="416" column="8" selection-start-line="416" selection-start-column="8" selection-end-line="416" selection-end-column="8" />
+        <state vertical-scroll-proportion="-0.7692308">
+          <caret line="320" column="0" selection-start-line="320" selection-start-column="0" selection-end-line="320" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
             <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
             <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
             <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
-            <element signature="method#prepareHymnsHtml#0;class#Main#0" expanded="false" />
-            <element signature="method#getSynopsisPages#0;class#Main#0" expanded="false" />
+            <element signature="method#prepareMinistry#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>

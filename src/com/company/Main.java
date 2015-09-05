@@ -414,95 +414,110 @@ public class Main {
     }
 
     private static void prepareMinistry(Config cfg, Author author) {
-        
-    }
 
-//    private void prepare(String strAuth) {
-//        PrintWriter pwLog = null;
-//        BufferedReader brLog = null;
-//        StringBuffer sbLine = new StringBuffer();
-//        StringBuffer sbPageNum = new StringBuffer();
-//        int intVol = 0;
-//        int intSection = 1;
-//
-//        // MJP 2x 15/3/15
-//        String strVolsPath = Constants.BASIC_FILE_PATH + "src" + File.separator + strAuth + File.separator + "best" + File.separator;
-//        String strVolsDestPath = Constants.BASIC_FILE_PATH + "target" + File.separator + strAuth + File.separator;
-//
-//        try {
-//            String strInfo; //line read from file
-//            int intFootnotes = 0;
-//            int intActualFootnotes = 0;
-//            int intMaxFootnotes = 0;
-//            String strFootnotes = "";
-//            String strActualFootnotes = "";
-//            int intLineCount = 0;
-//            int intCharPos = 0;
-//            int intTempCharPos = 0;
-//            int intEndRef = 0;
-//            int intBookNamePos = 0;
-//            StringBuffer sbBookName = new StringBuffer();
-//            StringBuffer sbChapter = new StringBuffer();
-//            StringBuffer sbHymn = new StringBuffer();
-//            StringBuffer sbVerse = new StringBuffer();
-//            boolean bStartedItalic = false;
-//            String strBookName;
-//            String strCompressedBookName = "";
-//            String strReference;
-//            String strUCLine;
-//            boolean finished;
-//            boolean bFinishedVols = false;
-//            int intPageNum;
-//            int intKeepPageNum;
-//
-//            intVol = 1;
-//            if (strAuth.equals("hymns")) {
-//                intVol = Constants.LAST_HYMNBOOK + 1;
-//            }
-//            while (!bFinishedVols) {
-//
-//                File fVolTxt = new File(strVolsPath + strAuth + intVol + ".doc");
-//                if (!fVolTxt.exists()) {
-//                    bFinishedVols = true;
-//                } else if (taFilename.getText().equals("") || taFilename.getText().equals("" + intVol)) {
-//                    intPageNum = 0;
-//                    intKeepPageNum = 0;
-//                    taOutput.append(NEW_LINE + "*** Preparing " + strAuth + intVol + ".htm ***");
-//                    tfProgress.setText(strAuth + intVol);
-//                    brLog = new BufferedReader(new FileReader(strVolsPath + strAuth + intVol + ".doc"));
-//                    pwLog = new PrintWriter(new FileWriter(strVolsDestPath + strAuth + intVol + ".htm", false));
-//                    pwLog.println("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\"><style>a:hover{background-color:yellow;}</style>");
-//                    pwLog.println("<title>" + strAuth.toUpperCase() + " Volume " + intVol + "</title></head><body bgcolor=\"#FFFFFF\" link=\"#0000FF\" vlink=\"#0000FF\" alink=\"#0000FF\">");
-//                    while ((strInfo = brLog.readLine()) != null) {//still more lines
-//                        sbLine.replace(0, sbLine.length(), strInfo);
-//
-//                        if ((sbLine.length() < 400) && (sbLine.charAt(0) != '{')) {//probable heading
-//                            strUCLine = sbLine.toString().toUpperCase();
-//                            if (strUCLine.equals(sbLine.toString()) && (sbLine.charAt(0) != ' ')) {
-//                                taOutput.append(NEW_LINE + "<a href=\"" + strAuth + intVol + ".htm#" + sbPageNum + "\"><font size=4>" + sbLine.toString() + "</font></a><br>~");
-//                                sbLine.insert(0, "<h2>");
-//                                sbLine.append("</h2>");
-//                            } else {
-//                                //                            taOutput.append(NEW_LINE + "SHORT PARA - " + sbLine.toString());
-//                            }
-//                        }
-//
-//                        int intCharsInSection = 0;
-//                        intCharPos = 0;
-//                        if ((sbLine.charAt(0) != '?') && (sbLine.charAt(0) != '{') && (intActualFootnotes != 0)) {
-//                            taOutput.append(NEW_LINE + "FOOTNOTE not at foot of page - " + sbPageNum);
-//                        }
-//
-//                        while (intCharPos < sbLine.length()) {
-//                            char charCurr = sbLine.charAt(intCharPos);
-//                            if (charCurr == '*') {//italics
-//                                if (bStartedItalic) {
-//                                    sbLine.replace(intCharPos, intCharPos + 1, "</i>");
-//                                } else {
-//                                    sbLine.replace(intCharPos, intCharPos + 1, "<i>");
-//                                }
-//                                bStartedItalic = !bStartedItalic;
-//                            } else if (charCurr == '{') {//start page number
+        try {
+
+            // set up readers/writers
+            File f;
+            String volPath = cfg.getPrepareDir() + File.separator + author.getFolder() + File.separator + "best" + File.separator;
+            f = new File(volPath);
+            System.out.println("Reading from " + f.getCanonicalPath());
+            String volDestPath = cfg.getPrepareDir() + File.separator + "target" + File.separator + author.getFolder() + File.separator;
+            f = new File(volDestPath);
+            System.out.println("Reading from " + f.getCanonicalPath());
+
+            BufferedReader brLog;
+            PrintWriter pwLog;
+
+            String line;
+            int volumeNumber = 1;
+            int section = 1;
+            int actualFootnotes = 0;
+            boolean finishedVolumes = false;
+            boolean startedItalics = false;
+
+            // for each volume
+            while (!finishedVolumes) {
+                try {
+
+                    File volumeFile = new File(volPath + author.getFolder() + volumeNumber);
+                    if (volumeFile.exists()) {
+                        int pageNumber = 0;
+                        int keepPageNumber = 0;
+
+
+                        // print out "." for each volume
+                        System.out.print(".");
+
+                        brLog = new BufferedReader(new FileReader(volumeFile));
+                        pwLog = new PrintWriter(new FileWriter(volDestPath + author.getCode() + volumeNumber + ".htm"));
+
+                        // write html head
+                        pwLog.println(String.format("<html>\n\n<head>\n\t<title>%s Volume %d</title>\n</head>", author.getName(), volumeNumber));
+
+                        // while there are still more lines
+                        while ((line = brLog.readLine()) != null) {
+                            String outputLine = line;
+
+                            // probable heading
+                            if ((outputLine.length() < 400) && (outputLine.charAt(0) != '{')) {
+
+                                // if the line is all uppercase
+                                if ((outputLine.toUpperCase() == outputLine) && (outputLine.charAt(0) != ' ')) {
+                                    outputLine = String.format("<h2>%s</h2>", outputLine);
+                                }
+                            }
+
+                            int charsInSection = 0;
+                            int charPosition = 0;
+
+                            if ((outputLine.charAt(0) != '?') && (outputLine.charAt(0) != '{') && (actualFootnotes != 0)) {
+                                System.out.println("Footnote not at foot of page");
+                            }
+
+                            // for each character in the line
+                            while (charPosition < outputLine.length()) {
+                                char currentCharacter = outputLine.charAt(charPosition);
+
+                                // add italics
+                                if (currentCharacter == '*') {
+                                    if (startedItalics) {
+                                        outputLine.replaceFirst("\\*", "</i>");
+                                    } else {
+                                        outputLine.replaceFirst("\\*", "<i>");
+                                    }
+                                } else if (currentCharacter == '{') {
+                                    // start page number
+
+                                    int tempCharPosition = charPosition + 1;
+                                    while (outputLine.charAt(tempCharPosition) != '}') {
+                                        tempCharPosition++;
+                                    }
+
+
+                                }
+
+
+
+
+                            }
+
+                        }
+
+                    } else {
+                        finishedVolumes = true;
+                    }
+                } catch (IOException ioe) {
+                    System.out.println("!*** Error with " + author.getName() + " volume: " + volumeNumber);
+                }
+            }
+
+        } catch (IOException ioe) {
+            System.out.println("!*** Error preparing " + author.getName() + " ***!");
+            System.out.println(ioe.getMessage());
+        }
+    }
+//    else if (charCurr == '{') {//start page number
 //                                intTempCharPos = intCharPos + 1;
 ////                                    sbPageNum.replace(0, sbLine.length(), "");
 //                                StringBuffer sbPageNumTmp = new StringBuffer();
