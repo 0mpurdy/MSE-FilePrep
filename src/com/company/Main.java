@@ -437,7 +437,7 @@ public class Main {
 
             // set up readers/writers
             File f;
-            String volPath = cfg.getPrepareDir() + File.separator + author.getFolder() + File.separator + "best" + File.separator;
+            String volPath = cfg.getPrepareDir()+ File.separator + "source" + File.separator + author.getFolder()  + File.separator;
             f = new File(volPath);
             f.mkdirs();
             System.out.print("\r\tReading from " + f.getCanonicalPath());
