@@ -1,0 +1,48 @@
+/* global */
+
+html {
+	font-family: Arial, sans-serif;
+}
+
+table, .bible-verse {
+	border-collapse: collapse;
+	border: solid 1px #002900;
+	padding: 5px;
+}
+
+.bible {
+	margin: 10px;
+}
+
+.chapterTitle {
+	background-color: #002900;
+	color: #FFFFFF;
+	padding: 20px;
+	vertical-align: center;
+	font-size: 30;
+	font-weight: bold;
+	text-align: center;
+}
+
+.odd {
+	background-color: #E0E5E0;
+}
+
+.hymn-number {
+	font-size: 30;
+}
+
+.verse-number {
+	font-size: 20;
+}
+
+.hymn-table {
+	margin: 60px;
+	margin-right: auto;
+	margin-left: auto;
+	border: none;
+}
+
+td {
+	padding: 20px
+}

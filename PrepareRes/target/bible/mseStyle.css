@@ -1,0 +1,29 @@
+/* global */
+
+html {
+	font-family: Arial, sans-serif;
+}
+
+table, td {
+	border-collapse: collapse;
+	border: solid 1px #002900;
+	padding: 5px;
+}
+
+.bible {
+	margin: 10px;
+}
+
+.chapterTitle {
+	background-color: #002900;
+	color: #FFFFFF;
+	padding: 20px;
+	vertical-align: center;
+	font-size: 30;
+	font-weight: bold;
+	text-align: center;
+}
+
+.odd {
+	background-color: #E0E5E0;
+}
