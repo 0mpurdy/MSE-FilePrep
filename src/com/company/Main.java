@@ -1,17 +1,21 @@
 package com.company;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class Main {
 
+    static String[] deleteChars = {"?","\"","!",",","",".","-","\'",":"};
+    static String[] uncommonDeleteChars = {"1","2","3","4","5","6","7","8","9","0",";","@",")","(","¦","*","[","]","\u00AC","{","}","\u2019", "~",
+            "\u201D","°","…","†","&","`","$","§","|","\t","=","+","‘","€","/","¶","_","–","½","£","“","%","#"};
+    // 00AC = ¬
+    // 2019 = ’
+    // 201D = ”
+    // 002D = –
     /**
      * @param args the command line arguments
      */
@@ -29,6 +33,7 @@ public class Main {
         while (mainMenuChoice != 0) {
             printMainMenu();
 
+            int authorChoice;
             mainMenuChoice = sc.nextInt();
             sc.nextLine();
 
@@ -42,13 +47,15 @@ public class Main {
                     System.out.println();
                     prepareHymnsHtml(cfg);
                     for (Author nextAuthor : Author.values()) {
-                        prepareMinistry(cfg, nextAuthor);
+                        if (nextAuthor != Author.TUNES) {
+                            prepareMinistry(cfg, nextAuthor);
+                        }
                     }
                     break;
                 case 2:
                     System.out.println("\nWhich author do you wish to prepare?");
                     printAuthorMenu();
-                    int authorChoice = sc.nextInt();
+                    authorChoice = sc.nextInt();
                     sc.nextLine();
 
                     if (authorChoice == 0) {
@@ -59,6 +66,24 @@ public class Main {
                         prepareMinistry(cfg, Author.values()[authorChoice]);
                     } else {
                         System.out.println("\nOption " + authorChoice + " is not available at the moment");
+                    }
+                    break;
+                case 3:
+                    for (Author nextAuthor : Author.values()) {
+                        if (nextAuthor != Author.TUNES) {
+                            writeIndex(cfg, nextAuthor);
+                        }
+                    }
+                    break;
+                case 4:
+                    System.out.println("\nWhich author do you wish to prepare?");
+                    printAuthorMenu();
+                    authorChoice = sc.nextInt();
+                    sc.nextLine();
+                    if ((authorChoice>=0) && (authorChoice < Author.values().length)){
+                        writeIndex(cfg, Author.values()[authorChoice]);
+                    } else {
+                        System.out.println("This is not a valid option");
                     }
                     break;
                 default:
@@ -76,6 +101,8 @@ public class Main {
         options.add("Close");
         options.add("Prepare all files");
         options.add("Prepare single author");
+        options.add("Create all indexes");
+        options.add("Create single author index");
 
         int i = 0;
         for (String option : options) {
@@ -108,11 +135,11 @@ public class Main {
             File f;
 
             // get the paths for the files that are used in preparing the bible html
-            String jndBiblePath = cfg.getPrepareDir() + "bible" + File.separator + "best" + File.separator;
+            String jndBiblePath = cfg.getPrepareDir() + "source" + File.separator + "bible" + File.separator;
             f = new File(jndBiblePath);
             System.out.print("Reading JND bible from " + f.getCanonicalPath());
 
-            String kjvBiblePath = cfg.getPrepareDir() + "kjv" + File.separator + "best" + File.separator;
+            String kjvBiblePath = cfg.getPrepareDir() + "source" + File.separator + "kjv" + File.separator;
             f = new File(kjvBiblePath);
             System.out.print("\rReading KJV bible from " + f.getCanonicalPath());
 
@@ -148,16 +175,9 @@ public class Main {
                 BufferedReader brJND = new BufferedReader(new FileReader(jndBiblePath + "bible" + bookNumber + ".txt"));
                 BufferedReader brKJV = new BufferedReader(new FileReader(kjvBiblePath + "kjv" + bookNumber + ".txt"));
 
-                String formattedBookNumber;
-                if (bookNumber < 10) {
-                    formattedBookNumber = "0" + bookNumber;
-                } else {
-                    formattedBookNumber = bookNumber + "";
-                }
-
                 // create print writers to write the bible html and txt (overwrite any existing files)
                 PrintWriter pwBible = new PrintWriter(new FileWriter(bibleDestinationPath + nextBook.getName() + ".htm", false));
-                PrintWriter pwBibleTxt = new PrintWriter(new FileWriter(bibleTxtDestinationPath + "bible" + formattedBookNumber + ": " + nextBook.getName() + ".doc", false));
+                PrintWriter pwBibleTxt = new PrintWriter(new FileWriter(bibleTxtDestinationPath + "bible" + bookNumber + ": " + nextBook.getName() + ".doc", false));
 
                 // write the html header
                 pwBible.println("<html>");
@@ -312,7 +332,7 @@ public class Main {
             File f;
 
             // the path of the input
-            String hymnsPath = cfg.getPrepareDir() + File.separator + "hymns" + File.separator + "best" + File.separator;
+            String hymnsPath = cfg.getPrepareDir() + File.separator + "source" + File.separator + "hymns" + File.separator;
             f = new File(hymnsPath);
             System.out.print("\tReading Hymns from: " + f.getCanonicalPath());
 
@@ -795,6 +815,217 @@ public class Main {
             System.out.println(ioe.getMessage());
         }
     } // end prepare (used for ministry)
+
+    private static void writeIndex(Config cfg, Author author) {
+
+        HashMap<String, Integer> tokenCountMap = new HashMap<>();
+
+        // source file path
+        String sourcePath = cfg.getPrepareDir();
+
+        if (author == Author.BIBLE) {
+            sourcePath += "target" + File.separator + "bibleText" + File.separator;
+        } else {
+            sourcePath += "source" + File.separator + author.getFolder() + File.separator;
+        }
+
+        // destination file path
+        String destinationPath = cfg.getPrepareDir() + File.separator + "target" + File.separator + author.getFolder() + File.separator;
+
+        int volumeNumber = 1;
+        boolean finished = false;
+
+        // for all the volumes
+        while (!finished) {
+            File inputVolume = new File(sourcePath + author.getCode() + volumeNumber + ".txt");
+            if (!inputVolume.exists()) {
+                finished = true;
+                break;
+            } else {
+                analyseVolume(inputVolume, author, volumeNumber, tokenCountMap);
+            }
+            volumeNumber++;
+        }
+
+
+        // write output
+        try {
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            String json = gson.toJson(tokenCountMap);
+            File outputFile = new File(destinationPath + File.separator + author.getFolder() + ".idx");
+            PrintWriter pw = new PrintWriter(new FileWriter(outputFile));
+            pw.println(json);
+        } catch (IOException ioe) {
+            System.out.println("\nError printing index for " + author.getName());
+            System.out.println(ioe.getMessage());
+        }
+        System.out.println();
+    } // writeIndex
+
+    private static void analyseVolume(File inputVolume, Author author, int volumeNumber, HashMap<String, Integer> tokenCountMap) {
+
+        System.out.print("\rAnalysing " + author.getName() + " volume " + volumeNumber);
+
+        HashMap<String, Integer> tokenMap = new HashMap<>();
+
+        int pageNumber = 0;
+
+        try {
+
+            // line read
+            String line;
+            boolean noErrors = true;
+
+            if (volumeNumber == 26) {
+                int debug = 1;
+            }
+
+            // create reader
+            FileReader inputReader = new FileReader(inputVolume);
+            BufferedReader brLog = new BufferedReader(inputReader);
+
+            // while there are more lines
+            while ((line = brLog.readLine()) != null) {
+
+                StringBuilder outputLine = new StringBuilder(line);
+                int charPos = 0;
+                boolean skip = false;
+
+                if (outputLine.length() > 0) {
+                    if (outputLine.charAt(charPos) == '{') {
+                        // if it is a page number or a title
+
+                        charPos++;
+                        StringBuilder specialLine = new StringBuilder();
+
+                        // find the end of the page number
+                        while (outputLine.charAt(charPos) != '}') {
+                            specialLine.append(outputLine.charAt(charPos));
+                            charPos++;
+                        }
+
+                        if (specialLine.charAt(0) != '#') {
+                            // page number
+                            pageNumber = Integer.parseInt(specialLine.toString());
+                            skip = true;
+                        } else {
+                            outputLine = new StringBuilder(specialLine.substring(1));
+                        }
+
+                    }
+
+                    // if the line contains html
+                    while (outputLine.indexOf("<") != -1) {
+                        charPos = 0;
+                        while ((charPos < outputLine.length()) && (outputLine.charAt(charPos) != '<')) {
+                            charPos++;
+                        }
+                        int tempCharPos = charPos + 1;
+                        while ((tempCharPos < outputLine.length()) && (outputLine.charAt(tempCharPos) != '>')) {
+                            tempCharPos++;
+                        }
+                        if ((charPos < outputLine.length()) && (tempCharPos <= outputLine.length()))
+                            outputLine.replace(charPos, tempCharPos + 1, "");
+                    }
+
+                    if (!skip) {
+                        // split the line into tokens by " " characters
+                        String[] tokens = outputLine.toString().split(" ");
+
+                        // make each token into a word that can be searched
+                        for (String token : tokens) {
+                            token = token.toUpperCase();
+                            if (!isAlpha(token)) {
+                                token = processString(token);
+                            }
+                            if (!isAlpha(token)) {
+                                token = processUncommonString(token);
+                                if (!isAlpha(token)) {
+                                    if (noErrors) {
+                                        noErrors = !noErrors;
+                                        System.out.println();
+                                    }
+                                    System.out.print("\t" + token + "\t" + volumeNumber + ":" + pageNumber);
+                                    token = "";
+                                }
+                            }
+
+                            if (!token.equals("")) {
+                                // if the string isn't empty
+
+                                Integer tokenCount = tokenCountMap.get(token);
+                                if (tokenCount != null) {
+                                    // if the word has already been added
+                                    tokenCount++;
+                                    tokenCountMap.put(token, tokenCount);
+                                } else {
+                                    tokenCountMap.put(token, 1);
+                                }
+                            }
+                        }
+                    } // end if (!skip)
+                }// end if outputline is !empty
+            }
+
+        } catch (FileNotFoundException fnf) {
+            System.out.println("Error - could not find file " + inputVolume.getAbsolutePath());
+            System.out.println(fnf.getMessage());
+        } catch (IOException ioe) {
+            System.out.println("Error reading " + inputVolume.getAbsolutePath());
+            System.out.println(ioe.getMessage());
+        }
+
+
+    }
+
+    private static boolean isAlpha(String token) {
+        char[] chars = token.toCharArray();
+
+        for (char c : chars) {
+            if(!Character.isLetter(c)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static String processString(String token) {
+
+        for (String c : deleteChars) {
+            token = token.replace(c, "");
+        }
+
+//        boolean finished = false;
+//        while ((token.contains("\'") && !finished)) {
+//            // if it is the first or last character then remove it
+//            if (token.indexOf('\'') == 0) {
+//                token = token.substring(1);
+//            } else if (token.indexOf('\'') == (token.length() - 1)) {
+//                token = token.substring(0,token.length()-1);
+//            } else if (!Character.isLetter(token.charAt(token.indexOf('\'') + 1))) {
+//                // if it isn't followed by a letter then remove it
+//                token = token.substring(0, token.indexOf('\'')) + token.substring(token.indexOf('\'')+1, token.length());
+//            } else {
+//                finished = true;
+//            }
+//        }
+//
+//        if (token.contains("-")) {
+//            if (!Character.isLetter(token.charAt(token.indexOf('-') - 1))) {
+//                // if it isn't preceded by a letter then remove it
+//                token = token.substring(0, token.indexOf('-')) + token.substring(token.indexOf('-')+1, token.length());
+//            }
+//        }
+
+        return token;
+    }
+
+    private static String processUncommonString(String token) {
+        for (String c : uncommonDeleteChars) {
+            token = token.replace(c, "");
+        }
+        return token;
+    }
 
     private static HashMap<String, String> getSynopsisPages(String filename) {
         // this gets a map of the corresponding synopsis page in JND's ministry for each book of the bible

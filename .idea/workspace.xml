@@ -1,627 +1,489 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/com/company/Main.java" line="511" />
-    <bookmark url="file://$PROJECT_DIR$/src/com/company/Main.java" line="521" />
+    <bookmark url="file://$PROJECT_DIR$/src/com/company/Main.java" line="531" />
+    <bookmark url="file://$PROJECT_DIR$/src/com/company/Main.java" line="541" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8333ef69-41d0-4129-8cc9-40327beb6890" name="Default" comment="">
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\ajg\best\ajg1.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\ajg\best\ajg10.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\ajg\best\ajg11.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\ajg\best\ajg2.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\ajg\best\ajg3.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\ajg\best\ajg4.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\ajg\best\ajg5.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\ajg\best\ajg6.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\ajg\best\ajg7.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\ajg\best\ajg8.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\ajg\best\ajg9.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible1.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible10.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible11.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible12.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible13.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible14.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible15.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible16.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible17.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible18.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible19.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible2.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible20.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible21.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible22.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible23.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible24.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible25.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible26.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible27.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible28.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible29.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible3.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible30.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible31.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible32.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible33.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible34.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible35.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible36.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible37.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible38.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible39.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible4.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible40.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible41.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible42.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible43.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible44.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible45.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible46.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible47.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible48.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible49.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible5.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible50.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible51.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible52.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible53.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible54.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible55.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible56.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible57.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible58.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible59.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible6.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible60.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible61.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible62.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible63.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible64.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible65.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible66.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible7.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible8.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible9.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\bible_idx.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\oldPages.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\best\pages.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible1.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible10.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible11.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible12.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible13.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible14.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible15.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible16.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible17.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible18.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible19.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible2.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible20.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible21.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible22.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible23.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible24.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible25.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible26.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible27.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible28.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible29.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible3.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible30.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible31.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible32.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible33.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible34.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible35.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible36.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible37.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible38.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible39.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible4.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible40.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible41.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible42.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible43.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible44.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible45.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible46.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible47.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible48.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible49.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible5.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible50.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible51.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible52.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible53.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible54.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible55.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible56.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible57.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible58.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible59.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible6.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible60.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible61.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible62.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible63.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible64.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible65.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible66.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible7.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible8.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible9.doc" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\bible\txt\bible_idx.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac1.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac10.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac11.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac12.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac13.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac14.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac15.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac16.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac17.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac18.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac19.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac2.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac20.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac21.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac22.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac23.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac24.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac25.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac26.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac27.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac28.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac29.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac3.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac30.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac31.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac32.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac33.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac34.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac35.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac36.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac37.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac4.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac5.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac6.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac7.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac8.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac9.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\cac\best\cac_idx.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\chm\best\chm1.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\chm\best\chm10.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\chm\best\chm11.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\chm\best\chm12.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\chm\best\chm13.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\chm\best\chm14.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\chm\best\chm15.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\chm\best\chm16.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\chm\best\chm17.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\chm\best\chm18.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\chm\best\chm2.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\chm\best\chm3.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\chm\best\chm4.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\chm\best\chm5.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\chm\best\chm6.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\chm\best\chm7.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\chm\best\chm8.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\chm\best\chm9.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer1.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer10.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer11.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer12.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer13.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer14.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer15.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer16.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer17.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer18.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer19.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer2.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer20.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer21.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer3.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer4.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer5.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer6.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer7.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer8.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer9.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\fer\best\fer_idx.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc1.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc10.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc11.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc12.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc13.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc14.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc15.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc16.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc17.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc18.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc19.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc2.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc20.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc21.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc22.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc23.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc24.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc25.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc26.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc27.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc28.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc29.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc3.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc30.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc31.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc32.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc33.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc34.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc35.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc36.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc37.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc38.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc39.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc4.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc40.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc41.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc42.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc43.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc44.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc45.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc46.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc47.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc48.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc49.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc5.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc50.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc51.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc52.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc53.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc54.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc55.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc56.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc57.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc58.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc59.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc6.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc60.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc61.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc62.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc63.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc64.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc65.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc66.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc67.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc68.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc69.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc7.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc70.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc71.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc72.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc73.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc74.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc75.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc76.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc77.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc78.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc79.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc8.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc80.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc81.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc82.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc83.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc84.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc85.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc86.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc87.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc88.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\grc\best\grc9.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns1.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns1903.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns1932.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns1951.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns1962.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns1973.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns2.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns3.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns4.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns5.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns6.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns7.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\hymns\best\hymns_idx.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jbs\best\jbs1.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jbs\best\jbs10.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jbs\best\jbs11.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jbs\best\jbs12.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jbs\best\jbs13.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jbs\best\jbs14.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jbs\best\jbs15.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jbs\best\jbs16.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jbs\best\jbs17.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jbs\best\jbs2.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jbs\best\jbs3.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jbs\best\jbs4.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jbs\best\jbs5.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jbs\best\jbs6.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jbs\best\jbs7.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jbs\best\jbs8.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jbs\best\jbs9.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jbs\best\jbs_idx.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\Neil\Collected Writings - diffs.zip" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\Neil\Collected Writings Volume 1 - diffs.docx" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\Neil\Collected Writings Volume 4 - diffs.docx" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\Neil\Vol1 - final.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\Neil\Vol4 - final.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd.zip" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd1.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd1.zip" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd10.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd11.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd12.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd13.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd14.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd15.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd16.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd17.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd18.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd19.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd2.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd2.zip" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd20.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd21.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd22.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd23.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd24.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd25.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd26.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd27.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd28.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd29.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd3.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd3.zip" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd30.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd31.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd32.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd33.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd34.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd35.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd36.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd37.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd38.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd39.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd4.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd4.zip" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd40.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd41.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd42.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd43.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd44.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd45.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd46.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd47.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd48.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd49.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd5.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd50.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd51.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd52.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd6.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd7.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd8.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd9.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jnd\best\jnd_idx.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt1.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt10.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt100.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt101.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt102.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt103.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt11.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt12.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt13.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt14.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt15.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt16.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt17.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt18.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt19.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt2.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt20.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt21.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt22.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt23.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt24.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt25.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt26.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt27.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt28.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt29.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt3.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt30.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt31.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt32.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt33.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt34.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt35.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt36.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt37.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt38.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt39.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt4.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt40.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt41.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt42.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt43.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt44.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt45.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt46.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt47.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt48.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt49.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt5.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt50.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt51.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt52.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt53.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt54.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt55.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt56.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt57.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt58.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt59.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt6.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt60.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt61.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt62.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt63.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt64.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt65.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt66.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt67.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt68.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt69.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt7.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt70.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt71.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt72.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt73.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt74.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt75.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt76.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt77.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt78.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt79.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt8.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt80.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt81.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt82.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt83.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt84.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt85.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt86.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt87.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt88.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt89.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt9.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt90.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt91.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt92.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt93.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt94.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt95.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt96.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt97.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt98.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt99.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\jt\best\jt_idx.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv1.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv10.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv11.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv12.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv13.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv14.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv15.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv16.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv17.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv18.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv19.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv2.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv20.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv21.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv22.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv23.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv24.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv25.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv26.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv27.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv28.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv29.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv3.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv30.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv31.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv32.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv33.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv34.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv35.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv36.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv37.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv38.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv39.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv4.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv40.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv41.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv42.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv43.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv44.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv45.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv46.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv47.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv48.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv49.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv5.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv50.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv51.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv52.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv53.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv54.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv55.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv56.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv57.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv58.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv59.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv6.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv60.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv61.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv62.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv63.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv64.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv65.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv66.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv7.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv8.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\kjv\best\kjv9.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\Morrish Bible Dictionary (Draft - April 2007 for IEP).pdf" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc1.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc10.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc11.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc12.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc13.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc14.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc15.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc16.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc17.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc18.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc19.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc2.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc20.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc21.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc22.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc23.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc24.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc25.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc26.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc3.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc4.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc5.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc6.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc7.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc8.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc9.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\misc\best\misc_idx.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\smc\best\smc1.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\smc\best\smc10.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\smc\best\smc2.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\smc\best\smc3.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\smc\best\smc4.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\smc\best\smc5.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\smc\best\smc6.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\smc\best\smc7.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\smc\best\smc8.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\Java\MSE-FilePrep\PrepareRes\smc\best\smc9.txt" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gson.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG1.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG1.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG10.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG10.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG11.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG11.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG2.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG2.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG3.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG3.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG4.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG4.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG5.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG5.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG6.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG6.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG7.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG7.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG8.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG8.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG9.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/ajg/AJG9.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible1.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible1.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible10.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible10.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible11.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible11.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible12.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible12.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible13.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible13.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible14.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible14.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible15.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible15.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible16.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible16.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible17.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible17.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible18.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible18.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible19.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible19.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible2.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible2.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible20.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible20.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible21.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible21.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible22.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible22.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible23.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible23.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible24.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible24.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible25.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible25.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible26.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible26.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible27.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible27.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible28.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible28.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible29.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible29.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible3.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible3.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible30.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible30.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible31.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible31.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible32.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible32.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible33.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible33.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible34.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible34.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible35.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible35.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible36.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible36.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible37.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible37.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible38.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible38.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible39.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible39.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible4.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible4.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible40.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible40.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible41.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible41.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible42.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible42.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible43.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible43.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible44.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible44.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible45.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible45.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible46.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible46.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible47.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible47.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible48.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible48.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible49.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible49.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible5.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible5.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible50.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible50.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible51.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible51.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible52.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible52.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible53.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible53.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible54.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible54.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible55.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible55.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible56.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible56.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible57.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible57.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible58.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible58.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible59.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible59.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible6.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible6.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible60.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible60.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible61.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible61.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible62.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible62.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible63.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible63.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible64.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible64.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible65.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible65.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible66.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible66.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible7.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible7.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible8.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible8.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/bible/Bible9.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/bible/Bible9.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC1.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC1.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC10.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC10.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC11.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC11.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC12.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC12.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC13.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC13.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC14.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC14.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC15.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC15.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC16.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC16.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC17.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC17.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC18.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC18.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC19.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC19.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC2.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC2.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC20.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC20.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC21.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC21.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC22.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC22.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC23.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC23.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC24.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC24.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC25.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC25.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC26.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC26.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC27.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC27.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC28.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC28.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC29.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC29.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC3.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC3.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC30.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC30.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC31.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC31.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC32.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC32.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC33.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC33.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC34.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC34.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC35.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC35.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC36.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC36.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC37.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC37.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC4.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC4.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC5.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC5.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC6.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC6.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC7.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC7.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC8.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC8.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/cac/CAC9.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/cac/CAC9.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/chm/CHM1.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/chm/CHM1.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/chm/CHM10.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/chm/CHM10.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/chm/CHM11.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/chm/CHM11.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/chm/CHM12.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/chm/CHM12.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/chm/CHM13.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/chm/CHM13.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/chm/CHM14.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/chm/CHM14.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/chm/CHM15.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/chm/CHM15.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/chm/CHM16.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/chm/CHM16.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/chm/CHM17.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/chm/CHM17.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/chm/CHM18.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/chm/CHM18.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/chm/CHM2.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/chm/CHM2.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/chm/CHM3.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/chm/CHM3.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/chm/CHM4.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/chm/CHM4.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/chm/CHM5.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/chm/CHM5.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/chm/CHM6.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/chm/CHM6.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/chm/CHM7.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/chm/CHM7.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/chm/CHM8.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/chm/CHM8.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/chm/CHM9.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/chm/CHM9.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/fer/FER1.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/fer/FER1.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/fer/FER10.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/fer/FER10.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/fer/FER11.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/fer/FER11.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/fer/FER12.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/fer/FER12.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/fer/FER13.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/fer/FER13.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/fer/FER14.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/fer/FER14.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/fer/FER15.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/fer/FER15.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/fer/FER16.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/fer/FER16.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/fer/FER17.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/fer/FER17.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/fer/FER18.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/fer/FER18.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/fer/FER19.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/fer/FER19.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/fer/FER2.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/fer/FER2.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/fer/FER20.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/fer/FER20.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/fer/FER21.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/fer/FER21.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/fer/FER3.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/fer/FER3.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/fer/FER4.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/fer/FER4.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/fer/FER5.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/fer/FER5.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/fer/FER6.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/fer/FER6.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/fer/FER7.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/fer/FER7.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/fer/FER8.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/fer/FER8.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/fer/FER9.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/fer/FER9.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC1.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC1.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC10.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC10.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC11.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC11.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC12.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC12.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC13.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC13.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC14.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC14.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC15.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC15.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC16.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC16.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC17.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC17.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC18.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC18.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC19.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC19.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC2.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC2.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC20.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC20.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC21.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC21.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC22.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC22.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC23.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC23.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC24.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC24.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC25.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC25.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC26.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC26.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC27.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC27.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC28.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC28.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC29.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC29.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC3.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC3.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC30.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC30.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC31.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC31.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC32.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC32.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC33.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC33.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC34.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC34.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC35.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC35.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC36.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC36.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC37.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC37.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC38.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC38.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC39.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC39.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC4.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC4.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC40.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC40.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC41.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC41.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC42.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC42.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC43.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC43.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC44.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC44.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC45.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC45.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC46.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC46.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC47.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC47.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC48.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC48.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC49.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC49.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC5.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC5.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC50.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC50.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC51.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC51.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC52.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC52.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC53.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC53.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC54.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC54.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC55.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC55.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC56.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC56.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC57.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC57.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC58.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC58.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC59.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC59.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC6.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC6.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC60.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC60.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC61.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC61.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC62.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC62.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC63.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC63.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC64.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC64.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC65.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC65.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC66.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC66.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC67.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC67.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC68.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC68.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC69.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC69.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC7.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC7.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC70.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC70.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC71.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC71.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC72.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC72.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC73.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC73.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC74.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC74.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC75.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC75.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC76.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC76.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC77.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC77.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC78.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC78.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC79.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC79.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC8.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC8.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC80.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC80.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC81.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC81.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC82.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC82.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC83.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC83.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC84.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC84.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC85.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC85.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC86.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC86.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC87.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC87.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC88.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC88.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/grc/GRC9.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/grc/GRC9.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/hymns/Hymns1.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/hymns/Hymns1.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/hymns/Hymns2.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/hymns/Hymns2.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/hymns/Hymns3.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/hymns/Hymns3.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/hymns/Hymns4.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/hymns/Hymns4.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/hymns/Hymns5.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/hymns/Hymns5.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/hymns/Hymns6.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/hymns/Hymns6.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/hymns/Hymns7.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/hymns/Hymns7.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS1.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS1.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS10.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS10.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS11.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS11.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS12.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS12.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS13.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS13.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS14.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS14.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS15.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS15.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS16.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS16.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS17.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS17.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS2.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS2.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS3.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS3.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS4.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS4.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS5.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS5.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS6.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS6.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS7.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS7.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS8.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS8.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS9.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jbs/JBS9.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND1.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND1.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND10.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND10.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND11.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND11.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND12.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND12.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND13.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND13.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND14.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND14.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND15.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND15.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND16.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND16.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND17.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND17.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND18.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND18.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND19.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND19.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND2.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND2.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND20.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND20.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND21.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND21.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND22.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND22.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND23.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND23.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND24.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND24.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND25.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND25.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND26.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND26.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND27.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND27.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND28.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND28.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND29.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND29.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND3.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND3.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND30.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND30.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND31.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND31.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND32.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND32.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND33.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND33.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND34.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND34.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND35.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND35.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND36.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND36.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND37.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND37.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND38.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND38.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND39.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND39.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND4.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND4.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND40.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND40.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND41.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND41.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND42.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND42.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND43.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND43.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND44.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND44.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND45.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND45.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND46.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND46.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND47.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND47.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND48.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND48.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND49.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND49.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND5.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND5.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND50.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND50.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND51.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND51.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND52.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND52.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND6.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND6.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND7.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND7.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND8.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND8.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jnd/JND9.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jnd/JND9.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT1.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT1.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT10.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT10.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT100.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT100.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT101.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT101.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT102.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT102.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT103.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT103.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT11.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT11.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT12.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT12.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT13.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT13.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT14.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT14.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT15.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT15.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT16.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT16.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT17.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT17.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT18.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT18.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT19.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT19.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT2.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT2.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT20.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT20.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT21.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT21.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT22.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT22.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT23.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT23.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT24.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT24.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT25.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT25.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT26.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT26.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT27.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT27.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT28.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT28.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT29.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT29.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT3.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT3.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT30.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT30.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT31.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT31.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT32.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT32.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT33.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT33.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT34.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT34.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT35.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT35.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT36.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT36.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT37.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT37.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT38.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT38.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT39.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT39.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT4.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT4.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT40.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT40.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT41.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT41.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT42.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT42.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT43.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT43.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT44.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT44.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT45.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT45.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT46.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT46.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT47.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT47.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT48.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT48.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT49.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT49.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT5.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT5.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT50.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT50.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT51.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT51.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT52.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT52.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT53.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT53.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT54.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT54.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT55.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT55.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT56.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT56.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT57.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT57.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT58.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT58.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT59.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT59.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT6.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT6.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT60.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT60.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT61.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT61.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT62.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT62.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT63.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT63.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT64.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT64.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT65.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT65.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT66.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT66.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT67.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT67.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT68.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT68.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT69.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT69.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT7.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT7.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT70.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT70.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT71.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT71.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT72.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT72.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT73.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT73.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT74.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT74.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT75.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT75.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT76.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT76.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT77.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT77.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT78.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT78.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT79.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT79.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT8.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT8.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT80.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT80.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT81.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT81.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT82.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT82.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT83.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT83.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT84.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT84.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT85.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT85.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT86.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT86.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT87.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT87.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT88.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT88.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT89.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT89.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT9.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT9.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT90.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT90.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT91.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT91.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT92.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT92.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT93.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT93.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT94.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT94.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT95.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT95.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT96.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT96.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT97.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT97.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT98.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT98.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/jt/JT99.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/jt/JT99.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MSE-FilePrep.iml" afterPath="$PROJECT_DIR$/MSE-FilePrep.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Main.java" afterPath="$PROJECT_DIR$/src/com/company/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc1.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc1.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc10.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc10.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc11.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc11.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc12.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc12.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc13.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc13.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc14.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc14.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc15.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc15.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc16.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc16.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc17.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc17.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc18.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc18.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc19.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc19.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc2.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc2.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc20.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc20.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc21.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc21.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc22.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc22.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc23.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc23.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc24.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc24.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc25.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc25.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc26.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc26.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc3.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc3.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc4.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc4.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc5.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc5.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc6.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc6.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc7.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc7.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc8.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc8.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/misc/Misc9.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/misc/Misc9.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/smc/SMC1.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/smc/SMC1.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/smc/SMC10.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/smc/SMC10.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/smc/SMC2.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/smc/SMC2.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/smc/SMC3.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/smc/SMC3.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/smc/SMC4.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/smc/SMC4.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/smc/SMC5.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/smc/SMC5.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/smc/SMC6.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/smc/SMC6.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/smc/SMC7.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/smc/SMC7.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/smc/SMC8.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/smc/SMC8.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/target/smc/SMC9.htm" afterPath="$PROJECT_DIR$/PrepareRes/target/smc/SMC9.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/source/cac/cac10.txt" afterPath="$PROJECT_DIR$/PrepareRes/source/cac/cac10.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/source/cac/cac15.txt" afterPath="$PROJECT_DIR$/PrepareRes/source/cac/cac15.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/source/cac/cac5.txt" afterPath="$PROJECT_DIR$/PrepareRes/source/cac/cac5.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/source/chm/chm5.txt" afterPath="$PROJECT_DIR$/PrepareRes/source/chm/chm5.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/source/jbs/jbs4.txt" afterPath="$PROJECT_DIR$/PrepareRes/source/jbs/jbs4.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/source/jnd/jnd11.txt" afterPath="$PROJECT_DIR$/PrepareRes/source/jnd/jnd11.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/source/jnd/jnd13.txt" afterPath="$PROJECT_DIR$/PrepareRes/source/jnd/jnd13.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/source/jnd/jnd15.txt" afterPath="$PROJECT_DIR$/PrepareRes/source/jnd/jnd15.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/source/jnd/jnd19.txt" afterPath="$PROJECT_DIR$/PrepareRes/source/jnd/jnd19.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/source/jnd/jnd21.txt" afterPath="$PROJECT_DIR$/PrepareRes/source/jnd/jnd21.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/source/jnd/jnd50.txt" afterPath="$PROJECT_DIR$/PrepareRes/source/jnd/jnd50.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/source/jnd/jnd7.txt" afterPath="$PROJECT_DIR$/PrepareRes/source/jnd/jnd7.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/source/jt/jt32.txt" afterPath="$PROJECT_DIR$/PrepareRes/source/jt/jt32.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/source/jt/jt94.txt" afterPath="$PROJECT_DIR$/PrepareRes/source/jt/jt94.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/source/misc/misc14.txt" afterPath="$PROJECT_DIR$/PrepareRes/source/misc/misc14.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/source/misc/misc15.txt" afterPath="$PROJECT_DIR$/PrepareRes/source/misc/misc15.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/source/smc/smc9.txt" afterPath="$PROJECT_DIR$/PrepareRes/source/smc/smc9.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MSE-FilePrep.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -646,14 +508,29 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.07752809">
-              <caret line="434" column="0" selection-start-line="434" selection-start-column="0" selection-end-line="434" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.29668412">
+              <caret line="334" column="104" selection-start-line="334" selection-start-column="104" selection-end-line="334" selection-end-column="104" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#544#555#0" expanded="false" />
+                <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
+                <element signature="method#main#0;class#Main#0" expanded="false" />
+                <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
                 <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
                 <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
-                <element signature="method#prepareHymnsHtml#0;class#Main#0" expanded="false" />
+                <element signature="e#10571#10590#0" expanded="false" />
+                <element signature="e#11666#11756#0" expanded="false" />
+                <element signature="e#18034#18057#0" expanded="false" />
+                <element signature="method#prepareMinistry#0;class#Main#0" expanded="false" />
+                <element signature="e#29861#29894#0" expanded="false" />
+                <element signature="e#35006#35032#0" expanded="false" />
+                <element signature="method#writeIndex#0;class#Main#0" expanded="false" />
+                <element signature="method#analyseVolume#0;class#Main#0" expanded="false" />
+                <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
+                <element signature="method#processString#0;class#Main#0" expanded="false" />
+                <element signature="e#46668#46703#0" expanded="false" />
+                <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
                 <element signature="method#getSynopsisPages#0;class#Main#0" expanded="false" />
+                <element signature="e#48806#48842#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -686,7 +563,24 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-              <folding />
+              <folding>
+                <element signature="e#1208#1209#0" expanded="false" />
+                <element signature="e#1235#1236#0" expanded="false" />
+                <element signature="e#1266#1267#0" expanded="false" />
+                <element signature="e#1293#1294#0" expanded="false" />
+                <element signature="e#1326#1327#0" expanded="false" />
+                <element signature="e#1355#1356#0" expanded="false" />
+                <element signature="e#1394#1395#0" expanded="false" />
+                <element signature="e#1438#1439#0" expanded="false" />
+                <element signature="e#1477#1478#0" expanded="false" />
+                <element signature="e#1547#1548#0" expanded="false" />
+                <element signature="e#1583#1584#0" expanded="false" />
+                <element signature="e#1627#1628#0" expanded="false" />
+                <element signature="e#1663#1664#0" expanded="false" />
+                <element signature="e#1733#1734#0" expanded="false" />
+                <element signature="e#1770#1771#0" expanded="false" />
+                <element signature="e#1803#1804#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -730,13 +624,20 @@
       </list>
     </option>
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="NamedScopeManager">
     <order />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
+    <option name="width" value="1924" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -750,7 +651,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -761,7 +662,31 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSE-FilePrep" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSE-FilePrep" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSE-FilePrep" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="recentsLimit" value="5" />
@@ -769,6 +694,10 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="dynamic.classpath" value="false" />
     <property name="FullScreen" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
@@ -786,6 +715,26 @@
       <envs />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -914,12 +863,14 @@
       <listeners />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Main (1)" />
     </list>
     <recent_temporary>
-      <list size="1">
+      <list size="2">
         <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -937,7 +888,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1924" height="1056" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -951,7 +902,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3347413" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14739583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14727463" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -981,18 +932,30 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/Main.java</url>
-          <line>493</line>
+          <line>513</line>
           <properties />
           <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/Main.java</url>
-          <line>492</line>
+          <line>512</line>
           <properties />
           <option name="timeStamp" value="66" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/Main.java</url>
+          <line>879</line>
+          <properties />
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/Main.java</url>
+          <line>890</line>
+          <properties />
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="67" />
+      <option name="time" value="78" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1006,11 +969,266 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#544#555#0" expanded="false" />
+            <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
             <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
             <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
-            <element signature="method#prepareHymnsHtml#0;class#Main#0" expanded="false" />
+            <element signature="e#10571#10590#0" expanded="false" />
+            <element signature="e#11666#11756#0" expanded="false" />
+            <element signature="e#18034#18057#0" expanded="false" />
+            <element signature="method#prepareMinistry#0;class#Main#0" expanded="false" />
+            <element signature="e#29861#29894#0" expanded="false" />
+            <element signature="e#35006#35032#0" expanded="false" />
+            <element signature="method#writeIndex#0;class#Main#0" expanded="false" />
+            <element signature="method#analyseVolume#0;class#Main#0" expanded="false" />
+            <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
+            <element signature="method#processString#0;class#Main#0" expanded="false" />
+            <element signature="e#46668#46703#0" expanded="false" />
+            <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
             <element signature="method#getSynopsisPages#0;class#Main#0" expanded="false" />
+            <element signature="e#48806#48842#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/HymnBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Author.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding>
+            <element signature="e#1208#1209#0" expanded="false" />
+            <element signature="e#1235#1236#0" expanded="false" />
+            <element signature="e#1266#1267#0" expanded="false" />
+            <element signature="e#1293#1294#0" expanded="false" />
+            <element signature="e#1326#1327#0" expanded="false" />
+            <element signature="e#1355#1356#0" expanded="false" />
+            <element signature="e#1394#1395#0" expanded="false" />
+            <element signature="e#1438#1439#0" expanded="false" />
+            <element signature="e#1477#1478#0" expanded="false" />
+            <element signature="e#1547#1548#0" expanded="false" />
+            <element signature="e#1583#1584#0" expanded="false" />
+            <element signature="e#1627#1628#0" expanded="false" />
+            <element signature="e#1663#1664#0" expanded="false" />
+            <element signature="e#1733#1734#0" expanded="false" />
+            <element signature="e#1770#1771#0" expanded="false" />
+            <element signature="e#1803#1804#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/BibleBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#544#555#0" expanded="false" />
+            <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
+            <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
+            <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
+            <element signature="e#10571#10590#0" expanded="false" />
+            <element signature="e#11666#11756#0" expanded="false" />
+            <element signature="e#18034#18057#0" expanded="false" />
+            <element signature="method#prepareMinistry#0;class#Main#0" expanded="false" />
+            <element signature="e#29861#29894#0" expanded="false" />
+            <element signature="e#35006#35032#0" expanded="false" />
+            <element signature="method#writeIndex#0;class#Main#0" expanded="false" />
+            <element signature="method#analyseVolume#0;class#Main#0" expanded="false" />
+            <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
+            <element signature="method#processString#0;class#Main#0" expanded="false" />
+            <element signature="e#46668#46703#0" expanded="false" />
+            <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
+            <element signature="method#getSynopsisPages#0;class#Main#0" expanded="false" />
+            <element signature="e#48806#48842#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/HymnBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Author.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding>
+            <element signature="e#1208#1209#0" expanded="false" />
+            <element signature="e#1235#1236#0" expanded="false" />
+            <element signature="e#1266#1267#0" expanded="false" />
+            <element signature="e#1293#1294#0" expanded="false" />
+            <element signature="e#1326#1327#0" expanded="false" />
+            <element signature="e#1355#1356#0" expanded="false" />
+            <element signature="e#1394#1395#0" expanded="false" />
+            <element signature="e#1438#1439#0" expanded="false" />
+            <element signature="e#1477#1478#0" expanded="false" />
+            <element signature="e#1547#1548#0" expanded="false" />
+            <element signature="e#1583#1584#0" expanded="false" />
+            <element signature="e#1627#1628#0" expanded="false" />
+            <element signature="e#1663#1664#0" expanded="false" />
+            <element signature="e#1733#1734#0" expanded="false" />
+            <element signature="e#1770#1771#0" expanded="false" />
+            <element signature="e#1803#1804#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/BibleBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#544#555#0" expanded="false" />
+            <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
+            <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
+            <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
+            <element signature="e#10571#10590#0" expanded="false" />
+            <element signature="e#11666#11756#0" expanded="false" />
+            <element signature="e#18034#18057#0" expanded="false" />
+            <element signature="method#prepareMinistry#0;class#Main#0" expanded="false" />
+            <element signature="e#29861#29894#0" expanded="false" />
+            <element signature="e#35006#35032#0" expanded="false" />
+            <element signature="method#writeIndex#0;class#Main#0" expanded="false" />
+            <element signature="method#analyseVolume#0;class#Main#0" expanded="false" />
+            <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
+            <element signature="method#processString#0;class#Main#0" expanded="false" />
+            <element signature="e#46668#46703#0" expanded="false" />
+            <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
+            <element signature="method#getSynopsisPages#0;class#Main#0" expanded="false" />
+            <element signature="e#48806#48842#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/HymnBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Author.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding>
+            <element signature="e#1208#1209#0" expanded="false" />
+            <element signature="e#1235#1236#0" expanded="false" />
+            <element signature="e#1266#1267#0" expanded="false" />
+            <element signature="e#1293#1294#0" expanded="false" />
+            <element signature="e#1326#1327#0" expanded="false" />
+            <element signature="e#1355#1356#0" expanded="false" />
+            <element signature="e#1394#1395#0" expanded="false" />
+            <element signature="e#1438#1439#0" expanded="false" />
+            <element signature="e#1477#1478#0" expanded="false" />
+            <element signature="e#1547#1548#0" expanded="false" />
+            <element signature="e#1583#1584#0" expanded="false" />
+            <element signature="e#1627#1628#0" expanded="false" />
+            <element signature="e#1663#1664#0" expanded="false" />
+            <element signature="e#1733#1734#0" expanded="false" />
+            <element signature="e#1770#1771#0" expanded="false" />
+            <element signature="e#1803#1804#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/BibleBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#544#555#0" expanded="false" />
+            <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
+            <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
+            <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
+            <element signature="e#10571#10590#0" expanded="false" />
+            <element signature="e#11666#11756#0" expanded="false" />
+            <element signature="e#18034#18057#0" expanded="false" />
+            <element signature="method#prepareMinistry#0;class#Main#0" expanded="false" />
+            <element signature="e#29861#29894#0" expanded="false" />
+            <element signature="e#35006#35032#0" expanded="false" />
+            <element signature="method#writeIndex#0;class#Main#0" expanded="false" />
+            <element signature="method#analyseVolume#0;class#Main#0" expanded="false" />
+            <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
+            <element signature="method#processString#0;class#Main#0" expanded="false" />
+            <element signature="e#46668#46703#0" expanded="false" />
+            <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
+            <element signature="method#getSynopsisPages#0;class#Main#0" expanded="false" />
+            <element signature="e#48806#48842#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1037,7 +1255,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-          <folding />
+          <folding>
+            <element signature="e#1208#1209#0" expanded="false" />
+            <element signature="e#1235#1236#0" expanded="false" />
+            <element signature="e#1266#1267#0" expanded="false" />
+            <element signature="e#1293#1294#0" expanded="false" />
+            <element signature="e#1326#1327#0" expanded="false" />
+            <element signature="e#1355#1356#0" expanded="false" />
+            <element signature="e#1394#1395#0" expanded="false" />
+            <element signature="e#1438#1439#0" expanded="false" />
+            <element signature="e#1477#1478#0" expanded="false" />
+            <element signature="e#1547#1548#0" expanded="false" />
+            <element signature="e#1583#1584#0" expanded="false" />
+            <element signature="e#1627#1628#0" expanded="false" />
+            <element signature="e#1663#1664#0" expanded="false" />
+            <element signature="e#1733#1734#0" expanded="false" />
+            <element signature="e#1770#1771#0" expanded="false" />
+            <element signature="e#1803#1804#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1049,10 +1284,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Author.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding>
+            <element signature="e#1208#1209#0" expanded="false" />
+            <element signature="e#1235#1236#0" expanded="false" />
+            <element signature="e#1266#1267#0" expanded="false" />
+            <element signature="e#1293#1294#0" expanded="false" />
+            <element signature="e#1326#1327#0" expanded="false" />
+            <element signature="e#1355#1356#0" expanded="false" />
+            <element signature="e#1394#1395#0" expanded="false" />
+            <element signature="e#1438#1439#0" expanded="false" />
+            <element signature="e#1477#1478#0" expanded="false" />
+            <element signature="e#1547#1548#0" expanded="false" />
+            <element signature="e#1583#1584#0" expanded="false" />
+            <element signature="e#1627#1628#0" expanded="false" />
+            <element signature="e#1663#1664#0" expanded="false" />
+            <element signature="e#1733#1734#0" expanded="false" />
+            <element signature="e#1770#1771#0" expanded="false" />
+            <element signature="e#1803#1804#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/BibleBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_51/src.zip!/java/lang/AbstractStringBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33222592">
+          <caret line="209" column="0" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/HymnBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1067,35 +1343,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Author.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/HymnBook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07752809">
-          <caret line="434" column="0" selection-start-line="434" selection-start-column="0" selection-end-line="434" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.29668412">
+          <caret line="334" column="104" selection-start-line="334" selection-start-column="104" selection-end-line="334" selection-end-column="104" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#544#555#0" expanded="false" />
+            <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
             <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
             <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
-            <element signature="method#prepareHymnsHtml#0;class#Main#0" expanded="false" />
+            <element signature="e#10571#10590#0" expanded="false" />
+            <element signature="e#11666#11756#0" expanded="false" />
+            <element signature="e#18034#18057#0" expanded="false" />
+            <element signature="method#prepareMinistry#0;class#Main#0" expanded="false" />
+            <element signature="e#29861#29894#0" expanded="false" />
+            <element signature="e#35006#35032#0" expanded="false" />
+            <element signature="method#writeIndex#0;class#Main#0" expanded="false" />
+            <element signature="method#analyseVolume#0;class#Main#0" expanded="false" />
+            <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
+            <element signature="method#processString#0;class#Main#0" expanded="false" />
+            <element signature="e#46668#46703#0" expanded="false" />
+            <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
             <element signature="method#getSynopsisPages#0;class#Main#0" expanded="false" />
+            <element signature="e#48806#48842#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>MSE-FilePrep</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Gson</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
