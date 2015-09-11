@@ -7,6 +7,9 @@ import java.util.ArrayList;
 
 public class Config {
 
+    // the number of times a word has to appear before it is too frequent
+    public final int TOO_FREQUENT = 10000;
+
     private String mseVersion;
     private String defaultBrowser;
     private String workingDir;

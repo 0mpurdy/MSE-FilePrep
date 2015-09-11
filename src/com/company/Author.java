@@ -4,27 +4,29 @@ import java.io.File;
 
 public enum Author {
 
-    BIBLE("Bible", "Bible", "bible", "books", true),
-    HYMNS("Hymns", "Hymns", "hymns", "hymns", true),
-    TUNES("Tunes", "Hymn Tunes", "tunes", "tunes", false),
-    JND("JND", "J.N.Darby", "jnd", "jnd", true),
-    JBS("JBS", "J.B.Stoney", "jbs", "jbs", true),
-    CHM("CHM", "C.H.Mackintosh", "chm", "chm", true),
-    FER("FER", "F.E.Raven", "fer", "fer", true),
-    CAC("CAC", "C.A.Coates", "cac", "cac", true),
-    JT("JT", "J.Taylor Snr", "jt", "jt", true),
-    GRC("GRC", "G.R.Cowell", "grc", "grc", true),
-    AJG("AJG", "A.J.Gardiner", "ajg", "ajg", true),
-    SMC("SMC", "S.McCallum", "smc", "smc", true),
-    Misc("Misc", "Various Authors", "misc", "misc", true);
+    BIBLE(0, "Bible", "Bible", "bible", "books", true),
+    HYMNS(1, "Hymns", "Hymns", "hymns", "hymns", true),
+    TUNES(2, "Tunes", "Hymn Tunes", "tunes", "tunes", false),
+    JND(3, "JND", "J.N.Darby", "jnd", "jnd", true),
+    JBS(4, "JBS", "J.B.Stoney", "jbs", "jbs", true),
+    CHM(5, "CHM", "C.H.Mackintosh", "chm", "chm", true),
+    FER(6, "FER", "F.E.Raven", "fer", "fer", true),
+    CAC(7, "CAC", "C.A.Coates", "cac", "cac", true),
+    JT(8, "JT", "J.Taylor Snr", "jt", "jt", true),
+    GRC(9, "GRC", "G.R.Cowell", "grc", "grc", true),
+    AJG(10, "AJG", "A.J.Gardiner", "ajg", "ajg", true),
+    SMC(11, "SMC", "S.McCallum", "smc", "smc", true),
+    Misc(12, "Misc", "Various Authors", "misc", "misc", true);
 
+    private final int index;
     private final String code;
     private final String name;
     private final String folder;
     private final String contentsName;
     private final boolean searchable;
 
-    Author(String code, String name, String folder, String contentsName, boolean searchable) {
+    Author(int index, String code, String name, String folder, String contentsName, boolean searchable) {
+        this.index = index;
         this.code = code;
         this.name = name;
         this.folder = folder;
@@ -45,23 +47,22 @@ public enum Author {
     }
 
     public String getContentsName() {
-        return contentsName + ".htm";
-    }
-
-    public String getContentsPath() {
-        return folder + File.separator + contentsName + ".htm";
+        return contentsName;
     }
 
     public String getIndexName() {
         return contentsName + ".idx";
     }
 
-    public String getIndexPath() {
-        return folder + File.separator + contentsName + ".idx";
+    public String getTargetFilePath(String filename) {
+        return "target" + File.separator + folder + File.separator + filename;
     }
 
     public boolean isSearchable() {
         return searchable;
     }
 
+    public int getIndex() {
+        return index;
+    }
 }

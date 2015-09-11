@@ -4,14 +4,17 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 public class Main {
 
-    static String[] deleteChars = {"?","\"","!",",","",".","-","\'",":"};
-    static String[] uncommonDeleteChars = {"1","2","3","4","5","6","7","8","9","0",";","@",")","(","¦","*","[","]","\u00AC","{","}","\u2019", "~",
+    static String[] deleteChars = {"?","\"","!",",",".","-","\'",":",
+            "1","2","3","4","5","6","7","8","9","0",";","@",")","(","¦","*","[","]","\u00AC","{","}","\u2019", "~",
             "\u201D","°","…","†","&","`","$","§","|","\t","=","+","‘","€","/","¶","_","–","½","£","“","%","#"};
+
     // 00AC = ¬
     // 2019 = ’
     // 201D = ”
@@ -69,11 +72,15 @@ public class Main {
                     }
                     break;
                 case 3:
+                    long startIndexing = System.nanoTime();
+                    // add a reference processor for each author then write the index
                     for (Author nextAuthor : Author.values()) {
                         if (nextAuthor != Author.TUNES) {
-                            writeIndex(cfg, nextAuthor);
+                            processAuthor(nextAuthor, cfg);
                         }
                     }
+                    long endIndexing = System.nanoTime();
+                    System.out.println("Total Index Time: " + ((endIndexing - startIndexing) / 1000000) + "ms");
                     break;
                 case 4:
                     System.out.println("\nWhich author do you wish to prepare?");
@@ -81,16 +88,45 @@ public class Main {
                     authorChoice = sc.nextInt();
                     sc.nextLine();
                     if ((authorChoice>=0) && (authorChoice < Author.values().length)){
-                        writeIndex(cfg, Author.values()[authorChoice]);
+                        Author author = Author.values()[authorChoice];
+                        processAuthor(author, cfg);
                     } else {
                         System.out.println("This is not a valid option");
                     }
+                    break;
+                case 5:
+                    System.out.println("Benchmarking ...\n\n");
+                    new Benchmark().run();
                     break;
                 default:
                     System.out.println("Invalid choice");
             }
         }
 
+    }
+
+    private static void processAuthor(Author author, Config cfg) {
+
+        long startAuthor = System.nanoTime();
+
+        final ReferenceQueue referenceQueue = new ReferenceQueue(author, cfg);
+        ReferenceProcessor referenceProcessor = new ReferenceProcessor(referenceQueue);
+        referenceProcessor.start();
+        writeIndex(cfg, author, referenceQueue);
+        System.out.println();
+        referenceProcessor.interrupt();
+        while (referenceProcessor.isAlive()) {
+            try {
+                referenceProcessor.join(500);
+                System.out.print("\rWords left: " + referenceQueue.size());
+            } catch (InterruptedException ie) {
+                ie.printStackTrace();
+            }
+        }
+
+        long endAuthor = System.nanoTime();
+
+        System.out.println("\nAuthor Time: " + ((endAuthor - startAuthor) / 1000000) + "ms");
     }
 
     private static void printMainMenu() {
@@ -816,9 +852,9 @@ public class Main {
         }
     } // end prepare (used for ministry)
 
-    private static void writeIndex(Config cfg, Author author) {
+    private static void writeIndex(Config cfg, Author author, ReferenceQueue referenceQueue) {
 
-        HashMap<String, Integer> tokenCountMap = new HashMap<>();
+        AuthorIndex authorIndex = new AuthorIndex(author);
 
         // source file path
         String sourcePath = cfg.getPrepareDir();
@@ -833,40 +869,23 @@ public class Main {
         String destinationPath = cfg.getPrepareDir() + File.separator + "target" + File.separator + author.getFolder() + File.separator;
 
         int volumeNumber = 1;
-        boolean finished = false;
+
+        File inputVolume = new File(sourcePath + author.getCode() + volumeNumber + ".txt");
 
         // for all the volumes
-        while (!finished) {
-            File inputVolume = new File(sourcePath + author.getCode() + volumeNumber + ".txt");
-            if (!inputVolume.exists()) {
-                finished = true;
-                break;
-            } else {
-                analyseVolume(inputVolume, author, volumeNumber, tokenCountMap);
-            }
+        while (inputVolume.exists()) {
+            analyseVolume(authorIndex, inputVolume, volumeNumber, referenceQueue);
             volumeNumber++;
+            inputVolume = new File(sourcePath + author.getCode() + volumeNumber + ".txt");
         }
 
-
-        // write output
-        try {
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            String json = gson.toJson(tokenCountMap);
-            File outputFile = new File(destinationPath + File.separator + author.getFolder() + ".idx");
-            PrintWriter pw = new PrintWriter(new FileWriter(outputFile));
-            pw.println(json);
-        } catch (IOException ioe) {
-            System.out.println("\nError printing index for " + author.getName());
-            System.out.println(ioe.getMessage());
-        }
-        System.out.println();
     } // writeIndex
 
-    private static void analyseVolume(File inputVolume, Author author, int volumeNumber, HashMap<String, Integer> tokenCountMap) {
+    private static void analyseVolume(AuthorIndex authorIndex, File inputVolume, int volumeNumber, ReferenceQueue referenceQueue) {
 
-        System.out.print("\rAnalysing " + author.getName() + " volume " + volumeNumber);
+        Author author = authorIndex.getAuthor();
 
-        HashMap<String, Integer> tokenMap = new HashMap<>();
+        System.out.print("\rAnalysing " + authorIndex.getAuthorName() + " volume " + volumeNumber);
 
         int pageNumber = 0;
 
@@ -875,10 +894,6 @@ public class Main {
             // line read
             String line;
             boolean noErrors = true;
-
-            if (volumeNumber == 26) {
-                int debug = 1;
-            }
 
             // create reader
             FileReader inputReader = new FileReader(inputVolume);
@@ -929,11 +944,12 @@ public class Main {
                     }
 
                     if (!skip) {
-                        // split the line into tokens by " " characters
+                        // split the line into tokens (words) by " " characters
                         String[] tokens = outputLine.toString().split(" ");
 
                         // make each token into a word that can be searched
                         for (String token : tokens) {
+
                             token = token.toUpperCase();
                             if (!isAlpha(token)) {
                                 token = processString(token);
@@ -952,19 +968,13 @@ public class Main {
 
                             if (!token.equals("")) {
                                 // if the string isn't empty
-
-                                Integer tokenCount = tokenCountMap.get(token);
-                                if (tokenCount != null) {
-                                    // if the word has already been added
-                                    tokenCount++;
-                                    tokenCountMap.put(token, tokenCount);
-                                } else {
-                                    tokenCountMap.put(token, 1);
-                                }
+                                referenceQueue.add(new ReferenceQueueItem(author, token, volumeNumber, pageNumber));
+//                                authorIndex.incrementTokenCount(token, volumeNumber, pageNumber);
                             }
-                        }
+                        } // end for each token
                     } // end if (!skip)
                 }// end if outputline is !empty
+
             }
 
         } catch (FileNotFoundException fnf) {
@@ -974,7 +984,6 @@ public class Main {
             System.out.println("Error reading " + inputVolume.getAbsolutePath());
             System.out.println(ioe.getMessage());
         }
-
 
     }
 
@@ -990,38 +999,17 @@ public class Main {
     }
 
     private static String processString(String token) {
-
         for (String c : deleteChars) {
-            token = token.replace(c, "");
+            if (token.contains(c)) {
+                token = token.replace(c, "");
+                return token;
+            }
         }
-
-//        boolean finished = false;
-//        while ((token.contains("\'") && !finished)) {
-//            // if it is the first or last character then remove it
-//            if (token.indexOf('\'') == 0) {
-//                token = token.substring(1);
-//            } else if (token.indexOf('\'') == (token.length() - 1)) {
-//                token = token.substring(0,token.length()-1);
-//            } else if (!Character.isLetter(token.charAt(token.indexOf('\'') + 1))) {
-//                // if it isn't followed by a letter then remove it
-//                token = token.substring(0, token.indexOf('\'')) + token.substring(token.indexOf('\'')+1, token.length());
-//            } else {
-//                finished = true;
-//            }
-//        }
-//
-//        if (token.contains("-")) {
-//            if (!Character.isLetter(token.charAt(token.indexOf('-') - 1))) {
-//                // if it isn't preceded by a letter then remove it
-//                token = token.substring(0, token.indexOf('-')) + token.substring(token.indexOf('-')+1, token.length());
-//            }
-//        }
-
         return token;
     }
 
     private static String processUncommonString(String token) {
-        for (String c : uncommonDeleteChars) {
+        for (String c : deleteChars) {
             token = token.replace(c, "");
         }
         return token;
@@ -1072,4 +1060,6 @@ public class Main {
 
         return synopsisMap;
     }
+
+
 }
