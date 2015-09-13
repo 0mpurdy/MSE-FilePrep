@@ -1,0 +1,85 @@
+/* global */
+
+html {
+	font-family: Arial, sans-serif;
+}
+
+table, td {
+	border-collapse: collapse;
+	padding: 5px;
+}
+
+/* Bible */
+
+.bible {
+	margin: 10px;
+}
+
+.chapterTitle {
+	background-color: #002900;
+	color: #FFFFFF;
+	padding: 20px;
+	vertical-align: center;
+	font-size: 30;
+	font-weight: bold;
+	text-align: center;
+}
+
+.odd {
+	background-color: #D0D5D0;
+}
+
+a:hover {
+	background-color:yellow;
+}
+
+/* Ministry */
+
+.volume-title {
+	font-size: 30;
+	color: green;
+	margin-left: auto;
+	margin-right: auto;
+	text-decoration: underline;
+	text-align: center;
+	margin: 20px;
+	font-weight: bold;
+}
+
+.page-number {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin: 20px;
+}
+
+.heading {
+	font-size: 20;
+	color: green;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin: 20px;
+	font-weight: bold;
+}
+
+.paragraph {
+	margin: 10px;
+}
+
+/* Hymns */
+
+.hymn-number {
+	font-size: 30;
+}
+
+.verse-number {
+	font-size: 20;
+}
+
+.hymn-table {
+	margin: 60px;
+	margin-right: auto;
+	margin-left: auto;
+	border: none;
+}

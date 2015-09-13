@@ -13,7 +13,7 @@ public class Config {
     private String mseVersion;
     private String defaultBrowser;
     private String workingDir;
-    private String prepareDir;
+    private String resDir;
     private String resultsFileName;
     private String searchString;
     private String searchType;
@@ -34,7 +34,7 @@ public class Config {
 
         mseVersion = "3.0.0";
         workingDir = "";
-        prepareDir = "PrepareRes" + File.separator;
+        resDir = "PrepareRes" + File.separator;
         defaultBrowser = "/usr/bin/firefox";
         resultsFileName = "search_results.htm";
         searchString = "";
@@ -74,8 +74,8 @@ public class Config {
         return workingDir;
     }
 
-    public String getPrepareDir() {
-        return prepareDir;
+    public String getResDir() {
+        return resDir;
     }
 
     public void setWorkingDir(String workingDir) {

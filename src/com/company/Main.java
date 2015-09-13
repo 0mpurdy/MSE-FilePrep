@@ -4,13 +4,10 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
-import java.util.concurrent.ConcurrentLinkedQueue;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 public class Main {
 
+    // The list of characters to remove from tokens in the search indexes
     static String[] deleteChars = {"?","\"","!",",",".","-","\'",":",
             "1","2","3","4","5","6","7","8","9","0",";","@",")","(","¦","*","[","]","\u00AC","{","}","\u2019", "~",
             "\u201D","°","…","†","&","`","$","§","|","\t","=","+","‘","€","/","¶","_","–","½","£","“","%","#"};
@@ -50,7 +47,7 @@ public class Main {
                     System.out.println();
                     prepareHymnsHtml(cfg);
                     for (Author nextAuthor : Author.values()) {
-                        if (nextAuthor != Author.TUNES) {
+                        if (nextAuthor.getIndex() >= 3) {
                             prepareMinistry(cfg, nextAuthor);
                         }
                     }
@@ -75,7 +72,7 @@ public class Main {
                     long startIndexing = System.nanoTime();
                     // add a reference processor for each author then write the index
                     for (Author nextAuthor : Author.values()) {
-                        if (nextAuthor != Author.TUNES) {
+                        if (nextAuthor.isSearchable()) {
                             processAuthor(nextAuthor, cfg);
                         }
                     }
@@ -103,30 +100,6 @@ public class Main {
             }
         }
 
-    }
-
-    private static void processAuthor(Author author, Config cfg) {
-
-        long startAuthor = System.nanoTime();
-
-        final ReferenceQueue referenceQueue = new ReferenceQueue(author, cfg);
-        ReferenceProcessor referenceProcessor = new ReferenceProcessor(referenceQueue);
-        referenceProcessor.start();
-        writeIndex(cfg, author, referenceQueue);
-        System.out.println();
-        referenceProcessor.interrupt();
-        while (referenceProcessor.isAlive()) {
-            try {
-                referenceProcessor.join(500);
-                System.out.print("\rWords left: " + referenceQueue.size());
-            } catch (InterruptedException ie) {
-                ie.printStackTrace();
-            }
-        }
-
-        long endAuthor = System.nanoTime();
-
-        System.out.println("\nAuthor Time: " + ((endAuthor - startAuthor) / 1000000) + "ms");
     }
 
     private static void printMainMenu() {
@@ -171,21 +144,25 @@ public class Main {
             File f;
 
             // get the paths for the files that are used in preparing the bible html
-            String jndBiblePath = cfg.getPrepareDir() + "source" + File.separator + "bible" + File.separator;
+            String jndBiblePath = cfg.getResDir() + "source" + File.separator + "bible" + File.separator;
             f = new File(jndBiblePath);
+            f.mkdirs();
             System.out.print("Reading JND bible from " + f.getCanonicalPath());
 
-            String kjvBiblePath = cfg.getPrepareDir() + "source" + File.separator + "kjv" + File.separator;
+            String kjvBiblePath = cfg.getResDir() + "source" + File.separator + "kjv" + File.separator;
             f = new File(kjvBiblePath);
+            f.mkdirs();
             System.out.print("\rReading KJV bible from " + f.getCanonicalPath());
 
             // get the file paths that the bible html and text will be written to
-            String bibleDestinationPath = cfg.getPrepareDir() + "target" + File.separator + "bible" + File.separator;
+            String bibleDestinationPath = cfg.getResDir() + "target" + File.separator + "bible" + File.separator;
             f = new File(bibleDestinationPath);
+            f.mkdirs();
             System.out.print("\rWriting bible HTML to " + f.getCanonicalPath());
 
-            String bibleTxtDestinationPath = cfg.getPrepareDir() + "target" + File.separator + "bibleText" + File.separator;
+            String bibleTxtDestinationPath = cfg.getResDir() + "target" + File.separator + "bibleText" + File.separator;
             f = new File(bibleTxtDestinationPath);
+            f.mkdirs();
             System.out.print("\rWriting bible text to " + f.getCanonicalPath());
 
             String jndLine; //line read from JND file
@@ -213,11 +190,11 @@ public class Main {
 
                 // create print writers to write the bible html and txt (overwrite any existing files)
                 PrintWriter pwBible = new PrintWriter(new FileWriter(bibleDestinationPath + nextBook.getName() + ".htm", false));
-                PrintWriter pwBibleTxt = new PrintWriter(new FileWriter(bibleTxtDestinationPath + "bible" + bookNumber + ": " + nextBook.getName() + ".doc", false));
+                PrintWriter pwBibleTxt = new PrintWriter(new FileWriter(bibleTxtDestinationPath + "bible" + bookNumber + ".txt"));
 
                 // write the html header
                 pwBible.println("<html>");
-                pwBible.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"mseStyle.css\">\n");
+                pwBible.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"../mseStyle.css\">\n");
                 pwBible.println("<head>\n\t<title>"
                         + "Darby translation and King James Version of The Bible"
                         + "</title>\n</head>");
@@ -359,6 +336,52 @@ public class Main {
 
     }
 
+    private static HashMap<String, String> getSynopsisPages(String filename) {
+        // this gets a map of the corresponding synopsis page in JND's ministry for each book of the bible
+
+        HashMap<String, String> synopsisMap = new HashMap<>();
+
+        // boolean used to check if there are more pages to read
+        boolean morePages = true;
+
+        // buffer for the synopsis file input
+        String synopsisLine;
+
+        BufferedReader brPages = null;
+
+        try {
+            // buffered reader for reading the synopsis pages link file
+            brPages = new BufferedReader(new FileReader(filename));
+
+            // populate the synopsis pages hash map
+            while (morePages) {//still more lines in pages.txt
+                if ((synopsisLine = brPages.readLine()) != null) {
+                    // get the synopsis for a bible book
+                    // links are stored in the format {bible book}, {bible book chapter}, {jnd volume}, {jnd volume page}
+
+                    String[] synopsisNumbers = synopsisLine.split(",");
+                    String key = String.format("%s/%s", synopsisNumbers[0], synopsisNumbers[1]);
+                    String value = String.format(" - <a href=\"../jnd/jnd%s.htm#%s\">go to synopsis</a>", synopsisNumbers[2], synopsisNumbers[3]);
+                    synopsisMap.put(key, value);
+                } else {
+                    morePages = false;
+                }
+            }
+        } catch (IOException ex) {
+            System.out.println("!***Error creating synopsis hash map***!");
+        } finally {
+            if (brPages != null) {
+                try {
+                    brPages.close();
+                } catch (IOException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
+
+        return synopsisMap;
+    }
+
     private static void prepareHymnsHtml(Config cfg) {
 
         System.out.println("Preparing Hymns");
@@ -368,13 +391,15 @@ public class Main {
             File f;
 
             // the path of the input
-            String hymnsPath = cfg.getPrepareDir() + File.separator + "source" + File.separator + "hymns" + File.separator;
+            String hymnsPath = cfg.getResDir() + File.separator + "source" + File.separator + "hymns" + File.separator;
             f = new File(hymnsPath);
+            f.mkdirs();
             System.out.print("\tReading Hymns from: " + f.getCanonicalPath());
 
             // the path of the output
-            String hymnsOutPath = cfg.getPrepareDir() + File.separator + "target" + File.separator + "hymns" + File.separator;
+            String hymnsOutPath = cfg.getResDir() + File.separator + "target" + File.separator + "hymns" + File.separator;
             f = new File(hymnsOutPath);
+            f.mkdirs();
             System.out.print("\tWriting Hymns to: " + f.getCanonicalPath());
 
             // set up buffers
@@ -399,7 +424,7 @@ public class Main {
 
                 // print the html header
                 pwHymns.println("<html>");
-                pwHymns.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"mseStyle.css\">\n");
+                pwHymns.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"../mseStyle.css\">\n");
                 pwHymns.println("<head>\n\t<title>"
                         + nextHymnBook.getName()
                         + "</title>\n</head>\n\n<body>");
@@ -493,11 +518,11 @@ public class Main {
 
             // set up readers/writers
             File f;
-            String volPath = cfg.getPrepareDir()+ File.separator + "source" + File.separator + author.getFolder()  + File.separator;
+            String volPath = cfg.getResDir()+ File.separator + "source" + File.separator + author.getFolder()  + File.separator;
             f = new File(volPath);
             f.mkdirs();
             System.out.print("\r\tReading from " + f.getCanonicalPath());
-            String volDestPath = cfg.getPrepareDir() + File.separator + "target" + File.separator + author.getFolder() + File.separator;
+            String volDestPath = cfg.getResDir() + File.separator + "target" + File.separator + author.getFolder() + File.separator;
             f = new File(volDestPath);
             f.mkdirs();
             System.out.print("\r\tWriting to " + f.getCanonicalPath());
@@ -540,7 +565,7 @@ public class Main {
                         pwLog = new PrintWriter(new FileWriter(volDestPath + author.getCode() + volumeNumber + ".htm"));
 
                         // write html head
-                        pwLog.println(String.format("<!DOCTYPE html>\n<html>\n\n<head>\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"mseStyle.css\">\n\t<title>%s Volume %d</title>\n</head>\n\n<body>", author.getName(), volumeNumber));
+                        pwLog.println(String.format("<!DOCTYPE html>\n<html>\n\n<head>\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../mseStyle.css\">\n\t<title>%s Volume %d</title>\n</head>\n\n<body>", author.getName(), volumeNumber));
 
                         // while there are still more lines
                         while ((line = brLog.readLine()) != null) {
@@ -852,12 +877,36 @@ public class Main {
         }
     } // end prepare (used for ministry)
 
+    private static void processAuthor(Author author, Config cfg) {
+
+        long startAuthor = System.nanoTime();
+
+        final ReferenceQueue referenceQueue = new ReferenceQueue(author, cfg);
+        ReferenceProcessor referenceProcessor = new ReferenceProcessor(referenceQueue);
+        referenceProcessor.start();
+        writeIndex(cfg, author, referenceQueue);
+        System.out.println();
+        referenceProcessor.interrupt();
+        while (referenceProcessor.isAlive()) {
+            try {
+                referenceProcessor.join(500);
+                System.out.print("\rWords left: " + referenceQueue.size());
+            } catch (InterruptedException ie) {
+                ie.printStackTrace();
+            }
+        }
+
+        long endAuthor = System.nanoTime();
+
+        System.out.println("\nAuthor Time: " + ((endAuthor - startAuthor) / 1000000) + "ms");
+    }
+
     private static void writeIndex(Config cfg, Author author, ReferenceQueue referenceQueue) {
 
         AuthorIndex authorIndex = new AuthorIndex(author);
 
         // source file path
-        String sourcePath = cfg.getPrepareDir();
+        String sourcePath = cfg.getResDir();
 
         if (author == Author.BIBLE) {
             sourcePath += "target" + File.separator + "bibleText" + File.separator;
@@ -866,7 +915,7 @@ public class Main {
         }
 
         // destination file path
-        String destinationPath = cfg.getPrepareDir() + File.separator + "target" + File.separator + author.getFolder() + File.separator;
+        String destinationPath = cfg.getResDir() + File.separator + "target" + File.separator + author.getFolder() + File.separator;
 
         int volumeNumber = 1;
 
@@ -987,6 +1036,10 @@ public class Main {
 
     }
 
+    private static void createSuperIndex() {
+
+    }
+
     private static boolean isAlpha(String token) {
         char[] chars = token.toCharArray();
 
@@ -1013,52 +1066,6 @@ public class Main {
             token = token.replace(c, "");
         }
         return token;
-    }
-
-    private static HashMap<String, String> getSynopsisPages(String filename) {
-        // this gets a map of the corresponding synopsis page in JND's ministry for each book of the bible
-
-        HashMap<String, String> synopsisMap = new HashMap<>();
-
-        // boolean used to check if there are more pages to read
-        boolean morePages = true;
-
-        // buffer for the synopsis file input
-        String synopsisLine;
-
-        BufferedReader brPages = null;
-
-        try {
-            // buffered reader for reading the synopsis pages link file
-            brPages = new BufferedReader(new FileReader(filename));
-
-            // populate the synopsis pages hash map
-            while (morePages) {//still more lines in pages.txt
-                if ((synopsisLine = brPages.readLine()) != null) {
-                    // get the synopsis for a bible book
-                    // links are stored in the format {bible book}, {bible book chapter}, {jnd volume}, {jnd volume page}
-
-                    String[] synopsisNumbers = synopsisLine.split(",");
-                    String key = String.format("%s/%s", synopsisNumbers[0], synopsisNumbers[1]);
-                    String value = String.format(" - <a href=\"../jnd/jnd%s.htm#%s\">go to synopsis</a>", synopsisNumbers[2], synopsisNumbers[3]);
-                    synopsisMap.put(key, value);
-                } else {
-                    morePages = false;
-                }
-            }
-        } catch (IOException ex) {
-            System.out.println("!***Error creating synopsis hash map***!");
-        } finally {
-            if (brPages != null) {
-                try {
-                    brPages.close();
-                } catch (IOException ex) {
-                    System.out.println(ex.getMessage());
-                }
-            }
-        }
-
-        return synopsisMap;
     }
 
 
