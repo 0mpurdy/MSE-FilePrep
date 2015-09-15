@@ -38,7 +38,7 @@ public class ReferenceProcessor extends Thread {
         try {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             String tokenCountMapJson = gson.toJson(authorIndex.getTokenCountMap());
-            File outputFile = new File(cfg.getResDir() + author.getTargetFilePath("index-" + author.getCode() + "-tokenCount-json.idx"));
+            File outputFile = new File(cfg.getResDir() + author.getTargetPath("index-" + author.getCode() + "-tokenCount-json.idx"));
             PrintWriter pw = new PrintWriter(new FileWriter(outputFile));
             pw.println(tokenCountMapJson);
         } catch (IOException ioe) {
@@ -50,7 +50,7 @@ public class ReferenceProcessor extends Thread {
         try {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             String authorIndexJson = gson.toJson(authorIndex);
-            File outputFile = new File(cfg.getResDir() + author.getTargetFilePath("index-" + author.getCode() + "-json.idx"));
+            File outputFile = new File(cfg.getResDir() + author.getTargetPath("index-" + author.getCode() + "-json.idx"));
             PrintWriter pw = new PrintWriter(new FileWriter(outputFile));
             pw.println(authorIndexJson);
         } catch (IOException ioe) {
@@ -60,8 +60,8 @@ public class ReferenceProcessor extends Thread {
 
         // output index
         try {
-            OutputStream file = new FileOutputStream(cfg.getResDir() + author.getTargetFilePath("index-" + author.getCode() + ".idx"));
-            OutputStream buffer = new BufferedOutputStream(file);
+            OutputStream file = new FileOutputStream(cfg.getResDir() + author.getTargetPath("index-" + author.getCode() + ".idx"));
+            BufferedOutputStream buffer = new BufferedOutputStream(file);
             ObjectOutput output = new ObjectOutputStream(buffer);
             output.writeObject(authorIndex);
         }

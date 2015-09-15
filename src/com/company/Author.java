@@ -42,20 +42,28 @@ public enum Author {
         return name;
     }
 
-    public String getFolder() {
-        return folder;
+    public String getPreparePath() {
+        return "prepare" + File.separator + folder + File.separator;
+    }
+
+    public String getPreparePath(String filename) {
+        return "prepare" + File.separator + folder + File.separator + filename;
+    }
+
+    public String getTargetPath() {
+        return "target" + File.separator + folder + File.separator;
+    }
+
+    public String getTargetPath(String filename) {
+        return "target" + File.separator + folder + File.separator + filename;
     }
 
     public String getContentsName() {
         return contentsName;
     }
 
-    public String getIndexName() {
-        return contentsName + ".idx";
-    }
-
-    public String getTargetFilePath(String filename) {
-        return "target" + File.separator + folder + File.separator + filename;
+    public String getIndexFilePath() {
+        return getTargetPath("index-" + getCode() + ".idx");
     }
 
     public boolean isSearchable() {

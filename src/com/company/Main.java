@@ -518,11 +518,11 @@ public class Main {
 
             // set up readers/writers
             File f;
-            String volPath = cfg.getResDir()+ File.separator + "source" + File.separator + author.getFolder()  + File.separator;
+            String volPath = cfg.getResDir()+ File.separator + author.getPreparePath();
             f = new File(volPath);
             f.mkdirs();
             System.out.print("\r\tReading from " + f.getCanonicalPath());
-            String volDestPath = cfg.getResDir() + File.separator + "target" + File.separator + author.getFolder() + File.separator;
+            String volDestPath = cfg.getResDir() + File.separator + author.getTargetPath();
             f = new File(volDestPath);
             f.mkdirs();
             System.out.print("\r\tWriting to " + f.getCanonicalPath());
@@ -552,7 +552,7 @@ public class Main {
             while (!finishedVolumes) {
                 try {
 
-                    File volumeFile = new File(volPath + author.getFolder() + volumeNumber + ".txt");
+                    File volumeFile = new File(volPath + author.getContentsName() + volumeNumber + ".txt");
                     if (volumeFile.exists()) {
                         int pageNumber = 0;
                         int keepPageNumber = 0;
@@ -656,10 +656,10 @@ public class Main {
                                     // end page number
                                 } else if (currentCharacter == '~') {
                                     // footnote
-                                    outputLine.replace(charPosition, charPosition + 1, String.format("<i>see <a href=\"%s_footnotes.htm#%d:%d\">footnote</a></i>", author.getFolder(), volumeNumber, pageNumber));
+                                    outputLine.replace(charPosition, charPosition + 1, String.format("<i>see <a href=\"%s_footnotes.htm#%d:%d\">footnote</a></i>", author.getContentsName(), volumeNumber, pageNumber));
 
                                     // increase character position by number of characters added (minus for testing)
-                                    charPosition += 50 + author.getFolder().length() + Integer.toString(volumeNumber).length() + Integer.toString(pageNumber).length() - 5;
+                                    charPosition += 50 + author.getContentsName().length() + Integer.toString(volumeNumber).length() + Integer.toString(pageNumber).length() - 5;
                                 } else if (currentCharacter == '\u00AC') {
                                     //possessive apostrophe (not character)
 
@@ -909,13 +909,13 @@ public class Main {
         String sourcePath = cfg.getResDir();
 
         if (author == Author.BIBLE) {
-            sourcePath += "target" + File.separator + "bibleText" + File.separator;
+            sourcePath += "prepare" + File.separator + "bibleText" + File.separator;
         } else {
-            sourcePath += "source" + File.separator + author.getFolder() + File.separator;
+            sourcePath += author.getPreparePath();
         }
 
         // destination file path
-        String destinationPath = cfg.getResDir() + File.separator + "target" + File.separator + author.getFolder() + File.separator;
+        String destinationPath = cfg.getResDir() + File.separator + author.getTargetPath();
 
         int volumeNumber = 1;
 
@@ -1037,6 +1037,8 @@ public class Main {
     }
 
     private static void createSuperIndex() {
+
+
 
     }
 

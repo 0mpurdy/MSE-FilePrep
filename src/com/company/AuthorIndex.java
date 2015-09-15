@@ -1,6 +1,6 @@
 package com.company;
 
-import java.io.Serializable;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -122,5 +122,18 @@ public class AuthorIndex implements Serializable {
 
     public Author getAuthor() {
         return author;
+    }
+
+    public void loadIndex() {
+
+        // try to load the index of the current author
+        try {
+            InputStream inStream = new FileInputStream(author.getIndexFilePath());
+
+        } catch (FileNotFoundException fnfe) {
+            System.out.println("Could not file find file: " + author.getIndexFilePath());
+        }
+
+
     }
 }
