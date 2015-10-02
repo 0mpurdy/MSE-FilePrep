@@ -1,7 +1,6 @@
-package com.company;
+package mse.common;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -124,16 +123,37 @@ public class AuthorIndex implements Serializable {
         return author;
     }
 
-    public void loadIndex() {
+    public void loadIndex(String location) {
 
         // try to load the index of the current author
         try {
             InputStream inStream = new FileInputStream(author.getIndexFilePath());
-
+            BufferedInputStream bInStream = new BufferedInputStream(inStream);
+            ObjectInput input = new ObjectInputStream(bInStream);
+            this.author = ((AuthorIndex) input).author;
+            this.tokenCountMap = ((AuthorIndex) input).tokenCountMap;
+            this.lastPage = ((AuthorIndex) input).lastPage;
+            this.nextReferenceIndex = ((AuthorIndex) input).nextReferenceIndex;
+            this.references = ((AuthorIndex) input).references;
         } catch (FileNotFoundException fnfe) {
             System.out.println("Could not file find file: " + author.getIndexFilePath());
+        } catch (IOException ioe) {
+            System.out.println("Error loading from: " + location);
+        } catch (ClassCastException cce) {
+            System.out.println("Error casting class when loading new index");
         }
 
+    }
 
+    public void writeIndex(String location) {
+        try {
+            OutputStream file = new FileOutputStream(location);
+            BufferedOutputStream buffer = new BufferedOutputStream(file);
+            ObjectOutput output = new ObjectOutputStream(buffer);
+            output.writeObject(this);
+        }
+        catch(IOException ex){
+            System.out.println("\nError writing index for " + author.getName());
+        }
     }
 }

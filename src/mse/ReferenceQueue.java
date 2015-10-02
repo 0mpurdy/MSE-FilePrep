@@ -1,4 +1,7 @@
-package com.company;
+package mse;
+
+import mse.common.Author;
+import mse.common.Config;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 

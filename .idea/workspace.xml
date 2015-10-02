@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/com/company/ReferenceProcessor.java" line="28" />
-    <bookmark url="file://$PROJECT_DIR$/src/com/company/Main.java" line="900" />
+    <bookmark url="file://$PROJECT_DIR$/src/mse/ReferenceProcessor.java" line="27" />
+    <bookmark url="file://$PROJECT_DIR$/src/mse/Main.java" line="908" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8333ef69-41d0-4129-8cc9-40327beb6890" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Author.java" afterPath="$PROJECT_DIR$/src/com/company/Author.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/AuthorIndex.java" afterPath="$PROJECT_DIR$/src/com/company/AuthorIndex.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Main.java" afterPath="$PROJECT_DIR$/src/com/company/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ReferenceProcessor.java" afterPath="$PROJECT_DIR$/src/com/company/ReferenceProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PrepareRes/source/chm/chm3.txt" afterPath="$PROJECT_DIR$/PrepareRes/source/chm/chm3.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="F:\dev\Java\MSE-FilePrep\src\com\company\Author.java" afterPath="$PROJECT_DIR$/src/mse/common/Author.java" />
+      <change type="MOVED" beforePath="F:\dev\Java\MSE-FilePrep\src\com\company\AuthorIndex.java" afterPath="$PROJECT_DIR$/src/mse/common/AuthorIndex.java" />
+      <change type="MOVED" beforePath="F:\dev\Java\MSE-FilePrep\src\com\company\Benchmark.java" afterPath="$PROJECT_DIR$/src/mse/Benchmark.java" />
+      <change type="MOVED" beforePath="F:\dev\Java\MSE-FilePrep\src\com\company\BibleBook.java" afterPath="$PROJECT_DIR$/src/mse/BibleBook.java" />
+      <change type="MOVED" beforePath="F:\dev\Java\MSE-FilePrep\src\com\company\Config.java" afterPath="$PROJECT_DIR$/src/mse/common/Config.java" />
+      <change type="MOVED" beforePath="F:\dev\Java\MSE-FilePrep\src\com\company\HymnBook.java" afterPath="$PROJECT_DIR$/src/mse/HymnBook.java" />
+      <change type="MOVED" beforePath="F:\dev\Java\MSE-FilePrep\src\com\company\Main.java" afterPath="$PROJECT_DIR$/src/mse/Main.java" />
+      <change type="MOVED" beforePath="F:\dev\Java\MSE-FilePrep\src\com\company\ReferenceProcessor.java" afterPath="$PROJECT_DIR$/src/mse/ReferenceProcessor.java" />
+      <change type="MOVED" beforePath="F:\dev\Java\MSE-FilePrep\src\com\company\ReferenceQueue.java" afterPath="$PROJECT_DIR$/src/mse/ReferenceQueue.java" />
+      <change type="MOVED" beforePath="F:\dev\Java\MSE-FilePrep\src\com\company\ReferenceQueueItem.java" afterPath="$PROJECT_DIR$/src/mse/ReferenceQueueItem.java" />
     </list>
     <ignored path="MSE-FilePrep.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,26 +40,21 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/mse/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40152338">
-              <caret line="661" column="81" selection-start-line="661" selection-start-column="81" selection-end-line="661" selection-end-column="81" />
+            <state vertical-scroll-proportion="0.31991294">
+              <caret line="1045" column="0" selection-start-line="1045" selection-start-column="0" selection-end-line="1045" selection-end-column="0" />
               <folding>
-                <element signature="e#519#530#0" expanded="false" />
                 <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
                 <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
                 <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
                 <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
-                <element signature="e#11122#11141#0" expanded="false" />
-                <element signature="e#12217#12307#0" expanded="false" />
-                <element signature="method#getSynopsisPages#0;class#Main#0" expanded="false" />
-                <element signature="e#15442#15478#0" expanded="false" />
-                <element signature="method#prepareHymnsHtml#0;class#Main#0" expanded="false" />
-                <element signature="e#20476#20499#0" expanded="false" />
-                <element signature="e#32234#32267#0" expanded="false" />
-                <element signature="e#37379#37405#0" expanded="false" />
-                <element signature="method#analyseVolume#0;class#Main#0" expanded="false" />
-                <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
+                <element signature="e#11252#11271#0" expanded="false" />
+                <element signature="e#12347#12437#0" expanded="false" />
+                <element signature="e#15572#15608#0" expanded="false" />
+                <element signature="e#20606#20629#0" expanded="false" />
+                <element signature="e#32364#32397#0" expanded="false" />
+                <element signature="e#37509#37535#0" expanded="false" />
                 <element signature="method#processString#0;class#Main#0" expanded="false" />
                 <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
               </folding>
@@ -62,17 +63,17 @@
         </entry>
       </file>
       <file leaf-file-name="ReferenceProcessor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/ReferenceProcessor.java">
+        <entry file="file://$PROJECT_DIR$/src/mse/ReferenceProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="44" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
+              <caret line="56" column="85" selection-start-line="56" selection-start-column="85" selection-end-line="56" selection-end-column="85" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Config.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Config.java">
+        <entry file="file://$PROJECT_DIR$/src/mse/common/Config.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
@@ -82,32 +83,30 @@
         </entry>
       </file>
       <file leaf-file-name="AuthorIndex.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/AuthorIndex.java">
+        <entry file="file://$PROJECT_DIR$/src/mse/common/AuthorIndex.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="133" column="87" selection-start-line="133" selection-start-column="87" selection-end-line="133" selection-end-column="87" />
+              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#AuthorIndex#0" expanded="false" />
+                <element signature="e#815#816#0" expanded="true" />
+                <element signature="e#851#852#0" expanded="true" />
+                <element signature="method#incrementTokenCount#0;class#AuthorIndex#0" expanded="false" />
+                <element signature="e#2364#2395#0" expanded="false" />
+                <element signature="e#2745#2797#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Author.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Author.java">
+        <entry file="file://$PROJECT_DIR$/src/mse/common/Author.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
-                <element signature="e#1318#1319#0" expanded="true" />
-                <element signature="e#1345#1346#0" expanded="true" />
-                <element signature="e#1376#1377#0" expanded="true" />
-                <element signature="e#1403#1404#0" expanded="true" />
-                <element signature="e#1441#1442#0" expanded="true" />
-                <element signature="e#1516#1517#0" expanded="true" />
-                <element signature="e#1692#1693#0" expanded="true" />
-                <element signature="e#1766#1767#0" expanded="true" />
-                <element signature="e#1977#1978#0" expanded="true" />
+                <element signature="e#1941#1942#0" expanded="true" />
+                <element signature="e#1976#1977#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -147,10 +146,11 @@
         <option value="$PROJECT_DIR$/src/com/company/ReferenceQueue.java" />
         <option value="$PROJECT_DIR$/src/com/company/AuthorIndex_old2.java" />
         <option value="$PROJECT_DIR$/src/com/company/Config.java" />
-        <option value="$PROJECT_DIR$/src/com/company/ReferenceProcessor.java" />
-        <option value="$PROJECT_DIR$/src/com/company/AuthorIndex.java" />
         <option value="$PROJECT_DIR$/src/com/company/Author.java" />
+        <option value="$PROJECT_DIR$/src/com/company/AuthorIndex.java" />
+        <option value="$PROJECT_DIR$/src/com/company/ReferenceProcessor.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
+        <option value="$PROJECT_DIR$/src/mse/Main.java" />
       </list>
     </option>
   </component>
@@ -167,7 +167,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1924" />
+    <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -193,6 +193,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -225,20 +226,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="company" />
+              <option name="myItemId" value="mse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSE-FilePrep" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSE-FilePrep" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="dynamic.classpath" value="false" />
     <property name="FullScreen" value="false" />
@@ -441,8 +463,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1924" height="1056" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -453,8 +475,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14884695" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14791666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -466,6 +487,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915523" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3347413" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915523" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -484,24 +506,13 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/Main.java</url>
-          <properties />
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/Main.java</url>
-          <line>136</line>
+          <url>file://$PROJECT_DIR$/src/mse/Main.java</url>
+          <line>144</line>
           <properties />
           <option name="timeStamp" value="107" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/Main.java</url>
-          <line>23</line>
-          <properties />
-          <option name="timeStamp" value="108" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="109" />
+      <option name="time" value="111" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -519,7 +530,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/company/Config.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/common/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -527,467 +538,391 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/AuthorIndex.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/common/AuthorIndex.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#AuthorIndex#0" expanded="false" />
+            <element signature="e#815#816#0" expanded="true" />
+            <element signature="e#851#852#0" expanded="true" />
+            <element signature="method#incrementTokenCount#0;class#AuthorIndex#0" expanded="false" />
+            <element signature="e#2364#2395#0" expanded="false" />
+            <element signature="e#2745#2797#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Author.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/common/Author.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
           <folding>
-            <element signature="e#1318#1319#0" expanded="true" />
-            <element signature="e#1345#1346#0" expanded="true" />
-            <element signature="e#1376#1377#0" expanded="true" />
-            <element signature="e#1403#1404#0" expanded="true" />
-            <element signature="e#1441#1442#0" expanded="true" />
-            <element signature="e#1516#1517#0" expanded="true" />
-            <element signature="e#1692#1693#0" expanded="true" />
-            <element signature="e#1766#1767#0" expanded="true" />
-            <element signature="e#1977#1978#0" expanded="true" />
+            <element signature="e#1941#1942#0" expanded="true" />
+            <element signature="e#1976#1977#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/HymnBook.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/HymnBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Config.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/common/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="73" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Author.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/common/Author.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
           <folding>
-            <element signature="e#1318#1319#0" expanded="true" />
-            <element signature="e#1345#1346#0" expanded="true" />
-            <element signature="e#1376#1377#0" expanded="true" />
-            <element signature="e#1403#1404#0" expanded="true" />
-            <element signature="e#1441#1442#0" expanded="true" />
-            <element signature="e#1516#1517#0" expanded="true" />
-            <element signature="e#1692#1693#0" expanded="true" />
-            <element signature="e#1766#1767#0" expanded="true" />
-            <element signature="e#1977#1978#0" expanded="true" />
+            <element signature="e#1941#1942#0" expanded="true" />
+            <element signature="e#1976#1977#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/BibleBook.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/BibleBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="886" column="41" selection-start-line="886" selection-start-column="41" selection-end-line="886" selection-end-column="41" />
           <folding>
-            <element signature="e#519#530#0" expanded="false" />
             <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
             <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
             <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
             <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
-            <element signature="e#11122#11141#0" expanded="false" />
-            <element signature="e#12217#12307#0" expanded="false" />
-            <element signature="method#getSynopsisPages#0;class#Main#0" expanded="false" />
-            <element signature="e#15442#15478#0" expanded="false" />
-            <element signature="method#prepareHymnsHtml#0;class#Main#0" expanded="false" />
-            <element signature="e#20476#20499#0" expanded="false" />
-            <element signature="e#32234#32267#0" expanded="false" />
-            <element signature="e#37379#37405#0" expanded="false" />
-            <element signature="method#analyseVolume#0;class#Main#0" expanded="false" />
-            <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
+            <element signature="e#11252#11271#0" expanded="false" />
+            <element signature="e#12347#12437#0" expanded="false" />
+            <element signature="e#15572#15608#0" expanded="false" />
+            <element signature="e#20606#20629#0" expanded="false" />
+            <element signature="e#32364#32397#0" expanded="false" />
+            <element signature="e#37509#37535#0" expanded="false" />
             <element signature="method#processString#0;class#Main#0" expanded="false" />
             <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/AuthorIndex.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/common/AuthorIndex.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#AuthorIndex#0" expanded="false" />
+            <element signature="e#815#816#0" expanded="true" />
+            <element signature="e#851#852#0" expanded="true" />
+            <element signature="method#incrementTokenCount#0;class#AuthorIndex#0" expanded="false" />
+            <element signature="e#2364#2395#0" expanded="false" />
+            <element signature="e#2745#2797#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/HymnBook.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/HymnBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Config.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/common/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="73" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Author.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/common/Author.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
           <folding>
-            <element signature="e#1318#1319#0" expanded="true" />
-            <element signature="e#1345#1346#0" expanded="true" />
-            <element signature="e#1376#1377#0" expanded="true" />
-            <element signature="e#1403#1404#0" expanded="true" />
-            <element signature="e#1441#1442#0" expanded="true" />
-            <element signature="e#1516#1517#0" expanded="true" />
-            <element signature="e#1692#1693#0" expanded="true" />
-            <element signature="e#1766#1767#0" expanded="true" />
-            <element signature="e#1977#1978#0" expanded="true" />
+            <element signature="e#1941#1942#0" expanded="true" />
+            <element signature="e#1976#1977#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/BibleBook.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/BibleBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#519#530#0" expanded="false" />
             <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
             <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
             <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
             <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
-            <element signature="e#11122#11141#0" expanded="false" />
-            <element signature="e#12217#12307#0" expanded="false" />
-            <element signature="method#getSynopsisPages#0;class#Main#0" expanded="false" />
-            <element signature="e#15442#15478#0" expanded="false" />
-            <element signature="method#prepareHymnsHtml#0;class#Main#0" expanded="false" />
-            <element signature="e#20476#20499#0" expanded="false" />
-            <element signature="e#32234#32267#0" expanded="false" />
-            <element signature="e#37379#37405#0" expanded="false" />
-            <element signature="method#analyseVolume#0;class#Main#0" expanded="false" />
-            <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
+            <element signature="e#11252#11271#0" expanded="false" />
+            <element signature="e#12347#12437#0" expanded="false" />
+            <element signature="e#15572#15608#0" expanded="false" />
+            <element signature="e#20606#20629#0" expanded="false" />
+            <element signature="e#32364#32397#0" expanded="false" />
+            <element signature="e#37509#37535#0" expanded="false" />
             <element signature="method#processString#0;class#Main#0" expanded="false" />
             <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/HymnBook.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/HymnBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Config.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/common/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Author.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/common/Author.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
           <folding>
-            <element signature="e#1318#1319#0" expanded="true" />
-            <element signature="e#1345#1346#0" expanded="true" />
-            <element signature="e#1376#1377#0" expanded="true" />
-            <element signature="e#1403#1404#0" expanded="true" />
-            <element signature="e#1441#1442#0" expanded="true" />
-            <element signature="e#1516#1517#0" expanded="true" />
-            <element signature="e#1692#1693#0" expanded="true" />
-            <element signature="e#1766#1767#0" expanded="true" />
-            <element signature="e#1977#1978#0" expanded="true" />
+            <element signature="e#1941#1942#0" expanded="true" />
+            <element signature="e#1976#1977#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/BibleBook.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/BibleBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#519#530#0" expanded="false" />
             <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
             <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
             <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
             <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
-            <element signature="e#11122#11141#0" expanded="false" />
-            <element signature="e#12217#12307#0" expanded="false" />
-            <element signature="method#getSynopsisPages#0;class#Main#0" expanded="false" />
-            <element signature="e#15442#15478#0" expanded="false" />
-            <element signature="method#prepareHymnsHtml#0;class#Main#0" expanded="false" />
-            <element signature="e#20476#20499#0" expanded="false" />
-            <element signature="e#32234#32267#0" expanded="false" />
-            <element signature="e#37379#37405#0" expanded="false" />
-            <element signature="method#analyseVolume#0;class#Main#0" expanded="false" />
-            <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
+            <element signature="e#11252#11271#0" expanded="false" />
+            <element signature="e#12347#12437#0" expanded="false" />
+            <element signature="e#15572#15608#0" expanded="false" />
+            <element signature="e#20606#20629#0" expanded="false" />
+            <element signature="e#32364#32397#0" expanded="false" />
+            <element signature="e#37509#37535#0" expanded="false" />
             <element signature="method#processString#0;class#Main#0" expanded="false" />
             <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/HymnBook.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/HymnBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Config.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/common/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Author.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/common/Author.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
           <folding>
-            <element signature="e#1318#1319#0" expanded="true" />
-            <element signature="e#1345#1346#0" expanded="true" />
-            <element signature="e#1376#1377#0" expanded="true" />
-            <element signature="e#1403#1404#0" expanded="true" />
-            <element signature="e#1441#1442#0" expanded="true" />
-            <element signature="e#1516#1517#0" expanded="true" />
-            <element signature="e#1692#1693#0" expanded="true" />
-            <element signature="e#1766#1767#0" expanded="true" />
-            <element signature="e#1977#1978#0" expanded="true" />
+            <element signature="e#1941#1942#0" expanded="true" />
+            <element signature="e#1976#1977#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/BibleBook.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/BibleBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#519#530#0" expanded="false" />
             <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
             <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
             <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
             <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
-            <element signature="e#11122#11141#0" expanded="false" />
-            <element signature="e#12217#12307#0" expanded="false" />
-            <element signature="method#getSynopsisPages#0;class#Main#0" expanded="false" />
-            <element signature="e#15442#15478#0" expanded="false" />
-            <element signature="method#prepareHymnsHtml#0;class#Main#0" expanded="false" />
-            <element signature="e#20476#20499#0" expanded="false" />
-            <element signature="e#32234#32267#0" expanded="false" />
-            <element signature="e#37379#37405#0" expanded="false" />
-            <element signature="method#analyseVolume#0;class#Main#0" expanded="false" />
-            <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
+            <element signature="e#11252#11271#0" expanded="false" />
+            <element signature="e#12347#12437#0" expanded="false" />
+            <element signature="e#15572#15608#0" expanded="false" />
+            <element signature="e#20606#20629#0" expanded="false" />
+            <element signature="e#32364#32397#0" expanded="false" />
+            <element signature="e#37509#37535#0" expanded="false" />
             <element signature="method#processString#0;class#Main#0" expanded="false" />
             <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/HymnBook.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/HymnBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Config.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/common/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Author.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/common/Author.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
           <folding>
-            <element signature="e#1318#1319#0" expanded="true" />
-            <element signature="e#1345#1346#0" expanded="true" />
-            <element signature="e#1376#1377#0" expanded="true" />
-            <element signature="e#1403#1404#0" expanded="true" />
-            <element signature="e#1441#1442#0" expanded="true" />
-            <element signature="e#1516#1517#0" expanded="true" />
-            <element signature="e#1692#1693#0" expanded="true" />
-            <element signature="e#1766#1767#0" expanded="true" />
-            <element signature="e#1977#1978#0" expanded="true" />
+            <element signature="e#1941#1942#0" expanded="true" />
+            <element signature="e#1976#1977#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/BibleBook.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/BibleBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#519#530#0" expanded="false" />
             <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
             <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
             <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
             <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
-            <element signature="e#11122#11141#0" expanded="false" />
-            <element signature="e#12217#12307#0" expanded="false" />
-            <element signature="method#getSynopsisPages#0;class#Main#0" expanded="false" />
-            <element signature="e#15442#15478#0" expanded="false" />
-            <element signature="method#prepareHymnsHtml#0;class#Main#0" expanded="false" />
-            <element signature="e#20476#20499#0" expanded="false" />
-            <element signature="e#32234#32267#0" expanded="false" />
-            <element signature="e#37379#37405#0" expanded="false" />
-            <element signature="method#analyseVolume#0;class#Main#0" expanded="false" />
-            <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
+            <element signature="e#11252#11271#0" expanded="false" />
+            <element signature="e#12347#12437#0" expanded="false" />
+            <element signature="e#15572#15608#0" expanded="false" />
+            <element signature="e#20606#20629#0" expanded="false" />
+            <element signature="e#32364#32397#0" expanded="false" />
+            <element signature="e#37509#37535#0" expanded="false" />
             <element signature="method#processString#0;class#Main#0" expanded="false" />
             <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/HymnBook.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/HymnBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Config.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/common/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Author.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/common/Author.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
           <folding>
-            <element signature="e#1318#1319#0" expanded="true" />
-            <element signature="e#1345#1346#0" expanded="true" />
-            <element signature="e#1376#1377#0" expanded="true" />
-            <element signature="e#1403#1404#0" expanded="true" />
-            <element signature="e#1441#1442#0" expanded="true" />
-            <element signature="e#1516#1517#0" expanded="true" />
-            <element signature="e#1692#1693#0" expanded="true" />
-            <element signature="e#1766#1767#0" expanded="true" />
-            <element signature="e#1977#1978#0" expanded="true" />
+            <element signature="e#1941#1942#0" expanded="true" />
+            <element signature="e#1976#1977#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/BibleBook.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/BibleBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#519#530#0" expanded="false" />
             <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
             <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
             <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
             <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
-            <element signature="e#11122#11141#0" expanded="false" />
-            <element signature="e#12217#12307#0" expanded="false" />
-            <element signature="method#getSynopsisPages#0;class#Main#0" expanded="false" />
-            <element signature="e#15442#15478#0" expanded="false" />
-            <element signature="method#prepareHymnsHtml#0;class#Main#0" expanded="false" />
-            <element signature="e#20476#20499#0" expanded="false" />
-            <element signature="e#32234#32267#0" expanded="false" />
-            <element signature="e#37379#37405#0" expanded="false" />
-            <element signature="method#analyseVolume#0;class#Main#0" expanded="false" />
-            <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
+            <element signature="e#11252#11271#0" expanded="false" />
+            <element signature="e#12347#12437#0" expanded="false" />
+            <element signature="e#15572#15608#0" expanded="false" />
+            <element signature="e#20606#20629#0" expanded="false" />
+            <element signature="e#32364#32397#0" expanded="false" />
+            <element signature="e#37509#37535#0" expanded="false" />
             <element signature="method#processString#0;class#Main#0" expanded="false" />
             <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/HymnBook.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/HymnBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Config.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/common/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Author.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/common/Author.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
           <folding>
-            <element signature="e#1318#1319#0" expanded="true" />
-            <element signature="e#1345#1346#0" expanded="true" />
-            <element signature="e#1376#1377#0" expanded="true" />
-            <element signature="e#1403#1404#0" expanded="true" />
-            <element signature="e#1441#1442#0" expanded="true" />
-            <element signature="e#1516#1517#0" expanded="true" />
-            <element signature="e#1692#1693#0" expanded="true" />
-            <element signature="e#1766#1767#0" expanded="true" />
-            <element signature="e#1977#1978#0" expanded="true" />
+            <element signature="e#1941#1942#0" expanded="true" />
+            <element signature="e#1976#1977#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/BibleBook.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/BibleBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
@@ -1001,28 +936,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/BibleBook.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/BibleBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.077634014">
           <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/HymnBook.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/HymnBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/ReferenceQueue.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/ReferenceQueue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/ReferenceQueueItem.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/ReferenceQueueItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
@@ -1043,14 +978,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Benchmark.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/Benchmark.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7486398">
           <caret line="63" column="12" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Config.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/common/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
@@ -1058,62 +993,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/ReferenceProcessor.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/common/Author.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="44" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#1941#1942#0" expanded="true" />
+            <element signature="e#1976#1977#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mse/ReferenceProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="85" selection-start-line="56" selection-start-column="85" selection-end-line="56" selection-end-column="85" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/AuthorIndex.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/common/AuthorIndex.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="133" column="87" selection-start-line="133" selection-start-column="87" selection-end-line="133" selection-end-column="87" />
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#AuthorIndex#0" expanded="false" />
+            <element signature="e#815#816#0" expanded="true" />
+            <element signature="e#851#852#0" expanded="true" />
+            <element signature="method#incrementTokenCount#0;class#AuthorIndex#0" expanded="false" />
+            <element signature="e#2364#2395#0" expanded="false" />
+            <element signature="e#2745#2797#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Author.java">
+    <entry file="file://$PROJECT_DIR$/src/mse/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.31991294">
+          <caret line="1045" column="0" selection-start-line="1045" selection-start-column="0" selection-end-line="1045" selection-end-column="0" />
           <folding>
-            <element signature="e#1318#1319#0" expanded="true" />
-            <element signature="e#1345#1346#0" expanded="true" />
-            <element signature="e#1376#1377#0" expanded="true" />
-            <element signature="e#1403#1404#0" expanded="true" />
-            <element signature="e#1441#1442#0" expanded="true" />
-            <element signature="e#1516#1517#0" expanded="true" />
-            <element signature="e#1692#1693#0" expanded="true" />
-            <element signature="e#1766#1767#0" expanded="true" />
-            <element signature="e#1977#1978#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40152338">
-          <caret line="661" column="81" selection-start-line="661" selection-start-column="81" selection-end-line="661" selection-end-column="81" />
-          <folding>
-            <element signature="e#519#530#0" expanded="false" />
             <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
             <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
             <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
             <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
-            <element signature="e#11122#11141#0" expanded="false" />
-            <element signature="e#12217#12307#0" expanded="false" />
-            <element signature="method#getSynopsisPages#0;class#Main#0" expanded="false" />
-            <element signature="e#15442#15478#0" expanded="false" />
-            <element signature="method#prepareHymnsHtml#0;class#Main#0" expanded="false" />
-            <element signature="e#20476#20499#0" expanded="false" />
-            <element signature="e#32234#32267#0" expanded="false" />
-            <element signature="e#37379#37405#0" expanded="false" />
-            <element signature="method#analyseVolume#0;class#Main#0" expanded="false" />
-            <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
+            <element signature="e#11252#11271#0" expanded="false" />
+            <element signature="e#12347#12437#0" expanded="false" />
+            <element signature="e#15572#15608#0" expanded="false" />
+            <element signature="e#20606#20629#0" expanded="false" />
+            <element signature="e#32364#32397#0" expanded="false" />
+            <element signature="e#37509#37535#0" expanded="false" />
             <element signature="method#processString#0;class#Main#0" expanded="false" />
             <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
           </folding>

@@ -1,9 +1,8 @@
-package com.company;
+package mse;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import java.io.*;
+import mse.common.Author;
+import mse.common.AuthorIndex;
+import mse.common.Config;
 
 /**
  * Created by mj_pu_000 on 10/09/2015.
@@ -34,7 +33,8 @@ public class ReferenceProcessor extends Thread {
         // clean up the index arrays
         authorIndex.cleanIndexArrays();
 
-        // write tokenCountMapJson
+        // testing output
+        /*// write tokenCountMapJson
         try {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             String tokenCountMapJson = gson.toJson(authorIndex.getTokenCountMap());
@@ -56,18 +56,10 @@ public class ReferenceProcessor extends Thread {
         } catch (IOException ioe) {
             System.out.println("\nError writing json index for " + author.getName());
             System.out.println(ioe.getMessage());
-        }
+        }*/
 
         // output index
-        try {
-            OutputStream file = new FileOutputStream(cfg.getResDir() + author.getTargetPath("index-" + author.getCode() + ".idx"));
-            BufferedOutputStream buffer = new BufferedOutputStream(file);
-            ObjectOutput output = new ObjectOutputStream(buffer);
-            output.writeObject(authorIndex);
-        }
-        catch(IOException ex){
-            System.out.println("\nError writing index for " + author.getName());
-        }
+        authorIndex.writeIndex(cfg.getResDir() + author.getIndexFilePath());
 
     }
 }

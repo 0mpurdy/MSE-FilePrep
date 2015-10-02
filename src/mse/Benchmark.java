@@ -1,4 +1,4 @@
-package com.company;
+package mse;
 
 /**
  * Created by mj_pu_000 on 10/09/2015.

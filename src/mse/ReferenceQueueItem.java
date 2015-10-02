@@ -1,4 +1,6 @@
-package com.company;
+package mse;
+
+import mse.common.Author;
 
 /**
  * Created by mj_pu_000 on 10/09/2015.

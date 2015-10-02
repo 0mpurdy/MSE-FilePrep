@@ -1,6 +1,11 @@
-package com.company;
+package mse;
+
+import mse.common.Author;
+import mse.common.AuthorIndex;
+import mse.common.Config;
 
 import java.io.*;
+import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -12,10 +17,13 @@ public class Main {
             "1","2","3","4","5","6","7","8","9","0",";","@",")","(","¦","*","[","]","\u00AC","{","}","\u2019", "~",
             "\u201D","°","…","†","&","`","$","§","|","\t","=","+","‘","€","/","¶","_","–","½","£","“","%","#"};
 
-    // 00AC = ¬
-    // 2019 = ’
-    // 201D = ”
-    // 002D = –
+    /* Char hex codes
+     * 00AC = ¬
+     * 2019 = ’
+     * 201D = ”
+     * 002D = –
+    */
+
     /**
      * @param args the command line arguments
      */
@@ -1037,9 +1045,46 @@ public class Main {
     }
 
     private static void createSuperIndex() {
+        // Read each index and create the super index
+
+        for (Author nextAuthor : Author.values()) {
+            if (nextAuthor.isSearchable()) {
+                AuthorIndex nextAuthorIndex = readIndex(nextAuthor.getIndexFilePath());
+            }
+        }
 
 
+    }
 
+    private static AuthorIndex readIndex(String filename) {
+
+        AuthorIndex result;
+        InputStream inStream = null;
+
+        try {
+            File indexFile = new File(filename);
+            inStream = new FileInputStream(indexFile);
+            BufferedInputStream bInStream = new BufferedInputStream(inStream);
+            ObjectInput objectInput = new ObjectInputStream(bInStream);
+
+            result =  (AuthorIndex) objectInput.readObject();
+
+        } catch (IOException ioe) {
+            System.out.println("Error reading file: " + filename);
+            result = null;
+        } catch (ClassNotFoundException cnfe) {
+            System.out.println("Invalid class in file: " + filename);
+            result = null;
+        } finally {
+            if (inStream != null) {
+                try {
+                    inStream.close();
+                } catch (IOException ioe) {
+                    System.out.println("Error closing: " + filename);
+                }
+            }
+        }
+        return result;
     }
 
     private static boolean isAlpha(String token) {

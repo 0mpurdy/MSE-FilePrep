@@ -1,4 +1,4 @@
-package com.company;
+package mse.common;
 
 import java.io.File;
 
