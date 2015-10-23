@@ -59,7 +59,7 @@ public class ReferenceProcessor extends Thread {
         }*/
 
         // output index
-        authorIndex.writeIndex(cfg.getResDir() + author.getIndexFilePath());
+        authorIndex.writeIndex(author.getIndexFilePath());
 
     }
 }

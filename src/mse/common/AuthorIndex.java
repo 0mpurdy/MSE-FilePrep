@@ -16,6 +16,10 @@ public class AuthorIndex implements Serializable {
     private HashMap<String, Integer> nextReferenceIndex;
     private HashMap<String, String[]> references;
 
+    public AuthorIndex(String location) {
+        loadIndex(location);
+    }
+
     public AuthorIndex(Author author) {
         this.author = author;
         tokenCountMap = new HashMap<>();
@@ -146,14 +150,26 @@ public class AuthorIndex implements Serializable {
     }
 
     public void writeIndex(String location) {
+
+        ObjectOutputStream objectOutputStream = null;
+
         try {
             OutputStream file = new FileOutputStream(location);
             BufferedOutputStream buffer = new BufferedOutputStream(file);
-            ObjectOutput output = new ObjectOutputStream(buffer);
-            output.writeObject(this);
+            objectOutputStream = new ObjectOutputStream(buffer);
+            objectOutputStream.writeObject(this);
         }
         catch(IOException ex){
-            System.out.println("\nError writing index for " + author.getName());
+            System.out.println("\nError writing index for " + author.getName() + " at location " + location);
+        } finally {
+            if (!(objectOutputStream == null)) {
+                try {
+                    objectOutputStream.close();
+                } catch (IOException ioe) {
+                    System.out.println("Error closing: " + location);
+                }
+            }
         }
     }
+    
 }

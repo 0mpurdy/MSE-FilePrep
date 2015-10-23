@@ -100,6 +100,10 @@ public class Main {
                     }
                     break;
                 case 5:
+                    System.out.println("Creating super index");
+                    createSuperIndex(cfg);
+                    break;
+                case 6:
                     System.out.println("Benchmarking ...\n\n");
                     new Benchmark().run();
                     break;
@@ -120,6 +124,8 @@ public class Main {
         options.add("Prepare single author");
         options.add("Create all indexes");
         options.add("Create single author index");
+        options.add("Create super index");
+        options.add("Benchmark");
 
         int i = 0;
         for (String option : options) {
@@ -917,7 +923,7 @@ public class Main {
         String sourcePath = cfg.getResDir();
 
         if (author == Author.BIBLE) {
-            sourcePath += "prepare" + File.separator + "bibleText" + File.separator;
+            sourcePath += "source" + File.separator + "bibleText" + File.separator;
         } else {
             sourcePath += author.getPreparePath();
         }
@@ -1044,41 +1050,110 @@ public class Main {
 
     }
 
-    private static void createSuperIndex() {
-        // Read each index and create the super index
+    private static void createSuperIndex(Config cfg) {
 
+        // super index token count
+        HashMap<String,Integer> superIndex = new HashMap<>();
+
+        // Read each index and create the super index
         for (Author nextAuthor : Author.values()) {
             if (nextAuthor.isSearchable()) {
+
+                System.out.println("Creating super index for " + nextAuthor.getName());
+
                 AuthorIndex nextAuthorIndex = readIndex(nextAuthor.getIndexFilePath());
+
+                // if the index loads
+                if (!(nextAuthorIndex == null)) {
+                    // for each word in the author index
+                    HashMap<String, Integer> authorTokenCount = nextAuthorIndex.getTokenCountMap();
+                    for (String token : authorTokenCount.keySet()) {
+
+                        // key: author code + token
+                        // value: token count for author
+                        superIndex.put(nextAuthor.getCode() + "-" + token, authorTokenCount.get(token));
+                    }
+                } else {
+                    System.out.println("Author index cannot be null");
+                }
             }
+
         }
 
+        try {
 
+            // output super index
+            FileOutputStream fileOutStream = new FileOutputStream(cfg.getResDir() +  "super.idx");
+            ObjectOutputStream objectOutStream = new ObjectOutputStream(fileOutStream);
+            objectOutStream.writeObject(superIndex);
+            objectOutStream.flush();
+            objectOutStream.close();
+
+        } catch (IOException ioe) {
+            System.out.println("Error writing super index file");
+            System.out.println(ioe.getMessage());
+        }
     }
 
     private static AuthorIndex readIndex(String filename) {
 
         AuthorIndex result;
-        InputStream inStream = null;
+        ObjectInputStream objectInputStream = null;
 
         try {
             File indexFile = new File(filename);
-            inStream = new FileInputStream(indexFile);
+            InputStream inStream = new FileInputStream(indexFile);
             BufferedInputStream bInStream = new BufferedInputStream(inStream);
-            ObjectInput objectInput = new ObjectInputStream(bInStream);
+            objectInputStream = new ObjectInputStream(bInStream);
 
-            result =  (AuthorIndex) objectInput.readObject();
+            result =  (AuthorIndex) objectInputStream.readObject();
 
         } catch (IOException ioe) {
             System.out.println("Error reading file: " + filename);
+            System.out.println(ioe.getMessage());
             result = null;
         } catch (ClassNotFoundException cnfe) {
             System.out.println("Invalid class in file: " + filename);
             result = null;
         } finally {
-            if (inStream != null) {
+            if (objectInputStream != null) {
                 try {
-                    inStream.close();
+                    objectInputStream.close();
+                } catch (IOException ioe) {
+                    System.out.println("Error closing: " + filename);
+                }
+            }
+        }
+        return result;
+    }
+
+    private static HashMap<String,Integer> readSuperIndex(String filename) {
+
+        HashMap<String,Integer> result;
+        ObjectInputStream objectInputStream = null;
+
+        try {
+            File indexFile = new File(filename);
+            InputStream inStream = new FileInputStream(indexFile);
+            BufferedInputStream bInStream = new BufferedInputStream(inStream);
+            objectInputStream = new ObjectInputStream(bInStream);
+
+            try {
+                result = (HashMap<String, Integer>) objectInputStream.readObject();
+            } catch (ClassCastException cce) {
+                result = null;
+            }
+        } catch (IOException ioe) {
+            System.out.println("Error reading file: " + filename);
+            System.out.println(ioe.getMessage());
+            result = null;
+        } catch (ClassNotFoundException cnfe) {
+            System.out.println("Invalid class in file: " + filename);
+            result = null;
+        } finally {
+            if (objectInputStream != null) {
+                try {
+                    objectInputStream.close();
                 } catch (IOException ioe) {
                     System.out.println("Error closing: " + filename);
                 }

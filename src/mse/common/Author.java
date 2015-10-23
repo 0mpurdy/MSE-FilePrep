@@ -43,11 +43,11 @@ public enum Author {
     }
 
     public String getPreparePath() {
-        return "prepare" + File.separator + folder + File.separator;
+        return "source" + File.separator + folder + File.separator;
     }
 
     public String getPreparePath(String filename) {
-        return "prepare" + File.separator + folder + File.separator + filename;
+        return "source" + File.separator + folder + File.separator + filename;
     }
 
     public String getTargetPath() {
@@ -55,7 +55,7 @@ public enum Author {
     }
 
     public String getTargetPath(String filename) {
-        return "target" + File.separator + folder + File.separator + filename;
+        return "res" + File.separator + "target" + File.separator + folder + File.separator + filename;
     }
 
     public String getContentsName() {

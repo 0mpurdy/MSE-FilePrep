@@ -34,7 +34,7 @@ public class Config {
 
         mseVersion = "3.0.0";
         workingDir = "";
-        resDir = "PrepareRes" + File.separator;
+        resDir = "res" + File.separator;
         defaultBrowser = "/usr/bin/firefox";
         resultsFileName = "search_results.htm";
         searchString = "";
