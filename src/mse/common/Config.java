@@ -1,10 +1,24 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package mse.common;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.ArrayList;
 
+/**
+ *
+ * @author michael
+ */
 public class Config {
 
     // the number of times a word has to appear before it is too frequent
@@ -17,13 +31,13 @@ public class Config {
     private String resultsFileName;
     private String searchString;
     private String searchType;
-    private ArrayList<Boolean> selectedAuthors;
+    private HashMap<Author, Boolean> selectedAuthors;
     private boolean synopsis;
     private boolean beep;
     private boolean splashWindow;
     private boolean autoLoad;
     private boolean fullScan;
-    private boolean loggingActions;
+    private boolean setup;
     private boolean debugOn;
 
     public Config() {
@@ -35,27 +49,53 @@ public class Config {
         mseVersion = "3.0.0";
         workingDir = "";
         resDir = "res" + File.separator;
-        defaultBrowser = "/usr/bin/firefox";
+//        defaultBrowser = "/usr/bin/firefox";
+        defaultBrowser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
         resultsFileName = "search_results.htm";
         searchString = "";
         searchType = "Phrase";
 
         // set the selected books to be searched to only the bible
-        selectedAuthors = new ArrayList<>();
+        selectedAuthors = new HashMap<>();
         for (Author nextAuthor : Author.values()) {
             if (nextAuthor.isSearchable()) {
-                selectedAuthors.add(false);
+                selectedAuthors.put(nextAuthor, false);
             }
         }
-        selectedAuthors.set(0, true);
+        selectedAuthors.put(Author.BIBLE, true);
 
         synopsis = true;
         beep = false;
         splashWindow = false;
         autoLoad = false;
         fullScan = false;
+        setup = false;
         debugOn = false;
 
+    }
+
+    public void save(Logger logger) {
+        if (!setup) {
+            try {
+                Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                String json = gson.toJson(this);
+                File f = new File("Config.txt");
+                PrintWriter pw = new PrintWriter(f);
+                pw.write(json);
+                pw.close();
+                logger.log(LogLevel.INFO, "Config saved: " + f.getCanonicalPath());
+            } catch (IOException ioe) {
+                logger.log(LogLevel.LOW, "Could not write config" + ioe.getMessage());
+            }
+        }
+    }
+
+    public void setSetup(boolean setupCheck) {
+        setup = setupCheck;
+    }
+
+    public boolean isSettingUp() {
+        return setup;
     }
 
     public String getMseVersion() {
@@ -106,12 +146,32 @@ public class Config {
         this.searchType = searchType;
     }
 
-    public ArrayList<Boolean> getSelectedAuthors() {
+    public HashMap<Author, Boolean> getSelectedAuthors() {
         return selectedAuthors;
     }
 
-    public void setSelectedAuthors(ArrayList<Boolean> selectedAuthors) {
+    public void setSelectedAuthors(HashMap<Author, Boolean> selectedAuthors) {
         this.selectedAuthors = selectedAuthors;
+    }
+
+    public void setSelectedAuthor(Author author, boolean isSelected) {
+        selectedAuthors.put(author, isSelected);
+    }
+
+    public Boolean getSelectedAuthor(Author author) {
+        return selectedAuthors.get(author);
+    }
+
+    public boolean isAuthorSelected() {
+        boolean check = false;
+        for (Author nextAuthor : Author.values()) {
+            if (nextAuthor != Author.TUNES) {
+                if (getSelectedAuthor(nextAuthor)) {
+                    check = true;
+                }
+            }
+        }
+        return check;
     }
 
     public boolean isBeep() {
@@ -160,35 +220,6 @@ public class Config {
 
     public void setSynopsis(boolean synopsis) {
         this.synopsis = synopsis;
-    }
-
-    public boolean isLoggingActions() {
-        return loggingActions;
-    }
-
-    public void setLoggingActions(boolean loggingActions) {
-        this.loggingActions = loggingActions;
-    }
-
-    public void writeToLog(String message) {
-
-        if (loggingActions) {
-            FileWriter logWriter = null;
-            try {
-                File logFile = new File(workingDir + "log.txt");
-                logWriter = new FileWriter(logFile, true);
-                logWriter.write("\n" + message);
-            } catch (IOException ioe) {
-                // ignore io exception
-            } finally {
-                if (logWriter != null) {
-                    try {
-                        logWriter.close();
-                    } catch (IOException ex) {
-                    }
-                }
-            }
-        }
     }
 
 }
