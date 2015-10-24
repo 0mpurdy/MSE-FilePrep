@@ -9,11 +9,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
-import java.util.ArrayList;
 
 /**
  *
@@ -25,7 +23,7 @@ public class Config {
     public final int TOO_FREQUENT = 10000;
 
     private String mseVersion;
-    private String defaultBrowser;
+//    private String defaultBrowser;
     private String workingDir;
     private String resDir;
     private String resultsFileName;
@@ -50,7 +48,7 @@ public class Config {
         workingDir = "";
         resDir = "res" + File.separator;
 //        defaultBrowser = "/usr/bin/firefox";
-        defaultBrowser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
+//        defaultBrowser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
         resultsFileName = "search_results.htm";
         searchString = "";
         searchType = "Phrase";
@@ -102,13 +100,13 @@ public class Config {
         return mseVersion;
     }
 
-    public String getDefaultBrowser() {
-        return defaultBrowser;
-    }
-
-    public void setDefaultBrowser(String defaultBrowser) {
-        this.defaultBrowser = defaultBrowser;
-    }
+//    public String getDefaultBrowser() {
+//        return defaultBrowser;
+//    }
+//
+//    public void setDefaultBrowser(String defaultBrowser) {
+//        this.defaultBrowser = defaultBrowser;
+//    }
 
     public String getWorkingDir() {
         return workingDir;
