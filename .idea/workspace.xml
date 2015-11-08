@@ -6,7 +6,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8333ef69-41d0-4129-8cc9-40327beb6890" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mse/common/Config.java" afterPath="$PROJECT_DIR$/src/mse/common/Config.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mse/common/Author.java" afterPath="$PROJECT_DIR$/src/mse/common/Author.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mse/common/AuthorIndex.java" afterPath="$PROJECT_DIR$/src/mse/common/AuthorIndex.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mse/Main.java" afterPath="$PROJECT_DIR$/src/mse/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MSE-FilePrep.iws" />
@@ -33,9 +35,10 @@
         <entry file="file://$PROJECT_DIR$/src/mse/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1095" column="5" selection-start-line="1095" selection-start-column="5" selection-end-line="1095" selection-end-column="5" />
+              <caret line="1064" column="36" selection-start-line="1064" selection-start-column="36" selection-end-line="1064" selection-end-column="36" />
               <folding>
                 <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
+                <element signature="method#main#0;class#Main#0" expanded="false" />
                 <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
                 <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
                 <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
@@ -49,12 +52,21 @@
                 <element signature="e#32599#32632#0" expanded="false" />
                 <element signature="e#37744#37770#0" expanded="false" />
                 <element signature="method#processAuthor#0;class#Main#0" expanded="false" />
-                <element signature="method#writeIndex#0;class#Main#0" expanded="false" />
-                <element signature="e#49688#49715#0" expanded="false" />
-                <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
+                <element signature="e#49735#49762#0" expanded="false" />
+                <element signature="method#readSuperIndex#0;class#Main#0" expanded="false" />
                 <element signature="method#processString#0;class#Main#0" expanded="false" />
                 <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BibleBook.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mse/BibleBook.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -63,8 +75,24 @@
         <entry file="file://$PROJECT_DIR$/src/mse/ReferenceProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+              <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReferenceQueueItem.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mse/ReferenceQueueItem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding>
+                <element signature="e#474#475#0" expanded="true" />
+                <element signature="e#502#503#0" expanded="true" />
+                <element signature="e#538#539#0" expanded="true" />
+                <element signature="e#573#574#0" expanded="true" />
+                <element signature="e#640#641#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -74,31 +102,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="103" column="28" selection-start-line="103" selection-start-column="28" selection-end-line="103" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1054#1055#0" expanded="true" />
-                <element signature="e#1083#1084#0" expanded="true" />
-                <element signature="e#2628#2629#0" expanded="true" />
-                <element signature="e#2662#2663#0" expanded="true" />
-                <element signature="e#2698#2699#0" expanded="true" />
-                <element signature="e#2726#2727#0" expanded="true" />
-                <element signature="e#2763#2764#0" expanded="true" />
-                <element signature="e#2796#2797#0" expanded="true" />
-                <element signature="e#3037#3038#0" expanded="true" />
-                <element signature="e#3070#3071#0" expanded="true" />
-                <element signature="e#3946#3947#0" expanded="true" />
-                <element signature="e#4000#4001#0" expanded="true" />
-                <element signature="e#4072#4073#0" expanded="true" />
-                <element signature="e#4127#4128#0" expanded="true" />
-                <element signature="e#4182#4183#0" expanded="true" />
-                <element signature="e#4232#4233#0" expanded="true" />
-                <element signature="e#5290#5291#0" expanded="true" />
-                <element signature="e#5328#5329#0" expanded="true" />
-                <element signature="e#5363#5364#0" expanded="true" />
-                <element signature="e#5394#5395#0" expanded="true" />
-                <element signature="e#5443#5444#0" expanded="true" />
-                <element signature="e#5483#5484#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -108,10 +112,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding>
-                <element signature="e#679#680#0" expanded="true" />
-                <element signature="e#719#720#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -129,18 +130,12 @@
       <file leaf-file-name="AuthorIndex.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mse/common/AuthorIndex.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1511627">
-              <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+            <state vertical-scroll-proportion="2.6507072">
+              <caret line="137" column="82" selection-start-line="137" selection-start-column="82" selection-end-line="137" selection-end-column="82" />
               <folding>
                 <element signature="docComment;class#AuthorIndex#0" expanded="false" />
-                <element signature="e#486#487#0" expanded="true" />
-                <element signature="e#521#522#0" expanded="true" />
-                <element signature="e#796#797#0" expanded="true" />
-                <element signature="e#835#836#0" expanded="true" />
-                <element signature="e#893#894#0" expanded="true" />
-                <element signature="e#929#930#0" expanded="true" />
-                <element signature="e#4335#4336#0" expanded="true" />
-                <element signature="e#4364#4365#0" expanded="true" />
+                <element signature="e#2790#2842#0" expanded="false" />
+                <element signature="method#getTokenCount#0;class#AuthorIndex#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -150,11 +145,8 @@
         <entry file="file://$PROJECT_DIR$/src/mse/common/Author.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-              <folding>
-                <element signature="e#2039#2040#0" expanded="true" />
-                <element signature="e#2106#2107#0" expanded="true" />
-              </folding>
+              <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -197,13 +189,13 @@
         <option value="$PROJECT_DIR$/src/com/company/AuthorIndex.java" />
         <option value="$PROJECT_DIR$/src/com/company/ReferenceProcessor.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
-        <option value="$PROJECT_DIR$/src/mse/common/Author.java" />
-        <option value="$PROJECT_DIR$/src/mse/ReferenceProcessor.java" />
-        <option value="$PROJECT_DIR$/src/mse/Main.java" />
-        <option value="$PROJECT_DIR$/src/mse/common/AuthorIndex.java" />
         <option value="$PROJECT_DIR$/src/mse/common/Logger.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/mse/common/Config.java" />
+        <option value="$PROJECT_DIR$/src/mse/common/AuthorIndex.java" />
+        <option value="$PROJECT_DIR$/src/mse/ReferenceProcessor.java" />
+        <option value="$PROJECT_DIR$/src/mse/Main.java" />
+        <option value="$PROJECT_DIR$/src/mse/common/Author.java" />
       </list>
     </option>
   </component>
@@ -246,9 +238,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -307,22 +296,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSE-FilePrep" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSE-FilePrep" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -331,7 +309,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="dynamic.classpath" value="false" />
     <property name="FullScreen" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MSE-Java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -558,13 +536,11 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3347413" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14791666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -572,13 +548,15 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915523" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915523" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3347413" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915523" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -601,10 +579,26 @@
           <properties />
           <option name="timeStamp" value="107" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/mse/common/AuthorIndex.java</url>
+          <line>162</line>
+          <properties />
+          <option name="timeStamp" value="121" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/mse/common/AuthorIndex.java</url>
+          <line>104</line>
+          <properties />
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="121" />
+      <option name="time" value="141" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="nextReferenceIndex" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -615,10 +609,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding>
-            <element signature="e#2039#2040#0" expanded="true" />
-            <element signature="e#2106#2107#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -635,6 +626,7 @@
           <caret line="886" column="41" selection-start-line="886" selection-start-column="41" selection-end-line="886" selection-end-column="41" />
           <folding>
             <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
             <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
             <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
             <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
@@ -648,9 +640,8 @@
             <element signature="e#32599#32632#0" expanded="false" />
             <element signature="e#37744#37770#0" expanded="false" />
             <element signature="method#processAuthor#0;class#Main#0" expanded="false" />
-            <element signature="method#writeIndex#0;class#Main#0" expanded="false" />
-            <element signature="e#49688#49715#0" expanded="false" />
-            <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
+            <element signature="e#49735#49762#0" expanded="false" />
+            <element signature="method#readSuperIndex#0;class#Main#0" expanded="false" />
             <element signature="method#processString#0;class#Main#0" expanded="false" />
             <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
           </folding>
@@ -663,14 +654,8 @@
           <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
           <folding>
             <element signature="docComment;class#AuthorIndex#0" expanded="false" />
-            <element signature="e#486#487#0" expanded="true" />
-            <element signature="e#521#522#0" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
-            <element signature="e#835#836#0" expanded="true" />
-            <element signature="e#893#894#0" expanded="true" />
-            <element signature="e#929#930#0" expanded="true" />
-            <element signature="e#4335#4336#0" expanded="true" />
-            <element signature="e#4364#4365#0" expanded="true" />
+            <element signature="e#2790#2842#0" expanded="false" />
+            <element signature="method#getTokenCount#0;class#AuthorIndex#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -693,10 +678,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding>
-            <element signature="e#2039#2040#0" expanded="true" />
-            <element signature="e#2106#2107#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -713,6 +695,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
             <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
             <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
             <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
@@ -726,9 +709,8 @@
             <element signature="e#32599#32632#0" expanded="false" />
             <element signature="e#37744#37770#0" expanded="false" />
             <element signature="method#processAuthor#0;class#Main#0" expanded="false" />
-            <element signature="method#writeIndex#0;class#Main#0" expanded="false" />
-            <element signature="e#49688#49715#0" expanded="false" />
-            <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
+            <element signature="e#49735#49762#0" expanded="false" />
+            <element signature="method#readSuperIndex#0;class#Main#0" expanded="false" />
             <element signature="method#processString#0;class#Main#0" expanded="false" />
             <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
           </folding>
@@ -753,10 +735,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding>
-            <element signature="e#2039#2040#0" expanded="true" />
-            <element signature="e#2106#2107#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -773,6 +752,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
             <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
             <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
             <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
@@ -786,9 +766,8 @@
             <element signature="e#32599#32632#0" expanded="false" />
             <element signature="e#37744#37770#0" expanded="false" />
             <element signature="method#processAuthor#0;class#Main#0" expanded="false" />
-            <element signature="method#writeIndex#0;class#Main#0" expanded="false" />
-            <element signature="e#49688#49715#0" expanded="false" />
-            <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
+            <element signature="e#49735#49762#0" expanded="false" />
+            <element signature="method#readSuperIndex#0;class#Main#0" expanded="false" />
             <element signature="method#processString#0;class#Main#0" expanded="false" />
             <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
           </folding>
@@ -813,10 +792,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding>
-            <element signature="e#2039#2040#0" expanded="true" />
-            <element signature="e#2106#2107#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -833,6 +809,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
             <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
             <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
             <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
@@ -846,9 +823,8 @@
             <element signature="e#32599#32632#0" expanded="false" />
             <element signature="e#37744#37770#0" expanded="false" />
             <element signature="method#processAuthor#0;class#Main#0" expanded="false" />
-            <element signature="method#writeIndex#0;class#Main#0" expanded="false" />
-            <element signature="e#49688#49715#0" expanded="false" />
-            <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
+            <element signature="e#49735#49762#0" expanded="false" />
+            <element signature="method#readSuperIndex#0;class#Main#0" expanded="false" />
             <element signature="method#processString#0;class#Main#0" expanded="false" />
             <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
           </folding>
@@ -873,10 +849,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding>
-            <element signature="e#2039#2040#0" expanded="true" />
-            <element signature="e#2106#2107#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -893,6 +866,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
             <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
             <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
             <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
@@ -906,9 +880,8 @@
             <element signature="e#32599#32632#0" expanded="false" />
             <element signature="e#37744#37770#0" expanded="false" />
             <element signature="method#processAuthor#0;class#Main#0" expanded="false" />
-            <element signature="method#writeIndex#0;class#Main#0" expanded="false" />
-            <element signature="e#49688#49715#0" expanded="false" />
-            <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
+            <element signature="e#49735#49762#0" expanded="false" />
+            <element signature="method#readSuperIndex#0;class#Main#0" expanded="false" />
             <element signature="method#processString#0;class#Main#0" expanded="false" />
             <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
           </folding>
@@ -933,10 +906,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding>
-            <element signature="e#2039#2040#0" expanded="true" />
-            <element signature="e#2106#2107#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -953,6 +923,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
             <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
             <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
             <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
@@ -966,9 +937,8 @@
             <element signature="e#32599#32632#0" expanded="false" />
             <element signature="e#37744#37770#0" expanded="false" />
             <element signature="method#processAuthor#0;class#Main#0" expanded="false" />
-            <element signature="method#writeIndex#0;class#Main#0" expanded="false" />
-            <element signature="e#49688#49715#0" expanded="false" />
-            <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
+            <element signature="e#49735#49762#0" expanded="false" />
+            <element signature="method#readSuperIndex#0;class#Main#0" expanded="false" />
             <element signature="method#processString#0;class#Main#0" expanded="false" />
             <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
           </folding>
@@ -993,10 +963,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-          <folding>
-            <element signature="e#2039#2040#0" expanded="true" />
-            <element signature="e#2106#2107#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1014,13 +981,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mse/BibleBook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.077634014">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mse/HymnBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1032,13 +992,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mse/ReferenceQueueItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -1070,53 +1023,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mse/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1095" column="5" selection-start-line="1095" selection-start-column="5" selection-end-line="1095" selection-end-column="5" />
-          <folding>
-            <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
-            <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
-            <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
-            <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
-            <element signature="e#11487#11506#0" expanded="false" />
-            <element signature="e#12582#12672#0" expanded="false" />
-            <element signature="method#getSynopsisPages#0;class#Main#0" expanded="false" />
-            <element signature="e#15807#15843#0" expanded="false" />
-            <element signature="method#prepareHymnsHtml#0;class#Main#0" expanded="false" />
-            <element signature="e#20841#20864#0" expanded="false" />
-            <element signature="method#prepareMinistry#0;class#Main#0" expanded="false" />
-            <element signature="e#32599#32632#0" expanded="false" />
-            <element signature="e#37744#37770#0" expanded="false" />
-            <element signature="method#processAuthor#0;class#Main#0" expanded="false" />
-            <element signature="method#writeIndex#0;class#Main#0" expanded="false" />
-            <element signature="e#49688#49715#0" expanded="false" />
-            <element signature="method#isAlpha#0;class#Main#0" expanded="false" />
-            <element signature="method#processString#0;class#Main#0" expanded="false" />
-            <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mse/common/Author.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding>
-            <element signature="e#2039#2040#0" expanded="true" />
-            <element signature="e#2106#2107#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mse/common/Logger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="e#679#680#0" expanded="true" />
-            <element signature="e#719#720#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1132,7 +1043,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1148,30 +1058,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="103" column="28" selection-start-line="103" selection-start-column="28" selection-end-line="103" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mse/BibleBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mse/ReferenceQueueItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1054#1055#0" expanded="true" />
-            <element signature="e#1083#1084#0" expanded="true" />
-            <element signature="e#2628#2629#0" expanded="true" />
-            <element signature="e#2662#2663#0" expanded="true" />
-            <element signature="e#2698#2699#0" expanded="true" />
-            <element signature="e#2726#2727#0" expanded="true" />
-            <element signature="e#2763#2764#0" expanded="true" />
-            <element signature="e#2796#2797#0" expanded="true" />
-            <element signature="e#3037#3038#0" expanded="true" />
-            <element signature="e#3070#3071#0" expanded="true" />
-            <element signature="e#3946#3947#0" expanded="true" />
-            <element signature="e#4000#4001#0" expanded="true" />
-            <element signature="e#4072#4073#0" expanded="true" />
-            <element signature="e#4127#4128#0" expanded="true" />
-            <element signature="e#4182#4183#0" expanded="true" />
-            <element signature="e#4232#4233#0" expanded="true" />
-            <element signature="e#5290#5291#0" expanded="true" />
-            <element signature="e#5328#5329#0" expanded="true" />
-            <element signature="e#5363#5364#0" expanded="true" />
-            <element signature="e#5394#5395#0" expanded="true" />
-            <element signature="e#5443#5444#0" expanded="true" />
-            <element signature="e#5483#5484#0" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
+            <element signature="e#502#503#0" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#640#641#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1179,25 +1087,55 @@
     <entry file="file://$PROJECT_DIR$/src/mse/ReferenceProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mse/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1064" column="36" selection-start-line="1064" selection-start-column="36" selection-end-line="1064" selection-end-column="36" />
+          <folding>
+            <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#printMainMenu#0;class#Main#0" expanded="false" />
+            <element signature="method#printAuthorMenu#0;class#Main#0" expanded="false" />
+            <element signature="method#prepareBibleHtml#0;class#Main#0" expanded="false" />
+            <element signature="e#11487#11506#0" expanded="false" />
+            <element signature="e#12582#12672#0" expanded="false" />
+            <element signature="method#getSynopsisPages#0;class#Main#0" expanded="false" />
+            <element signature="e#15807#15843#0" expanded="false" />
+            <element signature="method#prepareHymnsHtml#0;class#Main#0" expanded="false" />
+            <element signature="e#20841#20864#0" expanded="false" />
+            <element signature="method#prepareMinistry#0;class#Main#0" expanded="false" />
+            <element signature="e#32599#32632#0" expanded="false" />
+            <element signature="e#37744#37770#0" expanded="false" />
+            <element signature="method#processAuthor#0;class#Main#0" expanded="false" />
+            <element signature="e#49735#49762#0" expanded="false" />
+            <element signature="method#readSuperIndex#0;class#Main#0" expanded="false" />
+            <element signature="method#processString#0;class#Main#0" expanded="false" />
+            <element signature="method#processUncommonString#0;class#Main#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mse/common/Author.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mse/common/AuthorIndex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1511627">
-          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+        <state vertical-scroll-proportion="2.6507072">
+          <caret line="137" column="82" selection-start-line="137" selection-start-column="82" selection-end-line="137" selection-end-column="82" />
           <folding>
             <element signature="docComment;class#AuthorIndex#0" expanded="false" />
-            <element signature="e#486#487#0" expanded="true" />
-            <element signature="e#521#522#0" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
-            <element signature="e#835#836#0" expanded="true" />
-            <element signature="e#893#894#0" expanded="true" />
-            <element signature="e#929#930#0" expanded="true" />
-            <element signature="e#4335#4336#0" expanded="true" />
-            <element signature="e#4364#4365#0" expanded="true" />
+            <element signature="e#2790#2842#0" expanded="false" />
+            <element signature="method#getTokenCount#0;class#AuthorIndex#0" expanded="false" />
           </folding>
         </state>
       </provider>

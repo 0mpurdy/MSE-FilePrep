@@ -16,10 +16,6 @@ public class AuthorIndex implements Serializable {
     private HashMap<String, Integer> nextReferenceIndex;
     private HashMap<String, String[]> references;
 
-    public AuthorIndex(String location) {
-        loadIndex(location);
-    }
-
     public AuthorIndex(Author author) {
         this.author = author;
         tokenCountMap = new HashMap<>();
@@ -52,7 +48,8 @@ public class AuthorIndex implements Serializable {
                     if (lastPage.get(token) != pageNumber) {
 
                         String[] currentReferenceList = references.get(token);
-                        int index = nextReferenceIndex.get(token) + 1;
+                        int index = nextReferenceIndex.get(token);
+                        nextReferenceIndex.put(token, index + 1);
 
                         String currentReference = String.format("%d:%d", volumeNumber, pageNumber);
 
@@ -73,14 +70,15 @@ public class AuthorIndex implements Serializable {
                     references.put(token, new String[0]);
                     nextReferenceIndex.put(token, -1);
                     lastPage.put(token, -1);
-                    tokenCountMap.put(token, -1);
+
+                    count = -1;
                 }
             }
         } else {
             // if it is the first time this token has been found
 
             // create the new reference list
-            String[] referencesList = new String[10];
+            String[] referencesList = new String[1];
 
             count = 1;
 
@@ -88,7 +86,7 @@ public class AuthorIndex implements Serializable {
             String currentReference = String.format("%d:%d", volumeNumber, pageNumber);
             referencesList[0] = currentReference;
             lastPage.put(token, 0);
-            nextReferenceIndex.put(token, -1);
+            nextReferenceIndex.put(token, 1);
             references.put(token, referencesList);
         }
         tokenCountMap.put(token, count);
@@ -117,6 +115,8 @@ public class AuthorIndex implements Serializable {
                 if (nextReference != oldReferences.length) {
                     String[] newReferences = Arrays.copyOf(oldReferences, nextReference);
                     newReferencesMap.put(token, newReferences);
+                } else {
+                    newReferencesMap.put(token, oldReferences);
                 }
             }
         }
@@ -127,24 +127,27 @@ public class AuthorIndex implements Serializable {
         return author;
     }
 
-    public void loadIndex(String location) {
+    public String[] getReferences(String key) {
+        return references.get(key);
+    }
+
+    public void loadIndex(String resLocation) {
 
         // try to load the index of the current author
         try {
-            InputStream inStream = new FileInputStream(author.getIndexFilePath());
+            InputStream inStream = new FileInputStream(resLocation + author.getIndexFilePath());
             BufferedInputStream bInStream = new BufferedInputStream(inStream);
             ObjectInput input = new ObjectInputStream(bInStream);
-            this.author = ((AuthorIndex) input).author;
-            this.tokenCountMap = ((AuthorIndex) input).tokenCountMap;
-            this.lastPage = ((AuthorIndex) input).lastPage;
-            this.nextReferenceIndex = ((AuthorIndex) input).nextReferenceIndex;
-            this.references = ((AuthorIndex) input).references;
+            this.tokenCountMap = (HashMap<String, Integer>) input.readObject();
+            this.references = (HashMap<String, String[]>) input.readObject();
         } catch (FileNotFoundException fnfe) {
-            System.out.println("Could not file find file: " + author.getIndexFilePath());
+            System.out.println("Could not file find file: " + resLocation + author.getIndexFilePath());
         } catch (IOException ioe) {
-            System.out.println("Error loading from: " + location);
+            System.out.println("Error loading from: " + author.getIndexFilePath());
         } catch (ClassCastException cce) {
             System.out.println("Error casting class when loading new index");
+        } catch (ClassNotFoundException cnfe) {
+            System.out.println("Class not found when loading new index");
         }
 
     }
@@ -157,7 +160,8 @@ public class AuthorIndex implements Serializable {
             OutputStream file = new FileOutputStream(location);
             BufferedOutputStream buffer = new BufferedOutputStream(file);
             objectOutputStream = new ObjectOutputStream(buffer);
-            objectOutputStream.writeObject(this);
+            objectOutputStream.writeObject(tokenCountMap);
+            objectOutputStream.writeObject(references);
         }
         catch(IOException ex){
             System.out.println("\nError writing index for " + author.getName() + " at location " + location);

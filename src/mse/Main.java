@@ -1061,7 +1061,8 @@ public class Main {
 
                 System.out.println("Creating super index for " + nextAuthor.getName());
 
-                AuthorIndex nextAuthorIndex = readIndex(nextAuthor.getIndexFilePath());
+                AuthorIndex nextAuthorIndex = new AuthorIndex(nextAuthor);
+                nextAuthorIndex.loadIndex(cfg.getResDir());
 
                 // if the index loads
                 if (!(nextAuthorIndex == null)) {
@@ -1095,37 +1096,37 @@ public class Main {
         }
     }
 
-    private static AuthorIndex readIndex(String filename) {
-
-        AuthorIndex result;
-        ObjectInputStream objectInputStream = null;
-
-        try {
-            File indexFile = new File(filename);
-            InputStream inStream = new FileInputStream(indexFile);
-            BufferedInputStream bInStream = new BufferedInputStream(inStream);
-            objectInputStream = new ObjectInputStream(bInStream);
-
-            result =  (AuthorIndex) objectInputStream.readObject();
-
-        } catch (IOException ioe) {
-            System.out.println("Error reading file: " + filename);
-            System.out.println(ioe.getMessage());
-            result = null;
-        } catch (ClassNotFoundException cnfe) {
-            System.out.println("Invalid class in file: " + filename);
-            result = null;
-        } finally {
-            if (objectInputStream != null) {
-                try {
-                    objectInputStream.close();
-                } catch (IOException ioe) {
-                    System.out.println("Error closing: " + filename);
-                }
-            }
-        }
-        return result;
-    }
+//    private static AuthorIndex readIndex(String filename) {
+//
+//        AuthorIndex result;
+//        ObjectInputStream objectInputStream = null;
+//
+//        try {
+//            File indexFile = new File(filename);
+//            InputStream inStream = new FileInputStream(indexFile);
+//            BufferedInputStream bInStream = new BufferedInputStream(inStream);
+//            objectInputStream = new ObjectInputStream(bInStream);
+//
+//            result =  (AuthorIndex) objectInputStream.readObject();
+//
+//        } catch (IOException ioe) {
+//            System.out.println("Error reading file: " + filename);
+//            System.out.println(ioe.getMessage());
+//            result = null;
+//        } catch (ClassNotFoundException cnfe) {
+//            System.out.println("Invalid class in file: " + filename);
+//            result = null;
+//        } finally {
+//            if (objectInputStream != null) {
+//                try {
+//                    objectInputStream.close();
+//                } catch (IOException ioe) {
+//                    System.out.println("Error closing: " + filename);
+//                }
+//            }
+//        }
+//        return result;
+//    }
 
     private static HashMap<String,Integer> readSuperIndex(String filename) {
 

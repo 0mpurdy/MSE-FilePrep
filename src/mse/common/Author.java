@@ -55,7 +55,7 @@ public enum Author {
     }
 
     public String getTargetPath(String filename) {
-        return "res" + File.separator + "target" + File.separator + folder + File.separator + filename;
+        return File.separator + "target" + File.separator + folder + File.separator + filename;
     }
 
     public String getContentsName() {
