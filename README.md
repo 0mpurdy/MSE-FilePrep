@@ -3,8 +3,7 @@ This is a java console application used to prepare files to be used with the MSE
 
 ## In progress
 
- - Prepare indexes for fast lookups in search
- - Finalise layout of pages
+ - Finalise layout of html output
  - Add page numbers to CHM
 
 ## Issues
