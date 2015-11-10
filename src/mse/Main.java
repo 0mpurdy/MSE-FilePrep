@@ -104,6 +104,24 @@ public class Main {
                     createSuperIndex(cfg);
                     break;
                 case 6:
+                    System.out.println("\nWhich author index do you wish to check?");
+                    printAuthorMenu();
+                    authorChoice = sc.nextInt();
+                    sc.nextLine();
+                    if ((authorChoice>=0) && (authorChoice < Author.values().length)){
+                        Author author = Author.values()[authorChoice];
+                        if (author.isSearchable()) {
+                            AuthorIndex authorIndex = new AuthorIndex(author);
+                            authorIndex.loadIndex(cfg.getResDir());
+                            System.out.println(authorIndex.getTokenCountMap().size());
+                        } else {
+                            System.out.println("This author is not searchable");
+                        }
+                    } else {
+                        System.out.println("This is not a valid option");
+                    }
+                    break;
+                case 7:
                     System.out.println("Benchmarking ...\n\n");
                     new Benchmark().run();
                     break;
@@ -125,6 +143,7 @@ public class Main {
         options.add("Create all indexes");
         options.add("Create single author index");
         options.add("Create super index");
+        options.add("Check author index");
         options.add("Benchmark");
 
         int i = 0;
@@ -988,11 +1007,12 @@ public class Main {
                             skip = true;
                         } else {
                             outputLine = new StringBuilder(specialLine.substring(1));
+                            skip = true;
                         }
 
                     }
 
-                    // if the line contains html
+                    // if the line contains html - remove the html tag
                     while (outputLine.indexOf("<") != -1) {
                         charPos = 0;
                         while ((charPos < outputLine.length()) && (outputLine.charAt(charPos) != '<')) {

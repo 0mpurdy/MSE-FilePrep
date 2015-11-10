@@ -157,7 +157,13 @@ public class AuthorIndex implements Serializable {
         ObjectOutputStream objectOutputStream = null;
 
         try {
-            OutputStream file = new FileOutputStream(location);
+
+            File outputFile = new File(location);
+            if (!outputFile.exists()) {
+                outputFile.createNewFile();
+            }
+
+            OutputStream file = new FileOutputStream(outputFile);
             BufferedOutputStream buffer = new BufferedOutputStream(file);
             objectOutputStream = new ObjectOutputStream(buffer);
             objectOutputStream.writeObject(tokenCountMap);
