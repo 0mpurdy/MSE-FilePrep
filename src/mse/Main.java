@@ -121,6 +121,16 @@ public class Main {
                     }
                     break;
                 case 7:
+                    ArrayList<AuthorIndex> authorIndexes = new ArrayList<>();
+                    for (Author nextAuthor : Author.values()) {
+                        if (nextAuthor.isSearchable()) {
+                            AuthorIndex authorIndex = new AuthorIndex(nextAuthor);
+                            authorIndex.loadIndex(cfg.getResDir());
+                            authorIndexes.add(authorIndex);
+                        }
+                    }
+                    break;
+                case 8:
                     System.out.println("Benchmarking ...\n\n");
                     new Benchmark().run();
                     break;
@@ -143,6 +153,7 @@ public class Main {
         options.add("Create single author index");
         options.add("Create super index");
         options.add("Check author index");
+        options.add("Check all author indexes");
         options.add("Benchmark");
 
         int i = 0;
@@ -226,7 +237,7 @@ public class Main {
 
                 // write the html header
                 pwBible.println("<html>");
-                pwBible.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"../mseStyle.css\">\n");
+                pwBible.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"../../mseStyle.css\">\n");
                 pwBible.println("<head>\n\t<title>"
                         + "Darby translation and King James Version of The Bible"
                         + "</title>\n</head>");
