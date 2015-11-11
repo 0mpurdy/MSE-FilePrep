@@ -45,7 +45,7 @@ public class Config {
     private void setDefaults() {
 
         mseVersion = "3.0.0";
-        resDir = "res" + File.separator;
+        resDir = ".." + File.separator + "MSE-Res" + File.separator + "res" + File.separator;;
 //        defaultBrowser = "/usr/bin/firefox";
 //        defaultBrowser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
         resultsFileName = "search_results.htm";

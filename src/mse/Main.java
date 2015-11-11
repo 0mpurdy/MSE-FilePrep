@@ -5,7 +5,6 @@ import mse.common.AuthorIndex;
 import mse.common.Config;
 
 import java.io.*;
-import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -15,7 +14,7 @@ public class Main {
     // The list of characters to remove from tokens in the search indexes
     static String[] deleteChars = {"?","\"","!",",",".","-","\'",":",
             "1","2","3","4","5","6","7","8","9","0",";","@",")","(","¦","*","[","]","\u00AC","{","}","\u2019", "~",
-            "\u201D","°","…","†","&","`","$","§","|","\t","=","+","‘","€","/","¶","_","–","½","£","“","%","#"};
+            "\u201D","\u00B0","…","†","&","`","$","§","|","\t","=","+","‘","€","/","¶","_","–","½","£","“","%","#"};
 
     /* Char hex codes
      * 00AC = ¬
@@ -563,52 +562,38 @@ public class Main {
             BufferedReader brLog;
             PrintWriter pwLog;
 
-            String line;
-            int lineCount = 0;
-            int volumeNumber = 1;
-            int section = 1;
-            String footnotes = "";
-            String actualFootnotes = "";
-            int footnotesNumber = 0;
-            int actualFootnotesNumber = 0;
-            int maxFootnotesNumber = 0;
-
-            // css class
-            String cssClass = "";
-
-            boolean finishedVolumes = false;
-            boolean startedItalics = false;
-
-            String messages = "";
+            AuthorPrepareCache authorPrepareCache = new AuthorPrepareCache();
 
             // for each volume
-            while (!finishedVolumes) {
+            while (!authorPrepareCache.finishedVolumes) {
                 try {
 
-                    File volumeFile = new File(volPath + author.getContentsName() + volumeNumber + ".txt");
+                    File volumeFile = new File(volPath + author.getContentsName() + authorPrepareCache.volNum + ".txt");
                     if (volumeFile.exists()) {
-                        int pageNumber = 0;
-                        int keepPageNumber = 0;
+                        authorPrepareCache.pageNum = 0;
+                        authorPrepareCache.keepPageNumber = 0;
 
 
                         // print out progress for each volume
-                        System.out.print("\r\tVolume: " + volumeNumber);
+                        System.out.print("\r\tVolume: " + authorPrepareCache.volNum);
 
                         brLog = new BufferedReader(new FileReader(volumeFile));
-                        pwLog = new PrintWriter(new FileWriter(volDestPath + author.getCode() + volumeNumber + ".htm"));
+                        pwLog = new PrintWriter(new FileWriter(volDestPath + author.getCode() + authorPrepareCache.volNum + ".htm"));
 
                         // write html head
-                        pwLog.println(String.format("<!DOCTYPE html>\n<html>\n\n<head>\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../mseStyle.css\">\n\t<title>%s Volume %d</title>\n</head>\n\n<body>", author.getName(), volumeNumber));
+                        pwLog.println(String.format("<!DOCTYPE html>\n<html>\n\n<head>\n\t<link rel=\"stylesheet\" type=\"" +
+                                "text/css\" href=\"../../mseStyle.css\">\n\t<title>%s Volume %d</title>\n</head>\n\n<body>",
+                                author.getName(), authorPrepareCache.volNum));
+
+                        StringBuilder outputLine;
 
                         // while there are still more lines
-                        while ((line = brLog.readLine()) != null) {
-                            StringBuilder outputLine = new StringBuilder(line);
-
-                            if ((author == Author.Misc) && (volumeNumber == 26) && ((lineCount % 10) == 0)) {
-                                int debug = 5;
-                            }
+                        while ((authorPrepareCache.line = brLog.readLine()) != null) {
+                            outputLine = new StringBuilder(authorPrepareCache.line);
 
                             if (outputLine.length() < 1) outputLine.append("<hr/>");
+
+                            int charPosition = 0;
 
                             // probable heading
                             if ((outputLine.length() < 400) && (outputLine.charAt(0) != '{')) {
@@ -616,83 +601,44 @@ public class Main {
                                 // if the line is all uppercase
                                 String uppercaseLine = outputLine.toString().toUpperCase();
                                 if ((uppercaseLine.equals(outputLine.toString()) && (outputLine.charAt(0) != ' '))) {
-                                    cssClass = "heading";
+                                    authorPrepareCache.cssClass = "heading";
                                 }
-                            }
+                            } else if (outputLine.charAt(0) == '{') {
+                                // start of special line
+                                outputLine = getSpecialLine(authorPrepareCache, outputLine);
+                            } // end page number
 
                             int charsInSection = 0;
-                            int charPosition = 0;
 
-                            if ((outputLine.charAt(0) != '\u00a6') && (outputLine.charAt(0) != '{') && (actualFootnotesNumber != 0)) {
+                            if ((outputLine.charAt(0) != '\u00a6') && (outputLine.charAt(0) != '{') && (authorPrepareCache.actualFootnotesNumber != 0)) {
                                 // if it is a footnote (broken bar)
-                                String error = "Footnote not at foot of page " + author.getName() + " volume " + volumeNumber + " page " + pageNumber;
-                                if (!messages.contains(error)) {
-                                    messages += "\n\t" + error;
+                                String error = "Footnote not at foot of page " + author.getName() + " volume " + authorPrepareCache.volNum + " page " + authorPrepareCache.pageNum;
+                                if (!authorPrepareCache.messages.contains(error)) {
+                                    authorPrepareCache.messages += "\n\t" + error;
                                 }
                             }
 
                             // for each character in the line
-                            while ((charPosition < outputLine.length()) && (cssClass == "")) {
+                            while ((charPosition < outputLine.length()) && (authorPrepareCache.cssClass == "")) {
                                 char currentCharacter = outputLine.charAt(charPosition);
 
                                 // add italics
                                 if (currentCharacter == '*') {
-                                    if (startedItalics) {
+                                    if (authorPrepareCache.startedItalics) {
                                         outputLine.replace(charPosition, charPosition + 1, "</i>");
                                     } else {
                                         outputLine.replace(charPosition, charPosition + 1, "<i>");
                                     }
-                                    startedItalics = !startedItalics;
-                                } else if (currentCharacter == '{') {
-                                    // start of page number
-
-                                    int tempCharPosition = charPosition + 1;
-                                    while (outputLine.charAt(tempCharPosition) != '}') {
-                                        tempCharPosition++;
-                                    }
-
-                                    // get the page number string
-                                    String pageNumberTemp = outputLine.substring(charPosition + 1, tempCharPosition);
-
-                                    if (pageNumberTemp.charAt(0) != '#') {
-                                        // if it is a valid new page
-
-                                        pageNumber = Integer.parseInt(pageNumberTemp);
-                                        if ((pageNumber != keepPageNumber + 1) && (keepPageNumber != 0)) {
-                                            messages += "\n\tMissing page: " + (keepPageNumber + 1) + " volume " + volumeNumber;
-                                        }
-                                        keepPageNumber = pageNumber;
-                                        outputLine.replace(charPosition, outputLine.length(), String.format("<a name=%d>[Page %s]</a>", pageNumber, pageNumber));
-
-                                        // set char position to past the end of the line
-                                        charPosition = outputLine.length();
-
-                                        // reset page specific values
-                                        footnotes = "";
-                                        actualFootnotes = "";
-                                        footnotesNumber = 0;
-                                        actualFootnotesNumber = 0;
-                                        section = 1;
-
-                                        // set the css class
-                                        cssClass = "page-number";
-
-                                    } else {
-                                        // remove decoration {#x} from volume title "x"
-                                        outputLine.replace(charPosition, charPosition + 2, "");
-                                        outputLine.replace(outputLine.length() - 1, outputLine.length(), "");
-                                        charPosition = outputLine.length();
-
-                                        // set the css class
-                                        cssClass = "volume-title";
-                                    }
-                                    // end page number
+                                    authorPrepareCache.startedItalics = !authorPrepareCache.startedItalics;
                                 } else if (currentCharacter == '~') {
                                     // footnote
-                                    outputLine.replace(charPosition, charPosition + 1, String.format("<i>see <a href=\"%s_footnotes.htm#%d:%d\">footnote</a></i>", author.getContentsName(), volumeNumber, pageNumber));
+                                    outputLine.replace(charPosition, charPosition + 1,
+                                            String.format("<i>see <a href=\"%s_footnotes.htm#%d:%d\">footnote</a></i>",
+                                                    author.getContentsName(), authorPrepareCache.volNum, authorPrepareCache.pageNum));
 
                                     // increase character position by number of characters added (minus for testing)
-                                    charPosition += 50 + author.getContentsName().length() + Integer.toString(volumeNumber).length() + Integer.toString(pageNumber).length() - 5;
+                                    charPosition += 50 + author.getContentsName().length() + Integer.toString(authorPrepareCache.volNum).length() +
+                                            Integer.toString(authorPrepareCache.pageNum).length() - 5;
                                 } else if (currentCharacter == '\u00AC') {
                                     //possessive apostrophe (not character)
 
@@ -701,8 +647,8 @@ public class Main {
                                     // end of sentence
 
                                     if (charsInSection > 1) {
-                                        outputLine.insert(charPosition + 1, String.format("<a name=%d:%d></a>", pageNumber, section));
-                                        section++;
+                                        outputLine.insert(charPosition + 1, String.format("<a name=%d:%d></a>", authorPrepareCache.pageNum, authorPrepareCache.section));
+                                        authorPrepareCache.section++;
                                     }
                                     charsInSection = 0;
                                 } else if (currentCharacter == '\u2022') {
@@ -713,23 +659,26 @@ public class Main {
                                     // footnote (broken bar character
 
                                     if (charPosition == 0) {
-                                        if (actualFootnotesNumber == 0) {
-                                            footnotes = "";
+                                        if (authorPrepareCache.actualFootnotesNumber == 0) {
+                                            authorPrepareCache.footnotes = "";
                                         }
-                                        actualFootnotesNumber++;
-                                        actualFootnotes += "+";
-                                        outputLine.replace(charPosition, charPosition + 1, String.format("<a class=\"footnote\" name=\"#%d:f%d\"><sup>%s</sup></a>", pageNumber, actualFootnotesNumber, actualFootnotes));
+                                        authorPrepareCache.actualFootnotesNumber++;
+                                        authorPrepareCache.actualFootnotes += "+";
+                                        outputLine.replace(charPosition, charPosition + 1,
+                                                String.format("<a class=\"footnote\" name=\"#%d:f%d\"><sup>%s</sup></a>",
+                                                        authorPrepareCache.pageNum, authorPrepareCache.actualFootnotesNumber, authorPrepareCache.actualFootnotes));
 
                                         // set css class
-                                        cssClass = "footnote";
+                                        authorPrepareCache.cssClass = "footnote";
 
                                     } else {
-                                        footnotesNumber++;
-                                        if (footnotesNumber > maxFootnotesNumber) {
-                                            maxFootnotesNumber = footnotesNumber;
+                                        authorPrepareCache.footnotesNumber++;
+                                        if (authorPrepareCache.footnotesNumber > authorPrepareCache.maxFootnotesNumber) {
+                                            authorPrepareCache.maxFootnotesNumber = authorPrepareCache.footnotesNumber;
                                         }
-                                        footnotes += "+";
-                                        outputLine.replace(charPosition, charPosition + 1, String.format("<a href=\"#%d:f%d\"><sup class=\"footnote-link\">%s</sup></a>", pageNumber, footnotesNumber, footnotes));
+                                        authorPrepareCache.footnotes += "+";
+                                        outputLine.replace(charPosition, charPosition + 1, String.format("<a href=\"#%d:f%d\"><sup class=\"footnote-link\">%s</sup></a>",
+                                                authorPrepareCache.pageNum, authorPrepareCache.footnotesNumber, authorPrepareCache.footnotes));
                                     }
                                 } else if (currentCharacter == '@') {
                                     // start of a scripture reference
@@ -860,7 +809,7 @@ public class Main {
                                     outputLine.replace(charPosition, tempCharPos, reference);
 
                                     // move the char position forward
-                                    charPosition += reference.length() - charPosition;
+                                    charPosition += reference.length() - 1;
 
                                     // end hymn reference
                                 }
@@ -869,39 +818,39 @@ public class Main {
                             } // end of processing line
 
                             // add formatting to the line
-                            if (cssClass == "") {
-                                cssClass = "paragraph";
+                            if (authorPrepareCache.cssClass == "") {
+                                authorPrepareCache.cssClass = "paragraph";
                             }
-                            outputLine.insert(0, "\t<div class=\"" + cssClass +"\">\n\t\t");
+                            outputLine.insert(0, "\t<div class=\"" + authorPrepareCache.cssClass +"\">\n\t\t");
                             outputLine.append("\n\t</div>");
 
                             // reset css class
-                            cssClass = "";
+                            authorPrepareCache.cssClass = "";
 
                             // output the "outputLine"
                             pwLog.println(outputLine.toString());
 
-                            lineCount++;
+                            authorPrepareCache.lineCount++;
                         } // end of processing lines
 
                         pwLog.println("\n</body>\n\n</html>");
                         pwLog.close();
                         brLog.close();
 
-                        volumeNumber++;
+                        authorPrepareCache.volNum++;
 
                     } else {
-                        finishedVolumes = true;
-                        if (!messages.equals("")) {
-                            messages = messages.replaceFirst("\n", "");
-                            System.out.print("\r" + messages);
+                        authorPrepareCache.finishedVolumes = true;
+                        if (!authorPrepareCache.messages.equals("")) {
+//                            messages = messages.replaceFirst("\n", "");
+                            System.out.print("\r" + authorPrepareCache.messages);
                         }
                         System.out.println("\rFinished preparing " + author.getName());
                     }
                 } catch (IOException ioe) {
-                    System.out.println("\n!*** Error with " + author.getName() + " volume: " + volumeNumber);
+                    System.out.println("\n!*** Error with " + author.getName() + " volume: " + authorPrepareCache.volNum);
                     System.out.println(ioe.getMessage());
-                    volumeNumber++;
+                    authorPrepareCache.volNum++;
                 }
             }
         } catch (IOException ioe) {
@@ -909,6 +858,56 @@ public class Main {
             System.out.println(ioe.getMessage());
         }
     } // end prepare (used for ministry)
+
+    private static StringBuilder getSpecialLine(AuthorPrepareCache authorAnalyzer, StringBuilder line) {
+
+        int charPosition = 0;
+        int tempCharPosition = charPosition + 1;
+
+        // get the bounds of the page number
+        while (line.charAt(tempCharPosition) != '}') {
+            tempCharPosition++;
+        }
+
+        // get the page number string
+        String pageNumberTemp = line.substring(charPosition + 1, tempCharPosition);
+
+        // if it is a page number
+        if (pageNumberTemp.charAt(0) != '#') {
+            // if it is a valid new page
+
+            authorAnalyzer.pageNum = Integer.parseInt(pageNumberTemp);
+
+            if ((authorAnalyzer.pageNum != authorAnalyzer.keepPageNumber + 1) && (authorAnalyzer.keepPageNumber != 0)) {
+                authorAnalyzer.messages += "\n\tMissing page: " + (authorAnalyzer.keepPageNumber + 1) + " volume " + authorAnalyzer.volNum;
+            }
+            authorAnalyzer.keepPageNumber = authorAnalyzer.pageNum;
+            line.replace(charPosition, line.length(), String.format("<a name=%d>[Page %s]</a>", authorAnalyzer.pageNum, authorAnalyzer.pageNum));
+
+            // set char position to past the end of the line
+            charPosition = line.length();
+
+            // reset page specific values
+            authorAnalyzer.footnotes = "";
+            authorAnalyzer.actualFootnotes = "";
+            authorAnalyzer.footnotesNumber = 0;
+            authorAnalyzer.actualFootnotesNumber = 0;
+            authorAnalyzer.section = 1;
+
+            // set the css class
+            authorAnalyzer.cssClass = "page-number";
+
+        } else {
+            // remove decoration {#x} from volume title "x"
+            line.replace(charPosition, charPosition + 2, "");
+            line.replace(line.length() - 1, line.length(), "");
+
+            // set the css class
+            authorAnalyzer.cssClass = "volume-title";
+        }
+        return line;
+    }
+
 
     private static void processAuthor(Author author, Config cfg) {
 
