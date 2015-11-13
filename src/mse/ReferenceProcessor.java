@@ -13,6 +13,7 @@ public class ReferenceProcessor extends Thread {
     private AuthorIndex authorIndex;
     private Config cfg;
     private Author author;
+    private long totalTokenCount = 0;
 
     public ReferenceProcessor(ReferenceQueue tokenQueue){
         this.tokenQueue = tokenQueue;
@@ -26,7 +27,8 @@ public class ReferenceProcessor extends Thread {
         while (!(isInterrupted() && tokenQueue.isEmpty())) {
             if (!tokenQueue.isEmpty()) {
                 ReferenceQueueItem nextItem = tokenQueue.remove();
-                authorIndex.incrementTokenCount(nextItem.getToken(), nextItem.getVolumeNumber(), nextItem.getPageNumber());
+                authorIndex.incrementTokenCount(nextItem.getToken(), nextItem.volumeNumber, nextItem.pageNumber);
+                totalTokenCount++;
             }
         }
 
@@ -35,6 +37,8 @@ public class ReferenceProcessor extends Thread {
 
         // output index
         authorIndex.writeIndex(cfg.getResDir() + author.getIndexFilePath());
+
+        System.out.println("Total token count: " + totalTokenCount);
 
     }
 }

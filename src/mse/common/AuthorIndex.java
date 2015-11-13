@@ -12,14 +12,21 @@ public class AuthorIndex implements Serializable {
 
     private Author author;
     private HashMap<String, Integer> tokenCountMap;
-    private HashMap<String, Integer> lastPage;
+    private HashMap<String, short[]> lastRefMap;
     private HashMap<String, Integer> nextReferenceIndex;
-    private HashMap<String, String[]> references;
+    private HashMap<String, short[]> references;
+
+    // c - current
+    int index;
+    private short[] cLastReference = new short[2];
+    private short[] cReferences;
+    short[] newReferences;
+    int count;
 
     public AuthorIndex(Author author) {
         this.author = author;
         tokenCountMap = new HashMap<>();
-        lastPage = new HashMap<>();
+        lastRefMap = new HashMap<>();
         nextReferenceIndex = new HashMap<>();
         references = new HashMap<>();
     }
@@ -32,8 +39,12 @@ public class AuthorIndex implements Serializable {
         return tokenCountMap;
     }
 
-    public void incrementTokenCount(String token, int volumeNumber, int pageNumber) {
-        int count = -1;
+    public void incrementTokenCount(String token, short volumeNumber, short pageNumber) {
+        count = -1;
+
+//        if (token.equals("LOVE")) {
+//            System.out.println("debug");
+//        }
 
         // if the token already exists
         if ((tokenCountMap.get(token)) != null) {
@@ -44,32 +55,54 @@ public class AuthorIndex implements Serializable {
 
                 // if the token is too frequent
                 if (count < 10000) {
-                    // if this page hasn't already been added
-                    if (lastPage.get(token) != pageNumber) {
 
-                        String[] currentReferenceList = references.get(token);
-                        int index = nextReferenceIndex.get(token);
-                        nextReferenceIndex.put(token, index + 1);
+                    cLastReference = lastRefMap.get(token);
 
-                        String currentReference = String.format("%d:%d", volumeNumber, pageNumber);
+                    // if it is still in the same volume
+                    if (cLastReference[0] == volumeNumber) {
 
-                        // if the next index is greater than the length of the array
-                        if (index >= currentReferenceList.length) {
-                            String[] newReferenceList = Arrays.copyOf(currentReferenceList, currentReferenceList.length * 10);
-                            newReferenceList[index] = currentReference;
-                            references.put(token, newReferenceList);
+                        // if not in the same page
+                        if (cLastReference[1] != pageNumber) {
+
+                            cReferences = references.get(token);
+                            index = nextReferenceIndex.get(token);
+                            nextReferenceIndex.put(token, index + 1);
+
+                            // if the next index is greater than the length of the array
+                            if (index >= cReferences.length) {
+                                newReferences = Arrays.copyOf(cReferences, cReferences.length * 10);
+                                newReferences[index] = pageNumber;
+                                references.put(token, newReferences);
+                            } else {
+                                cReferences[index] = pageNumber;
+                                references.put(token, cReferences);
+                            }
+                        }
+                    } else {
+                        // not in the same volume
+
+                        cReferences = references.get(token);
+                        index = nextReferenceIndex.get(token);
+                        nextReferenceIndex.put(token, index + 2);
+
+                        // if the next index (+1 for page number also added) is greater than the length of the array
+                        if ((index + 1) >= cReferences.length) {
+                            newReferences = Arrays.copyOf(cReferences, cReferences.length * 10);
+                            newReferences[index] = (short) (volumeNumber * -1);
+                            newReferences[index + 1] = pageNumber;
+                            references.put(token, newReferences);
                         } else {
-                            currentReferenceList[index] = currentReference;
-                            references.put(token, currentReferenceList);
+                            cReferences[index] = (short) (volumeNumber * -1);
+                            cReferences[index + 1] = pageNumber;
+                            references.put(token, cReferences);
                         }
                     }
                 } else {
 
                     // if the token is too frequent
                     // empty the maps and ignore any future tokens of this type
-                    references.put(token, new String[0]);
+                    references.put(token, new short[0]);
                     nextReferenceIndex.put(token, -1);
-                    lastPage.put(token, -1);
 
                     count = -1;
                 }
@@ -78,17 +111,23 @@ public class AuthorIndex implements Serializable {
             // if it is the first time this token has been found
 
             // create the new reference list
-            String[] referencesList = new String[1];
 
             count = 1;
 
             // add the reference
-            String currentReference = String.format("%d:%d", volumeNumber, pageNumber);
-            referencesList[0] = currentReference;
-            lastPage.put(token, 0);
-            nextReferenceIndex.put(token, 1);
-            references.put(token, referencesList);
+            cReferences = new short[2];
+            cReferences[0] = (short) (volumeNumber * -1);
+            cReferences[1] = pageNumber;
+            nextReferenceIndex.put(token, 2);
+            references.put(token, cReferences);
         }
+
+        // update the last reference
+        cLastReference = new short[2];
+        cLastReference[0] = volumeNumber;
+        cLastReference[1] = pageNumber;
+        lastRefMap.put(token, cLastReference);
+
         tokenCountMap.put(token, count);
     }
 
@@ -102,18 +141,18 @@ public class AuthorIndex implements Serializable {
 
     public void cleanIndexArrays() {
 
-        HashMap<String, String[]> newReferencesMap = new HashMap<>();
+        HashMap<String, short[]> newReferencesMap = new HashMap<>();
 
-        for(Map.Entry<String, String[]> entry : references.entrySet()) {
+        for(Map.Entry<String, short[]> entry : references.entrySet()) {
             String token = entry.getKey();
-            String[] oldReferences = entry.getValue();
+            short[] oldReferences = entry.getValue();
 
             int nextReference = nextReferenceIndex.get(token);
 
             // ignore references with "nextReference" of -1
             if (nextReference != -1) {
                 if (nextReference != oldReferences.length) {
-                    String[] newReferences = Arrays.copyOf(oldReferences, nextReference);
+                    short[] newReferences = Arrays.copyOf(oldReferences, nextReference);
                     newReferencesMap.put(token, newReferences);
                 } else {
                     newReferencesMap.put(token, oldReferences);
@@ -127,7 +166,7 @@ public class AuthorIndex implements Serializable {
         return author;
     }
 
-    public String[] getReferences(String key) {
+    public short[] getReferences(String key) {
         return references.get(key);
     }
 
@@ -139,7 +178,7 @@ public class AuthorIndex implements Serializable {
             BufferedInputStream bInStream = new BufferedInputStream(inStream);
             ObjectInput input = new ObjectInputStream(bInStream);
             this.tokenCountMap = (HashMap<String, Integer>) input.readObject();
-            this.references = (HashMap<String, String[]>) input.readObject();
+            this.references = (HashMap<String, short[]>) input.readObject();
         } catch (FileNotFoundException fnfe) {
             System.out.println("Could not file find file: " + resLocation + author.getIndexFilePath());
         } catch (IOException ioe) {
@@ -172,12 +211,10 @@ public class AuthorIndex implements Serializable {
         catch(IOException ex){
             System.out.println("\nError writing index for " + author.getName() + " at location " + location);
         } finally {
-            if (!(objectOutputStream == null)) {
-                try {
-                    objectOutputStream.close();
-                } catch (IOException ioe) {
-                    System.out.println("Error closing: " + location);
-                }
+            if (objectOutputStream != null) try {
+                objectOutputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }

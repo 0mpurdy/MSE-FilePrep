@@ -5,6 +5,7 @@ import mse.common.AuthorIndex;
 import mse.common.Config;
 
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -14,7 +15,7 @@ public class Main {
     // The list of characters to remove from tokens in the search indexes
     static String[] deleteChars = {"?","\"","!",",",".","-","\'",":",
             "1","2","3","4","5","6","7","8","9","0",";","@",")","(","¦","*","[","]","\u00AC","{","}","\u2019", "~",
-            "\u201D","\u00B0","…","†","&","`","$","§","|","\t","=","+","‘","€","/","¶","_","–","½","£","“","%","#"};
+            "\u201D","\u00B0","…","†","&","`","$","§","|","\t","=","+","‘","€","/","¶","_","–","½","£","“","%","#", "\u005E"};
 
     /* Char hex codes
      * 00AC = ¬
@@ -630,7 +631,7 @@ public class Main {
                             }
 
                             // for each character in the line
-                            while ((charPosition < outputLine.length()) && (authorPrepareCache.cssClass == "")) {
+                            while ((charPosition < outputLine.length()) && (authorPrepareCache.cssClass.equals(""))) {
                                 char currentCharacter = outputLine.charAt(charPosition);
 
                                 // add italics
@@ -853,7 +854,7 @@ public class Main {
                     } else {
                         authorPrepareCache.finishedVolumes = true;
                         if (!authorPrepareCache.messages.equals("")) {
-//                            messages = messages.replaceFirst("\n", "");
+                            authorPrepareCache.messages = authorPrepareCache.messages.replaceFirst("\n", "");
                             System.out.print("\r" + authorPrepareCache.messages);
                         }
                         System.out.println("\rFinished preparing " + author.getName());
@@ -922,12 +923,14 @@ public class Main {
 
     private static void processAuthor(Author author, Config cfg) {
 
+        ArrayList<String> messages = new ArrayList<>();
+
         long startAuthor = System.nanoTime();
 
         final ReferenceQueue referenceQueue = new ReferenceQueue(author, cfg);
         ReferenceProcessor referenceProcessor = new ReferenceProcessor(referenceQueue);
         referenceProcessor.start();
-        writeIndex(cfg, author, referenceQueue);
+        writeIndex(cfg, author, referenceQueue, messages);
         System.out.println();
         referenceProcessor.interrupt();
         while (referenceProcessor.isAlive()) {
@@ -942,9 +945,14 @@ public class Main {
         long endAuthor = System.nanoTime();
 
         System.out.println("\nAuthor Time: " + ((endAuthor - startAuthor) / 1000000) + "ms");
+
+        for (String message : messages) {
+            System.out.println(message);
+        }
+
     }
 
-    private static void writeIndex(Config cfg, Author author, ReferenceQueue referenceQueue) {
+    private static void writeIndex(Config cfg, Author author, ReferenceQueue referenceQueue, ArrayList<String> messages) {
 
         AuthorIndex authorIndex = new AuthorIndex(author);
 
@@ -966,14 +974,14 @@ public class Main {
 
         // for all the volumes
         while (inputVolume.exists()) {
-            analyseVolume(authorIndex, inputVolume, volumeNumber, referenceQueue);
+            analyseVolume(authorIndex, inputVolume, volumeNumber, referenceQueue, messages);
             volumeNumber++;
             inputVolume = new File(sourcePath + author.getCode() + volumeNumber + ".txt");
         }
 
     } // writeIndex
 
-    private static void analyseVolume(AuthorIndex authorIndex, File inputVolume, int volumeNumber, ReferenceQueue referenceQueue) {
+    private static void analyseVolume(AuthorIndex authorIndex, File inputVolume, int volumeNumber, ReferenceQueue referenceQueue, ArrayList<String> messages) {
 
         Author author = authorIndex.getAuthor();
 
@@ -1054,21 +1062,21 @@ public class Main {
                                         noErrors = !noErrors;
                                         System.out.println();
                                     }
-                                    System.out.print("\t" + token + "\t" + volumeNumber + ":" + pageNumber);
+                                    messages.add("\t" + token + "\t" + volumeNumber + ":" + pageNumber);
                                     token = "";
                                 }
                             }
 
                             if (!token.equals("")) {
                                 // if the string isn't empty
-                                referenceQueue.add(new ReferenceQueueItem(author, token, volumeNumber, pageNumber));
+                                referenceQueue.add(new ReferenceQueueItem(author, token, (short) volumeNumber, (short) pageNumber));
 //                                authorIndex.incrementTokenCount(token, volumeNumber, pageNumber);
                             }
                         } // end for each token
                     } // end if (!skip)
                 }// end if outputline is !empty
 
-            }
+            } // end for the whole file
 
         } catch (FileNotFoundException fnf) {
             System.out.println("Error - could not find file " + inputVolume.getAbsolutePath());
@@ -1205,14 +1213,24 @@ public class Main {
     }
 
     private static String processString(String token) {
-        for (String c : deleteChars) {
-            if (token.contains(c)) {
-                token = token.replace(c, "");
-                return token;
+        for (char c : token.toCharArray()) {
+            if (!Character.isLetter(c)) {
+                token = token.replace(Character.toString(c), "");
             }
         }
+
         return token;
     }
+
+//    private static String processString(String token) {
+//        for (String c : deleteChars) {
+//            if (token.contains(c)) {
+//                token = token.replace(c, "");
+//                return token;
+//            }
+//        }
+//        return token;
+//    }
 
     private static String processUncommonString(String token) {
         for (String c : deleteChars) {

@@ -9,10 +9,13 @@ public class ReferenceQueueItem {
 
     private Author author;
     private String token;
-    private int volumeNumber;
-    private int pageNumber;
 
-    public ReferenceQueueItem(Author author, String token, int volumeNumber, int pageNumber) {
+    // public values are bad but faster
+
+    public short volumeNumber;
+    public short pageNumber;
+
+    public ReferenceQueueItem(Author author, String token, short volumeNumber, short pageNumber) {
         this.token = token;
         this.volumeNumber = volumeNumber;
         this.pageNumber = pageNumber;
@@ -20,13 +23,5 @@ public class ReferenceQueueItem {
 
     public String getToken() {
         return token;
-    }
-
-    public int getVolumeNumber() {
-        return volumeNumber;
-    }
-
-    public int getPageNumber() {
-        return pageNumber;
     }
 }
