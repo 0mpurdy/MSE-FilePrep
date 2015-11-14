@@ -1,4 +1,4 @@
-package mse;
+﻿package mse;
 
 import mse.common.Author;
 import mse.common.AuthorIndex;
@@ -11,18 +11,6 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
-
-    // The list of characters to remove from tokens in the search indexes
-    static String[] deleteChars = {"?","\"","!",",",".","-","\'",":",
-            "1","2","3","4","5","6","7","8","9","0",";","@",")","(","¦","*","[","]","\u00AC","{","}","\u2019", "~",
-            "\u201D","\u00B0","…","†","&","`","$","§","|","\t","=","+","‘","€","/","¶","_","–","½","£","“","%","#", "\u005E"};
-
-    /* Char hex codes
-     * 00AC = ¬
-     * 2019 = ’
-     * 201D = ”
-     * 002D = –
-    */
 
     /**
      * @param args the command line arguments
@@ -92,7 +80,7 @@ public class Main {
                     printAuthorMenu();
                     authorChoice = sc.nextInt();
                     sc.nextLine();
-                    if ((authorChoice>=0) && (authorChoice < Author.values().length)){
+                    if ((authorChoice >= 0) && (authorChoice < Author.values().length)) {
                         Author author = Author.values()[authorChoice];
                         processAuthor(author, cfg);
                     } else {
@@ -108,7 +96,7 @@ public class Main {
                     printAuthorMenu();
                     authorChoice = sc.nextInt();
                     sc.nextLine();
-                    if ((authorChoice>=0) && (authorChoice < Author.values().length)){
+                    if ((authorChoice >= 0) && (authorChoice < Author.values().length)) {
                         Author author = Author.values()[authorChoice];
                         if (author.isSearchable()) {
                             AuthorIndex authorIndex = new AuthorIndex(author);
@@ -420,7 +408,7 @@ public class Main {
 
                     String[] synopsisNumbers = synopsisLine.split(",");
                     String key = String.format("%s/%s", synopsisNumbers[0], synopsisNumbers[1]);
-                    String value = String.format(" - <a href=\"../jnd/jnd%s.htm#%s\">go to synopsis</a>", synopsisNumbers[2], synopsisNumbers[3]);
+                    String value = String.format(" - <a href=\"../jnd/JND%s.htm#%s\">go to synopsis</a>", synopsisNumbers[2], synopsisNumbers[3]);
                     synopsisMap.put(key, value);
                 } else {
                     morePages = false;
@@ -577,7 +565,7 @@ public class Main {
 
             // set up readers/writers
             File f;
-            String volPath = cfg.getResDir()+ File.separator + author.getPreparePath();
+            String volPath = cfg.getResDir() + File.separator + author.getPreparePath();
             f = new File(volPath);
             f.mkdirs();
             System.out.print("\r\tReading from " + f.getCanonicalPath());
@@ -609,7 +597,7 @@ public class Main {
 
                         // write html head
                         pwLog.println(String.format("<!DOCTYPE html>\n<html>\n\n<head>\n\t<link rel=\"stylesheet\" type=\"" +
-                                "text/css\" href=\"" + mseStylesLocation + "\">\n\t<title>%s Volume %d</title>\n</head>\n\n<body>",
+                                        "text/css\" href=\"" + mseStylesLocation + "\">\n\t<title>%s Volume %d</title>\n</head>\n\n<body>",
                                 author.getName(), apc.volNum));
 
                         StringBuilder outputLine;
@@ -719,6 +707,11 @@ public class Main {
                                         tempCharPos++;
                                     }
                                     String bookName = outputLine.substring(charPosition + 1, tempCharPos);
+
+                                    if (bookName.equalsIgnoreCase("Psalm ")) {
+//                                        System.out.println("Malformed link " + apc.author.getCode() + " " + apc.volNum + ":" + apc.pageNum);
+                                        bookName = "Psalms ";
+                                    }
 
                                     // get chapter
                                     String chapter = "";
@@ -847,7 +840,7 @@ public class Main {
                             if (apc.cssClass.equals("")) {
                                 apc.cssClass = "paragraph";
                             }
-                            outputLine.insert(0, "\t<div class=\"" + apc.cssClass +"\">\n\t\t");
+                            outputLine.insert(0, "\t<div class=\"" + apc.cssClass + "\">\n\t\t");
                             outputLine.append("\n\t</div>");
 
                             // reset css class
@@ -1105,7 +1098,7 @@ public class Main {
     private static void createSuperIndex(Config cfg) {
 
         // super index token count
-        HashMap<String,Integer> superIndex = new HashMap<>();
+        HashMap<String, Integer> superIndex = new HashMap<>();
 
         // Read each index and create the super index
         for (Author nextAuthor : Author.values()) {
@@ -1136,7 +1129,7 @@ public class Main {
         try {
 
             // output super index
-            FileOutputStream fileOutStream = new FileOutputStream(cfg.getResDir() +  "super.idx");
+            FileOutputStream fileOutStream = new FileOutputStream(cfg.getResDir() + "super.idx");
             ObjectOutputStream objectOutStream = new ObjectOutputStream(fileOutStream);
             objectOutStream.writeObject(superIndex);
             objectOutStream.flush();
@@ -1180,9 +1173,9 @@ public class Main {
 //        return result;
 //    }
 
-    private static HashMap<String,Integer> readSuperIndex(String filename) {
+    private static HashMap<String, Integer> readSuperIndex(String filename) {
 
-        HashMap<String,Integer> result;
+        HashMap<String, Integer> result;
         ObjectInputStream objectInputStream = null;
 
         try {
@@ -1219,7 +1212,7 @@ public class Main {
         char[] chars = token.toCharArray();
 
         for (char c : chars) {
-            if(!Character.isLetter(c)) {
+            if (!Character.isLetter(c)) {
                 return false;
             }
         }
