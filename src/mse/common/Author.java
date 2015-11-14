@@ -24,6 +24,7 @@ public enum Author {
     private final String folder;
     private final String contentsName;
     private final boolean searchable;
+    private String targetFolder;
 
     Author(int index, String code, String name, String folder, String contentsName, boolean searchable) {
         this.index = index;
@@ -32,6 +33,11 @@ public enum Author {
         this.folder = folder;
         this.contentsName = contentsName;
         this.searchable = searchable;
+        this.targetFolder = "target";
+    }
+
+    public void setTargetFolder(String targetFolder) {
+        this.targetFolder = targetFolder;
     }
 
     public String getCode() {
@@ -51,11 +57,11 @@ public enum Author {
     }
 
     public String getTargetPath() {
-        return "target" + File.separator + folder + File.separator;
+        return targetFolder + File.separator + folder + File.separator;
     }
 
     public String getTargetPath(String filename) {
-        return "target" + File.separator + folder + File.separator + filename;
+        return targetFolder + File.separator + folder + File.separator + filename;
     }
 
     public String getContentsName() {

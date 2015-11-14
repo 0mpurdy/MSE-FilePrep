@@ -1,11 +1,15 @@
 package mse;
 
+import mse.common.Author;
+
 /**
  * Created by mj_pu_000 on 11/11/2015.
  */
 public class AuthorPrepareCache {
 
     // public variables are bad but they're faster than a method call
+
+    public Author author;
 
     public int volNum;
     public int pageNum;
@@ -33,7 +37,8 @@ public class AuthorPrepareCache {
 
     String messages = "";
 
-    public AuthorPrepareCache() {
+    public AuthorPrepareCache(Author author) {
+        this.author = author;
         lineCount = 0;
         volNum = 1;
         section = 1;

@@ -111,6 +111,10 @@ public class Config {
         return workingDir;
     }
 
+    public void setResDir(String resDir) {
+        this.resDir = resDir;
+    }
+
     public String getResDir() {
         return resDir;
     }
