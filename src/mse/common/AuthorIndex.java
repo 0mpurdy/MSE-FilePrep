@@ -39,6 +39,8 @@ public class AuthorIndex implements Serializable {
         return tokenCountMap;
     }
 
+    public HashMap<String, short[]> getReferencesMap() { return references; }
+
     public void incrementTokenCount(String token, short volumeNumber, short pageNumber) {
         count = -1;
 

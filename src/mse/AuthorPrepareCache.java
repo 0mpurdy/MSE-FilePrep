@@ -53,4 +53,18 @@ public class AuthorPrepareCache {
         messages = "";
     }
 
+    public void clearPageValues() {
+        footnotes = "";
+        actualFootnotes = "";
+        footnotesNumber = 0;
+        maxFootnotesNumber = 0;
+        actualFootnotesNumber = 0;
+    }
+
+    public void clearVolumeValues() {
+        pageNum = 0;
+        keepPageNumber = 0;
+        clearPageValues();
+    }
+
 }

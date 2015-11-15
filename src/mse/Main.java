@@ -1,4 +1,4 @@
-﻿package mse;
+package mse;
 
 import mse.common.Author;
 import mse.common.AuthorIndex;
@@ -8,6 +8,7 @@ import java.io.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
@@ -39,12 +40,12 @@ public class Main {
                     break;
                 case 1:
                     System.out.println();
-                    prepareBibleHtml(cfg, "../../mseStyles.css");
+                    prepareBibleHtml(cfg, "../../mseStyle.css");
                     System.out.println();
-                    prepareHymnsHtml(cfg, "../../mseStyles.css");
+                    prepareHymnsHtml(cfg, "../../mseStyle.css");
                     for (Author nextAuthor : Author.values()) {
                         if (nextAuthor.getIndex() >= 3) {
-                            prepareMinistry(cfg, nextAuthor, "../../mseStyles.css");
+                            prepareMinistry(cfg, nextAuthor, "../../mseStyle.css");
                         }
                     }
                     break;
@@ -55,11 +56,11 @@ public class Main {
                     sc.nextLine();
 
                     if (authorChoice == 0) {
-                        prepareBibleHtml(cfg, "../mseStyle.css");
+                        prepareBibleHtml(cfg, "../../mseStyle.css");
                     } else if (authorChoice == 1) {
-                        prepareHymnsHtml(cfg, "../mseStyle.css");
+                        prepareHymnsHtml(cfg, "../../mseStyle.css");
                     } else if ((authorChoice >= 3) && (authorChoice <= 12)) {
-                        prepareMinistry(cfg, Author.values()[authorChoice], "../../mseStyles.css");
+                        prepareMinistry(cfg, Author.values()[authorChoice], "../../mseStyle.css");
                     } else {
                         System.out.println("\nOption " + authorChoice + " is not available at the moment");
                     }
@@ -102,6 +103,22 @@ public class Main {
                             AuthorIndex authorIndex = new AuthorIndex(author);
                             authorIndex.loadIndex(cfg.getResDir());
                             System.out.println(authorIndex.getTokenCountMap().size());
+
+                            System.out.print("Do you wish to write the index to a file (y/n): ");
+                            if (sc.nextLine().equalsIgnoreCase("y")) {
+                                try {
+                                    BufferedWriter bw = new BufferedWriter(new FileWriter("index.txt"));
+                                    for (Map.Entry<String, short[]> entry : authorIndex.getReferencesMap().entrySet()) {
+                                        bw.write("\"" + entry.getKey() + "\": [");
+                                        for (short ref : entry.getValue()) {
+                                            bw.write(ref + ", ");
+                                        }
+                                        bw.write("]\n");
+                                    }
+                                } catch (IOException ioe) {
+                                    System.out.println("Error writing index");
+                                }
+                            }
                         } else {
                             System.out.println("This author is not searchable");
                         }
@@ -583,6 +600,8 @@ public class Main {
             while (!apc.finishedVolumes) {
                 try {
 
+                    apc.clearVolumeValues();
+
                     File volumeFile = new File(volPath + author.getContentsName() + apc.volNum + ".txt");
                     if (volumeFile.exists()) {
                         apc.pageNum = 0;
@@ -601,6 +620,7 @@ public class Main {
                                 author.getName(), apc.volNum));
 
                         StringBuilder outputLine;
+                        boolean skipLine;
 
                         // while there are still more lines
                         while ((apc.line = brLog.readLine()) != null) {
@@ -610,18 +630,18 @@ public class Main {
 
                             int charPosition = 0;
 
-                            // probable heading
-                            if ((outputLine.length() < 400) && (outputLine.charAt(0) != '{')) {
+                            // heading or special line
+                            if (outputLine.charAt(0) == '{') {
+                                // start of special line
+                                outputLine = getSpecialLine(apc, outputLine);
+                            } else if (outputLine.length() < 400) {
 
                                 // if the line is all uppercase
                                 String uppercaseLine = outputLine.toString().toUpperCase();
                                 if ((uppercaseLine.equals(outputLine.toString()) && (outputLine.charAt(0) != ' '))) {
                                     apc.cssClass = "heading";
                                 }
-                            } else if (outputLine.charAt(0) == '{') {
-                                // start of special line
-                                outputLine = getSpecialLine(apc, outputLine);
-                            } // end page number
+                            }
 
                             int charsInSection = 0;
 
@@ -898,13 +918,14 @@ public class Main {
             apc.pageNum = Integer.parseInt(pageNumberTemp);
 
             if ((apc.pageNum != apc.keepPageNumber + 1) && (apc.keepPageNumber != 0)) {
-                apc.messages += "\n\tMissing page: " + apc.author.getCode() + " " + apc.volNum + ":" + (apc.keepPageNumber + 1);
+                if (apc.pageNum == apc.keepPageNumber) {
+                    apc.messages += "\n\tDuplicate page: " + apc.author.getCode() + " " + apc.volNum + ":" + (apc.keepPageNumber);
+                } else {
+                    apc.messages += "\n\tMissing page: " + apc.author.getCode() + " " + apc.volNum + ":" + (apc.keepPageNumber + 1);
+                }
             }
             apc.keepPageNumber = apc.pageNum;
             line.replace(charPosition, line.length(), String.format("<a name=%d>[Page %s]</a>", apc.pageNum, apc.pageNum));
-
-            // set char position to past the end of the line
-            charPosition = line.length();
 
             // reset page specific values
             apc.footnotes = "";
@@ -1063,15 +1084,9 @@ public class Main {
                                 token = processString(token);
                             }
                             if (!isAlpha(token)) {
-                                token = processUncommonString(token);
-                                if (!isAlpha(token)) {
-                                    if (noErrors) {
-                                        noErrors = false;
-                                        System.out.println();
-                                    }
-                                    messages.add("\t" + token + "\t" + volumeNumber + ":" + pageNumber);
-                                    token = "";
-                                }
+                                noErrors = false;
+                                messages.add("\t" + token + "\t" + volumeNumber + ":" + pageNumber);
+                                token = "";
                             }
 
                             if (!token.equals("")) {
@@ -1110,7 +1125,7 @@ public class Main {
                 nextAuthorIndex.loadIndex(cfg.getResDir());
 
                 // if the index loads
-                if (!(nextAuthorIndex == null)) {
+                if (nextAuthorIndex != null) {
                     // for each word in the author index
                     HashMap<String, Integer> authorTokenCount = nextAuthorIndex.getTokenCountMap();
                     for (String token : authorTokenCount.keySet()) {
@@ -1226,23 +1241,6 @@ public class Main {
             }
         }
 
-        return token;
-    }
-
-//    private static String processString(String token) {
-//        for (String c : deleteChars) {
-//            if (token.contains(c)) {
-//                token = token.replace(c, "");
-//                return token;
-//            }
-//        }
-//        return token;
-//    }
-
-    private static String processUncommonString(String token) {
-        for (String c : deleteChars) {
-            token = token.replace(c, "");
-        }
         return token;
     }
 
