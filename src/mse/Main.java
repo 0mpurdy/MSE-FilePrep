@@ -152,6 +152,21 @@ public class Main {
                     }
                     break;
                 case 9:
+                    System.out.println("Preparing android indexes...");
+                    long startAndroidIndexing = System.nanoTime();
+                    // add a reference processor for each author then write the index
+                    for (Author nextAuthor : Author.values()) {
+                        if (nextAuthor.isSearchable()) {
+                            nextAuthor.setTargetFolder("android");
+                            processAuthor(nextAuthor, cfg);
+                            nextAuthor.setTargetFolder("target");
+                        }
+                    }
+                    long endAndroidIndexing = System.nanoTime();
+                    System.out.println("Total Index Time: " + ((endAndroidIndexing - startAndroidIndexing) / 1000000) + "ms");
+                    break;
+
+                case 10:
                     System.out.println("Benchmarking ...\n\n");
                     new Benchmark().run();
                     break;
@@ -176,6 +191,7 @@ public class Main {
         options.add("Check author index");
         options.add("Check all author indexes");
         options.add("Prepare android files");
+        options.add("Prepare android indexes");
         options.add("Benchmark");
 
         int i = 0;
@@ -947,7 +963,6 @@ public class Main {
         }
         return line;
     }
-
 
     private static void processAuthor(Author author, Config cfg) {
 
