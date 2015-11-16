@@ -22,6 +22,13 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
+        // used to skip menu option
+        boolean skip;
+
+        // the folder where indexes and html is written to
+        String targetFolder;
+        String stylesLink;
+
         System.out.println("MSE File Prep console application");
         System.out.println("Version: " + cfg.getMseVersion());
 
@@ -39,13 +46,35 @@ public class Main {
                     System.out.println("Closing ...");
                     break;
                 case 1:
-                    System.out.println();
-                    prepareBibleHtml(cfg, "../../mseStyle.css");
-                    System.out.println();
-                    prepareHymnsHtml(cfg, "../../mseStyle.css");
-                    for (Author nextAuthor : Author.values()) {
-                        if (nextAuthor.getIndex() >= 3) {
-                            prepareMinistry(cfg, nextAuthor, "../../mseStyle.css");
+
+                    skip = false;
+                    targetFolder = "";
+                    stylesLink = "";
+                    switch (chooseSystem(sc)) {
+                        case 0:
+                            skip = true;
+                            break;
+                        case 1:
+                            targetFolder = "target";
+                            stylesLink = "../../mseStyle.css";
+                            break;
+                        case 2:
+                            targetFolder = "android";
+                            stylesLink = "../mseStyle.css";
+                    }
+
+                    if (!skip) {
+                        System.out.println();
+                        Author.BIBLE.setTargetFolder(targetFolder);
+                        prepareBibleHtml(cfg, stylesLink);
+                        System.out.println();
+                        Author.HYMNS.setTargetFolder(targetFolder);
+                        prepareHymnsHtml(cfg, stylesLink);
+                        for (Author nextAuthor : Author.values()) {
+                            if (nextAuthor.getIndex() >= 3) {
+                                nextAuthor.setTargetFolder(targetFolder);
+                                prepareMinistry(cfg, nextAuthor, stylesLink);
+                            }
                         }
                     }
                     break;
@@ -55,37 +84,93 @@ public class Main {
                     authorChoice = sc.nextInt();
                     sc.nextLine();
 
-                    if (authorChoice == 0) {
-                        prepareBibleHtml(cfg, "../../mseStyle.css");
-                    } else if (authorChoice == 1) {
-                        prepareHymnsHtml(cfg, "../../mseStyle.css");
-                    } else if ((authorChoice >= 3) && (authorChoice <= 12)) {
-                        prepareMinistry(cfg, Author.values()[authorChoice], "../../mseStyle.css");
-                    } else {
-                        System.out.println("\nOption " + authorChoice + " is not available at the moment");
+                    skip = false;
+                    targetFolder = "";
+                    stylesLink = "";
+                    switch (chooseSystem(sc)) {
+                        case 0:
+                            skip = true;
+                            break;
+                        case 1:
+                            targetFolder = "target";
+                            stylesLink = "../../mseStyle.css";
+                            break;
+                        case 2:
+                            targetFolder = "android";
+                            stylesLink = "../mseStyle.css";
+                    }
+
+                    if (!skip) {
+                        if (authorChoice == 0) {
+                            Author.BIBLE.setTargetFolder(targetFolder);
+                            prepareBibleHtml(cfg, stylesLink);
+                        } else if (authorChoice == 1) {
+                            Author.HYMNS.setTargetFolder(targetFolder);
+                            prepareHymnsHtml(cfg, stylesLink);
+                        } else if ((authorChoice >= 3) && (authorChoice <= 12)) {
+                            Author.values()[authorChoice].setTargetFolder(targetFolder);
+                            prepareMinistry(cfg, Author.values()[authorChoice], stylesLink);
+                        } else {
+                            System.out.println("\nOption " + authorChoice + " is not available at the moment");
+                        }
                     }
                     break;
                 case 3:
-                    long startIndexing = System.nanoTime();
-                    // add a reference processor for each author then write the index
-                    for (Author nextAuthor : Author.values()) {
-                        if (nextAuthor.isSearchable()) {
-                            processAuthor(nextAuthor, cfg);
-                        }
+                    skip = false;
+                    targetFolder = "";
+                    // get which system to write to
+                    switch (chooseSystem(sc)) {
+                        case 0:
+                            skip = true;
+                            break;
+                        case 1:
+                            targetFolder = "target";
+                            break;
+                        case 2:
+                            targetFolder = "android";
                     }
-                    long endIndexing = System.nanoTime();
-                    System.out.println("Total Index Time: " + ((endIndexing - startIndexing) / 1000000) + "ms");
+
+                    if (!skip) {
+                        long startIndexing = System.nanoTime();
+                        // add a reference processor for each author then write the index
+                        for (Author nextAuthor : Author.values()) {
+                            if (nextAuthor.isSearchable()) {
+                                nextAuthor.setTargetFolder(targetFolder);
+                                processAuthor(nextAuthor, cfg);
+                            }
+                        }
+                        long endIndexing = System.nanoTime();
+                        System.out.println("Total Index Time: " + ((endIndexing - startIndexing) / 1000000) + "ms");
+                    } // end creating all indexes
                     break;
                 case 4:
-                    System.out.println("\nWhich author do you wish to prepare?");
+                    System.out.println("\nWhich author do you wish to index?");
                     printAuthorMenu();
                     authorChoice = sc.nextInt();
                     sc.nextLine();
-                    if ((authorChoice >= 0) && (authorChoice < Author.values().length)) {
-                        Author author = Author.values()[authorChoice];
-                        processAuthor(author, cfg);
-                    } else {
-                        System.out.println("This is not a valid option");
+
+                    skip = false;
+                    targetFolder = "";
+                    // get which system to write to
+                    switch (chooseSystem(sc)) {
+                        case 0:
+                            skip = true;
+                            break;
+                        case 1:
+                            targetFolder = "target";
+                            break;
+                        case 2:
+                            targetFolder = "android";
+                    }
+
+                    if (!skip) {
+                        if ((authorChoice >= 0) && (authorChoice < Author.values().length)) {
+                            Author author = Author.values()[authorChoice];
+                            author.setTargetFolder(targetFolder);
+                            processAuthor(author, cfg);
+                        } else {
+                            System.out.println("This is not a valid option");
+                        }
                     }
                     break;
                 case 5:
@@ -137,36 +222,6 @@ public class Main {
                     }
                     break;
                 case 8:
-                    Author.BIBLE.setTargetFolder("android");
-                    prepareBibleHtml(cfg, "../mseStyle.css");
-                    Author.BIBLE.setTargetFolder("target");
-                    Author.HYMNS.setTargetFolder("android");
-                    prepareHymnsHtml(cfg, "../mseStyle.css");
-                    Author.HYMNS.setTargetFolder("target");
-                    for (Author nextAuthor : Author.values()) {
-                        if (nextAuthor.getIndex() >= 3) {
-                            nextAuthor.setTargetFolder("android");
-                            prepareMinistry(cfg, nextAuthor, "../mseStyle.css");
-                            nextAuthor.setTargetFolder("target");
-                        }
-                    }
-                    break;
-                case 9:
-                    System.out.println("Preparing android indexes...");
-                    long startAndroidIndexing = System.nanoTime();
-                    // add a reference processor for each author then write the index
-                    for (Author nextAuthor : Author.values()) {
-                        if (nextAuthor.isSearchable()) {
-                            nextAuthor.setTargetFolder("android");
-                            processAuthor(nextAuthor, cfg);
-                            nextAuthor.setTargetFolder("target");
-                        }
-                    }
-                    long endAndroidIndexing = System.nanoTime();
-                    System.out.println("Total Index Time: " + ((endAndroidIndexing - startAndroidIndexing) / 1000000) + "ms");
-                    break;
-
-                case 10:
                     System.out.println("Benchmarking ...\n\n");
                     new Benchmark().run();
                     break;
@@ -194,12 +249,7 @@ public class Main {
         options.add("Prepare android indexes");
         options.add("Benchmark");
 
-        int i = 0;
-        for (String option : options) {
-            System.out.println(i + " - " + option);
-            i++;
-        }
-        System.out.print("Choose an option: ");
+        printMenu(options);
 
     }
 
@@ -208,6 +258,31 @@ public class Main {
         int i = 0;
         for (Author nextAuthor : Author.values()) {
             System.out.println(i + " - " + nextAuthor.getName());
+            i++;
+        }
+        System.out.print("Choose an option: ");
+    }
+
+    private static int chooseSystem(Scanner sc) {
+
+        System.out.println("\nChoose a system:");
+
+        ArrayList<String> systems = new ArrayList<>();
+        systems.add("Cancel");
+        systems.add("PC");
+        systems.add("Android");
+
+        printMenu(systems);
+        int option = sc.nextInt();
+        sc.nextLine();
+
+        return option;
+    }
+
+    private static void printMenu(ArrayList<String> menu) {
+        int i = 0;
+        for (String option : menu) {
+            System.out.println(i + " - " + option);
             i++;
         }
         System.out.print("Choose an option: ");
