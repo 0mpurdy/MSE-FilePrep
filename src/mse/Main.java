@@ -222,6 +222,9 @@ public class Main {
                     }
                     break;
                 case 8:
+                    createHymnsContents(cfg, "../../mseStyle.css");
+                    break;
+                case 9:
                     System.out.println("Benchmarking ...\n\n");
                     new Benchmark().run();
                     break;
@@ -245,8 +248,7 @@ public class Main {
         options.add("Create super index");
         options.add("Check author index");
         options.add("Check all author indexes");
-        options.add("Prepare android files");
-        options.add("Prepare android indexes");
+        options.add("Prepare hymns contents");
         options.add("Benchmark");
 
         printMenu(options);
@@ -261,6 +263,108 @@ public class Main {
             i++;
         }
         System.out.print("Choose an option: ");
+    }
+
+    private static void createHymnsContents(Config cfg, String mseStyleLocation) {
+
+        System.out.println("Creating hymns contents");
+
+        try {
+
+            File f;
+
+            // the path of the input
+            String hymnsPath = cfg.getResDir() + File.separator + "source" + File.separator + "hymns" + File.separator;
+            f = new File(hymnsPath);
+            f.mkdirs();
+            System.out.print("\r\tReading Hymns from: " + f.getCanonicalPath());
+
+            // the path of the output
+            String hymnsOutPath = cfg.getResDir() + File.separator + "target" + File.separator + "hymns" + File.separator;
+            f = new File(hymnsOutPath);
+            f.mkdirs();
+            System.out.print("\r\tWriting Hymns to: " + f.getCanonicalPath());
+
+            // set up buffers
+            String hymnLine;
+            String hymnNumber = "0";
+            String verseNumber;
+            String bufferOutHtml;
+            String bufferOutTxt;
+
+            PrintWriter pwHymns = new PrintWriter(new FileWriter(hymnsOutPath + "hymns_contents.htm"));
+
+            // print the html header
+            pwHymns.println("<html>");
+            pwHymns.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"" + mseStyleLocation + "\">\n");
+            pwHymns.println("<head>\n\t<title>Hymn Contents</title>\n</head>\n\n<body>");
+
+            // prepare html for each hymn book
+            for (HymnBook nextHymnBook : HymnBook.values()) {
+
+                System.out.print("\r\tScanning " + nextHymnBook.getName() + " ");
+                String inputFileName = hymnsPath + nextHymnBook.getInputFilename();
+
+                // make the reader and writer
+                BufferedReader brHymns = new BufferedReader(new FileReader(inputFileName));
+
+                // read the first line of the hymn book
+                hymnLine = brHymns.readLine();
+
+                pwHymns.println("<h1 class=\"volume-title\">" + nextHymnBook.getName() + "</h1>");
+
+                // read the second line of the hymn book
+                hymnLine = brHymns.readLine();
+
+                // print out the start of the table
+                pwHymns.println("\n\t<table class=\"hymn-contents-table\">\n\t<tr>");
+
+                // if there are still more lines
+                while (hymnLine != null) {
+
+                    // if it is a new hymn
+                    if (hymnLine.indexOf("{") == 0) {
+
+                        // get the hymn number
+                        hymnNumber = hymnLine.substring(1, hymnLine.length() - 1);
+
+                        System.out.print("\r\tNumber: " + hymnNumber);
+
+                        if (Integer.parseInt(hymnNumber) % 10 != 0) {
+                            pwHymns.println("\n\t\t\t<td><a href=\"" + nextHymnBook.getOutputFilename() + "#" + hymnNumber + "\">" + hymnNumber + "</a></td>");
+                        } else {
+                            pwHymns.println("\n\t\t\t<td><a href=\"" + nextHymnBook.getOutputFilename() + "#" + hymnNumber + "\">" + hymnNumber + "</a></td>\n\t</tr>\n\t<tr>");
+                        }
+
+                    }
+
+                    // read the next line of the hymn book
+                    hymnLine = brHymns.readLine();
+
+                }
+
+                // close the reader
+                brHymns.close();
+
+                // close the hymns table
+                pwHymns.println("\n\t</tr>\n\t</table>");
+
+            }
+
+            pwHymns.println("</body>\n\n</html>");
+
+            // close the writer
+            pwHymns.close();
+
+            System.out.print(" *Done");
+
+        } catch (IOException ioe) {
+            System.out.println("!*** Error preparing hymns ***!");
+            System.out.println(ioe.getMessage());
+        }
+
+        System.out.println("\rFinished preparing Hymns");
+
     }
 
     private static int chooseSystem(Scanner sc) {
