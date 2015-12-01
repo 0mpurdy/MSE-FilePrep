@@ -450,7 +450,7 @@ public class Main {
 
                 // create print writers to write the bible html and txt (overwrite any existing files)
                 PrintWriter pwBible = new PrintWriter(new FileWriter(bibleDestinationPath + nextBook.getName().replaceAll("\\s", "") + ".htm", false));
-                PrintWriter pwBibleTxt = new PrintWriter(new FileWriter(bibleTxtDestinationPath + "bible" + bookNumber + ".txt"));
+                PrintWriter pwBibleTxt = new PrintWriter(new FileWriter(bibleTxtDestinationPath + Author.BIBLE.getCode() + bookNumber + ".txt"));
 
                 // write the html header
                 pwBible.println("<html>");
@@ -1182,7 +1182,7 @@ public class Main {
         String sourcePath = cfg.getResDir();
 
         if (author == Author.BIBLE) {
-            sourcePath += "source" + File.separator + "bibleText" + File.separator;
+            sourcePath += "target" + File.separator + "bibleText" + File.separator;
         } else {
             sourcePath += author.getPreparePath();
         }
@@ -1268,7 +1268,8 @@ public class Main {
 
                     if (!skip) {
                         // split the line into tokens (words) by " " characters
-                        String[] tokens = outputLine.toString().split(" ");
+//                        String[] tokens = outputLine.toString().split(" ");
+                        String[] tokens = outputLine.toString().split("[\\W]");
 
                         // make each token into a word that can be searched
                         for (String token : tokens) {
