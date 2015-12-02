@@ -85,4 +85,12 @@ public enum BibleBook {
         return numChapters;
     }
 
+    public static int getNumOldTestamentBooks() {
+        return 39;
+    }
+
+    public static int getNumNewTestamentBooks() {
+        return 27;
+    }
+
 }

@@ -5,7 +5,6 @@ import mse.common.AuthorIndex;
 import mse.common.Config;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -222,9 +221,12 @@ public class Main {
                     }
                     break;
                 case 8:
-                    createHymnsContents(cfg, "../../mseStyle.css");
+                    createBibleContents(cfg, "../../mseStyle.css");
                     break;
                 case 9:
+                    createHymnsContents(cfg, "../../mseStyle.css");
+                    break;
+                case 10:
                     System.out.println("Benchmarking ...\n\n");
                     new Benchmark().run();
                     break;
@@ -248,6 +250,7 @@ public class Main {
         options.add("Create super index");
         options.add("Check author index");
         options.add("Check all author indexes");
+        options.add("Prepare Bible contents");
         options.add("Prepare hymns contents");
         options.add("Benchmark");
 
@@ -595,6 +598,65 @@ public class Main {
 
     }
 
+    private static void createBibleContents(Config cfg, String mseStyleLocation) {
+
+        String contentsFilePath = cfg.getResDir() + Author.BIBLE.getTargetPath("bible_contents.htm");
+
+        File bibleContentsFile = new File(contentsFilePath);
+
+        PrintWriter pw = null;
+        try {
+
+            pw = new PrintWriter(bibleContentsFile);
+
+            writeContentsHeader(pw, mseStyleLocation, "Bible Contents");
+            pw.println("");
+            pw.println("\t<table class=\"bible-contents-table\">");
+            pw.println("\t\t<tr class=\"bible-contents-header\">");
+            pw.println("\t\t\t<td>Old Testament</td>");
+            pw.println("\t\t\t<td>New Testament</td>");
+            pw.println("\t\t</tr>");
+
+            for (int i = 0; i < BibleBook.getNumOldTestamentBooks(); i++) {
+
+                pw.println("\t\t<tr class=\"bible-contents-row\">\n\t\t\t<td><a href=\"" + Author.BIBLE.getTargetPath(BibleBook.values()[i].getName())
+                        + "\">" + BibleBook.values()[i].getName() + "</a>");
+
+                // if i+1 is less than the number of new testament books
+                if (i < BibleBook.getNumNewTestamentBooks()) {
+                    pw.println("\t\t\t<td><a href=\"" + Author.BIBLE.getTargetPath(BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName())
+                            + "\">" + BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName() + "</a>");
+                } else {
+                    pw.println("\t\t\t<td></td>");
+                }
+
+                pw.println("\t\t</tr>");
+
+            }
+
+            pw.println("\t</table>");
+
+            pw.println("</body>");
+            pw.println();
+            pw.println("</html>");
+
+        } catch (FileNotFoundException e) {
+            System.out.println("Could not find file: " + contentsFilePath);
+        } finally {
+            if (pw != null) pw.close();
+        }
+
+    }
+
+    private static void writeContentsHeader(PrintWriter pw, String mseStyleLocation, String title) {
+        pw.println("<html>\n" +
+                "<link rel=\"stylesheet\" type=\"text/css\" href=\"" + mseStyleLocation + "\">\n" +
+                "\n" +
+                "<head>\n" +
+                "\t<title>" + title + "</title>\n" +
+                "</head>");
+    }
+
     private static HashMap<String, String> getSynopsisPages(String filename) {
         // this gets a map of the corresponding synopsis page in JND's ministry for each book of the bible
 
@@ -773,6 +835,8 @@ public class Main {
 
         System.out.print("Preparing: " + author.getName());
 
+        PrintWriter pwContents = null;
+
         try {
 
             // set up readers/writers
@@ -781,15 +845,24 @@ public class Main {
             f = new File(volPath);
             f.mkdirs();
             System.out.print("\r\tReading from " + f.getCanonicalPath());
+
             String volDestPath = cfg.getResDir() + File.separator + author.getTargetPath();
             f = new File(volDestPath);
             f.mkdirs();
             System.out.print("\r\tWriting to " + f.getCanonicalPath());
 
-            BufferedReader brLog;
-            PrintWriter pwLog;
+            BufferedReader brSourceText = null;
+            PrintWriter pwHtml = null;
 
             AuthorPrepareCache apc = new AuthorPrepareCache(author);
+
+            // write html head
+            pwContents = new PrintWriter(new FileWriter(volDestPath + author.getCode() + "-Contents.htm"));
+            pwContents.println(String.format("<!DOCTYPE html>\n<html>\n\n<head>\n\t<link rel=\"stylesheet\" type=\"" +
+                            "text/css\" href=\"%s\">\n\t<title>%s contents</title>\n</head>\n\n<body>",
+                    mseStylesLocation, author.getName()));
+
+            printContentsVolumeNumbers(pwContents, author);
 
             // for each volume
             while (!apc.finishedVolumes) {
@@ -797,20 +870,19 @@ public class Main {
 
                     apc.clearVolumeValues();
 
-                    File volumeFile = new File(volPath + author.getContentsName() + apc.volNum + ".txt");
+                    File volumeFile = new File(volPath + author.getPrepareSourceName(apc.volNum));
                     if (volumeFile.exists()) {
                         apc.pageNum = 0;
                         apc.keepPageNumber = 0;
 
-
                         // print out progress for each volume
                         System.out.print("\rPreparing " + author.getCode() + " Volume: " + apc.volNum);
 
-                        brLog = new BufferedReader(new FileReader(volumeFile));
-                        pwLog = new PrintWriter(new FileWriter(volDestPath + author.getCode() + apc.volNum + ".htm"));
+                        brSourceText = new BufferedReader(new FileReader(volumeFile));
+                        pwHtml = new PrintWriter(new FileWriter(volDestPath + author.getCode() + apc.volNum + ".htm"));
 
                         // write html head
-                        pwLog.println(String.format("<!DOCTYPE html>\n<html>\n\n<head>\n\t<link rel=\"stylesheet\" type=\"" +
+                        pwHtml.println(String.format("<!DOCTYPE html>\n<html>\n\n<head>\n\t<link rel=\"stylesheet\" type=\"" +
                                         "text/css\" href=\"" + mseStylesLocation + "\">\n\t<title>%s Volume %d</title>\n</head>\n\n<body>",
                                 author.getName(), apc.volNum));
 
@@ -818,7 +890,7 @@ public class Main {
                         boolean skipLine;
 
                         // while there are still more lines
-                        while ((apc.line = brLog.readLine()) != null) {
+                        while ((apc.line = brSourceText.readLine()) != null) {
                             outputLine = new StringBuilder(apc.line);
 
                             if (outputLine.length() < 1) outputLine.append("<hr/>");
@@ -829,11 +901,15 @@ public class Main {
                             if (outputLine.charAt(0) == '{') {
                                 // start of special line
                                 outputLine = getSpecialLine(apc, outputLine);
+
+                                if (apc.cssClass.contains("volume-title"))
+                                    printContentsVolumeTitle(pwContents, outputLine, author, apc.volNum);
                             } else if (outputLine.length() < 400) {
 
                                 // if the line is all uppercase
                                 String uppercaseLine = outputLine.toString().toUpperCase();
                                 if ((uppercaseLine.equals(outputLine.toString()) && (outputLine.charAt(0) != ' '))) {
+                                    printContentsHeading(pwContents, outputLine, author, apc.volNum, apc.pageNum);
                                     apc.cssClass = "heading";
                                 }
                             }
@@ -1062,14 +1138,14 @@ public class Main {
                             apc.cssClass = "";
 
                             // output the "outputLine"
-                            pwLog.println(outputLine.toString());
+                            pwHtml.println(outputLine.toString());
 
                             apc.lineCount++;
                         } // end of processing lines
 
-                        pwLog.println("\n</body>\n\n</html>");
-                        pwLog.close();
-                        brLog.close();
+                        pwHtml.println("\n</body>\n\n</html>");
+                        pwHtml.close();
+                        brSourceText.close();
 
                         apc.volNum++;
 
@@ -1085,13 +1161,65 @@ public class Main {
                     System.out.println("\n!*** Error with " + author.getName() + " volume: " + apc.volNum);
                     System.out.println(ioe.getMessage());
                     apc.volNum++;
+                } finally {
+                    if (brSourceText != null) brSourceText.close();
+                    if (pwHtml != null) pwHtml.close();
                 }
             }
         } catch (IOException ioe) {
             System.out.println("\n!*** Error preparing " + author.getName() + " ***!");
             System.out.println(ioe.getMessage());
+        } finally {
+            if (pwContents != null) pwContents.close();
         }
     } // end prepare (used for ministry)
+
+    private static void printContentsVolumeNumbers(PrintWriter pwContents, Author author) {
+
+        pwContents.println("\t<table class=\"contents-page-numbers-table\">");
+
+        for (int i = 0; i < author.getNumVols(); i++) {
+
+            if ((i % 10) == 0) {
+                pwContents.println("\t\t<tr>");
+            }
+
+            pwContents.println("\t\t\t<td>");
+            pwContents.println(String.format("\t\t\t\t<a href=\"%s\">%s</a>",
+                    "#" + i, i));
+            pwContents.println("\t\t\t</td>");
+
+            if ((i % 10) == 9) {
+                pwContents.println("\t\t</tr>");
+            }
+
+        }
+
+        pwContents.println("\t</table>");
+
+    }
+
+    private static void printContentsHeading(PrintWriter pwContents, StringBuilder outputLine, Author author, int volNum, int pageNum) {
+
+        pwContents.println("\t\t<tr>");
+        pwContents.println("\t\t\t<td>");
+        pwContents.println(String.format("\t\t\t\t<a href=\"%s\">%s</a>", author.getCode() + volNum + ".htm#" + pageNum, outputLine));
+        pwContents.println("\t\t\t</td>");
+        pwContents.println("\t\t</tr>");
+
+    }
+
+    private static void printContentsVolumeTitle(PrintWriter pwContents, StringBuilder outputLine, Author author, int volNum) {
+
+        if (volNum > 1) pwContents.println("\t</table>");
+
+        pwContents.println("\t<p class=\"contents-volume-heading\">");
+        pwContents.println(String.format("\t\t<a id=\""+ volNum + "\" href=\"%s\">%s</a>", author.getCode() + volNum + ".htm", outputLine));
+        pwContents.println("\t</p>");
+
+        pwContents.println("\t<table class=\"contents-table\">");
+
+    }
 
     private static StringBuilder getSpecialLine(AuthorPrepareCache apc, StringBuilder line) {
 
@@ -1192,16 +1320,25 @@ public class Main {
 
         int volumeNumber = 1;
 
-        File inputVolume = new File(sourcePath + author.getCode() + volumeNumber + ".txt");
+        File inputVolume = getVolumeName(sourcePath, author, volumeNumber);
 
         // for all the volumes
         while (inputVolume.exists()) {
             analyseVolume(authorIndex, inputVolume, volumeNumber, referenceQueue, messages);
             volumeNumber++;
-            inputVolume = new File(sourcePath + author.getCode() + volumeNumber + ".txt");
+            inputVolume = getVolumeName(sourcePath, author, volumeNumber);
         }
 
     } // writeIndex
+
+    private static File getVolumeName(String sourcePath, Author author, int volumeNumber) {
+        if (author == Author.HYMNS) {
+            if (volumeNumber >= HymnBook.values().length) return new File("doesntexist");
+            return new File(sourcePath + HymnBook.values()[volumeNumber].getInputFilename());
+        } else {
+            return new File(sourcePath + author.getCode() + volumeNumber + ".txt");
+        }
+    }
 
     private static void analyseVolume(AuthorIndex authorIndex, File inputVolume, int volumeNumber, ReferenceQueue referenceQueue, ArrayList<String> messages) {
 
