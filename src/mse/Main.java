@@ -295,15 +295,19 @@ public class Main {
             String bufferOutHtml;
             String bufferOutTxt;
 
-            PrintWriter pwHymns = new PrintWriter(new FileWriter(hymnsOutPath + "hymns_contents.htm"));
+            PrintWriter pwHymns = new PrintWriter(new FileWriter(hymnsOutPath + "Hymns-Contents.htm"));
 
-            // print the html header
-            pwHymns.println("<html>");
-            pwHymns.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"" + mseStyleLocation + "\">\n");
-            pwHymns.println("<head>\n\t<title>Hymn Contents</title>\n</head>\n\n<body>");
+            // print the html header for the overall contents page
+            HtmlHelper.writeHtmlHeader(pwHymns, "Hymn Contents", mseStyleLocation);
 
             // prepare html for each hymn book
             for (HymnBook nextHymnBook : HymnBook.values()) {
+
+                // create a print writer for the hymnbook
+                PrintWriter pwSingleHymnBook = new PrintWriter(new File(hymnsOutPath + nextHymnBook.getContentsName()));
+
+                // print the html header for the single book contents page
+                HtmlHelper.writeHtmlHeader(pwSingleHymnBook, "Hymn Contents", mseStyleLocation);
 
                 System.out.print("\r\tScanning " + nextHymnBook.getName() + " ");
                 String inputFileName = hymnsPath + nextHymnBook.getInputFilename();
@@ -314,13 +318,14 @@ public class Main {
                 // read the first line of the hymn book
                 hymnLine = brHymns.readLine();
 
-                pwHymns.println("<h1 class=\"volume-title\">" + nextHymnBook.getName() + "</h1>");
+                pwHymns.println("<h1 class=\"volume-title\"><a href=\"" + nextHymnBook.getContentsName() + "\">" + nextHymnBook.getName() + "</a></h1>");
+                pwSingleHymnBook.println("<h1 class=\"volume-title\">" + nextHymnBook.getName() + "</h1>");
 
                 // read the second line of the hymn book
                 hymnLine = brHymns.readLine();
 
                 // print out the start of the table
-                pwHymns.println("\n\t<table class=\"hymn-contents-table\">\n\t<tr>");
+                pwSingleHymnBook.println("\n\t<table class=\"hymn-contents-table\">\n\t<tr>");
 
                 // if there are still more lines
                 while (hymnLine != null) {
@@ -333,10 +338,10 @@ public class Main {
 
                         System.out.print("\r\tNumber: " + hymnNumber);
 
-                        if (Integer.parseInt(hymnNumber) % 10 != 0) {
-                            pwHymns.println("\n\t\t\t<td><a href=\"" + nextHymnBook.getOutputFilename() + "#" + hymnNumber + "\">" + hymnNumber + "</a></td>");
+                        if (Integer.parseInt(hymnNumber) % 5 != 0) {
+                            pwSingleHymnBook.println("\n\t\t\t<td><a href=\"" + nextHymnBook.getOutputFilename() + "#" + hymnNumber + "\">" + hymnNumber + "</a></td>");
                         } else {
-                            pwHymns.println("\n\t\t\t<td><a href=\"" + nextHymnBook.getOutputFilename() + "#" + hymnNumber + "\">" + hymnNumber + "</a></td>\n\t</tr>\n\t<tr>");
+                            pwSingleHymnBook.println("\n\t\t\t<td><a href=\"" + nextHymnBook.getOutputFilename() + "#" + hymnNumber + "\">" + hymnNumber + "</a></td>\n\t</tr>\n\t<tr>");
                         }
 
                     }
@@ -350,7 +355,10 @@ public class Main {
                 brHymns.close();
 
                 // close the hymns table
-                pwHymns.println("\n\t</tr>\n\t</table>");
+                pwSingleHymnBook.println("\n\t</tr>\n\t</table>");
+
+                pwSingleHymnBook.println("</body>\n\n</html>");
+                pwSingleHymnBook.close();
 
             }
 
