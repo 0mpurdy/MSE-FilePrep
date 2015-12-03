@@ -22,11 +22,11 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         // used to skip menu option
-        boolean skip;
+        boolean skip = true;
 
         // the folder where indexes and html is written to
         String targetFolder;
-        String stylesLink;
+        String stylesLink = "";
 
         System.out.println("MSE File Prep console application");
         System.out.println("Version: " + cfg.getMseVersion());
@@ -221,10 +221,44 @@ public class Main {
                     }
                     break;
                 case 8:
-                    createBibleContents(cfg, "../../mseStyle.css");
+                    targetFolder = "";
+                    skip = false;
+                    switch (chooseSystem(sc)) {
+                        case 1:
+                            targetFolder = "target";
+                            stylesLink = "../../mseStyle.css";
+                            break;
+                        case 2:
+                            targetFolder = "android";
+                            stylesLink = "../mseStyle.css";
+                            break;
+                        default:
+                            skip = true;
+                    }
+                    Author.BIBLE.setTargetFolder(targetFolder);
+                    if (!skip) {
+                        createBibleContents(cfg, stylesLink);
+                    }
                     break;
                 case 9:
-                    createHymnsContents(cfg, "../../mseStyle.css");
+                    targetFolder = "";
+                    skip = false;
+                    switch (chooseSystem(sc)) {
+                        case 1:
+                            targetFolder = "target";
+                            stylesLink = "../../mseStyle.css";
+                            break;
+                        case 2:
+                            targetFolder = "android";
+                            stylesLink = "../mseStyle.css";
+                            break;
+                        default:
+                            skip = true;
+                    }
+                    Author.HYMNS.setTargetFolder(targetFolder);
+                    if (!skip) {
+                        createHymnsContents(cfg, stylesLink);
+                    }
                     break;
                 case 10:
                     System.out.println("Benchmarking ...\n\n");
@@ -277,13 +311,13 @@ public class Main {
             File f;
 
             // the path of the input
-            String hymnsPath = cfg.getResDir() + File.separator + "source" + File.separator + "hymns" + File.separator;
+            String hymnsPath = cfg.getResDir() + Author.HYMNS.getPreparePath();
             f = new File(hymnsPath);
             f.mkdirs();
             System.out.print("\r\tReading Hymns from: " + f.getCanonicalPath());
 
             // the path of the output
-            String hymnsOutPath = cfg.getResDir() + File.separator + "target" + File.separator + "hymns" + File.separator;
+            String hymnsOutPath = cfg.getResDir() + Author.HYMNS.getTargetPath();
             f = new File(hymnsOutPath);
             f.mkdirs();
             System.out.print("\r\tWriting Hymns to: " + f.getCanonicalPath());
@@ -608,7 +642,7 @@ public class Main {
 
     private static void createBibleContents(Config cfg, String mseStyleLocation) {
 
-        String contentsFilePath = cfg.getResDir() + Author.BIBLE.getTargetPath("bible_contents.htm");
+        String contentsFilePath = cfg.getResDir() + Author.BIBLE.getTargetPath(Author.BIBLE.getContentsName());
 
         File bibleContentsFile = new File(contentsFilePath);
 
@@ -627,13 +661,13 @@ public class Main {
 
             for (int i = 0; i < BibleBook.getNumOldTestamentBooks(); i++) {
 
-                pw.println("\t\t<tr class=\"bible-contents-row\">\n\t\t\t<td><a href=\"" + Author.BIBLE.getTargetPath(BibleBook.values()[i].getName())
-                        + "\">" + BibleBook.values()[i].getName() + "</a>");
+                pw.println("\t\t<tr class=\"bible-contents-row\">\n\t\t\t<td><a href=\"" + BibleBook.values()[i].getName()
+                        + ".htm\">" + BibleBook.values()[i].getName() + "</a>");
 
                 // if i+1 is less than the number of new testament books
                 if (i < BibleBook.getNumNewTestamentBooks()) {
-                    pw.println("\t\t\t<td><a href=\"" + Author.BIBLE.getTargetPath(BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName())
-                            + "\">" + BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName() + "</a>");
+                    pw.println("\t\t\t<td><a href=\"" + BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName()
+                            + ".htm\">" + BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName() + "</a>");
                 } else {
                     pw.println("\t\t\t<td></td>");
                 }
@@ -720,13 +754,13 @@ public class Main {
             File f;
 
             // the path of the input
-            String hymnsPath = cfg.getResDir() + File.separator + "source" + File.separator + "hymns" + File.separator;
+            String hymnsPath = cfg.getResDir() + Author.HYMNS.getPreparePath();
             f = new File(hymnsPath);
             f.mkdirs();
             System.out.print("\r\tReading Hymns from: " + f.getCanonicalPath());
 
             // the path of the output
-            String hymnsOutPath = cfg.getResDir() + File.separator + "target" + File.separator + "hymns" + File.separator;
+            String hymnsOutPath = cfg.getResDir() + Author.HYMNS.getTargetPath();
             f = new File(hymnsOutPath);
             f.mkdirs();
             System.out.print("\r\tWriting Hymns to: " + f.getCanonicalPath());
@@ -1222,7 +1256,7 @@ public class Main {
         if (volNum > 1) pwContents.println("\t</table>");
 
         pwContents.println("\t<p class=\"contents-volume-heading\">");
-        pwContents.println(String.format("\t\t<a id=\""+ volNum + "\" href=\"%s\">%s</a>", author.getCode() + volNum + ".htm", outputLine));
+        pwContents.println(String.format("\t\t<a id=\"" + volNum + "\" href=\"%s\">%s</a>", author.getCode() + volNum + ".htm", outputLine));
         pwContents.println("\t</p>");
 
         pwContents.println("\t<table class=\"contents-table\">");
@@ -1352,7 +1386,7 @@ public class Main {
 
         Author author = authorIndex.getAuthor();
 
-        System.out.print("\rAnalysing " + authorIndex.getAuthorName() + " volume " + volumeNumber);
+        System.out.print("\rAnalysing " + getReadableReference(author, volumeNumber, 0, 0));
 
         int pageNumber = 0;
 
@@ -1388,6 +1422,10 @@ public class Main {
 
                         if (specialLine.charAt(0) != '#') {
                             // page number
+
+                            // debug
+//                            if (author.equals(Author.HYMNS)) System.out.println(outputLine);
+
                             pageNumber = Integer.parseInt(specialLine.toString());
                             skip = true;
                         } else {
@@ -1582,6 +1620,18 @@ public class Main {
         }
 
         return token;
+    }
+
+    private static String getReadableReference(Author author, int volNum, int pageNum, int verseNum) {
+        if (author.isMinistry()) {
+            return author.getCode() + " volume " + volNum + " page " + pageNum;
+        } else if (author.equals(Author.BIBLE)) {
+            return BibleBook.values()[volNum - 1].getName() + " chapter " + pageNum + ":" + verseNum;
+        } else if (author.equals(Author.HYMNS)) {
+            return HymnBook.values()[volNum].getName() + " " + pageNum;
+        }
+
+        return "";
     }
 
 
