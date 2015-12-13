@@ -8,8 +8,17 @@ import java.io.PrintWriter;
 public class HtmlHelper {
 
     public static void writeHtmlHeader(PrintWriter pw, String title, String mseStyleLocation) {
-        pw.println("<html>");
-        pw.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"" + mseStyleLocation + "\">\n");
-        pw.println("<head>\n\t<title>" + title + "</title>\n</head>\n\n<body>");
+
+        String bootstrapLocation = "../../bootstrap/css/bootstrap.css";
+
+        pw.println("<!DOCTYPE html>\n" +
+                "\n" +
+                "<html>" +
+                "\n" +
+                "<head>\n" +
+                "\t<title>" + title + "</title>\n" +
+                "<link rel=\"stylesheet\" type=\"text/css\" href=\"" + mseStyleLocation + "\">\n" +
+                "<link rel=\"stylesheet\" type=\"text/css\" href=\"" + bootstrapLocation + "\">\n" +
+                "</head>");
     }
 }

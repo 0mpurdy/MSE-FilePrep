@@ -21,12 +21,8 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        // used to skip menu option
-        boolean skip = true;
-
-        // the folder where indexes and html is written to
-        String targetFolder;
-        String stylesLink = "";
+        // the platform that is being prepared for
+        PreparePlatform platform = null;
 
         System.out.println("MSE File Prep console application");
         System.out.println("Version: " + cfg.getMseVersion());
@@ -42,99 +38,59 @@ public class Main {
 
             switch (mainMenuChoice) {
                 case 0:
+                    // exit
                     System.out.println("Closing ...");
                     break;
                 case 1:
-
-                    skip = false;
-                    targetFolder = "";
-                    stylesLink = "";
-                    switch (chooseSystem(sc)) {
-                        case 0:
-                            skip = true;
-                            break;
-                        case 1:
-                            targetFolder = "target";
-                            stylesLink = "../../mseStyle.css";
-                            break;
-                        case 2:
-                            targetFolder = "android";
-                            stylesLink = "../mseStyle.css";
-                    }
-
-                    if (!skip) {
+                    // prepare all files
+                    platform = chooseSystem(sc);
+                    if (platform != null) {
                         System.out.println();
-                        Author.BIBLE.setTargetFolder(targetFolder);
-                        prepareBibleHtml(cfg, stylesLink);
+                        Author.BIBLE.setTargetFolder(platform.getTargetFolder());
+                        prepareBibleHtml(cfg, platform.getStylesLink());
                         System.out.println();
-                        Author.HYMNS.setTargetFolder(targetFolder);
-                        prepareHymnsHtml(cfg, stylesLink);
+                        Author.HYMNS.setTargetFolder(platform.getTargetFolder());
+                        prepareHymnsHtml(cfg, platform.getStylesLink());
                         for (Author nextAuthor : Author.values()) {
                             if (nextAuthor.getIndex() >= 3) {
-                                nextAuthor.setTargetFolder(targetFolder);
-                                prepareMinistry(cfg, nextAuthor, stylesLink);
+                                nextAuthor.setTargetFolder(platform.getTargetFolder());
+                                prepareMinistry(cfg, nextAuthor, platform.getStylesLink());
                             }
                         }
                     }
                     break;
                 case 2:
+                    // prepare single author
                     System.out.println("\nWhich author do you wish to prepare?");
                     printAuthorMenu();
                     authorChoice = sc.nextInt();
                     sc.nextLine();
 
-                    skip = false;
-                    targetFolder = "";
-                    stylesLink = "";
-                    switch (chooseSystem(sc)) {
-                        case 0:
-                            skip = true;
-                            break;
-                        case 1:
-                            targetFolder = "target";
-                            stylesLink = "../../mseStyle.css";
-                            break;
-                        case 2:
-                            targetFolder = "android";
-                            stylesLink = "../mseStyle.css";
-                    }
-
-                    if (!skip) {
+                    platform = chooseSystem(sc);
+                    if (platform != null) {
                         if (authorChoice == 0) {
-                            Author.BIBLE.setTargetFolder(targetFolder);
-                            prepareBibleHtml(cfg, stylesLink);
+                            Author.BIBLE.setTargetFolder(platform.getTargetFolder());
+                            prepareBibleHtml(cfg, platform.getStylesLink());
                         } else if (authorChoice == 1) {
-                            Author.HYMNS.setTargetFolder(targetFolder);
-                            prepareHymnsHtml(cfg, stylesLink);
+                            Author.HYMNS.setTargetFolder(platform.getTargetFolder());
+                            prepareHymnsHtml(cfg, platform.getStylesLink());
                         } else if ((authorChoice >= 3) && (authorChoice <= 12)) {
-                            Author.values()[authorChoice].setTargetFolder(targetFolder);
-                            prepareMinistry(cfg, Author.values()[authorChoice], stylesLink);
+                            Author.values()[authorChoice].setTargetFolder(platform.getTargetFolder());
+                            prepareMinistry(cfg, Author.values()[authorChoice], platform.getStylesLink());
                         } else {
                             System.out.println("\nOption " + authorChoice + " is not available at the moment");
                         }
                     }
                     break;
                 case 3:
-                    skip = false;
-                    targetFolder = "";
-                    // get which system to write to
-                    switch (chooseSystem(sc)) {
-                        case 0:
-                            skip = true;
-                            break;
-                        case 1:
-                            targetFolder = "target";
-                            break;
-                        case 2:
-                            targetFolder = "android";
-                    }
-
-                    if (!skip) {
+                    // create all indexes
+                    platform = chooseSystem(sc);
+                    if (platform != null) {
                         long startIndexing = System.nanoTime();
                         // add a reference processor for each author then write the index
                         for (Author nextAuthor : Author.values()) {
                             if (nextAuthor.isSearchable()) {
-                                nextAuthor.setTargetFolder(targetFolder);
+                                nextAuthor.setTargetFolder(platform.getTargetFolder());
                                 processAuthor(nextAuthor, cfg);
                             }
                         }
@@ -143,29 +99,17 @@ public class Main {
                     } // end creating all indexes
                     break;
                 case 4:
+                    // create single author index
                     System.out.println("\nWhich author do you wish to index?");
                     printAuthorMenu();
                     authorChoice = sc.nextInt();
                     sc.nextLine();
 
-                    skip = false;
-                    targetFolder = "";
-                    // get which system to write to
-                    switch (chooseSystem(sc)) {
-                        case 0:
-                            skip = true;
-                            break;
-                        case 1:
-                            targetFolder = "target";
-                            break;
-                        case 2:
-                            targetFolder = "android";
-                    }
-
-                    if (!skip) {
+                    platform = chooseSystem(sc);
+                    if (platform != null) {
                         if ((authorChoice >= 0) && (authorChoice < Author.values().length)) {
                             Author author = Author.values()[authorChoice];
-                            author.setTargetFolder(targetFolder);
+                            author.setTargetFolder(platform.getTargetFolder());
                             processAuthor(author, cfg);
                         } else {
                             System.out.println("This is not a valid option");
@@ -173,10 +117,12 @@ public class Main {
                     }
                     break;
                 case 5:
+                    // create super index
                     System.out.println("Creating super index");
                     createSuperIndex(cfg);
                     break;
                 case 6:
+                    // check author index
                     System.out.println("\nWhich author index do you wish to check?");
                     printAuthorMenu();
                     authorChoice = sc.nextInt();
@@ -211,6 +157,7 @@ public class Main {
                     }
                     break;
                 case 7:
+                    // check all indexes
                     ArrayList<AuthorIndex> authorIndexes = new ArrayList<>();
                     for (Author nextAuthor : Author.values()) {
                         if (nextAuthor.isSearchable()) {
@@ -221,46 +168,23 @@ public class Main {
                     }
                     break;
                 case 8:
-                    targetFolder = "";
-                    skip = false;
-                    switch (chooseSystem(sc)) {
-                        case 1:
-                            targetFolder = "target";
-                            stylesLink = "../../mseStyle.css";
-                            break;
-                        case 2:
-                            targetFolder = "android";
-                            stylesLink = "../mseStyle.css";
-                            break;
-                        default:
-                            skip = true;
-                    }
-                    Author.BIBLE.setTargetFolder(targetFolder);
-                    if (!skip) {
-                        createBibleContents(cfg, stylesLink);
+                    // create bible contents
+                    platform = chooseSystem(sc);
+                    if (platform != null) {
+                        Author.BIBLE.setTargetFolder(platform.getTargetFolder());
+                        createBibleContents(cfg, platform);
                     }
                     break;
                 case 9:
-                    targetFolder = "";
-                    skip = false;
-                    switch (chooseSystem(sc)) {
-                        case 1:
-                            targetFolder = "target";
-                            stylesLink = "../../mseStyle.css";
-                            break;
-                        case 2:
-                            targetFolder = "android";
-                            stylesLink = "../mseStyle.css";
-                            break;
-                        default:
-                            skip = true;
-                    }
-                    Author.HYMNS.setTargetFolder(targetFolder);
-                    if (!skip) {
-                        createHymnsContents(cfg, stylesLink);
+                    // create hymns contents
+                    platform = chooseSystem(sc);
+                    if (platform != null) {
+                        Author.HYMNS.setTargetFolder(platform.getTargetFolder());
+                        createHymnsContents(cfg, platform.getStylesLink());
                     }
                     break;
                 case 10:
+                    // benchmark
                     System.out.println("Benchmarking ...\n\n");
                     new Benchmark().run();
                     break;
@@ -359,7 +283,6 @@ public class Main {
                 hymnLine = brHymns.readLine();
 
                 // print out the start of the table
-                pwSingleHymnBook.println("\n\t<table class=\"hymn-contents-table\">\n\t<tr>");
 
                 // if there are still more lines
                 while (hymnLine != null) {
@@ -372,10 +295,33 @@ public class Main {
 
                         System.out.print("\r\tNumber: " + hymnNumber);
 
-                        if (Integer.parseInt(hymnNumber) % 5 != 0) {
-                            pwSingleHymnBook.println("\n\t\t\t<td><a href=\"" + nextHymnBook.getOutputFilename() + "#" + hymnNumber + "\">" + hymnNumber + "</a></td>");
-                        } else {
-                            pwSingleHymnBook.println("\n\t\t\t<td><a href=\"" + nextHymnBook.getOutputFilename() + "#" + hymnNumber + "\">" + hymnNumber + "</a></td>\n\t</tr>\n\t<tr>");
+                        int hymnNum = Integer.parseInt(hymnNumber);
+
+                        String colClass = "col-xs-2";
+
+                        if (hymnNum % 5 == 1) {
+                            // if it is the first of a large column
+                            if (hymnNum % 10 == 1) {
+                                // if the first of a whole row
+                                pwSingleHymnBook.println("\t<div class=\"row\">");
+                            }
+                            pwSingleHymnBook.println("\t\t<div class=\"col-lg-6\">" +
+                                    "\n\t\t\t<div class=\"btn-toolbar\" role=\"toolbar\">" +
+                                    "\n\t\t\t\t<div class=\"btn-group btn-group-lg btn-group-justified btn-group-fill-height\">");
+                            colClass = "col-xs-2 col-xs-offset-1";
+                        }
+
+                        printSingleHymnToContents(pwSingleHymnBook, nextHymnBook.getOutputFilename(), hymnNumber, colClass);
+
+                        if (hymnNum % 5 == 0) {
+                            // if it is the last hymn in a large column
+                            pwSingleHymnBook.println("\t\t\t\t</div>" +
+                                    "\n\t\t\t</div>" +
+                                    "\n\t\t</div>");
+                            if (hymnNum % 10 == 0) {
+                                // if it is the last hymn in a whole row
+                                pwSingleHymnBook.println("\n\t</div>");
+                            }
                         }
 
                     }
@@ -389,7 +335,10 @@ public class Main {
                 brHymns.close();
 
                 // close the hymns table
-                pwSingleHymnBook.println("\n\t</tr>\n\t</table>");
+                pwSingleHymnBook.println("\t\t\t\t</div>" +
+                        "\n\t\t\t</div>" +
+                        "\n\t\t</div>" +
+                        "\n\t</div>");
 
                 pwSingleHymnBook.println("</body>\n\n</html>");
                 pwSingleHymnBook.close();
@@ -412,20 +361,30 @@ public class Main {
 
     }
 
-    private static int chooseSystem(Scanner sc) {
+    private static void printSingleHymnToContents(PrintWriter pw, String hymnbookHtmlPath, String hymnNumber, String colClass) {
+        pw.println("\t\t\t\t\t<a class=\"btn btn-primary-outline\" href=\"" + hymnbookHtmlPath + "#" + hymnNumber + "\" role=\"button\">" + hymnNumber + "</a>");
+    }
+
+    private static PreparePlatform chooseSystem(Scanner sc) {
 
         System.out.println("\nChoose a system:");
 
         ArrayList<String> systems = new ArrayList<>();
         systems.add("Cancel");
-        systems.add("PC");
-        systems.add("Android");
+        for (PreparePlatform platform : PreparePlatform.values()) {
+            systems.add(platform.getName());
+        }
 
         printMenu(systems);
         int option = sc.nextInt();
         sc.nextLine();
 
-        return option;
+        switch (option) {
+            case 0:
+                return null;
+            default:
+                return PreparePlatform.values()[option - 1];
+        }
     }
 
     private static void printMenu(ArrayList<String> menu) {
@@ -640,43 +599,54 @@ public class Main {
 
     }
 
-    private static void createBibleContents(Config cfg, String mseStyleLocation) {
+    private static void createBibleContents(Config cfg, PreparePlatform preparePlatform) {
+
+        System.out.print("\nCreating Bible contents...");
 
         String contentsFilePath = cfg.getResDir() + Author.BIBLE.getTargetPath(Author.BIBLE.getContentsName());
 
         File bibleContentsFile = new File(contentsFilePath);
+
+        if (!bibleContentsFile.exists()) {
+            bibleContentsFile.getParentFile().mkdirs();
+            try {
+                bibleContentsFile.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
         PrintWriter pw = null;
         try {
 
             pw = new PrintWriter(bibleContentsFile);
 
-            writeContentsHeader(pw, mseStyleLocation, "Bible Contents");
+            HtmlHelper.writeHtmlHeader(pw, "Bible Contents", preparePlatform.getStylesLink());
             pw.println("");
-            pw.println("\t<table class=\"bible-contents-table\">");
-            pw.println("\t\t<tr class=\"bible-contents-header\">");
-            pw.println("\t\t\t<td>Old Testament</td>");
-            pw.println("\t\t\t<td>New Testament</td>");
-            pw.println("\t\t</tr>");
+            pw.println("\t<div class=\"container bible-contents-table\">");
+            pw.println("\t\t<div class=\"row bible-contents-header\">");
+            pw.println("\t\t\t<div class=\"col-xs-6\">Old<br>Testament</div>");
+            pw.println("\t\t\t<div class=\"col-xs-6\">New<br>Testament</div>");
+            pw.println("\t\t</div>");
 
             for (int i = 0; i < BibleBook.getNumOldTestamentBooks(); i++) {
 
-                pw.println("\t\t<tr class=\"bible-contents-row\">\n\t\t\t<td><a href=\"" + BibleBook.values()[i].getName()
-                        + ".htm\">" + BibleBook.values()[i].getName() + "</a>");
+                pw.println("\t\t<div class=\"row bible-contents-row\">\n\t\t\t<div class=\"col-xs-6\"><a href=\"" + preparePlatform.getLinkPrefix(Author.BIBLE) + BibleBook.values()[i].getName()
+                        + ".htm\">" + BibleBook.values()[i].getName() + "</a></div>");
 
                 // if i+1 is less than the number of new testament books
                 if (i < BibleBook.getNumNewTestamentBooks()) {
-                    pw.println("\t\t\t<td><a href=\"" + BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName()
-                            + ".htm\">" + BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName() + "</a>");
+                    pw.println("\t\t\t<div class=\"col-xs-6\"><a href=\"" + preparePlatform.getLinkPrefix(Author.BIBLE) + BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName()
+                            + ".htm\">" + BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName() + "</a></div>");
                 } else {
-                    pw.println("\t\t\t<td></td>");
+                    pw.println("\t\t\t<div class=\"col-xs-6\"></div>");
                 }
 
-                pw.println("\t\t</tr>");
+                pw.println("\t\t</div>");
 
             }
 
-            pw.println("\t</table>");
+            pw.println("\t</div>");
 
             pw.println("</body>");
             pw.println();
@@ -688,15 +658,8 @@ public class Main {
             if (pw != null) pw.close();
         }
 
-    }
+        System.out.println("\rFinished creating Bible contents");
 
-    private static void writeContentsHeader(PrintWriter pw, String mseStyleLocation, String title) {
-        pw.println("<html>\n" +
-                "<link rel=\"stylesheet\" type=\"text/css\" href=\"" + mseStyleLocation + "\">\n" +
-                "\n" +
-                "<head>\n" +
-                "\t<title>" + title + "</title>\n" +
-                "</head>");
     }
 
     private static HashMap<String, String> getSynopsisPages(String filename) {
@@ -856,7 +819,10 @@ public class Main {
 
                 }
 
-                pwHymns.println("</body>\n\n</html>");
+                pwHymns.println("\t\t\t</td>" +
+                        "\n\t\t</tr>" +
+                        "\n\t</table>" +
+                        "\n\n</body>\n\n</html>");
 
                 // close the reader and writer
                 brHymns.close();
@@ -900,11 +866,11 @@ public class Main {
 
             // write html head
             pwContents = new PrintWriter(new FileWriter(volDestPath + author.getCode() + "-Contents.htm"));
-            pwContents.println(String.format("<!DOCTYPE html>\n<html>\n\n<head>\n\t<link rel=\"stylesheet\" type=\"" +
-                            "text/css\" href=\"%s\">\n\t<title>%s contents</title>\n</head>\n\n<body>",
-                    mseStylesLocation, author.getName()));
+            HtmlHelper.writeHtmlHeader(pwContents, author.getName() + " contents", mseStylesLocation);
 
             printContentsVolumeNumbers(pwContents, author);
+
+            pwContents.println("\t<div class=\"container\">");
 
             // for each volume
             while (!apc.finishedVolumes) {
@@ -1208,6 +1174,9 @@ public class Main {
                     if (pwHtml != null) pwHtml.close();
                 }
             }
+
+            pwContents.println("\t</div>");
+
         } catch (IOException ioe) {
             System.out.println("\n!*** Error preparing " + author.getName() + " ***!");
             System.out.println(ioe.getMessage());
@@ -1218,48 +1187,60 @@ public class Main {
 
     private static void printContentsVolumeNumbers(PrintWriter pwContents, Author author) {
 
-        pwContents.println("\t<table class=\"contents-page-numbers-table\">");
+        pwContents.println("\t<p class=\"contents-title\">" + author.getName() + "</p>");
+        pwContents.println("\t<p class=\"contents-sub-title\">Volumes:</p>");
 
-        for (int i = 0; i < author.getNumVols(); i++) {
+        int i = 0;
 
-            if ((i % 10) == 0) {
-                pwContents.println("\t\t<tr>");
+        while (i < author.getNumVols()) {
+
+            if ((i % 5) == 0) {
+                if (i % 10 == 0) {
+                    pwContents.println("\t<div class=\"row\">");
+                }
+                pwContents.println("\t\t<div class=\"col-lg-6\">" +
+                        "\n\t\t\t<div class=\"btn-toolbar\" role=\"toolbar\">" +
+                        "\n\t\t\t\t<div class=\"btn-group btn-group-lg btn-group-justified btn-group-fill-height\">");
             }
 
-            pwContents.println("\t\t\t<td>");
-            pwContents.println(String.format("\t\t\t\t<a href=\"%s\">%s</a>",
+            pwContents.println(String.format("\t\t\t\t\t<a class=\"btn btn-primary-outline\" href=\"%s\" role=\"button\">%s</a>",
                     "#" + i, i));
-            pwContents.println("\t\t\t</td>");
 
-            if ((i % 10) == 9) {
-                pwContents.println("\t\t</tr>");
+            if ((i % 5) == 4) {
+                pwContents.println("\t\t\t\t</div>" +
+                        "\n\t\t\t</div>" +
+                        "\n\t\t</div>");
+                if (i % 10 == 9) {
+                    pwContents.println("\t</div>");
+                }
             }
-
+            i++;
         }
 
-        pwContents.println("\t</table>");
+        if ((i % 5) != 4) {
+            pwContents.println("\t\t\t\t</div>" +
+                    "\n\t\t\t</div>" +
+                    "\n\t\t</div>");
+            if (i % 10 != 9) {
+                pwContents.println("\t</div>");
+            }
+        }
 
     }
 
     private static void printContentsHeading(PrintWriter pwContents, StringBuilder outputLine, Author author, int volNum, int pageNum) {
-
-        pwContents.println("\t\t<tr>");
-        pwContents.println("\t\t\t<td>");
-        pwContents.println(String.format("\t\t\t\t<a href=\"%s\">%s</a>", author.getCode() + volNum + ".htm#" + pageNum, outputLine));
-        pwContents.println("\t\t\t</td>");
-        pwContents.println("\t\t</tr>");
+        pwContents.println(String.format("\t\t\t\t<a class=\"btn btn-success-outline\" href=\"%s\" role=\"button\">%s</a>", author.getCode() + volNum + ".htm#" + pageNum, outputLine));
 
     }
 
     private static void printContentsVolumeTitle(PrintWriter pwContents, StringBuilder outputLine, Author author, int volNum) {
 
-        if (volNum > 1) pwContents.println("\t</table>");
+//        if (volNum > 1) pwContents.println("\t</div>");
 
-        pwContents.println("\t<p class=\"contents-volume-heading\">");
-        pwContents.println(String.format("\t\t<a id=\"" + volNum + "\" href=\"%s\">%s</a>", author.getCode() + volNum + ".htm", outputLine));
-        pwContents.println("\t</p>");
+        pwContents.println(String.format("\t\t<a class=\"btn btn-lg btn-success\" id=\"" +
+                volNum + "\" href=\"%s\" role=\"button\">%s</a>", author.getCode() + volNum + ".htm", outputLine));
 
-        pwContents.println("\t<table class=\"contents-table\">");
+//        pwContents.println("\t<div class=\"btn-group-vertical\">");
 
     }
 
