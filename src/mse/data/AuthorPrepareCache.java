@@ -1,4 +1,4 @@
-package mse;
+package mse.data;
 
 import mse.common.Author;
 
@@ -35,7 +35,7 @@ public class AuthorPrepareCache {
 
     public boolean startedItalics = false;
 
-    String messages = "";
+    public String messages = "";
 
     public AuthorPrepareCache(Author author) {
         this.author = author;

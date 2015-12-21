@@ -1,4 +1,4 @@
-package mse;
+package mse.helpers;
 
 import java.io.PrintWriter;
 

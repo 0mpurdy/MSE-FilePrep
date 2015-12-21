@@ -1,4 +1,4 @@
-package mse;
+package mse.processors;
 
 /**
  * Created by mj_pu_000 on 10/09/2015.

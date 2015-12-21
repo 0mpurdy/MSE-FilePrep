@@ -44,10 +44,6 @@ public class AuthorIndex implements Serializable {
     public void incrementTokenCount(String token, short volumeNumber, short pageNumber) {
         count = -1;
 
-//        if (token.equals("LOVE")) {
-//            System.out.println("debug");
-//        }
-
         // if the token already exists
         if ((tokenCountMap.get(token)) != null) {
 

@@ -1,4 +1,4 @@
-package mse;
+package mse.data;
 
 import mse.common.Author;
 
@@ -24,15 +24,15 @@ public enum PreparePlatform {
         this.fullLink = fullLink;
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 
-    String getTargetFolder() {
+    public String getTargetFolder() {
         return targetFolder;
     }
 
-    String getStylesLink() {
+    public String getStylesLink() {
         return stylesLink;
     }
 

@@ -1,4 +1,4 @@
-package mse;
+package mse.data;
 
 public enum BibleBook {
 
