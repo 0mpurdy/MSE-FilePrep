@@ -401,9 +401,8 @@ public class Preparer {
                         pwHtml = new PrintWriter(new FileWriter(volDestPath + author.getCode() + apc.volNum + ".htm"));
 
                         // write html head
-                        pwHtml.println(String.format("<!DOCTYPE html>\n<html>\n\n<head>\n\t<link rel=\"stylesheet\" type=\"" +
-                                        "text/css\" href=\"" + mseStylesLocation + "\">\n\t<title>%s Volume %d</title>\n</head>\n\n<body>",
-                                author.getName(), apc.volNum));
+                        HtmlHelper.writeHtmlHeader(pwHtml, author.getName() + " Volume " + apc.volNum, mseStylesLocation);
+                        pwHtml.println("\n<body>\n\t<div class=\"container\">");
 
                         StringBuilder outputLine;
                         boolean skipLine;
@@ -662,6 +661,8 @@ public class Preparer {
                             apc.lineCount++;
                         } // end of processing lines
 
+
+                        pwHtml.println("\t</div>");
                         pwHtml.println("\n</body>\n\n</html>");
                         pwHtml.close();
                         brSourceText.close();

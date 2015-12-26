@@ -17,8 +17,8 @@ public class HtmlHelper {
                 "\n" +
                 "<head>\n" +
                 "\t<title>" + title + "</title>\n" +
-                "<link rel=\"stylesheet\" type=\"text/css\" href=\"" + mseStyleLocation + "\">\n" +
                 "<link rel=\"stylesheet\" type=\"text/css\" href=\"" + bootstrapLocation + "\">\n" +
+                "<link rel=\"stylesheet\" type=\"text/css\" href=\"" + mseStyleLocation + "\">\n" +
                 "</head>");
     }
 }
