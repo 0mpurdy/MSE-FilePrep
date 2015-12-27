@@ -150,12 +150,16 @@ public class Indexer {
     }
 
     private static File getVolumeName(String sourcePath, Author author, int volumeNumber) {
+        String filename;
         if (author == Author.HYMNS) {
             if (volumeNumber-1 >= HymnBook.values().length) return null;
-            return new File(sourcePath + HymnBook.values()[volumeNumber-1].getInputFilename());
+            filename = sourcePath + HymnBook.values()[volumeNumber-1].getInputFilename();
         } else {
-            return new File(sourcePath + author.getCode() + volumeNumber + ".txt");
+            filename = sourcePath + author.getCode() + volumeNumber + ".txt";
         }
+        File file = new File(filename);
+        if (file.exists()) return file;
+        else return null;
     }
 
     private static String getReadableReference(Author author, int volNum, int pageNum, int verseNum) {
