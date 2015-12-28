@@ -1,14 +1,13 @@
 package mse.processors;
 
-import mse.data.AuthorPrepareCache;
-import mse.data.BibleBook;
-import mse.data.PreparePlatform;
+import mse.data.*;
+import mse.helpers.FileHelper;
 import mse.helpers.HtmlHelper;
-import mse.data.HymnBook;
 import mse.common.Author;
 import mse.common.Config;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -16,194 +15,29 @@ import java.util.HashMap;
  */
 public class Preparer {
 
+    // region bible
+
     public static void prepareBibleHtml(Config cfg, String mseStyleLocation) {
 
         System.out.print("\nPreparing Bible");
 
-        StringBuilder messages = new StringBuilder();
+        StringBuilder errMessages = new StringBuilder();
 
         try {
 
-            // create file for outputting where the files are being read/written
-            File f;
-
             // get the paths for the files that are used in preparing the bible html
-            String jndBiblePath = cfg.getResDir() + "source" + File.separator + "bible" + File.separator;
-            f = new File(jndBiblePath);
-            f.mkdirs();
-            System.out.print("\rReading JND bible from " + f.getCanonicalPath());
-
-            String kjvBiblePath = cfg.getResDir() + "source" + File.separator + "kjv" + File.separator;
-            f = new File(kjvBiblePath);
-            f.mkdirs();
-            System.out.print("\rReading KJV bible from " + f.getCanonicalPath());
-
-            // get the file paths that the bible html and text will be written to
-            String bibleDestinationPath = cfg.getResDir() + Author.BIBLE.getTargetPath();
-            f = new File(bibleDestinationPath);
-            f.mkdirs();
-            System.out.print("\rWriting bible HTML to " + f.getCanonicalPath());
-
-            String bibleTxtDestinationPath = cfg.getResDir() + "target" + File.separator + "bibleText" + File.separator;
-            f = new File(bibleTxtDestinationPath);
-            f.mkdirs();
-            System.out.print("\rWriting bible text to " + f.getCanonicalPath());
-
-            String jndLine; //line read from JND file
-            String kjvLine; //line read from KJV file
-            String chapter = "1";
-            String synopsisLink;
-            String verseNum;
-            String jndVerse;
-            String kjvVerse;
-            String bufferString;
-            String bufferTxt;
-            boolean startedItalic = false;
+            BiblePrepareCache bpc = new BiblePrepareCache(cfg);
 
             // get the synopsis pages map
-            HashMap<String, String> synopsisPages = getSynopsisPages(jndBiblePath + "pages.txt");
+            bpc.synopsisPages = getSynopsisPages(bpc.getSynopsisSource());
 
-            int bookNumber = 0;
             // for each book in the bible
             for (BibleBook nextBook : BibleBook.values()) {
+
                 System.out.print("\rPreparing " + nextBook.getName());
-                bookNumber++;
-                // create buffered readers to read the jnd and kjv txt files
-                BufferedReader brJND = new BufferedReader(new FileReader(jndBiblePath + "bible" + bookNumber + ".txt"));
-                BufferedReader brKJV = new BufferedReader(new FileReader(kjvBiblePath + "kjv" + bookNumber + ".txt"));
+                bpc.nextBook(nextBook);
 
-                // create print writers to write the bible html and txt (overwrite any existing files)
-                PrintWriter pwBible = new PrintWriter(new FileWriter(bibleDestinationPath + nextBook.getName().replaceAll("\\s", "") + ".htm", false));
-                PrintWriter pwBibleTxt = new PrintWriter(new FileWriter(bibleTxtDestinationPath + Author.BIBLE.getCode() + bookNumber + ".txt"));
-
-                // write the html header
-                pwBible.println("<html>");
-                pwBible.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"" + mseStyleLocation + "\">\n");
-                pwBible.println("<head>\n\t<title>"
-                        + "Darby translation and King James Version of The Bible"
-                        + "</title>\n</head>");
-
-
-                pwBible.println("\n<body>\n\t<strong>Chapters</strong> ");
-                pwBibleTxt.println("{#" + nextBook.getName() + "}");
-
-                // for each chapter
-                for (int chapterCount = 1; chapterCount <= nextBook.getNumChapters(); chapterCount++) {
-                    pwBible.println("\t<a href=\"#" + chapterCount + "\">" + chapterCount + "</a> ");
-                    System.out.print(String.format("\rPreparing %s chapter %d", nextBook.getName(), chapterCount));
-                }
-                pwBible.println("\t<table class=\"bible\">");
-
-                // read the first line of the two versions and assume there are more lines
-                boolean finished = false;
-                jndLine = brJND.readLine();
-                kjvLine = brKJV.readLine();
-
-                // if there are no lines log error
-                if (jndLine == null) {
-                    System.out.println("\n!!! No JND lines found");
-                }
-                if (kjvLine == null) {
-                    System.out.println("\n!!! No kjv lines found");
-                }
-
-                // while there are more lines
-                while (!finished) {
-
-                    if ((jndLine != null) && (kjvLine != null)) {
-                        // if it is a chapter heading
-                        if (jndLine.indexOf("{") == 0) {
-                            chapter = jndLine.substring(1, jndLine.length() - 1);
-
-                            // for each chapter output .
-                            System.out.print(".");
-
-                            // if including synopsis
-                            if (cfg.isSynopsis()) {
-                                synopsisLink = synopsisPages.get(bookNumber + "/" + chapter);
-                                if (synopsisLink == null) {
-                                    messages.append("\n\tNo synopsis link for ").append(nextBook.getName()).append(" chapter ").append(chapter);
-                                    synopsisLink = "";
-                                }
-                            } else {
-                                // if not including synopsis
-                                synopsisLink = "";
-                            }
-                            // add the chapter title row for the html output
-                            bufferString = String.format("\n\t</table>\n\t<table class=\"bible\">\n\t\t<tr>\n\t\t\t<td colspan=\"3\" class=\"chapterTitle\"><a name=%s>%s %s</a></td>\n\t\t</tr>\n", chapter, nextBook.getName(), chapter);
-                            // add the translation and synopsis for the html output
-                            bufferString += String.format("\t\t<tr>\n\t\t\t<td></td>\n\t\t\t<td><strong>Darby Translation (1889)</strong> %s</td>\n\t\t\t<td><strong>Authorised (King James) Version (1796)</strong></td>\n\t\t</tr>", synopsisLink);
-                            // add the text for the text output
-                            bufferTxt = String.format("{%s}", chapter);
-                        } else {
-                            // if it is a verse
-
-                            // get the verse number and content
-                            verseNum = jndLine.substring(0, jndLine.indexOf(" "));
-                            jndVerse = jndLine.substring(jndLine.indexOf(" ")).trim();
-                            kjvVerse = kjvLine.substring(kjvLine.indexOf(" ")).trim();
-
-                            // create the html output
-                            bufferString = "\t\t<tr";
-
-                            // verse is odd make the class of <td> odd
-                            if ((Integer.parseInt(verseNum) % 2) != 0) {
-                                bufferString += " class=\"odd\"";
-                            }
-
-                            bufferString += String.format(">\n\t\t\t<td><a name=%s:%s>%s</a></td>\n", chapter, verseNum, verseNum);
-                            bufferString += String.format("\t\t\t<td>%s</td>\n\t\t\t<td>%s</td>\n\t\t</tr>", jndVerse, kjvVerse);
-
-                            // create the text output
-                            bufferTxt = verseNum + " " + jndVerse + " " + kjvVerse;
-
-//                            // legacy logging of short verses to find paragraph problems
-//                            if (jndVerse.length() < 5) {
-//                                System.out.println("Short verse: " + bufferString);
-//                            }
-
-                            // insert italics
-                            while (bufferString.contains("*")) {
-                                if (startedItalic) {
-                                    bufferString = bufferString.substring(0, bufferString.indexOf("*")) + "</i>" + bufferString.substring(bufferString.indexOf("*") + 1);
-                                } else {
-                                    bufferString = bufferString.substring(0, bufferString.indexOf("*")) + "<i>" + bufferString.substring(bufferString.indexOf("*") + 1);
-                                }
-                                startedItalic = !startedItalic;
-                            }
-
-                        }
-
-                        // write the html and text output
-                        pwBible.println(bufferString);
-                        pwBibleTxt.println(bufferTxt);
-
-                        // check if italics run over a line
-                        if (startedItalic) {
-                            messages.append("Italics - ").append(bufferTxt);
-                        }
-
-                        // read the next line to process
-                        jndLine = brJND.readLine();
-                        kjvLine = brKJV.readLine();
-                    } else {
-                        finished = true;
-                    }
-                }
-
-                // write the end of the html document
-                pwBible.println("</table>\n</body>\n\n</html>");
-
-                // close the print writers
-                pwBible.close();
-                pwBibleTxt.close();
-
-                // close the readers
-                brJND.close();
-                brKJV.close();
-
-                // log finished book
-                System.out.print(" *Done");
+                prepareSingleBibleBook(cfg, bpc, mseStyleLocation, errMessages);
 
             }
         } catch (Exception e) {
@@ -211,13 +45,250 @@ public class Preparer {
             System.out.println(e.getMessage());
         }
 
-        if (!messages.toString().equals("")) {
-            System.out.println("\r" + messages);
+        if (!errMessages.toString().equals("")) {
+            System.out.println("\r" + errMessages);
         }
 
-        System.out.print("\rFinished Preparing Bible");
+        System.out.println("\rFinished Preparing Bible");
 
     }
+
+    public static void prepareSingleBibleBook(Config cfg, BiblePrepareCache bpc, String mseStyleLocation, StringBuilder errMessages) throws IOException {
+        // create buffered readers to read the jnd and kjv txt files
+        BufferedReader brJND = new BufferedReader(new FileReader(bpc.getJndSource()));
+        BufferedReader brKJV = new BufferedReader(new FileReader(bpc.getKjvSource()));
+
+        // create print writers to write the bible html and txt (overwrite any existing files)
+        PrintWriter pwBible = new PrintWriter(new FileWriter(bpc.getBibleOutput(), false));
+        PrintWriter pwBibleTxt = new PrintWriter(new FileWriter(bpc.getBibleTextOutput()));
+
+        // write the html header
+        HtmlHelper.writeHtmlHeader(pwBible, "Darby translation and King James Version of The Bible", mseStyleLocation);
+        HtmlHelper.writeBibleStart(pwBible, pwBibleTxt, bpc.book);
+
+        // for each chapter
+        for (int chapterCount = 1; chapterCount <= bpc.book.getNumChapters(); chapterCount++) {
+            pwBible.println("\t<a href=\"#" + chapterCount + "\">" + chapterCount + "</a> ");
+//            System.out.print(String.format("\rPreparing %s chapter %d", bpc.book.getName(), chapterCount));
+        }
+        pwBible.println("\t<table class=\"bible\">");
+
+        // read the first line of the two versions and assume there are more lines
+        boolean finished = false;
+        bpc.jndLine = brJND.readLine();
+        bpc.kjvLine = brKJV.readLine();
+
+        // if there are no lines log error
+        if (bpc.jndLine == null) {
+            System.out.println("\n!!! No JND lines found");
+        }
+        if (bpc.kjvLine == null) {
+            System.out.println("\n!!! No KJV lines found");
+        }
+
+        // while there are more lines
+        while ((bpc.jndLine != null) && (bpc.kjvLine != null)) {
+
+            prepareSingleBibleLine(cfg, bpc, errMessages);
+            // write the html and text output
+            pwBible.println(bpc.bufferString);
+            pwBibleTxt.println(bpc.bufferTxt);
+
+            // check if italics run over a line
+            if (bpc.startedItalic) {
+                errMessages.append("\n\tItalics - ").append(bpc.bufferTxt);
+            }
+
+            // read the next line to process
+            bpc.jndLine = brJND.readLine();
+            bpc.kjvLine = brKJV.readLine();
+        }
+
+        // write the end of the html document
+        pwBible.println("</table>\n</body>\n\n</html>");
+
+        // close the print writers
+        pwBible.close();
+        pwBibleTxt.close();
+
+        // close the readers
+        brJND.close();
+        brKJV.close();
+    }
+
+    public static void prepareSingleBibleLine(Config cfg, BiblePrepareCache bpc, StringBuilder errMessages) {
+
+        // if it is a chapter heading
+        if (bpc.jndLine.indexOf("{") == 0) {
+            bpc.chapter = bpc.jndLine.substring(1, bpc.jndLine.length() - 1);
+
+            // if including synopsis
+            if (cfg.isSynopsis()) {
+                bpc.synopsisLink = bpc.synopsisPages.get(bpc.bookNumber + "/" + bpc.chapter);
+                if (bpc.synopsisLink == null) {
+                    errMessages.append("\n\tNo synopsis link for ").append(bpc.book.getName()).append(" chapter ").append(bpc.chapter);
+                    bpc.synopsisLink = "";
+                }
+            } else {
+                // if not including synopsis
+                bpc.synopsisLink = "";
+            }
+            // add the chapter title row for the html output
+            bpc.bufferString = HtmlHelper.getBibleChapterHeader(bpc);
+            // add chapter header for text output
+            bpc.bufferTxt = String.format("{%s}", bpc.chapter);
+        } else {
+            // if it is a verse
+
+            // get the verse number and content
+            bpc.verseNum = bpc.jndLine.substring(0, bpc.jndLine.indexOf(" "));
+            bpc.jndVerse = bpc.jndLine.substring(bpc.jndLine.indexOf(" ")).trim();
+            bpc.kjvVerse = bpc.kjvLine.substring(bpc.kjvLine.indexOf(" ")).trim();
+
+            // create the html output
+            bpc.bufferString = "\t\t<tr";
+
+            // verse is odd make the class of <td> odd
+            if ((Integer.parseInt(bpc.verseNum) % 2) != 0) {
+                bpc.bufferString += " class=\"odd\"";
+            }
+
+            bpc.bufferString += String.format(">\n\t\t\t<td><a name=%s:%s>%s</a></td>\n", bpc.chapter, bpc.verseNum, bpc.verseNum);
+            bpc.bufferString += String.format("\t\t\t<td>%s</td>\n\t\t\t<td>%s</td>\n\t\t</tr>", bpc.jndVerse, bpc.kjvVerse);
+
+            // create the text output
+            bpc.bufferTxt = bpc.verseNum + " " + bpc.jndVerse + " " + bpc.kjvVerse;
+
+//                            // legacy logging of short verses to find paragraph problems
+//                            if (jndVerse.length() < 5) {
+//                                System.out.println("Short verse: " + bufferString);
+//                            }
+
+            // insert italics
+            while (bpc.bufferString.contains("*")) {
+                if (bpc.startedItalic) {
+                    bpc.bufferString = bpc.bufferString.substring(0, bpc.bufferString.indexOf("*")) + "</i>" + bpc.bufferString.substring(bpc.bufferString.indexOf("*") + 1);
+                } else {
+                    bpc.bufferString = bpc.bufferString.substring(0, bpc.bufferString.indexOf("*")) + "<i>" + bpc.bufferString.substring(bpc.bufferString.indexOf("*") + 1);
+                }
+                bpc.startedItalic = !bpc.startedItalic;
+            }
+
+        }
+    }
+
+    public static void createBibleContents(Config cfg, PreparePlatform preparePlatform) {
+
+        System.out.print("Preparing Bible contents...");
+
+        String contentsFilePath = cfg.getResDir() + Author.BIBLE.getTargetPath(Author.BIBLE.getContentsName());
+
+        File bibleContentsFile = new File(contentsFilePath);
+
+        if (!bibleContentsFile.exists()) {
+            bibleContentsFile.getParentFile().mkdirs();
+            try {
+                bibleContentsFile.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        PrintWriter pw = null;
+        try {
+
+            pw = new PrintWriter(bibleContentsFile);
+
+            HtmlHelper.writeHtmlHeader(pw, "Bible Contents", preparePlatform.getStylesLink());
+            pw.println("");
+            pw.println("\t<div class=\"container bible-contents-table\">");
+            pw.println("\t\t<div class=\"row bible-contents-header\">");
+            pw.println("\t\t\t<div class=\"col-xs-6\">Old<br>Testament</div>");
+            pw.println("\t\t\t<div class=\"col-xs-6\">New<br>Testament</div>");
+            pw.println("\t\t</div>");
+
+            for (int i = 0; i < BibleBook.getNumOldTestamentBooks(); i++) {
+
+                pw.println("\t\t<div class=\"row bible-contents-row\">\n\t\t\t<div class=\"col-xs-6\"><a href=\"" + preparePlatform.getLinkPrefix(Author.BIBLE) + BibleBook.values()[i].getName()
+                        + ".htm\">" + BibleBook.values()[i].getName() + "</a></div>");
+
+                // if i+1 is less than the number of new testament books
+                if (i < BibleBook.getNumNewTestamentBooks()) {
+                    pw.println("\t\t\t<div class=\"col-xs-6\"><a href=\"" + preparePlatform.getLinkPrefix(Author.BIBLE) + BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName()
+                            + ".htm\">" + BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName() + "</a></div>");
+                } else {
+                    pw.println("\t\t\t<div class=\"col-xs-6\"></div>");
+                }
+
+                pw.println("\t\t</div>");
+
+            }
+
+            pw.println("\t</div>");
+
+            pw.println("</body>");
+            pw.println();
+            pw.println("</html>");
+
+        } catch (FileNotFoundException e) {
+            System.out.println("Could not find file: " + contentsFilePath);
+        } finally {
+            if (pw != null) pw.close();
+        }
+
+        System.out.println("\rFinished preparing Bible contents");
+
+    }
+
+    private static HashMap<String, String> getSynopsisPages(String filename) {
+        // this gets a map of the corresponding synopsis page in JND's ministry for each book of the bible
+
+        HashMap<String, String> synopsisMap = new HashMap<>();
+
+        // boolean used to check if there are more pages to read
+        boolean morePages = true;
+
+        // buffer for the synopsis file input
+        String synopsisLine;
+
+        BufferedReader brPages = null;
+
+        try {
+            // buffered reader for reading the synopsis pages link file
+            brPages = new BufferedReader(new FileReader(filename));
+
+            // populate the synopsis pages hash map
+            while (morePages) {//still more lines in pages.txt
+                if ((synopsisLine = brPages.readLine()) != null) {
+                    // get the synopsis for a bible book
+                    // links are stored in the format {bible book}, {bible book chapter}, {jnd volume}, {jnd volume page}
+
+                    String[] synopsisNumbers = synopsisLine.split(",");
+                    String key = String.format("%s/%s", synopsisNumbers[0], synopsisNumbers[1]);
+                    String value = String.format(" - <a href=\"../jnd/JND%s.htm#%s\">go to synopsis</a>", synopsisNumbers[2], synopsisNumbers[3]);
+                    synopsisMap.put(key, value);
+                } else {
+                    morePages = false;
+                }
+            }
+        } catch (IOException ex) {
+            System.out.println("!***Error creating synopsis hash map***!");
+        } finally {
+            if (brPages != null) {
+                try {
+                    brPages.close();
+                } catch (IOException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
+
+        return synopsisMap;
+    }
+
+    // endregion
+
+    // region hymns
 
     public static void prepareHymnsHtml(Config cfg, String mseStyleLocation) {
 
@@ -350,6 +421,143 @@ public class Preparer {
         System.out.println("\rFinished preparing Hymns");
     }
 
+    public static void createHymnsContents(Config cfg, String mseStyleLocation) {
+
+        System.out.print("Preparing hymns contents");
+
+        try {
+
+            File f;
+
+            // the path of the input
+            String hymnsPath = cfg.getResDir() + Author.HYMNS.getPreparePath();
+            f = new File(hymnsPath);
+            f.mkdirs();
+            System.out.print("\r\tReading Hymns from: " + f.getCanonicalPath());
+
+            // the path of the output
+            String hymnsOutPath = cfg.getResDir() + Author.HYMNS.getTargetPath();
+            f = new File(hymnsOutPath);
+            f.mkdirs();
+            System.out.print("\r\tWriting Hymns to: " + f.getCanonicalPath());
+
+            // set up buffers
+            String hymnLine;
+            String hymnNumber;
+
+            PrintWriter pwOverallHymnBooksContents = new PrintWriter(new FileWriter(hymnsOutPath + "Hymns-Contents.htm"));
+
+            // print the html header for the overall contents page
+            HtmlHelper.writeHtmlHeader(pwOverallHymnBooksContents, "Hymn Contents", mseStyleLocation);
+            pwOverallHymnBooksContents.println("<body>");
+
+            // prepare html for each hymn book
+            for (HymnBook nextHymnBook : HymnBook.values()) {
+
+                // create a print writer for the hymnbook
+                PrintWriter pwSingleHymnBookContents = new PrintWriter(new File(hymnsOutPath + nextHymnBook.getContentsName()));
+
+                // print the html header for the single book contents page
+                HtmlHelper.writeHtmlHeader(pwSingleHymnBookContents, "Hymn Contents", mseStyleLocation);
+                pwSingleHymnBookContents.println("<body>");
+
+                System.out.print("\r\tScanning " + nextHymnBook.getName() + " ");
+                String inputFileName = hymnsPath + nextHymnBook.getInputFilename();
+
+                // make the reader and writer
+                BufferedReader brHymns = new BufferedReader(new FileReader(inputFileName));
+
+                // read the first line of the hymn book
+                hymnLine = brHymns.readLine();
+
+                pwOverallHymnBooksContents.println("\t<h1 class=\"volume-title\"><a href=\"" + nextHymnBook.getContentsName() + "\">" + nextHymnBook.getName() + "</a></h1>");
+                pwSingleHymnBookContents.println("\t<h1 class=\"volume-title\">" + nextHymnBook.getName() + "</h1>");
+
+                // read the second line of the hymn book
+                hymnLine = brHymns.readLine();
+
+                // print out the start of the table
+
+                // if there are still more lines
+                while (hymnLine != null) {
+
+                    // if it is a new hymn
+                    if (hymnLine.indexOf("{") == 0) {
+
+                        // get the hymn number
+                        hymnNumber = hymnLine.substring(1, hymnLine.length() - 1);
+
+                        int hymnNum = Integer.parseInt(hymnNumber);
+
+                        String colClass = "col-xs-2";
+
+                        if (hymnNum % 5 == 1) {
+                            // if it is the first of a large column
+                            if (hymnNum % 10 == 1) {
+                                // if the first of a whole row
+                                pwSingleHymnBookContents.println("\t<div class=\"row\">");
+                            }
+                            pwSingleHymnBookContents.println("\t\t<div class=\"col-lg-6\">" +
+                                    "\n\t\t\t<div class=\"btn-toolbar\" role=\"toolbar\">" +
+                                    "\n\t\t\t\t<div class=\"btn-group btn-group-lg btn-group-justified btn-group-fill-height\">");
+                        }
+
+                        printSingleHymnToContents(pwSingleHymnBookContents, nextHymnBook.getOutputFilename(), hymnNumber);
+
+                        if (hymnNum % 5 == 0) {
+                            // if it is the last hymn in a large column
+                            pwSingleHymnBookContents.println("\t\t\t\t</div>" +
+                                    "\n\t\t\t</div>" +
+                                    "\n\t\t</div>");
+                            if (hymnNum % 10 == 0) {
+                                // if it is the last hymn in a whole row
+                                pwSingleHymnBookContents.println("\n\t</div>");
+                            }
+                        }
+
+                    }
+
+                    // read the next line of the hymn book
+                    hymnLine = brHymns.readLine();
+
+                }
+
+                // close the reader
+                brHymns.close();
+
+                // close the hymns table
+                pwSingleHymnBookContents.println("\t\t\t\t</div>" +
+                        "\n\t\t\t</div>" +
+                        "\n\t\t</div>" +
+                        "\n\t</div>");
+
+                pwSingleHymnBookContents.println("</body>\n\n</html>");
+                pwSingleHymnBookContents.close();
+
+            }
+
+            pwOverallHymnBooksContents.println("</body>\n\n</html>");
+
+            // close the writer
+            pwOverallHymnBooksContents.close();
+
+        } catch (IOException ioe) {
+            System.out.println("!*** Error preparing hymns contents ***!");
+            System.out.println(ioe.getMessage());
+        }
+
+        System.out.println("\rFinished preparing Hymns contents");
+
+    }
+
+    private static void printSingleHymnToContents(PrintWriter pw, String hymnbookHtmlPath, String hymnNumber) {
+        pw.println("\t\t\t\t\t<a class=\"btn btn-primary-outline\" href=\"" + hymnbookHtmlPath + "#" + hymnNumber + "\" role=\"button\">" + hymnNumber + "</a>");
+    }
+
+    // endregion
+
+    // region ministry
+
     public static void prepareMinistry(Config cfg, Author author, String mseStylesLocation) {
 
         System.out.print("Preparing: " + author.getName());
@@ -379,7 +587,7 @@ public class Preparer {
             pwContents = new PrintWriter(new FileWriter(volDestPath + author.getCode() + "-Contents.htm"));
             HtmlHelper.writeHtmlHeader(pwContents, author.getName() + " contents", mseStylesLocation);
 
-            printContentsVolumeNumbers(pwContents, author);
+//            printContentsVolumeNumbers(pwContents, author);
 
             pwContents.println("\t<div class=\"container\">");
 
@@ -697,252 +905,54 @@ public class Preparer {
         }
     } // end prepare (used for ministry)
 
-    public static void createBibleContents(Config cfg, PreparePlatform preparePlatform) {
+    private static StringBuilder getSpecialLine(AuthorPrepareCache apc, StringBuilder line) {
 
-        System.out.print("\nCreating Bible contents...");
+        int charPosition = 0;
+        int tempCharPosition = charPosition + 1;
 
-        String contentsFilePath = cfg.getResDir() + Author.BIBLE.getTargetPath(Author.BIBLE.getContentsName());
-
-        File bibleContentsFile = new File(contentsFilePath);
-
-        if (!bibleContentsFile.exists()) {
-            bibleContentsFile.getParentFile().mkdirs();
-            try {
-                bibleContentsFile.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        // get the bounds of the page number
+        while (line.charAt(tempCharPosition) != '}') {
+            tempCharPosition++;
         }
 
-        PrintWriter pw = null;
-        try {
+        // get the page number string
+        String pageNumberTemp = line.substring(charPosition + 1, tempCharPosition);
 
-            pw = new PrintWriter(bibleContentsFile);
+        // if it is a page number
+        if (pageNumberTemp.charAt(0) != '#') {
+            // if it is a valid new page
 
-            HtmlHelper.writeHtmlHeader(pw, "Bible Contents", preparePlatform.getStylesLink());
-            pw.println("");
-            pw.println("\t<div class=\"container bible-contents-table\">");
-            pw.println("\t\t<div class=\"row bible-contents-header\">");
-            pw.println("\t\t\t<div class=\"col-xs-6\">Old<br>Testament</div>");
-            pw.println("\t\t\t<div class=\"col-xs-6\">New<br>Testament</div>");
-            pw.println("\t\t</div>");
+            apc.pageNum = Integer.parseInt(pageNumberTemp);
 
-            for (int i = 0; i < BibleBook.getNumOldTestamentBooks(); i++) {
-
-                pw.println("\t\t<div class=\"row bible-contents-row\">\n\t\t\t<div class=\"col-xs-6\"><a href=\"" + preparePlatform.getLinkPrefix(Author.BIBLE) + BibleBook.values()[i].getName()
-                        + ".htm\">" + BibleBook.values()[i].getName() + "</a></div>");
-
-                // if i+1 is less than the number of new testament books
-                if (i < BibleBook.getNumNewTestamentBooks()) {
-                    pw.println("\t\t\t<div class=\"col-xs-6\"><a href=\"" + preparePlatform.getLinkPrefix(Author.BIBLE) + BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName()
-                            + ".htm\">" + BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName() + "</a></div>");
+            if ((apc.pageNum != apc.keepPageNumber + 1) && (apc.keepPageNumber != 0)) {
+                if (apc.pageNum == apc.keepPageNumber) {
+                    apc.messages += "\n\tDuplicate page: " + apc.author.getCode() + " " + apc.volNum + ":" + (apc.keepPageNumber);
                 } else {
-                    pw.println("\t\t\t<div class=\"col-xs-6\"></div>");
+                    apc.messages += "\n\tMissing page: " + apc.author.getCode() + " " + apc.volNum + ":" + (apc.keepPageNumber + 1);
                 }
-
-                pw.println("\t\t</div>");
-
             }
+            apc.keepPageNumber = apc.pageNum;
+            line.replace(charPosition, line.length(), String.format("<a name=%d>[Page %s]</a>", apc.pageNum, apc.pageNum));
 
-            pw.println("\t</div>");
+            // reset page specific values
+            apc.footnotes = "";
+            apc.actualFootnotes = "";
+            apc.footnotesNumber = 0;
+            apc.actualFootnotesNumber = 0;
+            apc.section = 1;
 
-            pw.println("</body>");
-            pw.println();
-            pw.println("</html>");
+            // set the css class
+            apc.cssClass = "page-number";
 
-        } catch (FileNotFoundException e) {
-            System.out.println("Could not find file: " + contentsFilePath);
-        } finally {
-            if (pw != null) pw.close();
+        } else {
+            // remove decoration {#x} from volume title "x"
+            line.replace(charPosition, charPosition + 2, "");
+            line.replace(line.length() - 1, line.length(), "");
+
+            // set the css class
+            apc.cssClass = "volume-title";
         }
-
-        System.out.println("\rFinished creating Bible contents");
-
-    }
-
-    public static void createHymnsContents(Config cfg, String mseStyleLocation) {
-
-        System.out.println("Creating hymns contents");
-
-        try {
-
-            File f;
-
-            // the path of the input
-            String hymnsPath = cfg.getResDir() + Author.HYMNS.getPreparePath();
-            f = new File(hymnsPath);
-            f.mkdirs();
-            System.out.print("\r\tReading Hymns from: " + f.getCanonicalPath());
-
-            // the path of the output
-            String hymnsOutPath = cfg.getResDir() + Author.HYMNS.getTargetPath();
-            f = new File(hymnsOutPath);
-            f.mkdirs();
-            System.out.print("\r\tWriting Hymns to: " + f.getCanonicalPath());
-
-            // set up buffers
-            String hymnLine;
-            String hymnNumber = "0";
-            String verseNumber;
-            String bufferOutHtml;
-            String bufferOutTxt;
-
-            PrintWriter pwHymns = new PrintWriter(new FileWriter(hymnsOutPath + "Hymns-Contents.htm"));
-
-            // print the html header for the overall contents page
-            HtmlHelper.writeHtmlHeader(pwHymns, "Hymn Contents", mseStyleLocation);
-
-            // prepare html for each hymn book
-            for (HymnBook nextHymnBook : HymnBook.values()) {
-
-                // create a print writer for the hymnbook
-                PrintWriter pwSingleHymnBook = new PrintWriter(new File(hymnsOutPath + nextHymnBook.getContentsName()));
-
-                // print the html header for the single book contents page
-                HtmlHelper.writeHtmlHeader(pwSingleHymnBook, "Hymn Contents", mseStyleLocation);
-
-                System.out.print("\r\tScanning " + nextHymnBook.getName() + " ");
-                String inputFileName = hymnsPath + nextHymnBook.getInputFilename();
-
-                // make the reader and writer
-                BufferedReader brHymns = new BufferedReader(new FileReader(inputFileName));
-
-                // read the first line of the hymn book
-                hymnLine = brHymns.readLine();
-
-                pwHymns.println("<h1 class=\"volume-title\"><a href=\"" + nextHymnBook.getContentsName() + "\">" + nextHymnBook.getName() + "</a></h1>");
-                pwSingleHymnBook.println("<h1 class=\"volume-title\">" + nextHymnBook.getName() + "</h1>");
-
-                // read the second line of the hymn book
-                hymnLine = brHymns.readLine();
-
-                // print out the start of the table
-
-                // if there are still more lines
-                while (hymnLine != null) {
-
-                    // if it is a new hymn
-                    if (hymnLine.indexOf("{") == 0) {
-
-                        // get the hymn number
-                        hymnNumber = hymnLine.substring(1, hymnLine.length() - 1);
-
-                        System.out.print("\r\tNumber: " + hymnNumber);
-
-                        int hymnNum = Integer.parseInt(hymnNumber);
-
-                        String colClass = "col-xs-2";
-
-                        if (hymnNum % 5 == 1) {
-                            // if it is the first of a large column
-                            if (hymnNum % 10 == 1) {
-                                // if the first of a whole row
-                                pwSingleHymnBook.println("\t<div class=\"row\">");
-                            }
-                            pwSingleHymnBook.println("\t\t<div class=\"col-lg-6\">" +
-                                    "\n\t\t\t<div class=\"btn-toolbar\" role=\"toolbar\">" +
-                                    "\n\t\t\t\t<div class=\"btn-group btn-group-lg btn-group-justified btn-group-fill-height\">");
-                            colClass = "col-xs-2 col-xs-offset-1";
-                        }
-
-                        printSingleHymnToContents(pwSingleHymnBook, nextHymnBook.getOutputFilename(), hymnNumber, colClass);
-
-                        if (hymnNum % 5 == 0) {
-                            // if it is the last hymn in a large column
-                            pwSingleHymnBook.println("\t\t\t\t</div>" +
-                                    "\n\t\t\t</div>" +
-                                    "\n\t\t</div>");
-                            if (hymnNum % 10 == 0) {
-                                // if it is the last hymn in a whole row
-                                pwSingleHymnBook.println("\n\t</div>");
-                            }
-                        }
-
-                    }
-
-                    // read the next line of the hymn book
-                    hymnLine = brHymns.readLine();
-
-                }
-
-                // close the reader
-                brHymns.close();
-
-                // close the hymns table
-                pwSingleHymnBook.println("\t\t\t\t</div>" +
-                        "\n\t\t\t</div>" +
-                        "\n\t\t</div>" +
-                        "\n\t</div>");
-
-                pwSingleHymnBook.println("</body>\n\n</html>");
-                pwSingleHymnBook.close();
-
-            }
-
-            pwHymns.println("</body>\n\n</html>");
-
-            // close the writer
-            pwHymns.close();
-
-            System.out.print(" *Done");
-
-        } catch (IOException ioe) {
-            System.out.println("!*** Error preparing hymns ***!");
-            System.out.println(ioe.getMessage());
-        }
-
-        System.out.println("\rFinished preparing Hymns");
-
-    }
-
-    private static void printSingleHymnToContents(PrintWriter pw, String hymnbookHtmlPath, String hymnNumber, String colClass) {
-        pw.println("\t\t\t\t\t<a class=\"btn btn-primary-outline\" href=\"" + hymnbookHtmlPath + "#" + hymnNumber + "\" role=\"button\">" + hymnNumber + "</a>");
-    }
-
-    private static HashMap<String, String> getSynopsisPages(String filename) {
-        // this gets a map of the corresponding synopsis page in JND's ministry for each book of the bible
-
-        HashMap<String, String> synopsisMap = new HashMap<>();
-
-        // boolean used to check if there are more pages to read
-        boolean morePages = true;
-
-        // buffer for the synopsis file input
-        String synopsisLine;
-
-        BufferedReader brPages = null;
-
-        try {
-            // buffered reader for reading the synopsis pages link file
-            brPages = new BufferedReader(new FileReader(filename));
-
-            // populate the synopsis pages hash map
-            while (morePages) {//still more lines in pages.txt
-                if ((synopsisLine = brPages.readLine()) != null) {
-                    // get the synopsis for a bible book
-                    // links are stored in the format {bible book}, {bible book chapter}, {jnd volume}, {jnd volume page}
-
-                    String[] synopsisNumbers = synopsisLine.split(",");
-                    String key = String.format("%s/%s", synopsisNumbers[0], synopsisNumbers[1]);
-                    String value = String.format(" - <a href=\"../jnd/JND%s.htm#%s\">go to synopsis</a>", synopsisNumbers[2], synopsisNumbers[3]);
-                    synopsisMap.put(key, value);
-                } else {
-                    morePages = false;
-                }
-            }
-        } catch (IOException ex) {
-            System.out.println("!***Error creating synopsis hash map***!");
-        } finally {
-            if (brPages != null) {
-                try {
-                    brPages.close();
-                } catch (IOException ex) {
-                    System.out.println(ex.getMessage());
-                }
-            }
-        }
-
-        return synopsisMap;
+        return line;
     }
 
     private static void printContentsVolumeNumbers(PrintWriter pwContents, Author author) {
@@ -1004,54 +1014,6 @@ public class Preparer {
 
     }
 
-    private static StringBuilder getSpecialLine(AuthorPrepareCache apc, StringBuilder line) {
-
-        int charPosition = 0;
-        int tempCharPosition = charPosition + 1;
-
-        // get the bounds of the page number
-        while (line.charAt(tempCharPosition) != '}') {
-            tempCharPosition++;
-        }
-
-        // get the page number string
-        String pageNumberTemp = line.substring(charPosition + 1, tempCharPosition);
-
-        // if it is a page number
-        if (pageNumberTemp.charAt(0) != '#') {
-            // if it is a valid new page
-
-            apc.pageNum = Integer.parseInt(pageNumberTemp);
-
-            if ((apc.pageNum != apc.keepPageNumber + 1) && (apc.keepPageNumber != 0)) {
-                if (apc.pageNum == apc.keepPageNumber) {
-                    apc.messages += "\n\tDuplicate page: " + apc.author.getCode() + " " + apc.volNum + ":" + (apc.keepPageNumber);
-                } else {
-                    apc.messages += "\n\tMissing page: " + apc.author.getCode() + " " + apc.volNum + ":" + (apc.keepPageNumber + 1);
-                }
-            }
-            apc.keepPageNumber = apc.pageNum;
-            line.replace(charPosition, line.length(), String.format("<a name=%d>[Page %s]</a>", apc.pageNum, apc.pageNum));
-
-            // reset page specific values
-            apc.footnotes = "";
-            apc.actualFootnotes = "";
-            apc.footnotesNumber = 0;
-            apc.actualFootnotesNumber = 0;
-            apc.section = 1;
-
-            // set the css class
-            apc.cssClass = "page-number";
-
-        } else {
-            // remove decoration {#x} from volume title "x"
-            line.replace(charPosition, charPosition + 2, "");
-            line.replace(line.length() - 1, line.length(), "");
-
-            // set the css class
-            apc.cssClass = "volume-title";
-        }
-        return line;
-    }
+    // endregion
 
 }

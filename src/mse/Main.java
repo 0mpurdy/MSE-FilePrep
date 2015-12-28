@@ -50,18 +50,26 @@ public class Main {
                     // prepare all files
                     platform = chooseSystem(sc);
                     if (platform != null) {
-                        System.out.println();
+
+                        System.out.println("Preparing all files");
+
+                        // prepare bible
                         Author.BIBLE.setTargetFolder(platform.getTargetFolder());
                         Preparer.prepareBibleHtml(cfg, platform.getStylesLink());
-                        System.out.println();
+
+                        // prepare hymns
                         Author.HYMNS.setTargetFolder(platform.getTargetFolder());
                         Preparer.prepareHymnsHtml(cfg, platform.getStylesLink());
+
+                        // prepare ministry
                         for (Author nextAuthor : Author.values()) {
-                            if (nextAuthor.getIndex() >= 3) {
+                            if (nextAuthor.isMinistry()) {
                                 nextAuthor.setTargetFolder(platform.getTargetFolder());
                                 Preparer.prepareMinistry(cfg, nextAuthor, platform.getStylesLink());
                             }
                         }
+                        Preparer.createBibleContents(cfg, platform);
+                        Preparer.createHymnsContents(cfg, platform.getStylesLink());
                     }
                     break;
                 case 2:
@@ -91,6 +99,7 @@ public class Main {
                     // create all indexes
                     platform = chooseSystem(sc);
                     if (platform != null) {
+                        System.out.println("Creating all indexes ...");
                         long startIndexing = System.nanoTime();
                         // add a reference processor for each author then write the index
                         for (Author nextAuthor : Author.values()) {
