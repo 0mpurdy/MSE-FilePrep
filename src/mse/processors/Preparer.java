@@ -1,17 +1,18 @@
 package mse.processors;
 
 import mse.data.*;
-import mse.helpers.FileHelper;
 import mse.helpers.HtmlHelper;
 import mse.common.Author;
 import mse.common.Config;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by mj_pu_000 on 21/12/2015.
+ * Created by Michael Purdy on 21/12/2015.
+ *
+ * This is used to prepare the html/text for indexing, reading and searching.
+ * Also prepares contents pages.
  */
 public class Preparer {
 
@@ -74,7 +75,6 @@ public class Preparer {
         pwBible.println("\t<table class=\"bible\">");
 
         // read the first line of the two versions and assume there are more lines
-        boolean finished = false;
         bpc.jndLine = brJND.readLine();
         bpc.kjvLine = brKJV.readLine();
 
@@ -185,53 +185,49 @@ public class Preparer {
 
         File bibleContentsFile = new File(contentsFilePath);
 
-        if (!bibleContentsFile.exists()) {
-            bibleContentsFile.getParentFile().mkdirs();
-            try {
-                bibleContentsFile.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
         PrintWriter pw = null;
         try {
 
-            pw = new PrintWriter(bibleContentsFile);
+            if (bibleContentsFile.exists() || bibleContentsFile.createNewFile()) {
 
-            HtmlHelper.writeHtmlHeader(pw, "Bible Contents", preparePlatform.getStylesLink());
-            pw.println("");
-            pw.println("\t<div class=\"container bible-contents-table\">");
-            pw.println("\t\t<div class=\"row bible-contents-header\">");
-            pw.println("\t\t\t<div class=\"col-xs-6\">Old<br>Testament</div>");
-            pw.println("\t\t\t<div class=\"col-xs-6\">New<br>Testament</div>");
-            pw.println("\t\t</div>");
+                pw = new PrintWriter(bibleContentsFile);
 
-            for (int i = 0; i < BibleBook.getNumOldTestamentBooks(); i++) {
-
-                pw.println("\t\t<div class=\"row bible-contents-row\">\n\t\t\t<div class=\"col-xs-6\"><a href=\"" + preparePlatform.getLinkPrefix(Author.BIBLE) + BibleBook.values()[i].getName()
-                        + ".htm\">" + BibleBook.values()[i].getName() + "</a></div>");
-
-                // if i+1 is less than the number of new testament books
-                if (i < BibleBook.getNumNewTestamentBooks()) {
-                    pw.println("\t\t\t<div class=\"col-xs-6\"><a href=\"" + preparePlatform.getLinkPrefix(Author.BIBLE) + BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName()
-                            + ".htm\">" + BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName() + "</a></div>");
-                } else {
-                    pw.println("\t\t\t<div class=\"col-xs-6\"></div>");
-                }
-
+                HtmlHelper.writeHtmlHeader(pw, "Bible Contents", preparePlatform.getStylesLink());
+                pw.println("");
+                pw.println("\t<div class=\"container bible-contents-table\">");
+                pw.println("\t\t<div class=\"row bible-contents-header\">");
+                pw.println("\t\t\t<div class=\"col-xs-6\">Old<br>Testament</div>");
+                pw.println("\t\t\t<div class=\"col-xs-6\">New<br>Testament</div>");
                 pw.println("\t\t</div>");
 
+                for (int i = 0; i < BibleBook.getNumOldTestamentBooks(); i++) {
+
+                    pw.println("\t\t<div class=\"row bible-contents-row\">\n\t\t\t<div class=\"col-xs-6\"><a href=\"" + preparePlatform.getLinkPrefix(Author.BIBLE) + BibleBook.values()[i].getName()
+                            + ".htm\">" + BibleBook.values()[i].getName() + "</a></div>");
+
+                    // if i+1 is less than the number of new testament books
+                    if (i < BibleBook.getNumNewTestamentBooks()) {
+                        pw.println("\t\t\t<div class=\"col-xs-6\"><a href=\"" + preparePlatform.getLinkPrefix(Author.BIBLE) + BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName()
+                                + ".htm\">" + BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName() + "</a></div>");
+                    } else {
+                        pw.println("\t\t\t<div class=\"col-xs-6\"></div>");
+                    }
+
+                    pw.println("\t\t</div>");
+
+                }
+
+                pw.println("\t</div>");
+
+                pw.println("</body>");
+                pw.println();
+                pw.println("</html>");
+
+            } else {
+                System.out.println("Could not find/create: " + contentsFilePath);
             }
-
-            pw.println("\t</div>");
-
-            pw.println("</body>");
-            pw.println();
-            pw.println("</html>");
-
-        } catch (FileNotFoundException e) {
-            System.out.println("Could not find file: " + contentsFilePath);
+        } catch (IOException e) {
+            System.out.println("IOException: " + contentsFilePath);
         } finally {
             if (pw != null) pw.close();
         }
@@ -331,11 +327,8 @@ public class Preparer {
                 hymnLine = brHymns.readLine();
 
                 // print the html header
-                pwHymns.println("<html>");
-                pwHymns.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"" + mseStyleLocation + "\">\n");
-                pwHymns.println("<head>\n\t<title>"
-                        + nextHymnBook.getName()
-                        + "</title>\n</head>\n\n<body>");
+                HtmlHelper.writeHtmlHeader(pwHymns, nextHymnBook.getName(), mseStyleLocation);
+                HtmlHelper.writeStart(pwHymns);
 
                 // read the second line of the hymn book
                 hymnLine = brHymns.readLine();
@@ -449,7 +442,7 @@ public class Preparer {
 
             // print the html header for the overall contents page
             HtmlHelper.writeHtmlHeader(pwOverallHymnBooksContents, "Hymn Contents", mseStyleLocation);
-            pwOverallHymnBooksContents.println("<body>");
+            HtmlHelper.writeStart(pwOverallHymnBooksContents);
 
             // prepare html for each hymn book
             for (HymnBook nextHymnBook : HymnBook.values()) {
@@ -459,7 +452,7 @@ public class Preparer {
 
                 // print the html header for the single book contents page
                 HtmlHelper.writeHtmlHeader(pwSingleHymnBookContents, "Hymn Contents", mseStyleLocation);
-                pwSingleHymnBookContents.println("<body>");
+                HtmlHelper.writeStart(pwSingleHymnBookContents);
 
                 System.out.print("\r\tScanning " + nextHymnBook.getName() + " ");
                 String inputFileName = hymnsPath + nextHymnBook.getInputFilename();
@@ -586,10 +579,10 @@ public class Preparer {
             // write html head
             pwContents = new PrintWriter(new FileWriter(volDestPath + author.getCode() + "-Contents.htm"));
             HtmlHelper.writeHtmlHeader(pwContents, author.getName() + " contents", mseStylesLocation);
+            HtmlHelper.writeStart(pwContents);
+            HtmlHelper.writeContentsTitle(pwContents, author.getName() + " Contents");
 
 //            printContentsVolumeNumbers(pwContents, author);
-
-            pwContents.println("\t<div class=\"container\">");
 
             // for each volume
             while (!apc.finishedVolumes) {
@@ -610,7 +603,7 @@ public class Preparer {
 
                         // write html head
                         HtmlHelper.writeHtmlHeader(pwHtml, author.getName() + " Volume " + apc.volNum, mseStylesLocation);
-                        pwHtml.println("\n<body>\n\t<div class=\"container\">");
+                        HtmlHelper.writeStartAndContainer(pwHtml);
 
                         StringBuilder outputLine;
                         boolean skipLine;
@@ -853,12 +846,7 @@ public class Preparer {
                                 charsInSection++;
                             } // end of processing line
 
-                            // add formatting to the line
-                            if (apc.cssClass.equals("")) {
-                                apc.cssClass = "paragraph";
-                            }
-                            outputLine.insert(0, "\t<div class=\"" + apc.cssClass + "\">\n\t\t");
-                            outputLine.append("\n\t</div>");
+                            HtmlHelper.wrapContent(apc, outputLine);
 
                             // reset css class
                             apc.cssClass = "";
@@ -895,7 +883,7 @@ public class Preparer {
                 }
             }
 
-            pwContents.println("\t</div>");
+            HtmlHelper.writeContentsClose(pwContents);
 
         } catch (IOException ioe) {
             System.out.println("\n!*** Error preparing " + author.getName() + " ***!");
@@ -999,18 +987,26 @@ public class Preparer {
     }
 
     private static void printContentsHeading(PrintWriter pwContents, StringBuilder outputLine, Author author, int volNum, int pageNum) {
-        pwContents.println(String.format("\t\t\t\t<a class=\"btn btn-success-outline\" href=\"%s\" role=\"button\">%s</a>", author.getCode() + volNum + ".htm#" + pageNum, outputLine));
+
+        pwContents.println(String.format("\t\t\t\t<a class=\"btn btn-success-outline\" href=\"%s\" role=\"button\">%s</a>",
+                author.getCode() + volNum + ".htm#" + pageNum, outputLine));
+        pwContents.println("\t\t\t\t<br>");
 
     }
 
     private static void printContentsVolumeTitle(PrintWriter pwContents, StringBuilder outputLine, Author author, int volNum) {
 
-//        if (volNum > 1) pwContents.println("\t</div>");
+        if (volNum != 1) {
+            HtmlHelper.writeSinglePanelBodyClose(pwContents);
+        } else {
+            HtmlHelper.writePanelGroupOpen(pwContents);
+        }
 
-        pwContents.println(String.format("\t\t<a class=\"btn btn-lg btn-success\" id=\"" +
-                volNum + "\" href=\"%s\" role=\"button\">%s</a>", author.getCode() + volNum + ".htm", outputLine));
-
-//        pwContents.println("\t<div class=\"btn-group-vertical\">");
+        HtmlHelper.writePanelHeading(pwContents, volNum, outputLine.toString());
+        HtmlHelper.writePanelBodyOpen(pwContents, volNum);
+//
+//        pwContents.println(String.format("\t\t<a class=\"btn btn-lg btn-success\" id=\"" +
+//                volNum + "\" href=\"%s\" role=\"button\">%s</a>", author.getCode() + volNum + ".htm", outputLine));
 
     }
 
