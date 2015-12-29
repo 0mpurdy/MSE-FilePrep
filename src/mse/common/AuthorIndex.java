@@ -197,6 +197,7 @@ public class AuthorIndex implements Serializable {
 
             File outputFile = new File(location);
             if (!outputFile.exists()) {
+                outputFile.getParentFile().mkdirs();
                 outputFile.createNewFile();
             }
 

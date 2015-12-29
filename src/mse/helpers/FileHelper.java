@@ -6,7 +6,9 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Created by michaelpurdy on 28/12/2015.
+ * Created by Michael Purdy on 28/12/2015.
+ *
+ * This performs common file operations
  */
 public class FileHelper {
 
@@ -22,7 +24,7 @@ public class FileHelper {
     }
 
     public static String checkTargetFolder(Config cfg, String targetPath) throws IOException {
-        String pathName = cfg.getResDir() + "source" + File.separator + targetPath + File.separator;
+        String pathName = cfg.getResDir() + targetPath + File.separator;
         File f = new File(pathName);
         System.out.print("\rWriting to " + f.getCanonicalPath());
         if (f.exists() || f.mkdirs()) {
