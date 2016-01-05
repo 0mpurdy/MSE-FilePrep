@@ -16,6 +16,7 @@ public class HtmlHelper {
 
     private static String bootstrapCssLocation = "../../bootstrap/css/bootstrap.min.css";
     private static String bootstrapJsLocation = "../../bootstrap/js/bootstrap.min.js";
+    private static String jqueryJsLocation = "../../jquery/jquery-1.11.3.min.js";
 
     // region genericStart
 
@@ -97,7 +98,7 @@ public class HtmlHelper {
         pw.println("\t\t\t<div class=\"panel-heading\">\n" +
                 "\t\t\t\t<div class=\"panel-title\">\n" +
                 "\t\t\t\t\t<h4 class=\"panel-title\">\n" +
-                "\t\t\t\t\t\t<a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse" + volNum + "\">Volume " + volNum + " - " + heading + "</a>\n" +
+                "\t\t\t\t\t\t<a class=\"btn-block\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse" + volNum + "\">Volume " + volNum + " - " + heading + "</a>\n" +
                 "\t\t\t\t\t</h4>\n" +
                 "\t\t\t\t</div>\n" +
                 "\t\t\t</div>");
@@ -118,9 +119,9 @@ public class HtmlHelper {
                 "\t\t\t</div>\n" +
                 "\t\t</div>\n" +
                 "\t</div>\n" +
+                "\t<script src=\"" + jqueryJsLocation + "\"></script>\n" +
+                "\t<script src=\"" + bootstrapJsLocation + "\"></script>\n" +
                 "</body>\n" +
-                "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js\"></script>\n" +
-                "<script src=\"" + bootstrapJsLocation + "\"></script>\n" +
                 "\n" +
                 "</html>");
     }

@@ -988,8 +988,8 @@ public class Preparer {
 
     private static void printContentsHeading(PrintWriter pwContents, StringBuilder outputLine, Author author, int volNum, int pageNum) {
 
-        pwContents.println(String.format("\t\t\t\t<a class=\"btn btn-success-outline\" href=\"%s\" role=\"button\">%s</a>",
-                author.getCode() + volNum + ".htm#" + pageNum, outputLine));
+        pwContents.println(String.format("\t\t\t\t<a class=\"btn btn-success-outline\" href=\"%s\" role=\"button\">%s</a><span class=\"label label-primary\">%d</span>",
+                author.getCode() + volNum + ".htm#" + pageNum, outputLine, pageNum));
         pwContents.println("\t\t\t\t<br>");
 
     }
