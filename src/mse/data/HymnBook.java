@@ -37,10 +37,10 @@ public enum HymnBook {
     }
 
     public String getOutputFilename() {
-        return filename + ".htm";
+        return filename + ".html";
     }
 
     public String getContentsName() {
-        return filename + "-Contents.htm";
+        return filename + "-Contents.html";
     }
 }

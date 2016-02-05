@@ -152,11 +152,15 @@ public enum Author {
     }
 
     public String getVolumePath(int volumeNumber) {
-        return getTargetPath(folder + volumeNumber + ".htm");
+        return getTargetPath(getVolumeName(volumeNumber));
+    }
+
+    public String getVolumeName(int volumeNumber) {
+        return folder + volumeNumber + ".html";
     }
 
     public String getContentsName() {
-        return code + "-Contents.htm";
+        return code + "-Contents.html";
     }
 
     public String getIndexFilePath() {

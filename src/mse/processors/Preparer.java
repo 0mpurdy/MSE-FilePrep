@@ -261,7 +261,7 @@ public class Preparer {
 
                     String[] synopsisNumbers = synopsisLine.split(",");
                     String key = String.format("%s/%s", synopsisNumbers[0], synopsisNumbers[1]);
-                    String value = String.format(" - <a href=\"../jnd/JND%s.htm#%s\">go to synopsis</a>", synopsisNumbers[2], synopsisNumbers[3]);
+                    String value = String.format(" - <a href=\"../jnd/JND%s.html#%s\">go to synopsis</a>", synopsisNumbers[2], synopsisNumbers[3]);
                     synopsisMap.put(key, value);
                 } else {
                     morePages = false;
@@ -438,7 +438,7 @@ public class Preparer {
             String hymnLine;
             String hymnNumber;
 
-            PrintWriter pwOverallHymnBooksContents = new PrintWriter(new FileWriter(hymnsOutPath + "Hymns-Contents.htm"));
+            PrintWriter pwOverallHymnBooksContents = new PrintWriter(new FileWriter(hymnsOutPath + Author.HYMNS.getContentsName()));
 
             // print the html header for the overall contents page
             HtmlHelper.writeHtmlHeader(pwOverallHymnBooksContents, "Hymn Contents", mseStyleLocation);
@@ -576,8 +576,10 @@ public class Preparer {
 
             AuthorPrepareCache apc = new AuthorPrepareCache(author);
 
+            // create contents file
+            pwContents = new PrintWriter(new FileWriter(volDestPath + author.getContentsName()));
+
             // write html head
-            pwContents = new PrintWriter(new FileWriter(volDestPath + author.getCode() + "-Contents.htm"));
             HtmlHelper.writeHtmlHeader(pwContents, author.getName() + " contents", mseStylesLocation);
             HtmlHelper.writeStart(pwContents);
             HtmlHelper.writeContentsTitle(pwContents, author.getName() + " Contents");
@@ -598,8 +600,11 @@ public class Preparer {
                         // print out progress for each volume
                         System.out.print("\rPreparing " + author.getCode() + " Volume: " + apc.volNum);
 
+                        // get source file
                         brSourceText = new BufferedReader(new FileReader(volumeFile));
-                        pwHtml = new PrintWriter(new FileWriter(volDestPath + author.getCode() + apc.volNum + ".htm"));
+
+                        // get output file
+                        pwHtml = new PrintWriter(new FileWriter(volDestPath + author.getVolumeName(apc.volNum)));
 
                         // write html head
                         HtmlHelper.writeHtmlHeader(pwHtml, author.getName() + " Volume " + apc.volNum, mseStylesLocation);
@@ -658,7 +663,7 @@ public class Preparer {
                                 } else if (currentCharacter == '~') {
                                     // footnote
                                     outputLine.replace(charPosition, charPosition + 1,
-                                            String.format("<i>see <a href=\"%s_footnotes.htm#%d:%d\">footnote</a></i>",
+                                            String.format("<i>see <a href=\"%s_footnotes.html#%d:%d\">footnote</a></i>",
                                                     author.getContentsName(), apc.volNum, apc.pageNum));
 
                                     // increase character position by number of characters added (minus for testing)
@@ -713,7 +718,7 @@ public class Preparer {
 
 
                                     //mjp? do you need length<4?
-                                    while (((tempCharPos - charPosition) < 4) || (!Character.isDigit(outputLine.charAt(tempCharPos)))) {
+                                    while (tempCharPos > outputLine.length() && (((tempCharPos - charPosition) < 4) || (!Character.isDigit(outputLine.charAt(tempCharPos))))) {
                                         tempCharPos++;
                                     }
                                     String bookName = outputLine.substring(charPosition + 1, tempCharPos);
@@ -785,9 +790,9 @@ public class Preparer {
                                     String reference;
                                     if (verse.length() > 0) {
                                         // if the reference has a verse
-                                        reference = String.format("<a href=\"../bible/%s.htm#%s:%s\">%s %s:%s</a>", bookName.replaceAll("\\s", ""), chapter, verse, bookName, chapter, verse);
+                                        reference = HtmlHelper.getBibleHtmlLink(bookName, chapter, verse);
                                     } else {
-                                        reference = String.format("<a href=\"../bible/%s.htm#%s\">%s %s</a>", bookName.replaceAll("\\s", ""), chapter, bookName, chapter);
+                                        reference = HtmlHelper.getBibleHtmlLink(bookName, chapter);
                                     }
                                     outputLine.replace(charPosition, tempCharPos, reference);
                                     charPosition += reference.length() - 1;
@@ -832,7 +837,7 @@ public class Preparer {
                                     } // end finding verse
 
                                     // create the reference
-                                    String reference = String.format("<a href=\"..\\hymns\\hymns1972.htm#%s:%s\">Hymn %s</a>", hymnNumber, verseNumber, hymnNumber);
+                                    String reference = String.format("<a href=\"..\\hymns\\hymns1972.html#%s:%s\">Hymn %s</a>", hymnNumber, verseNumber, hymnNumber);
 
                                     // insert the reference
                                     outputLine.replace(charPosition, tempCharPos, reference);
@@ -988,8 +993,13 @@ public class Preparer {
 
     private static void printContentsHeading(PrintWriter pwContents, StringBuilder outputLine, Author author, int volNum, int pageNum) {
 
+<<<<<<< Updated upstream
         pwContents.println(String.format("\t\t\t\t<a class=\"btn btn-success-outline\" href=\"%s\" role=\"button\">%s</a><span class=\"label label-primary\">%d</span>",
                 author.getCode() + volNum + ".htm#" + pageNum, outputLine, pageNum));
+=======
+        pwContents.println(String.format("\t\t\t\t<a class=\"btn btn-success-outline\" href=\"%s\" role=\"button\">%s</a>",
+                author.getCode() + volNum + ".html#" + pageNum, outputLine));
+>>>>>>> Stashed changes
         pwContents.println("\t\t\t\t<br>");
 
     }

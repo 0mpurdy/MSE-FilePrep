@@ -56,7 +56,7 @@ public class BiblePrepareCache {
     }
 
     public String getBibleOutput() {
-        return bibleDestinationPath + book.getName().replaceAll("\\s", "") + ".htm";
+        return bibleDestinationPath + book.getName().replaceAll("\\s", "") + ".html";
     }
 
     public void nextBook(BibleBook nextBook) {

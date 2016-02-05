@@ -9,14 +9,18 @@ import java.io.PrintWriter;
 
 /**
  * Created by Michael Purdy on 02/12/2015.
- * <p>
+ *
  * Helps with creation of HTML files
  */
 public class HtmlHelper {
 
     private static String bootstrapCssLocation = "../../bootstrap/css/bootstrap.min.css";
     private static String bootstrapJsLocation = "../../bootstrap/js/bootstrap.min.js";
+<<<<<<< Updated upstream
     private static String jqueryJsLocation = "../../jquery/jquery-1.11.3.min.js";
+=======
+    private static String jqueryLocation = "../../jquery/jquery-1.11.3.min.js";
+>>>>>>> Stashed changes
 
     // region genericStart
 
@@ -122,6 +126,11 @@ public class HtmlHelper {
                 "\t<script src=\"" + jqueryJsLocation + "\"></script>\n" +
                 "\t<script src=\"" + bootstrapJsLocation + "\"></script>\n" +
                 "</body>\n" +
+<<<<<<< Updated upstream
+=======
+                "<script src=\"" + jqueryLocation + "\"></script>\n" +
+                "<script src=\"" + bootstrapJsLocation + "\"></script>\n" +
+>>>>>>> Stashed changes
                 "\n" +
                 "</html>");
     }
@@ -160,4 +169,13 @@ public class HtmlHelper {
     }
 
     // endregion
+
+    public static String getBibleHtmlLink(String bookName, String chapter, String verse) {
+        return String.format("<a href=\"../bible/%s.html#%s:%s\">%s %s:%s</a>",
+                bookName.replaceAll("\\s", ""), chapter, verse, bookName, chapter, verse);
+    }
+
+    public static String getBibleHtmlLink(String bookName, String chapter) {
+        return String.format("<a href=\"../bible/%s.html#%s\">%s %s</a>", bookName.replaceAll("\\s", ""), chapter, bookName, chapter);
+    }
 }

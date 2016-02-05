@@ -44,11 +44,11 @@ public class Config {
 
     private void setDefaults() {
 
-        mseVersion = "3.0.0";
+        mseVersion = "3.0.1";
         resDir = ".." + File.separator + "MSE-Res-Lite" + File.separator + "res" + File.separator;;
 //        defaultBrowser = "/usr/bin/firefox";
 //        defaultBrowser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
-        resultsFileName = "search_results.htm";
+        resultsFileName = "search_results.html";
         searchString = "";
         searchType = "Phrase";
 
