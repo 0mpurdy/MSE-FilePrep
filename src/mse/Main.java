@@ -3,10 +3,7 @@ package mse;
 import mse.common.Author;
 import mse.common.AuthorIndex;
 import mse.common.Config;
-import mse.data.BibleBook;
-import mse.data.HymnBook;
 import mse.data.PreparePlatform;
-import mse.helpers.HtmlHelper;
 import mse.processors.*;
 
 import java.io.*;
@@ -182,31 +179,28 @@ public class Main {
                     }
                     break;
                 case 8:
-                    // create bible contents
-                    platform = chooseSystem(sc);
-                    if (platform != null) {
-                        Author.BIBLE.setTargetFolder(platform.getTargetFolder());
-                        Preparer.createBibleContents(cfg, platform);
-                    }
-                    break;
-                case 9:
-                    // create hymns contents
-                    platform = chooseSystem(sc);
-                    if (platform != null) {
-                        Author.HYMNS.setTargetFolder(platform.getTargetFolder());
-                        Preparer.createHymnsContents(cfg, platform.getStylesLink());
-                    }
-                    break;
-                case 10:
-                    // benchmark
-                    System.out.println("Benchmarking ...\n\n");
-                    new Benchmark().run();
+                    printOtherMenu();
+                    doOtherMenuOption(cfg, sc.nextInt());
                     break;
                 default:
                     System.out.println("Invalid choice");
             }
         }
 
+    }
+
+    private static void doOtherMenuOption(Config cfg, int option) {
+        switch (option) {
+            case 0:
+                return;
+            case 1:
+                // benchmark
+                System.out.println("Benchmarking ...\n\n");
+                new Benchmark().run();
+                break;
+            default:
+                System.out.println("Invalid choice");
+        }
     }
 
     private static void printMainMenu() {
@@ -222,8 +216,18 @@ public class Main {
         options.add("Create super index");
         options.add("Check author index");
         options.add("Check all author indexes");
-        options.add("Prepare Bible contents");
-        options.add("Prepare hymns contents");
+        options.add("Other");
+
+        printMenu(options);
+
+    }
+
+    private static void printOtherMenu() {
+
+        System.out.println("\nOptions: ");
+
+        ArrayList<String> options = new ArrayList<>();
+        options.add("Close");
         options.add("Benchmark");
 
         printMenu(options);
@@ -414,8 +418,6 @@ public class Main {
         }
         return result;
     }
-
-
 
 
 }

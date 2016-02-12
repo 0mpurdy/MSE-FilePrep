@@ -122,20 +122,22 @@ public class HtmlHelper {
                 "\t<script src=\"" + jqueryJsLocation + "\"></script>\n" +
                 "\t<script src=\"" + bootstrapJsLocation + "\"></script>\n" +
                 "</body>\n" +
-                "<script src=\"" + jqueryJsLocation + "\"></script>\n" +
-                "<script src=\"" + bootstrapJsLocation + "\"></script>\n" +
                 "\n" +
                 "</html>");
     }
 
-    public static StringBuilder wrapContent(AuthorPrepareCache apc, StringBuilder content) {
+    public static StringBuilder wrapContent(String cssClass, StringBuilder content) {
         // add formatting to the line
-        if (apc.cssClass.equals("")) {
-            apc.cssClass = "paragraph";
+        if (cssClass.equals("")) {
+            cssClass = "paragraph";
         }
-        content.insert(0, "\t\t<div class=\"" + apc.cssClass + "\">\n\t\t\t");
+        content.insert(0, "\t\t<div class=\"" + cssClass + "\">\n\t\t\t");
         content.append("\n\t\t</div>");
         return content;
+    }
+
+    public static void printWrappedHtml(PrintWriter pw, String cssClass, String content) {
+        pw.println(wrapContent(cssClass, new StringBuilder(content)).toString());
     }
 
     // endregion

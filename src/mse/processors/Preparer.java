@@ -4,13 +4,15 @@ import mse.data.*;
 import mse.helpers.HtmlHelper;
 import mse.common.Author;
 import mse.common.Config;
+import mse.processors.prepare.MinistryLine;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
  * Created by Michael Purdy on 21/12/2015.
- *
+ * <p>
  * This is used to prepare the html/text for indexing, reading and searching.
  * Also prepares contents pages.
  */
@@ -561,13 +563,13 @@ public class Preparer {
 
             // set up readers/writers
             File f;
-            String volPath = cfg.getResDir() + File.separator + author.getPreparePath();
-            f = new File(volPath);
+            String sourceFolder = cfg.getResDir() + File.separator + author.getPreparePath();
+            f = new File(sourceFolder);
             f.mkdirs();
             System.out.print("\r\tReading from " + f.getCanonicalPath());
 
-            String volDestPath = cfg.getResDir() + File.separator + author.getTargetPath();
-            f = new File(volDestPath);
+            String targetFolder = cfg.getResDir() + File.separator + author.getTargetPath();
+            f = new File(targetFolder);
             f.mkdirs();
             System.out.print("\r\tWriting to " + f.getCanonicalPath());
 
@@ -577,7 +579,7 @@ public class Preparer {
             AuthorPrepareCache apc = new AuthorPrepareCache(author);
 
             // create contents file
-            pwContents = new PrintWriter(new FileWriter(volDestPath + author.getContentsName()));
+            pwContents = new PrintWriter(new FileWriter(targetFolder + author.getContentsName()));
 
             // write html head
             HtmlHelper.writeHtmlHeader(pwContents, author.getName() + " contents", mseStylesLocation);
@@ -588,304 +590,7 @@ public class Preparer {
 
             // for each volume
             while (!apc.finishedVolumes) {
-                try {
-
-                    apc.clearVolumeValues();
-
-                    File volumeFile = new File(volPath + author.getPrepareSourceName(apc.volNum));
-                    if (volumeFile.exists()) {
-                        apc.pageNum = 0;
-                        apc.keepPageNumber = 0;
-
-                        // print out progress for each volume
-                        System.out.print("\rPreparing " + author.getCode() + " Volume: " + apc.volNum);
-
-                        // get source file
-                        brSourceText = new BufferedReader(new FileReader(volumeFile));
-
-                        // get output file
-                        pwHtml = new PrintWriter(new FileWriter(volDestPath + author.getVolumeName(apc.volNum)));
-
-                        // write html head
-                        HtmlHelper.writeHtmlHeader(pwHtml, author.getName() + " Volume " + apc.volNum, mseStylesLocation);
-                        HtmlHelper.writeStartAndContainer(pwHtml);
-
-                        StringBuilder outputLine;
-                        boolean skipLine;
-
-                        // while there are still more lines
-                        while ((apc.line = brSourceText.readLine()) != null) {
-                            outputLine = new StringBuilder(apc.line);
-
-                            if (outputLine.length() < 1) outputLine.append("<hr/>");
-
-                            int charPosition = 0;
-
-                            // heading or special line
-                            if (outputLine.charAt(0) == '{') {
-                                // start of special line
-                                outputLine = getSpecialLine(apc, outputLine);
-
-                                if (apc.cssClass.contains("volume-title"))
-                                    printContentsVolumeTitle(pwContents, outputLine, author, apc.volNum);
-                            } else if (outputLine.length() < 400) {
-
-                                // if the line is all uppercase
-                                String uppercaseLine = outputLine.toString().toUpperCase();
-                                if ((uppercaseLine.equals(outputLine.toString()) && (outputLine.charAt(0) != ' '))) {
-                                    printContentsHeading(pwContents, outputLine, author, apc.volNum, apc.pageNum);
-                                    apc.cssClass = "heading";
-                                }
-                            }
-
-                            int charsInSection = 0;
-
-                            if ((outputLine.charAt(0) != '\u00a6') && (outputLine.charAt(0) != '{') && (apc.actualFootnotesNumber != 0)) {
-                                // if it is a footnote (broken bar)
-                                String error = "Missing footnote: " + author.getCode() + " " + apc.volNum + ":" + apc.pageNum;
-                                if (!apc.messages.contains(error)) {
-                                    apc.messages += "\n\t" + error;
-                                }
-                            }
-
-                            // for each character in the line
-                            while ((charPosition < outputLine.length()) && (apc.cssClass.equals(""))) {
-                                char currentCharacter = outputLine.charAt(charPosition);
-
-                                // add italics
-                                if (currentCharacter == '*') {
-                                    if (apc.startedItalics) {
-                                        outputLine.replace(charPosition, charPosition + 1, "</i>");
-                                    } else {
-                                        outputLine.replace(charPosition, charPosition + 1, "<i>");
-                                    }
-                                    apc.startedItalics = !apc.startedItalics;
-                                } else if (currentCharacter == '~') {
-                                    // footnote
-                                    outputLine.replace(charPosition, charPosition + 1,
-                                            String.format("<i>see <a href=\"%s_footnotes.html#%d:%d\">footnote</a></i>",
-                                                    author.getContentsName(), apc.volNum, apc.pageNum));
-
-                                    // increase character position by number of characters added (minus for testing)
-                                    charPosition += 50 + author.getContentsName().length() + Integer.toString(apc.volNum).length() +
-                                            Integer.toString(apc.pageNum).length() - 5;
-                                } else if (currentCharacter == '\u00AC') {
-                                    //possessive apostrophe (not character)
-
-                                    outputLine.replace(charPosition, charPosition + 1, "'");
-                                } else if ((currentCharacter == '.') || (currentCharacter == '?') || (currentCharacter == '!')) {
-                                    // end of sentence
-
-                                    if (charsInSection > 1) {
-                                        outputLine.insert(charPosition + 1, String.format("<a name=%d:%d></a>", apc.pageNum, apc.section));
-                                        apc.section++;
-                                    }
-                                    charsInSection = 0;
-                                } else if (currentCharacter == '\u2022') {
-                                    // bullet character
-
-                                    outputLine.replace(charPosition, charPosition + 1, ".");
-                                } else if (currentCharacter == '\u00A6') {
-                                    // footnote (broken bar character
-
-                                    if (charPosition == 0) {
-                                        if (apc.actualFootnotesNumber == 0) {
-                                            apc.footnotes = "";
-                                        }
-                                        apc.actualFootnotesNumber++;
-                                        apc.actualFootnotes += "+";
-                                        outputLine.replace(charPosition, charPosition + 1,
-                                                String.format("<a class=\"footnote\" name=\"#%d:f%d\"><sup>%s</sup></a>",
-                                                        apc.pageNum, apc.actualFootnotesNumber, apc.actualFootnotes));
-
-                                        // set css class
-                                        apc.cssClass = "footnote";
-
-                                    } else {
-                                        apc.footnotesNumber++;
-                                        if (apc.footnotesNumber > apc.maxFootnotesNumber) {
-                                            apc.maxFootnotesNumber = apc.footnotesNumber;
-                                        }
-                                        apc.footnotes += "+";
-                                        outputLine.replace(charPosition, charPosition + 1, String.format("<a href=\"#%d:f%d\"><sup class=\"footnote-link\">%s</sup></a>",
-                                                apc.pageNum, apc.footnotesNumber, apc.footnotes));
-                                    }
-                                } else if (currentCharacter == '@') {
-                                    // start of a scripture reference
-
-                                    // find book name
-                                    int tempCharPos = charPosition + 1;
-
-
-                                    //mjp? do you need length<4?
-                                    while (tempCharPos > outputLine.length() && (((tempCharPos - charPosition) < 4) || (!Character.isDigit(outputLine.charAt(tempCharPos))))) {
-                                        tempCharPos++;
-                                    }
-                                    String bookName = outputLine.substring(charPosition + 1, tempCharPos);
-
-                                    if (bookName.equalsIgnoreCase("Psalm ")) {
-//                                        System.out.println("Malformed link " + apc.author.getCode() + " " + apc.volNum + ":" + apc.pageNum);
-                                        bookName = "Psalms ";
-                                    }
-
-                                    // get chapter
-                                    String chapter = "";
-                                    boolean finishedDoing = false;
-                                    while (!finishedDoing) {
-                                        if (tempCharPos >= outputLine.length()) {
-                                            finishedDoing = true;
-                                        } else if (Character.isDigit(outputLine.charAt(tempCharPos))) {
-                                            chapter += outputLine.charAt(tempCharPos);
-                                            tempCharPos++;
-                                        } else {
-                                            finishedDoing = true;
-                                        }
-                                    }
-
-                                    //skip white space
-                                    finishedDoing = false;
-                                    while (!finishedDoing) {
-                                        if (tempCharPos >= outputLine.length()) {
-                                            finishedDoing = true;
-                                        } else if (outputLine.charAt(tempCharPos) == ' ') {
-                                            tempCharPos++;
-                                        } else {
-                                            finishedDoing = true;
-                                        }
-                                    }
-
-                                    // find verse
-                                    String verse = "";
-                                    if (tempCharPos < outputLine.length()) {
-                                        if (outputLine.charAt(tempCharPos) == ':') {
-                                            tempCharPos++;
-
-                                            //skip white space
-                                            finishedDoing = false;
-                                            while (!finishedDoing) {
-                                                if (tempCharPos >= outputLine.length()) {
-                                                    finishedDoing = true;
-                                                } else if (outputLine.charAt(tempCharPos) == ' ') {
-                                                    tempCharPos++;
-                                                } else {
-                                                    finishedDoing = true;
-                                                }
-                                            }
-
-                                            // populate verse string
-                                            finishedDoing = false;
-                                            while (!finishedDoing) {
-                                                if (tempCharPos >= outputLine.length()) {
-                                                    finishedDoing = true;
-                                                } else if (Character.isDigit(outputLine.charAt(tempCharPos))) {
-                                                    verse += outputLine.charAt(tempCharPos);
-                                                    tempCharPos++;
-                                                } else {
-                                                    finishedDoing = true;
-                                                }
-                                            }
-                                        }
-                                    } // end finding verse
-
-                                    String reference;
-                                    if (verse.length() > 0) {
-                                        // if the reference has a verse
-                                        reference = HtmlHelper.getBibleHtmlLink(bookName, chapter, verse);
-                                    } else {
-                                        reference = HtmlHelper.getBibleHtmlLink(bookName, chapter);
-                                    }
-                                    outputLine.replace(charPosition, tempCharPos, reference);
-                                    charPosition += reference.length() - 1;
-
-                                    // end scripture reference
-                                } else if (currentCharacter == '`') {
-                                    // start of hymn reference
-
-                                    // find hymn number
-                                    int tempCharPos = charPosition + 1;
-                                    String hymnNumber = "";
-
-                                    boolean finishedDoing = false;
-                                    while (!finishedDoing) {
-                                        if (tempCharPos >= outputLine.length()) {
-                                            finishedDoing = true;
-                                        } else if (Character.isDigit(outputLine.charAt(tempCharPos))) {
-                                            hymnNumber += outputLine.charAt(tempCharPos);
-                                            tempCharPos++;
-                                        } else {
-                                            finishedDoing = true;
-                                        }
-                                    }
-
-                                    // find verse
-                                    String verseNumber = "";
-                                    if (tempCharPos < outputLine.length()) {
-                                        if (outputLine.charAt(tempCharPos) == ':') {
-                                            tempCharPos++;
-                                            finishedDoing = false;
-                                            while (!finishedDoing) {
-                                                if (tempCharPos >= outputLine.length()) {
-                                                    finishedDoing = true;
-                                                } else if (Character.isDigit(outputLine.charAt(tempCharPos))) {
-                                                    verseNumber += outputLine.charAt(tempCharPos);
-                                                    tempCharPos++;
-                                                } else {
-                                                    finishedDoing = true;
-                                                }
-                                            }
-                                        }
-                                    } // end finding verse
-
-                                    // create the reference
-                                    String reference = String.format("<a href=\"..\\hymns\\hymns1972.html#%s:%s\">Hymn %s</a>", hymnNumber, verseNumber, hymnNumber);
-
-                                    // insert the reference
-                                    outputLine.replace(charPosition, tempCharPos, reference);
-
-                                    // move the char position forward
-                                    charPosition += reference.length() - 1;
-
-                                    // end hymn reference
-                                }
-                                charPosition++;
-                                charsInSection++;
-                            } // end of processing line
-
-                            HtmlHelper.wrapContent(apc, outputLine);
-
-                            // reset css class
-                            apc.cssClass = "";
-
-                            // output the "outputLine"
-                            pwHtml.println(outputLine.toString());
-
-                            apc.lineCount++;
-                        } // end of processing lines
-
-
-                        pwHtml.println("\t</div>");
-                        pwHtml.println("\n</body>\n\n</html>");
-                        pwHtml.close();
-                        brSourceText.close();
-
-                        apc.volNum++;
-
-                    } else {
-                        apc.finishedVolumes = true;
-                        if (!apc.messages.equals("")) {
-                            apc.messages = apc.messages.replaceFirst("\n", "");
-                            System.out.println("\r" + apc.messages);
-                        }
-                        System.out.println("\rFinished preparing " + author.getName());
-                    }
-                } catch (IOException ioe) {
-                    System.out.println("\n!*** Error with " + author.getName() + " volume: " + apc.volNum);
-                    System.out.println(ioe.getMessage());
-                    apc.volNum++;
-                } finally {
-                    if (brSourceText != null) brSourceText.close();
-                    if (pwHtml != null) pwHtml.close();
-                }
+                prepareMinistryVolume(apc, sourceFolder, author, brSourceText, pwHtml, pwContents, targetFolder, mseStylesLocation);
             }
 
             HtmlHelper.writeContentsClose(pwContents);
@@ -897,6 +602,417 @@ public class Preparer {
             if (pwContents != null) pwContents.close();
         }
     } // end prepare (used for ministry)
+
+    private static void prepareMinistryVolume(AuthorPrepareCache apc, String sourceFolder, Author author,
+                                              BufferedReader brSourceText, PrintWriter pwHtml, PrintWriter pwContents,
+                                              String targetFolder, String mseStylesLocation) throws IOException {
+        try {
+
+            apc.clearVolumeValues();
+
+            // check if there is a source file for the next volume
+            File volumeFile = new File(sourceFolder + author.getPrepareSourceName(apc.volNum));
+            if (volumeFile.exists()) {
+
+                // print progress
+                System.out.print("\rPreparing " + author.getCode() + " Volume: " + apc.volNum);
+
+                // get source file
+                brSourceText = new BufferedReader(new FileReader(volumeFile));
+
+                // get output file
+                pwHtml = new PrintWriter(new FileWriter(targetFolder + author.getVolumeName(apc.volNum)));
+
+                // write html head
+                HtmlHelper.writeHtmlHeader(pwHtml, author.getName() + " Volume " + apc.volNum, mseStylesLocation);
+                HtmlHelper.writeStartAndContainer(pwHtml);
+
+                StringBuilder outputLine;
+
+                // read the volume title
+                apc.line = brSourceText.readLine();
+
+                if (apc.line != null) {
+
+                    // check the volume title is valid
+                    int volumeTitleLength = apc.line.length();
+                    if (volumeTitleLength > 3 && apc.line.charAt(0) == '{' ||
+                            apc.line.charAt(1) == '#' && apc.line.charAt(volumeTitleLength - 1) == '}') {
+
+                        String volumeTitle = apc.line.substring(2, volumeTitleLength - 1);
+                        printContentsVolumeTitle(pwContents, volumeTitle, apc.volNum);
+                        HtmlHelper.printWrappedHtml(pwHtml, "volume-title", volumeTitle);
+
+                        // process all pages
+                        apc.line = brSourceText.readLine();
+                        if (isPageNumber(apc.line)) {
+                            apc.pageNum = getNextPage(apc.line);
+                            validatePageNumber(apc);
+                            HtmlHelper.printWrappedHtml(pwHtml, "page-number", Integer.toString(apc.pageNum));
+
+                            while (apc.pageNum >= 0) {
+
+                                processMinistryPage(apc, brSourceText, pwHtml, pwContents, author);
+
+                                if (isPageNumber(apc.line)) {
+                                    apc.pageNum = getNextPage(apc.line);
+                                    validatePageNumber(apc);
+                                    HtmlHelper.printWrappedHtml(pwHtml, "page-number", Integer.toString(apc.pageNum));
+                                } else {
+                                    apc.pageNum = -1;
+                                }
+                            }
+                        } else {
+                            apc.addMessage("Second line not a page number in volume " + apc.volNum);
+                        }
+
+                    } else {
+                        apc.addMessage(author.getCode() + " volume " + apc.volNum + " error with title : " + apc.line);
+                    }
+                } else {
+                    apc.addMessage("No first line for " + apc.author.getCode() + " " + apc.volNum + ":" + apc.pageNum);
+                }
+
+                apc.pageNum = 0;
+                apc.prevPageNumber = 0;
+
+
+                pwHtml.println("\t</div>");
+                pwHtml.println("\n</body>\n\n</html>");
+                pwHtml.close();
+                brSourceText.close();
+
+                apc.volNum++;
+
+            } else {
+                apc.finishedVolumes = true;
+                if (!apc.messages.equals("")) {
+                    apc.messages = apc.messages.replaceFirst("\n", "");
+                    System.out.println("\r" + apc.messages);
+                }
+                System.out.println("\rFinished preparing " + author.getName());
+            }
+        } catch (IOException ioe) {
+            System.out.println("\n!*** Error with " + author.getName() + " volume: " + apc.volNum);
+            System.out.println(ioe.getMessage());
+            apc.volNum++;
+        } finally {
+            if (brSourceText != null) brSourceText.close();
+            if (pwHtml != null) pwHtml.close();
+        }
+    }
+
+    private static void processMinistryPage(AuthorPrepareCache apc, BufferedReader brSourceText, PrintWriter pwHtml,
+                                            PrintWriter pwContents, Author author) throws IOException {
+
+        StringBuilder outputLine;
+
+        // while there are still more lines in the page
+        while ((apc.line = brSourceText.readLine()) != null && !isPageNumber(apc.line)) {
+            outputLine = new StringBuilder(apc.line);
+
+            if (outputLine.length() > 0) {
+
+                // heading or special line
+                if (outputLine.charAt(0) == '{') {
+                    // start of special line
+                    outputLine = getSpecialLine(apc, outputLine);
+                } else if (outputLine.length() < 400) {
+
+                    // if the line is all uppercase
+                    String uppercaseLine = outputLine.toString().toUpperCase();
+                    if ((uppercaseLine.equals(outputLine.toString()) && (outputLine.charAt(0) != ' '))) {
+                        printContentsHeading(pwContents, outputLine, author, apc.volNum, apc.pageNum);
+                        apc.cssClass = "heading";
+                    }
+                }
+
+//                if ((outputLine.charAt(0) != '^') && (outputLine.charAt(0) != '{') && (apc.actualFootnotesNumber != 0)) {
+//                    // if it is a footnote
+//                    String error = "Missing footnote: " + author.getCode() + " " + apc.volNum + ":" + apc.pageNum;
+//                    if (!apc.messages.contains(error)) {
+//                    }
+//                }
+
+                processMinistryLine(outputLine, apc, author);
+
+            } else {
+                outputLine.append("<hr/>");
+            }
+
+            HtmlHelper.wrapContent(apc.cssClass, outputLine);
+
+            // reset css class
+            apc.cssClass = "";
+
+            // output the "outputLine"
+            pwHtml.println(outputLine.toString());
+
+            apc.lineCount++;
+        } // end of processing lines
+    }
+
+    private static void processMinistryLine(StringBuilder outputLine, AuthorPrepareCache apc,
+                                            Author author) {
+
+        int charsInSentence = 0;
+        int charPosition = 0;
+
+        MinistryLine mLine = new MinistryLine(outputLine.toString());
+
+        // for each character in the line
+        while ((charPosition < outputLine.length()) && (apc.cssClass.equals(""))) {
+            char currentCharacter = outputLine.charAt(charPosition);
+
+            // add italics
+            switch (currentCharacter) {
+                case '*': // italics
+                    apc.mPage.invertItalics();
+                    break;
+                case '~': // specific footnote
+                    outputLine.replace(charPosition, charPosition + 1,
+                            String.format("<i>see <a href=\"%s_footnotes.html#%d:%d\">footnote</a></i>",
+                                    author.getContentsName(), apc.volNum, apc.pageNum));
+
+                    // increase character position by number of characters added (minus for testing)
+                    charPosition += 50 + author.getContentsName().length() + Integer.toString(apc.volNum).length() +
+                            Integer.toString(apc.pageNum).length() - 5;
+                    break;
+                case '.':
+                case '?':
+                case '!': // end of sentence
+                    if (charsInSentence > 1) {
+                        outputLine.insert(charPosition + 1, String.format("<a name=%d:%d></a>", apc.pageNum, apc.section));
+                        apc.section++;
+                    }
+                    charsInSentence = 0;
+                    break;
+                case '^': // generic footnote
+                    charPosition = addFootnote(outputLine, apc, charPosition);
+                    break;
+                case '@': // start of a scripture reference
+                    charPosition = addScriptureLink(charPosition, outputLine);
+                    break;
+                case '`': // start of hymn reference
+                    charPosition = addHymnLink(charPosition, outputLine);
+                    break;
+            }
+            charPosition++;
+            charsInSentence++;
+        } // end of processing line
+    }
+
+    private static int addHymnLink(int charPosition, StringBuilder outputLine) {
+        // find hymn number
+        int tempCharPos = charPosition + 1;
+        String hymnNumber = "";
+
+        boolean finishedDoing = false;
+        while (!finishedDoing) {
+            if (tempCharPos >= outputLine.length()) {
+                finishedDoing = true;
+            } else if (Character.isDigit(outputLine.charAt(tempCharPos))) {
+                hymnNumber += outputLine.charAt(tempCharPos);
+                tempCharPos++;
+            } else {
+                finishedDoing = true;
+            }
+        }
+
+        // find verse
+        String verseNumber = "";
+        if (tempCharPos < outputLine.length()) {
+            if (outputLine.charAt(tempCharPos) == ':') {
+                tempCharPos++;
+                finishedDoing = false;
+                while (!finishedDoing) {
+                    if (tempCharPos >= outputLine.length()) {
+                        finishedDoing = true;
+                    } else if (Character.isDigit(outputLine.charAt(tempCharPos))) {
+                        verseNumber += outputLine.charAt(tempCharPos);
+                        tempCharPos++;
+                    } else {
+                        finishedDoing = true;
+                    }
+                }
+            }
+        } // end finding verse
+
+        // create the reference
+        String reference = String.format("<a href=\"..\\hymns\\hymns1972.html#%s:%s\">Hymn %s</a>", hymnNumber, verseNumber, hymnNumber);
+
+        // insert the reference
+        outputLine.replace(charPosition, tempCharPos, reference);
+
+        // move the char position forward
+        return charPosition + reference.length() - 1;
+
+        // end hymn reference
+    }
+
+    private static int addScriptureLink(int charPosition, StringBuilder outputLine) {
+
+        // find book name
+        int tempCharPos = charPosition + 1;
+
+
+        //mjp? do you need length<4?
+        while (tempCharPos > outputLine.length() && (((tempCharPos - charPosition) < 4) || (!Character.isDigit(outputLine.charAt(tempCharPos))))) {
+            tempCharPos++;
+        }
+        String bookName = outputLine.substring(charPosition + 1, tempCharPos);
+
+        if (bookName.equalsIgnoreCase("Psalm ")) {
+//                                        System.out.println("Malformed link " + apc.author.getCode() + " " + apc.volNum + ":" + apc.pageNum);
+            bookName = "Psalms ";
+        }
+
+        // get chapter
+        String chapter = "";
+        boolean finishedDoing = false;
+        while (!finishedDoing) {
+            if (tempCharPos >= outputLine.length()) {
+                finishedDoing = true;
+            } else if (Character.isDigit(outputLine.charAt(tempCharPos))) {
+                chapter += outputLine.charAt(tempCharPos);
+                tempCharPos++;
+            } else {
+                finishedDoing = true;
+            }
+        }
+
+        //skip white space
+        finishedDoing = false;
+        while (!finishedDoing) {
+            if (tempCharPos >= outputLine.length()) {
+                finishedDoing = true;
+            } else if (outputLine.charAt(tempCharPos) == ' ') {
+                tempCharPos++;
+            } else {
+                finishedDoing = true;
+            }
+        }
+
+        // find verse
+        String verse = "";
+        if (tempCharPos < outputLine.length()) {
+            if (outputLine.charAt(tempCharPos) == ':') {
+                tempCharPos++;
+
+                //skip white space
+                finishedDoing = false;
+                while (!finishedDoing) {
+                    if (tempCharPos >= outputLine.length()) {
+                        finishedDoing = true;
+                    } else if (outputLine.charAt(tempCharPos) == ' ') {
+                        tempCharPos++;
+                    } else {
+                        finishedDoing = true;
+                    }
+                }
+
+                // populate verse string
+                finishedDoing = false;
+                while (!finishedDoing) {
+                    if (tempCharPos >= outputLine.length()) {
+                        finishedDoing = true;
+                    } else if (Character.isDigit(outputLine.charAt(tempCharPos))) {
+                        verse += outputLine.charAt(tempCharPos);
+                        tempCharPos++;
+                    } else {
+                        finishedDoing = true;
+                    }
+                }
+            }
+        } // end finding verse
+
+        String reference;
+        if (verse.length() > 0) {
+            // if the reference has a verse
+            reference = HtmlHelper.getBibleHtmlLink(bookName, chapter, verse);
+        } else {
+            reference = HtmlHelper.getBibleHtmlLink(bookName, chapter);
+        }
+        outputLine.replace(charPosition, tempCharPos, reference);
+        return charPosition + reference.length() - 1;
+
+        // end scripture reference
+    }
+
+
+    private static int addFootnote(StringBuilder outputLine, AuthorPrepareCache apc, int charPosition) {
+        String footnoteLink;
+
+        if (charPosition != 0) {
+            apc.unresolvedFootnotes++;
+            apc.unresolvedFootnoteIdentifier += "+";
+            footnoteLink = String.format("<a href=\"#%d:f%d\"><sup class=\"footnote-link\">%s</sup></a>",
+                    apc.pageNum, apc.unresolvedFootnotes, apc.unresolvedFootnoteIdentifier);
+
+            return charPosition + footnoteLink.length() - 1;
+
+        } else {
+            apc.resolvedFootnotes++;
+            apc.resolvedFootnoteIdentifier += "+";
+            footnoteLink = String.format("<a class=\"footnote\" name=\"#%d:f%d\"><sup>%s</sup></a>",
+                    apc.pageNum, apc.resolvedFootnotes, apc.resolvedFootnoteIdentifier);
+
+            // set css class
+            apc.cssClass = "footnote";
+        }
+
+        outputLine.replace(charPosition, charPosition + 1, footnoteLink);
+        return charPosition + footnoteLink.length();
+    }
+
+    private static boolean isPageNumber(String line) {
+        if (line == null) return false;
+        if (line.length() < 3) return false;
+        if (line.charAt(0) != '{') return false;
+        if (line.charAt(line.length() - 1) != '}') return false;
+
+        // check all characters between {} are digits
+        for (int i = 1; i < line.length() - 1; i++) {
+            if (!(Character.isDigit(line.charAt(i)))) return false;
+        }
+
+        return true;
+    }
+
+    private static int getNextPage(String line) {
+        // remove brackets
+        line = line.substring(1, line.length() - 1);
+
+        int pageNum;
+        try {
+            pageNum = Integer.parseInt(line);
+        } catch (NumberFormatException e) {
+            pageNum = -1;
+            e.printStackTrace();
+        }
+
+        return pageNum;
+    }
+
+    private static void validatePageNumber(AuthorPrepareCache apc) {
+        if ((apc.pageNum != apc.prevPageNumber + 1) && (apc.prevPageNumber != 0)) {
+            if (apc.pageNum == apc.prevPageNumber) {
+                apc.addMessage("Duplicate page: " + apc.author.getCode() + " " + apc.volNum + ":" + (apc.prevPageNumber));
+            } else {
+                apc.addMessage("Missing page: " + apc.author.getCode() + " " + apc.volNum + ":" + (apc.prevPageNumber + 1));
+            }
+        }
+
+        // if there are unresolved footnotes print error
+        if (apc.unresolvedFootnotes > apc.resolvedFootnotes) {
+            apc.addMessage("Missing footnote: " + apc.author.getCode() + " " + apc.volNum + ":" + apc.prevPageNumber);
+        }
+
+        apc.prevPageNumber = apc.pageNum;
+
+        // reset page specific values
+        apc.clearPageValues();
+    }
 
     private static StringBuilder getSpecialLine(AuthorPrepareCache apc, StringBuilder line) {
 
@@ -915,27 +1031,14 @@ public class Preparer {
         if (pageNumberTemp.charAt(0) != '#') {
             // if it is a valid new page
 
-            apc.pageNum = Integer.parseInt(pageNumberTemp);
-
-            if ((apc.pageNum != apc.keepPageNumber + 1) && (apc.keepPageNumber != 0)) {
-                if (apc.pageNum == apc.keepPageNumber) {
-                    apc.messages += "\n\tDuplicate page: " + apc.author.getCode() + " " + apc.volNum + ":" + (apc.keepPageNumber);
-                } else {
-                    apc.messages += "\n\tMissing page: " + apc.author.getCode() + " " + apc.volNum + ":" + (apc.keepPageNumber + 1);
-                }
-            }
-            apc.keepPageNumber = apc.pageNum;
-            line.replace(charPosition, line.length(), String.format("<a name=%d>[Page %s]</a>", apc.pageNum, apc.pageNum));
-
-            // reset page specific values
-            apc.footnotes = "";
-            apc.actualFootnotes = "";
-            apc.footnotesNumber = 0;
-            apc.actualFootnotesNumber = 0;
-            apc.section = 1;
 
             // set the css class
             apc.cssClass = "page-number";
+
+            // if there are unresolved footnotes print error
+            if (apc.unresolvedFootnotes > apc.resolvedFootnotes) {
+                System.out.println("Missing footnote: " + apc.author.getCode() + " " + apc.volNum + ":" + apc.pageNum);
+            }
 
         } else {
             // remove decoration {#x} from volume title "x"
@@ -999,7 +1102,7 @@ public class Preparer {
 
     }
 
-    private static void printContentsVolumeTitle(PrintWriter pwContents, StringBuilder outputLine, Author author, int volNum) {
+    private static void printContentsVolumeTitle(PrintWriter pwContents, String volumeTitle, int volNum) {
 
         if (volNum != 1) {
             HtmlHelper.writeSinglePanelBodyClose(pwContents);
@@ -1007,7 +1110,7 @@ public class Preparer {
             HtmlHelper.writePanelGroupOpen(pwContents);
         }
 
-        HtmlHelper.writePanelHeading(pwContents, volNum, outputLine.toString());
+        HtmlHelper.writePanelHeading(pwContents, volNum, volumeTitle);
         HtmlHelper.writePanelBodyOpen(pwContents, volNum);
 //
 //        pwContents.println(String.format("\t\t<a class=\"btn btn-lg btn-success\" id=\"" +
