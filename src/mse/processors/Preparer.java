@@ -648,7 +648,8 @@ public class Preparer {
                         if (isPageNumber(apc.line)) {
                             apc.pageNum = getNextPage(apc.line);
                             validatePageNumber(apc);
-                            HtmlHelper.printWrappedHtml(pwHtml, "page-number", Integer.toString(apc.pageNum));
+                            String pageNumberText = String.format("<a name=%d>[Page %d]</a>", apc.pageNum, apc.pageNum);
+                            HtmlHelper.printWrappedHtml(pwHtml, "page-number", pageNumberText);
 
                             while (apc.pageNum >= 0) {
 
@@ -657,7 +658,8 @@ public class Preparer {
                                 if (isPageNumber(apc.line)) {
                                     apc.pageNum = getNextPage(apc.line);
                                     validatePageNumber(apc);
-                                    HtmlHelper.printWrappedHtml(pwHtml, "page-number", Integer.toString(apc.pageNum));
+                                    pageNumberText = String.format("<a name=%d>[Page %d]</a>", apc.pageNum, apc.pageNum);
+                                    HtmlHelper.printWrappedHtml(pwHtml, "page-number", pageNumberText);
                                 } else {
                                     apc.pageNum = -1;
                                 }
@@ -782,8 +784,10 @@ public class Preparer {
                 case '?':
                 case '!': // end of sentence
                     if (charsInSentence > 1) {
-                        outputLine.insert(charPosition + 1, String.format("<a name=%d:%d></a>", apc.pageNum, apc.section));
+                        String sentenceLink = String.format("<a name=%d:%d></a>", apc.pageNum, apc.section);
+                        outputLine.insert(charPosition + 1, sentenceLink);
                         apc.section++;
+                        charPosition += sentenceLink.length();
                     }
                     charsInSentence = 0;
                     break;
@@ -791,7 +795,7 @@ public class Preparer {
                     charPosition = addFootnote(outputLine, apc, charPosition);
                     break;
                 case '@': // start of a scripture reference
-                    charPosition = addScriptureLink(charPosition, outputLine);
+                    charPosition = addScriptureLink(charPosition, outputLine, apc);
                     break;
                 case '`': // start of hymn reference
                     charPosition = addHymnLink(charPosition, outputLine);
@@ -850,44 +854,64 @@ public class Preparer {
         // end hymn reference
     }
 
-    private static int addScriptureLink(int charPosition, StringBuilder outputLine) {
+    private static int addScriptureLink(int charPosition, StringBuilder outputLine, AuthorPrepareCache apc) {
 
-        // find book name
-        int tempCharPos = charPosition + 1;
+        int startOfBookName = charPosition + 1;
+        int endOfBookName = startOfBookName;
 
-
-        //mjp? do you need length<4?
-        while (tempCharPos > outputLine.length() && (((tempCharPos - charPosition) < 4) || (!Character.isDigit(outputLine.charAt(tempCharPos))))) {
-            tempCharPos++;
+        // find start of bookname
+        while (Character.isWhitespace(outputLine.charAt(startOfBookName))) {
+            startOfBookName++;
         }
-        String bookName = outputLine.substring(charPosition + 1, tempCharPos);
 
-        if (bookName.equalsIgnoreCase("Psalm ")) {
-//                                        System.out.println("Malformed link " + apc.author.getCode() + " " + apc.volNum + ":" + apc.pageNum);
-            bookName = "Psalms ";
+        // find start of book word (to include books with preceding numbers eg: 2 Timothy)
+        while (endOfBookName < outputLine.length() && (!Character.isLetter(outputLine.charAt(endOfBookName)))) {
+            endOfBookName++;
         }
+
+        // find end of book name
+        while (endOfBookName < outputLine.length() && ((!Character.isDigit(outputLine.charAt(endOfBookName))))) {
+            endOfBookName++;
+        }
+        String bookName = outputLine.substring(startOfBookName, endOfBookName);
+
+        bookName = removeTrailingWhiteSpace(bookName);
+        if (bookName.length() < 1) {
+            apc.addMessage("Malformed Scripture link " + apc.author + " " + apc.volNum + ":" + apc.pageNum);
+        }
+
+        if (bookName.equalsIgnoreCase("Psalm")) {
+//            System.out.println("Malformed link " + apc.author.getCode() + " " + apc.volNum + ":" + apc.pageNum);
+            bookName = "Psalms";
+        }
+
+        int startOfChapter = endOfBookName;
+        int endOfChapter = startOfChapter;
 
         // get chapter
         String chapter = "";
         boolean finishedDoing = false;
         while (!finishedDoing) {
-            if (tempCharPos >= outputLine.length()) {
+            if (endOfChapter >= outputLine.length()) {
                 finishedDoing = true;
-            } else if (Character.isDigit(outputLine.charAt(tempCharPos))) {
-                chapter += outputLine.charAt(tempCharPos);
-                tempCharPos++;
+            } else if (Character.isDigit(outputLine.charAt(endOfChapter))) {
+                chapter += outputLine.charAt(endOfChapter);
+                endOfChapter++;
             } else {
                 finishedDoing = true;
             }
         }
 
+        // find verse
+        int startOfVerse = endOfChapter;
+
         //skip white space
         finishedDoing = false;
         while (!finishedDoing) {
-            if (tempCharPos >= outputLine.length()) {
+            if (startOfVerse >= outputLine.length()) {
                 finishedDoing = true;
-            } else if (outputLine.charAt(tempCharPos) == ' ') {
-                tempCharPos++;
+            } else if (outputLine.charAt(startOfVerse) == ' ') {
+                startOfVerse++;
             } else {
                 finishedDoing = true;
             }
@@ -895,17 +919,18 @@ public class Preparer {
 
         // find verse
         String verse = "";
-        if (tempCharPos < outputLine.length()) {
-            if (outputLine.charAt(tempCharPos) == ':') {
-                tempCharPos++;
+        int endOfVerse = startOfVerse;
+        if (endOfVerse < outputLine.length()) {
+            if (outputLine.charAt(endOfVerse) == ':') {
+                endOfVerse++;
 
                 //skip white space
                 finishedDoing = false;
                 while (!finishedDoing) {
-                    if (tempCharPos >= outputLine.length()) {
+                    if (endOfVerse >= outputLine.length()) {
                         finishedDoing = true;
-                    } else if (outputLine.charAt(tempCharPos) == ' ') {
-                        tempCharPos++;
+                    } else if (outputLine.charAt(endOfVerse) == ' ') {
+                        endOfVerse++;
                     } else {
                         finishedDoing = true;
                     }
@@ -914,11 +939,11 @@ public class Preparer {
                 // populate verse string
                 finishedDoing = false;
                 while (!finishedDoing) {
-                    if (tempCharPos >= outputLine.length()) {
+                    if (endOfVerse >= outputLine.length()) {
                         finishedDoing = true;
-                    } else if (Character.isDigit(outputLine.charAt(tempCharPos))) {
-                        verse += outputLine.charAt(tempCharPos);
-                        tempCharPos++;
+                    } else if (Character.isDigit(outputLine.charAt(endOfVerse))) {
+                        verse += outputLine.charAt(endOfVerse);
+                        endOfVerse++;
                     } else {
                         finishedDoing = true;
                     }
@@ -927,16 +952,29 @@ public class Preparer {
         } // end finding verse
 
         String reference;
+        int endOfReference;
         if (verse.length() > 0) {
             // if the reference has a verse
             reference = HtmlHelper.getBibleHtmlLink(bookName, chapter, verse);
+            endOfReference = endOfVerse;
         } else {
             reference = HtmlHelper.getBibleHtmlLink(bookName, chapter);
+            endOfReference = endOfChapter;
         }
-        outputLine.replace(charPosition, tempCharPos, reference);
+        outputLine.replace(charPosition, endOfReference, reference);
         return charPosition + reference.length() - 1;
 
         // end scripture reference
+    }
+
+    private static String removeTrailingWhiteSpace(String bookName) {
+        int i = bookName.length() - 1;
+        if (i<0) return "";
+        while (Character.isWhitespace(bookName.charAt(i))) {
+            i--;
+            if (i<0) return "";
+        }
+        return bookName.substring(0, i + 1);
     }
 
 
