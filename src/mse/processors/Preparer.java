@@ -756,8 +756,7 @@ public class Preparer {
         } // end of processing lines
     }
 
-    private static void processMinistryLine(StringBuilder outputLine, AuthorPrepareCache apc,
-                                            Author author) {
+    private static void processMinistryLine(StringBuilder outputLine, AuthorPrepareCache apc, Author author) {
 
         int charsInSentence = 0;
         int charPosition = 0;
@@ -989,7 +988,8 @@ public class Preparer {
             footnoteLink = String.format("<a href=\"#%d:f%d\"><sup class=\"footnote-link\">%s</sup></a>",
                     apc.pageNum, apc.unresolvedFootnotes, apc.unresolvedFootnoteIdentifier);
 
-            return charPosition + footnoteLink.length() - 1;
+            outputLine.replace(charPosition, charPosition + 1, footnoteLink);
+            return charPosition + footnoteLink.length();
 
         } else {
             apc.resolvedFootnotes++;
