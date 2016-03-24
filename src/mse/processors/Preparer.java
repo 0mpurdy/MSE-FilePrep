@@ -37,7 +37,7 @@ public class Preparer {
             // for each book in the bible
             for (BibleBook nextBook : BibleBook.values()) {
 
-                System.out.print("\rPreparing " + nextBook.getName());
+                System.out.print("\rPreparing " + nextBook.getNameWithSpaces());
                 bpc.nextBook(nextBook);
 
                 prepareSingleBibleBook(cfg, bpc, mseStyleLocation, errMessages);
@@ -128,7 +128,7 @@ public class Preparer {
             if (cfg.isSynopsis()) {
                 bpc.synopsisLink = bpc.synopsisPages.get(bpc.bookNumber + "/" + bpc.chapter);
                 if (bpc.synopsisLink == null) {
-                    errMessages.append("\n\tNo synopsis link for ").append(bpc.book.getName()).append(" chapter ").append(bpc.chapter);
+                    errMessages.append("\n\tNo synopsis link for ").append(bpc.book.getNameWithSpaces()).append(" chapter ").append(bpc.chapter);
                     bpc.synopsisLink = "";
                 }
             } else {
@@ -206,13 +206,13 @@ public class Preparer {
 
                     pw.println("\t\t<div class=\"row bible-contents-row\">\n\t\t\t<div class=\"col-xs-6\"><a href=\"" +
                             preparePlatform.getLinkPrefix(Author.BIBLE) + BibleBook.values()[i].getBookFileName() + "\">" +
-                            BibleBook.values()[i].getName() + "</a></div>");
+                            BibleBook.values()[i].getNameWithSpaces() + "</a></div>");
 
                     // if i+1 is less than the number of new testament books
                     if (i < BibleBook.getNumNewTestamentBooks()) {
                         pw.println("\t\t\t<div class=\"col-xs-6\"><a href=\"" + preparePlatform.getLinkPrefix(Author.BIBLE) +
                                 BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getBookFileName() + "\">" +
-                                BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName() + "</a></div>");
+                                BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getNameWithSpaces() + "</a></div>");
                     } else {
                         pw.println("\t\t\t<div class=\"col-xs-6\"></div>");
                     }

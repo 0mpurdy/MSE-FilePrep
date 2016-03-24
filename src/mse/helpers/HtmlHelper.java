@@ -58,7 +58,7 @@ public class HtmlHelper {
 
     public static void writeBibleStart(PrintWriter pwBible, PrintWriter pwBibleText, BibleBook book) {
         pwBible.println("\n<body>\n\t<strong>Chapters</strong> ");
-        pwBibleText.println("{#" + book.getName() + "}");
+        pwBibleText.println("{#" + book.getNameWithSpaces() + "}");
     }
 
     public static String getBibleChapterHeader(BiblePrepareCache bpc) {
@@ -72,7 +72,7 @@ public class HtmlHelper {
                         "\n\t\t\t<td><strong>Darby Translation (1889)</strong> %s</td>" +
                         "\n\t\t\t<td><strong>Authorised (King James) Version (1796)</strong></td>" +
                         "\n\t\t</tr>"
-                , bpc.chapter, bpc.book.getName(), bpc.chapter, bpc.synopsisLink);
+                , bpc.chapter, bpc.book.getNameWithSpaces(), bpc.chapter, bpc.synopsisLink);
     }
 
     // endregion

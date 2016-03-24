@@ -166,7 +166,7 @@ public class Indexer {
         if (author.isMinistry()) {
             return author.getCode() + " volume " + volNum + " page " + pageNum;
         } else if (author.equals(Author.BIBLE)) {
-            return BibleBook.values()[volNum - 1].getName() + " chapter " + pageNum + ":" + verseNum;
+            return BibleBook.values()[volNum - 1].getNameWithSpaces() + " chapter " + pageNum + ":" + verseNum;
         } else if (author.equals(Author.HYMNS)) {
             return HymnBook.values()[volNum - 1].getName() + " " + pageNum;
         }
