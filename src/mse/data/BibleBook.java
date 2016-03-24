@@ -93,4 +93,8 @@ public enum BibleBook {
         return 27;
     }
 
+    public String getBookFileName() {
+        return getName() + ".html";
+    }
+
 }

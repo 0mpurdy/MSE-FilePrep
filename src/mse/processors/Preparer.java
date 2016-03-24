@@ -204,13 +204,15 @@ public class Preparer {
 
                 for (int i = 0; i < BibleBook.getNumOldTestamentBooks(); i++) {
 
-                    pw.println("\t\t<div class=\"row bible-contents-row\">\n\t\t\t<div class=\"col-xs-6\"><a href=\"" + preparePlatform.getLinkPrefix(Author.BIBLE) + BibleBook.values()[i].getName()
-                            + ".htm\">" + BibleBook.values()[i].getName() + "</a></div>");
+                    pw.println("\t\t<div class=\"row bible-contents-row\">\n\t\t\t<div class=\"col-xs-6\"><a href=\"" +
+                            preparePlatform.getLinkPrefix(Author.BIBLE) + BibleBook.values()[i].getBookFileName() + "\">" +
+                            BibleBook.values()[i].getName() + "</a></div>");
 
                     // if i+1 is less than the number of new testament books
                     if (i < BibleBook.getNumNewTestamentBooks()) {
-                        pw.println("\t\t\t<div class=\"col-xs-6\"><a href=\"" + preparePlatform.getLinkPrefix(Author.BIBLE) + BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName()
-                                + ".htm\">" + BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName() + "</a></div>");
+                        pw.println("\t\t\t<div class=\"col-xs-6\"><a href=\"" + preparePlatform.getLinkPrefix(Author.BIBLE) +
+                                BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getBookFileName() + "\">" +
+                                BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getName() + "</a></div>");
                     } else {
                         pw.println("\t\t\t<div class=\"col-xs-6\"></div>");
                     }
@@ -969,10 +971,10 @@ public class Preparer {
 
     private static String removeTrailingWhiteSpace(String bookName) {
         int i = bookName.length() - 1;
-        if (i<0) return "";
+        if (i < 0) return "";
         while (Character.isWhitespace(bookName.charAt(i))) {
             i--;
-            if (i<0) return "";
+            if (i < 0) return "";
         }
         return bookName.substring(0, i + 1);
     }

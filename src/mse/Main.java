@@ -24,7 +24,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         // the platform that is being prepared for
-        PreparePlatform platform = null;
+        PreparePlatform platform;
 
         System.out.println("MSE File Prep console application");
         System.out.println("Version: " + cfg.getMseVersion());
@@ -81,9 +81,11 @@ public class Main {
                         if (authorChoice == 0) {
                             Author.BIBLE.setTargetFolder(platform.getTargetFolder());
                             Preparer.prepareBibleHtml(cfg, platform.getStylesLink());
+                            Preparer.createBibleContents(cfg, platform);
                         } else if (authorChoice == 1) {
                             Author.HYMNS.setTargetFolder(platform.getTargetFolder());
                             Preparer.prepareHymnsHtml(cfg, platform.getStylesLink());
+                            Preparer.createHymnsContents(cfg, platform.getStylesLink());
                         } else if ((authorChoice >= 3) && (authorChoice <= 12)) {
                             Author.values()[authorChoice].setTargetFolder(platform.getTargetFolder());
                             Preparer.prepareMinistry(cfg, Author.values()[authorChoice], platform.getStylesLink());
