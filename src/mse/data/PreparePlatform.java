@@ -8,7 +8,7 @@ import mse.common.Author;
 public enum PreparePlatform {
 
     PC("PC", "target", "../../mseStyle.css", "", false),
-    ANDROID("Android", "target_a", "../mseStyle.css", "mse:", true);
+    ANDROID("Android", "target_a", "../../mseStyle.css", "mse:", true);
 
     private String name;
     private String targetFolder;

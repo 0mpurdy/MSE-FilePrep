@@ -46,6 +46,7 @@ public class Preparer {
         } catch (Exception e) {
             System.out.println("!*** Problem formatting bible ***!");
             System.out.println(e.getMessage());
+            e.printStackTrace();
         }
 
         if (!errMessages.toString().equals("")) {
@@ -130,6 +131,8 @@ public class Preparer {
                 if (bpc.synopsisLink == null) {
                     errMessages.append("\n\tNo synopsis link for ").append(bpc.book.getNameWithSpaces()).append(" chapter ").append(bpc.chapter);
                     bpc.synopsisLink = "";
+                } else {
+                    bpc.synopsisLink = bpc.synopsisLink.toLowerCase();
                 }
             } else {
                 // if not including synopsis
@@ -1137,7 +1140,7 @@ public class Preparer {
     private static void printContentsHeading(PrintWriter pwContents, StringBuilder outputLine, Author author, int volNum, int pageNum) {
 
         pwContents.println(String.format("\t\t\t\t<a class=\"btn btn-success-outline\" href=\"%s\" role=\"button\">%s</a><span class=\"label label-primary\">%d</span>",
-                author.getCode() + volNum + ".html#" + pageNum, outputLine, pageNum));
+                author.getVolumeName(volNum) + "#" + pageNum, outputLine, pageNum));
         pwContents.println("\t\t\t\t<br>");
 
     }
