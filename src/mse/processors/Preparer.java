@@ -1,6 +1,7 @@
 package mse.processors;
 
 import mse.data.*;
+import mse.helpers.FileHelper;
 import mse.helpers.HtmlHelper;
 import mse.common.Author;
 import mse.common.Config;
@@ -20,7 +21,7 @@ public class Preparer {
 
     // region bible
 
-    public static void prepareBibleHtml(Config cfg, String mseStyleLocation) {
+    public static void prepareBibleHtml(Config cfg, PreparePlatform platform) {
 
         System.out.print("\nPreparing Bible");
 
@@ -29,7 +30,7 @@ public class Preparer {
         try {
 
             // get the paths for the files that are used in preparing the bible html
-            BiblePrepareCache bpc = new BiblePrepareCache(cfg);
+            BiblePrepareCache bpc = new BiblePrepareCache(cfg, platform);
 
             // get the synopsis pages map
             bpc.synopsisPages = getSynopsisPages(bpc.getSynopsisSource());
@@ -40,7 +41,7 @@ public class Preparer {
                 System.out.print("\rPreparing " + nextBook.getNameWithSpaces());
                 bpc.nextBook(nextBook);
 
-                prepareSingleBibleBook(cfg, bpc, mseStyleLocation, errMessages);
+                prepareSingleBibleBook(cfg, bpc, platform.getStylesLink(), errMessages);
 
             }
         } catch (Exception e) {
@@ -186,7 +187,7 @@ public class Preparer {
 
         System.out.print("Preparing Bible contents...");
 
-        String contentsFilePath = cfg.getResDir() + Author.BIBLE.getTargetPath(Author.BIBLE.getContentsName());
+        String contentsFilePath = cfg.getResDir() + FileHelper.getTargetPath(Author.BIBLE, Author.BIBLE.getContentsName(), preparePlatform);
 
         File bibleContentsFile = new File(contentsFilePath);
 
@@ -293,7 +294,7 @@ public class Preparer {
 
     // region hymns
 
-    public static void prepareHymnsHtml(Config cfg, String mseStyleLocation) {
+    public static void prepareHymnsHtml(Config cfg, PreparePlatform platform) {
 
         System.out.print("Preparing Hymns");
 
@@ -308,7 +309,7 @@ public class Preparer {
             System.out.print("\r\tReading Hymns from: " + f.getCanonicalPath());
 
             // the path of the output
-            String hymnsOutPath = cfg.getResDir() + Author.HYMNS.getTargetPath();
+            String hymnsOutPath = cfg.getResDir() + FileHelper.getTargetPath(Author.HYMNS, platform);
             f = new File(hymnsOutPath);
             f.mkdirs();
             System.out.print("\r\tWriting Hymns to: " + f.getCanonicalPath());
@@ -334,7 +335,7 @@ public class Preparer {
                 hymnLine = brHymns.readLine();
 
                 // print the html header
-                HtmlHelper.writeHtmlHeader(pwHymns, nextHymnBook.getName(), mseStyleLocation);
+                HtmlHelper.writeHtmlHeader(pwHymns, nextHymnBook.getName(), platform.getStylesLink());
                 HtmlHelper.writeStart(pwHymns);
 
                 // read the second line of the hymn book
@@ -421,7 +422,7 @@ public class Preparer {
         System.out.println("\rFinished preparing Hymns");
     }
 
-    public static void createHymnsContents(Config cfg, String mseStyleLocation) {
+    public static void createHymnsContents(Config cfg, PreparePlatform platform) {
 
         System.out.print("Preparing hymns contents");
 
@@ -436,7 +437,7 @@ public class Preparer {
             System.out.print("\r\tReading Hymns from: " + f.getCanonicalPath());
 
             // the path of the output
-            String hymnsOutPath = cfg.getResDir() + Author.HYMNS.getTargetPath();
+            String hymnsOutPath = cfg.getResDir() + FileHelper.getTargetPath(Author.HYMNS, platform);
             f = new File(hymnsOutPath);
             f.mkdirs();
             System.out.print("\r\tWriting Hymns to: " + f.getCanonicalPath());
@@ -448,7 +449,7 @@ public class Preparer {
             PrintWriter pwOverallHymnBooksContents = new PrintWriter(new FileWriter(hymnsOutPath + Author.HYMNS.getContentsName()));
 
             // print the html header for the overall contents page
-            HtmlHelper.writeHtmlHeader(pwOverallHymnBooksContents, "Hymn Contents", mseStyleLocation);
+            HtmlHelper.writeHtmlHeader(pwOverallHymnBooksContents, "Hymn Contents", platform.getStylesLink());
             HtmlHelper.writeStart(pwOverallHymnBooksContents);
 
             // prepare html for each hymn book
@@ -458,7 +459,7 @@ public class Preparer {
                 PrintWriter pwSingleHymnBookContents = new PrintWriter(new File(hymnsOutPath + nextHymnBook.getContentsName()));
 
                 // print the html header for the single book contents page
-                HtmlHelper.writeHtmlHeader(pwSingleHymnBookContents, "Hymn Contents", mseStyleLocation);
+                HtmlHelper.writeHtmlHeader(pwSingleHymnBookContents, "Hymn Contents", platform.getStylesLink());
                 HtmlHelper.writeStart(pwSingleHymnBookContents);
 
                 System.out.print("\r\tScanning " + nextHymnBook.getName() + " ");
@@ -558,7 +559,7 @@ public class Preparer {
 
     // region ministry
 
-    public static void prepareMinistry(Config cfg, Author author, String mseStylesLocation) {
+    public static void prepareMinistry(Config cfg, Author author, PreparePlatform platform) {
 
         System.out.print("Preparing: " + author.getName());
 
@@ -573,7 +574,7 @@ public class Preparer {
             f.mkdirs();
             System.out.print("\r\tReading from " + f.getCanonicalPath());
 
-            String targetFolder = cfg.getResDir() + File.separator + author.getTargetPath();
+            String targetFolder = cfg.getResDir() + File.separator + FileHelper.getTargetPath(author, platform);
             f = new File(targetFolder);
             f.mkdirs();
             System.out.print("\r\tWriting to " + f.getCanonicalPath());
@@ -587,7 +588,7 @@ public class Preparer {
             pwContents = new PrintWriter(new FileWriter(targetFolder + author.getContentsName()));
 
             // write html head
-            HtmlHelper.writeHtmlHeader(pwContents, author.getName() + " contents", mseStylesLocation);
+            HtmlHelper.writeHtmlHeader(pwContents, author.getName() + " contents", platform.getStylesLink());
             HtmlHelper.writeStart(pwContents);
             HtmlHelper.writeContentsTitle(pwContents, author.getName() + " Contents");
 
@@ -595,7 +596,7 @@ public class Preparer {
 
             // for each volume
             while (!apc.finishedVolumes) {
-                prepareMinistryVolume(apc, sourceFolder, author, brSourceText, pwHtml, pwContents, targetFolder, mseStylesLocation);
+                prepareMinistryVolume(apc, sourceFolder, author, brSourceText, pwHtml, pwContents, targetFolder, platform.getStylesLink());
             }
 
             HtmlHelper.writeContentsClose(pwContents);

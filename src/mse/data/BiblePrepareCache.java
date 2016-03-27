@@ -35,12 +35,12 @@ public class BiblePrepareCache {
     public boolean startedItalic = false;
     public BibleBook book;
 
-    public BiblePrepareCache(Config cfg) throws IOException {
+    public BiblePrepareCache(Config cfg, PreparePlatform platform) throws IOException {
         this.cfg = cfg;
-         jndBiblePath = FileHelper.checkSourceFolder(cfg, "bible");
-         kjvBiblePath = FileHelper.checkSourceFolder(cfg, "kjv");
-         bibleDestinationPath = FileHelper.checkTargetFolder(cfg, Author.BIBLE.getTargetPath());
-         bibleTxtDestinationPath = FileHelper.checkTargetFolder(cfg, "target" + File.separator + "bibleText");
+        jndBiblePath = FileHelper.checkSourceFolder(cfg, "bible");
+        kjvBiblePath = FileHelper.checkSourceFolder(cfg, "kjv");
+        bibleDestinationPath = FileHelper.checkTargetFolder(cfg, FileHelper.getTargetPath(Author.BIBLE, platform));
+        bibleTxtDestinationPath = FileHelper.checkTargetFolder(cfg, "target" + File.separator + "bibleText");
     }
 
     public String getSynopsisSource() {

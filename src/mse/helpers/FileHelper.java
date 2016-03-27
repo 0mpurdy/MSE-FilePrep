@@ -1,6 +1,8 @@
 package mse.helpers;
 
+import mse.common.Author;
 import mse.common.Config;
+import mse.data.PreparePlatform;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,5 +35,32 @@ public class FileHelper {
             return null;
         }
     }
+
+    private static final String A_TARGET_FOLDER = "files/target_a";
+
+    // region target paths
+
+    public static String getTargetPath(Author author, PreparePlatform platform) {
+        return platform.getTargetFolder() + File.separator + author.getPath();
+    }
+
+    public static String getTargetPath(Author author, String filename, PreparePlatform platform) {
+        return platform.getTargetFolder() + File.separator + author.getPath() + filename;
+    }
+
+    public static String getTargetVolumePath(Author author, int volumeNumber, PreparePlatform platform) {
+        return getTargetPath(author, author.getVolumeName(volumeNumber), platform);
+    }
+
+    public static String getIndexTargetPath(Author author, PreparePlatform platform) {
+        return getTargetPath(author, author.getIndexFileName(), platform);
+    }
+
+
+    public static String getHtmlLink(Author author, String filename, PreparePlatform platform) {
+        return "../../../" + platform.getTargetFolder() + "/" + author.getPath() + filename;
+    }
+
+    // endregion
 
 }

@@ -51,22 +51,19 @@ public class Main {
                         System.out.println("Preparing all files");
 
                         // prepare bible
-                        Author.BIBLE.setTargetFolder(platform.getTargetFolder());
-                        Preparer.prepareBibleHtml(cfg, platform.getStylesLink());
+                        Preparer.prepareBibleHtml(cfg, platform);
+                        Preparer.createBibleContents(cfg, platform);
 
                         // prepare hymns
-                        Author.HYMNS.setTargetFolder(platform.getTargetFolder());
-                        Preparer.prepareHymnsHtml(cfg, platform.getStylesLink());
+                        Preparer.prepareHymnsHtml(cfg, platform);
+                        Preparer.createHymnsContents(cfg, platform);
 
                         // prepare ministry
                         for (Author nextAuthor : Author.values()) {
                             if (nextAuthor.isMinistry()) {
-                                nextAuthor.setTargetFolder(platform.getTargetFolder());
-                                Preparer.prepareMinistry(cfg, nextAuthor, platform.getStylesLink());
+                                Preparer.prepareMinistry(cfg, nextAuthor, platform);
                             }
                         }
-                        Preparer.createBibleContents(cfg, platform);
-                        Preparer.createHymnsContents(cfg, platform.getStylesLink());
                     }
                     break;
                 case 2:
@@ -79,16 +76,13 @@ public class Main {
                     platform = chooseSystem(sc);
                     if (platform != null) {
                         if (authorChoice == 0) {
-                            Author.BIBLE.setTargetFolder(platform.getTargetFolder());
-                            Preparer.prepareBibleHtml(cfg, platform.getStylesLink());
+                            Preparer.prepareBibleHtml(cfg, platform);
                             Preparer.createBibleContents(cfg, platform);
                         } else if (authorChoice == 1) {
-                            Author.HYMNS.setTargetFolder(platform.getTargetFolder());
-                            Preparer.prepareHymnsHtml(cfg, platform.getStylesLink());
-                            Preparer.createHymnsContents(cfg, platform.getStylesLink());
+                            Preparer.prepareHymnsHtml(cfg, platform);
+                            Preparer.createHymnsContents(cfg, platform);
                         } else if ((authorChoice >= 3) && (authorChoice <= 12)) {
-                            Author.values()[authorChoice].setTargetFolder(platform.getTargetFolder());
-                            Preparer.prepareMinistry(cfg, Author.values()[authorChoice], platform.getStylesLink());
+                            Preparer.prepareMinistry(cfg, Author.values()[authorChoice], platform);
                         } else {
                             System.out.println("\nOption " + authorChoice + " is not available at the moment");
                         }
@@ -103,8 +97,7 @@ public class Main {
                         // add a reference processor for each author then write the index
                         for (Author nextAuthor : Author.values()) {
                             if (nextAuthor.isSearchable()) {
-                                nextAuthor.setTargetFolder(platform.getTargetFolder());
-                                processAuthor(nextAuthor, cfg);
+                                processAuthor(nextAuthor, cfg, platform);
                             }
                         }
                         long endIndexing = System.nanoTime();
@@ -122,8 +115,7 @@ public class Main {
                     if (platform != null) {
                         if ((authorChoice >= 0) && (authorChoice < Author.values().length)) {
                             Author author = Author.values()[authorChoice];
-                            author.setTargetFolder(platform.getTargetFolder());
-                            processAuthor(author, cfg);
+                            processAuthor(author, cfg, platform);
                         } else {
                             System.out.println("This is not a valid option");
                         }
@@ -132,7 +124,10 @@ public class Main {
                 case 5:
                     // create super index
                     System.out.println("Creating super index");
-                    createSuperIndex(cfg);
+                    // choose system to create super index for
+                    if ((platform = chooseSystem(sc)) != null) {
+                        createSuperIndex(cfg, platform);
+                    }
                     break;
                 case 6:
                     // check author index
@@ -141,27 +136,35 @@ public class Main {
                     authorChoice = sc.nextInt();
                     sc.nextLine();
                     if ((authorChoice >= 0) && (authorChoice < Author.values().length)) {
+
+
                         Author author = Author.values()[authorChoice];
                         if (author.isSearchable()) {
-                            AuthorIndex authorIndex = new AuthorIndex(author);
-                            authorIndex.loadIndex(cfg.getResDir());
-                            System.out.println(authorIndex.getTokenCountMap().size());
 
-                            System.out.print("Do you wish to write the index to a file (y/n): ");
-                            if (sc.nextLine().equalsIgnoreCase("y")) {
-                                try {
-                                    BufferedWriter bw = new BufferedWriter(new FileWriter("index.txt"));
-                                    for (Map.Entry<String, short[]> entry : authorIndex.getReferencesMap().entrySet()) {
-                                        bw.write("\"" + entry.getKey() + "\": [");
-                                        for (short ref : entry.getValue()) {
-                                            bw.write(ref + ", ");
+                            // choose system to check index for
+                            platform = chooseSystem(sc);
+                            if (platform != null) {
+                                AuthorIndex authorIndex = new AuthorIndex(author);
+                                authorIndex.loadIndex(cfg.getResDir(), platform);
+                                System.out.println(authorIndex.getTokenCountMap().size());
+
+                                System.out.print("Do you wish to write the index to a file (y/n): ");
+                                if (sc.nextLine().equalsIgnoreCase("y")) {
+                                    try {
+                                        BufferedWriter bw = new BufferedWriter(new FileWriter("index.txt"));
+                                        for (Map.Entry<String, short[]> entry : authorIndex.getReferencesMap().entrySet()) {
+                                            bw.write("\"" + entry.getKey() + "\": [");
+                                            for (short ref : entry.getValue()) {
+                                                bw.write(ref + ", ");
+                                            }
+                                            bw.write("]\n");
                                         }
-                                        bw.write("]\n");
+                                    } catch (IOException ioe) {
+                                        System.out.println("Error writing index");
                                     }
-                                } catch (IOException ioe) {
-                                    System.out.println("Error writing index");
                                 }
                             }
+
                         } else {
                             System.out.println("This author is not searchable");
                         }
@@ -171,12 +174,15 @@ public class Main {
                     break;
                 case 7:
                     // check all indexes
-                    ArrayList<AuthorIndex> authorIndexes = new ArrayList<>();
-                    for (Author nextAuthor : Author.values()) {
-                        if (nextAuthor.isSearchable()) {
-                            AuthorIndex authorIndex = new AuthorIndex(nextAuthor);
-                            authorIndex.loadIndex(cfg.getResDir());
-                            authorIndexes.add(authorIndex);
+                    // choose system to check index for
+                    if ((platform = chooseSystem(sc)) != null) {
+                        ArrayList<AuthorIndex> authorIndexes = new ArrayList<>();
+                        for (Author nextAuthor : Author.values()) {
+                            if (nextAuthor.isSearchable()) {
+                                AuthorIndex authorIndex = new AuthorIndex(nextAuthor);
+                                authorIndex.loadIndex(cfg.getResDir(), platform);
+                                authorIndexes.add(authorIndex);
+                            }
                         }
                     }
                     break;
@@ -277,16 +283,16 @@ public class Main {
         System.out.print("Choose an option: ");
     }
 
-    private static void processAuthor(Author author, Config cfg) {
+    private static void processAuthor(Author author, Config cfg, PreparePlatform platform) {
 
         ArrayList<String> messages = new ArrayList<>();
 
         long startAuthor = System.nanoTime();
 
         final ReferenceQueue referenceQueue = new ReferenceQueue(author, cfg);
-        ReferenceProcessor referenceProcessor = new ReferenceProcessor(referenceQueue);
+        ReferenceProcessor referenceProcessor = new ReferenceProcessor(referenceQueue, platform);
         referenceProcessor.start();
-        Indexer.indexAuthor(cfg, author, referenceQueue, messages);
+        Indexer.indexAuthor(cfg, author, referenceQueue, messages, platform);
         System.out.println();
         referenceProcessor.interrupt();
         while (referenceProcessor.isAlive()) {
@@ -308,7 +314,7 @@ public class Main {
 
     }
 
-    private static void createSuperIndex(Config cfg) {
+    private static void createSuperIndex(Config cfg, PreparePlatform platform) {
 
         // super index token count
         HashMap<String, Integer> superIndex = new HashMap<>();
@@ -320,7 +326,7 @@ public class Main {
                 System.out.println("Creating super index for " + nextAuthor.getName());
 
                 AuthorIndex nextAuthorIndex = new AuthorIndex(nextAuthor);
-                nextAuthorIndex.loadIndex(cfg.getResDir());
+                nextAuthorIndex.loadIndex(cfg.getResDir(), platform);
 
                 // if the index loads
                 if (nextAuthorIndex != null) {

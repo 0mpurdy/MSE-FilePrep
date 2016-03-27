@@ -1,5 +1,8 @@
 package mse.common;
 
+import mse.data.PreparePlatform;
+import mse.helpers.FileHelper;
+
 import java.io.*;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -168,19 +171,19 @@ public class AuthorIndex implements Serializable {
         return references.get(key);
     }
 
-    public void loadIndex(String resLocation) {
+    public void loadIndex(String resLocation, PreparePlatform platform) {
 
         // try to load the index of the current author
         try {
-            InputStream inStream = new FileInputStream(resLocation + author.getIndexFilePath());
+            InputStream inStream = new FileInputStream(resLocation + FileHelper.getIndexTargetPath(author, platform));
             BufferedInputStream bInStream = new BufferedInputStream(inStream);
             ObjectInput input = new ObjectInputStream(bInStream);
             this.tokenCountMap = (HashMap<String, Integer>) input.readObject();
             this.references = (HashMap<String, short[]>) input.readObject();
         } catch (FileNotFoundException fnfe) {
-            System.out.println("Could not file find file: " + resLocation + author.getIndexFilePath());
+            System.out.println("Could not file find file: " + resLocation + FileHelper.getIndexTargetPath(author, platform));
         } catch (IOException ioe) {
-            System.out.println("Error loading from: " + author.getIndexFilePath());
+            System.out.println("Error loading from: " + FileHelper.getIndexTargetPath(author, platform));
         } catch (ClassCastException cce) {
             System.out.println("Error casting class when loading new index");
         } catch (ClassNotFoundException cnfe) {

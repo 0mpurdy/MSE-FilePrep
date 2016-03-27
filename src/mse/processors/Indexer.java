@@ -5,6 +5,8 @@ import mse.data.HymnBook;
 import mse.common.Author;
 import mse.common.AuthorIndex;
 import mse.common.Config;
+import mse.data.PreparePlatform;
+import mse.helpers.FileHelper;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -14,7 +16,7 @@ import java.util.ArrayList;
  */
 public class Indexer {
 
-    public static void indexAuthor(Config cfg, Author author, ReferenceQueue referenceQueue, ArrayList<String> messages) {
+    public static void indexAuthor(Config cfg, Author author, ReferenceQueue referenceQueue, ArrayList<String> messages, PreparePlatform platform) {
 
         AuthorIndex authorIndex = new AuthorIndex(author);
 
@@ -28,7 +30,7 @@ public class Indexer {
         }
 
         // destination file path
-        String destinationPath = cfg.getResDir() + File.separator + author.getTargetPath();
+        String destinationPath = cfg.getResDir() + File.separator + FileHelper.getTargetPath(author, platform);
 
         int volumeNumber = 1;
 
@@ -152,8 +154,8 @@ public class Indexer {
     private static File getVolumeName(String sourcePath, Author author, int volumeNumber) {
         String filename;
         if (author == Author.HYMNS) {
-            if (volumeNumber-1 >= HymnBook.values().length) return null;
-            filename = sourcePath + HymnBook.values()[volumeNumber-1].getInputFilename();
+            if (volumeNumber - 1 >= HymnBook.values().length) return null;
+            filename = sourcePath + HymnBook.values()[volumeNumber - 1].getInputFilename();
         } else {
             filename = sourcePath + author.getCode() + volumeNumber + ".txt";
         }

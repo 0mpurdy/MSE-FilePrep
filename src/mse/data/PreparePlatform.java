@@ -1,6 +1,7 @@
 package mse.data;
 
 import mse.common.Author;
+import mse.helpers.FileHelper;
 
 /**
  * Created by Michael on 12/12/2015.
@@ -8,7 +9,7 @@ import mse.common.Author;
 public enum PreparePlatform {
 
     PC("PC", "target", "../../mseStyle.css", "", false),
-    ANDROID("Android", "target_a", "../../mseStyle.css", "mse:", true);
+    ANDROID("Android", "files/target_a", "../../mseStyle.css", "mse:", false);
 
     private String name;
     private String targetFolder;
@@ -38,7 +39,9 @@ public enum PreparePlatform {
 
     public String getLinkPrefix(Author author) {
         String link = "";
-        if (fullLink) link = author.getTargetPath();
-        return linkPrefix + link;
+        if (fullLink) link = FileHelper.getTargetPath(author, this);
+        if (!author.isAsset())
+            return linkPrefix + link;
+        return link;
     }
 }
