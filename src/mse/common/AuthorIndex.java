@@ -171,17 +171,17 @@ public class AuthorIndex implements Serializable {
         return references.get(key);
     }
 
-    public void loadIndex(String resLocation, PreparePlatform platform) {
+    public void loadIndex(PreparePlatform platform) {
 
         // try to load the index of the current author
         try {
-            InputStream inStream = new FileInputStream(resLocation + FileHelper.getIndexTargetPath(author, platform));
+            InputStream inStream = new FileInputStream(FileHelper.getIndexTargetPath(author, platform));
             BufferedInputStream bInStream = new BufferedInputStream(inStream);
             ObjectInput input = new ObjectInputStream(bInStream);
             this.tokenCountMap = (HashMap<String, Integer>) input.readObject();
             this.references = (HashMap<String, short[]>) input.readObject();
         } catch (FileNotFoundException fnfe) {
-            System.out.println("Could not file find file: " + resLocation + FileHelper.getIndexTargetPath(author, platform));
+            System.out.println("Could not file find file: " + FileHelper.getIndexTargetPath(author, platform));
         } catch (IOException ioe) {
             System.out.println("Error loading from: " + FileHelper.getIndexTargetPath(author, platform));
         } catch (ClassCastException cce) {
@@ -193,6 +193,8 @@ public class AuthorIndex implements Serializable {
     }
 
     public void writeIndex(String location) {
+
+        System.out.println("Writing index at: " + location);
 
         ObjectOutputStream objectOutputStream = null;
 

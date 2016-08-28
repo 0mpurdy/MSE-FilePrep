@@ -145,7 +145,7 @@ public class Main {
                             platform = chooseSystem(sc);
                             if (platform != null) {
                                 AuthorIndex authorIndex = new AuthorIndex(author);
-                                authorIndex.loadIndex(cfg.getResDir(), platform);
+                                authorIndex.loadIndex(platform);
                                 System.out.println(authorIndex.getTokenCountMap().size());
 
                                 System.out.print("Do you wish to write the index to a file (y/n): ");
@@ -180,7 +180,7 @@ public class Main {
                         for (Author nextAuthor : Author.values()) {
                             if (nextAuthor.isSearchable()) {
                                 AuthorIndex authorIndex = new AuthorIndex(nextAuthor);
-                                authorIndex.loadIndex(cfg.getResDir(), platform);
+                                authorIndex.loadIndex(platform);
                                 authorIndexes.add(authorIndex);
                             }
                         }
@@ -235,7 +235,7 @@ public class Main {
         System.out.println("\nOptions: ");
 
         ArrayList<String> options = new ArrayList<>();
-        options.add("Close");
+        options.add("Back");
         options.add("Benchmark");
 
         printMenu(options);
@@ -326,7 +326,7 @@ public class Main {
                 System.out.println("Creating super index for " + nextAuthor.getName());
 
                 AuthorIndex nextAuthorIndex = new AuthorIndex(nextAuthor);
-                nextAuthorIndex.loadIndex(cfg.getResDir(), platform);
+                nextAuthorIndex.loadIndex(platform);
 
                 // if the index loads
                 if (nextAuthorIndex != null) {
@@ -348,7 +348,7 @@ public class Main {
         try {
 
             // output super index
-            FileOutputStream fileOutStream = new FileOutputStream(cfg.getResDir() + "super.idx");
+            FileOutputStream fileOutStream = new FileOutputStream(platform.getResDir() + "super.idx");
             ObjectOutputStream objectOutStream = new ObjectOutputStream(fileOutStream);
             objectOutStream.writeObject(superIndex);
             objectOutStream.flush();

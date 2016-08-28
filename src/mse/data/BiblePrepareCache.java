@@ -37,26 +37,26 @@ public class BiblePrepareCache {
 
     public BiblePrepareCache(Config cfg, PreparePlatform platform) throws IOException {
         this.cfg = cfg;
-        jndBiblePath = FileHelper.checkSourceFolder(cfg, "bible");
-        kjvBiblePath = FileHelper.checkSourceFolder(cfg, "kjv");
-        bibleDestinationPath = FileHelper.checkTargetFolder(cfg, FileHelper.getTargetPath(Author.BIBLE, platform));
-        bibleTxtDestinationPath = FileHelper.checkTargetFolder(cfg, "target" + File.separator + "bibleText");
+        jndBiblePath = FileHelper.checkSourceFolder(platform, FileConstants.JND_BIBLE_FOLDER);
+        kjvBiblePath = FileHelper.checkSourceFolder(platform, FileConstants.KJV_BIBLE_FOLDER);
+        bibleDestinationPath = FileHelper.checkTargetFolder(FileHelper.getTargetPath(Author.BIBLE, platform));
+        bibleTxtDestinationPath = FileHelper.checkTargetFolder(platform.getTargetPath() + File.separator + FileConstants.BIBLE_TEXT_OUTPUT_FOLDER);
     }
 
     public String getSynopsisSource() {
-        return jndBiblePath + "pages.txt";
+        return jndBiblePath + File.separator + FileConstants.JND_SYNOPSIS_SOURCE_NAME;
     }
 
     public String getJndSource() {
-        return jndBiblePath + "bible" + bookNumber + ".txt";
+        return jndBiblePath + File.separator + FileConstants.JND_BIBLE_FOLDER + bookNumber + FileConstants.SOURCE_FILE_ENDING;
     }
 
     public String getKjvSource() {
-        return kjvBiblePath + "kjv" + bookNumber + ".txt";
+        return kjvBiblePath + File.separator + FileConstants.KJV_BIBLE_FOLDER + bookNumber + FileConstants.SOURCE_FILE_ENDING;
     }
 
     public String getBibleOutput() {
-        return bibleDestinationPath + book.getBookFileName();
+        return bibleDestinationPath + File.separator + book.getTargetFilename();
     }
 
     public void nextBook(BibleBook nextBook) {
@@ -65,6 +65,6 @@ public class BiblePrepareCache {
     }
 
     public String getBibleTextOutput() {
-        return bibleTxtDestinationPath + Author.BIBLE.getCode() + bookNumber + ".txt";
+        return bibleTxtDestinationPath + File.separator + Author.BIBLE.getCode().toLowerCase() + bookNumber + FileConstants.SOURCE_FILE_ENDING;
     }
 }

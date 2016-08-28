@@ -1,5 +1,7 @@
 package mse.common;
 
+import mse.data.PreparePlatform;
+
 import java.io.File;
 
 public enum Author {
@@ -53,12 +55,25 @@ public enum Author {
 
     // region prepare
 
-    public String getPreparePath() {
-        return "source" + File.separator + folder + File.separator;
+    /**
+     * Get the path to the source text file
+     *
+     * @param platform The platform that the files are prepared for eg: PC or Android
+     * @return
+     */
+    public String getPreparePath(PreparePlatform platform) {
+        return platform.getSourcePath() + folder + File.separator;
     }
 
-    public String getPreparePath(String filename) {
-        return "source" + File.separator + folder + File.separator + filename;
+    /**
+     * Get the path to the source text for the bible index
+     *
+     * @param platform The platform that the files are prepared for eg: PC or Android
+     * @return The path to the source text for the bible index
+     */
+    public String getIndexPreparePath(PreparePlatform platform) {
+        if (this.equals(BIBLE)) return platform.getResDir() + "target" + File.separator + "bibleText" + File.separator;
+        return platform.getSourcePath() + folder + File.separator;
     }
 
     public String getPrepareSourceName(int volNumber) {
@@ -70,11 +85,11 @@ public enum Author {
     // region filenames
 
     public String getContentsName() {
-        return code + "-Contents.html";
+        return code.toLowerCase() + "-contents.html";
     }
 
     public String getIndexFileName() {
-        return "index-" + getCode() + ".idx";
+        return "index-" + getCode().toLowerCase() + ".idx";
     }
 
     public String getVolumeName(int volumeNumber) {

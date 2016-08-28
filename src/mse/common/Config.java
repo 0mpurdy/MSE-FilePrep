@@ -45,7 +45,7 @@ public class Config {
     private void setDefaults() {
 
         mseVersion = "3.0.1";
-        resDir = ".." + File.separator + "MSE-Res-Lite" + File.separator + "res" + File.separator;;
+        resDir = ".." + File.separator + "MSE-Res-Lite" + File.separator + "res" + File.separator;
 //        defaultBrowser = "/usr/bin/firefox";
 //        defaultBrowser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
         resultsFileName = "search_results.html";
@@ -115,9 +115,9 @@ public class Config {
         this.resDir = resDir;
     }
 
-    public String getResDir() {
-        return resDir;
-    }
+//    public String getResDir() {
+//        return resDir;
+//    }
 
     public void setWorkingDir(String workingDir) {
         this.workingDir = workingDir;

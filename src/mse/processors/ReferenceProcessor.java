@@ -40,7 +40,7 @@ public class ReferenceProcessor extends Thread {
         authorIndex.cleanIndexArrays();
 
         // output index
-        authorIndex.writeIndex(cfg.getResDir() + FileHelper.getIndexTargetPath(author, platform));
+        authorIndex.writeIndex(FileHelper.getIndexTargetPath(author, platform));
 
         System.out.println("Total token count: " + totalTokenCount);
 

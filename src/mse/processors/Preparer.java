@@ -8,7 +8,6 @@ import mse.common.Config;
 import mse.processors.prepare.MinistryLine;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -54,7 +53,7 @@ public class Preparer {
             System.out.println("\r" + errMessages);
         }
 
-        System.out.println("\rFinished Preparing Bible");
+        System.out.println("\rFinished Preparing Bible: " + FileHelper.getTargetPath(Author.BIBLE, platform));
 
     }
 
@@ -159,7 +158,7 @@ public class Preparer {
                 bpc.bufferString += " class=\"odd\"";
             }
 
-            bpc.bufferString += String.format(">\n\t\t\t<td><a name=%s:%s>%s</a></td>\n", bpc.chapter, bpc.verseNum, bpc.verseNum);
+            bpc.bufferString += String.format(">\n\t\t\t<td class=\"verse-num\"><a name=%s:%s>%s</a></td>\n", bpc.chapter, bpc.verseNum, bpc.verseNum);
             bpc.bufferString += String.format("\t\t\t<td>%s</td>\n\t\t\t<td>%s</td>\n\t\t</tr>", bpc.jndVerse, bpc.kjvVerse);
 
             // create the text output
@@ -187,7 +186,7 @@ public class Preparer {
 
         System.out.print("Preparing Bible contents...");
 
-        String contentsFilePath = cfg.getResDir() + FileHelper.getTargetPath(Author.BIBLE, Author.BIBLE.getContentsName(), preparePlatform);
+        String contentsFilePath = FileHelper.getTargetPath(Author.BIBLE, Author.BIBLE.getContentsName(), preparePlatform);
 
         File bibleContentsFile = new File(contentsFilePath);
 
@@ -209,13 +208,13 @@ public class Preparer {
                 for (int i = 0; i < BibleBook.getNumOldTestamentBooks(); i++) {
 
                     pw.println("\t\t<div class=\"row bible-contents-row\">\n\t\t\t<div class=\"col-xs-6\"><a href=\"" +
-                            preparePlatform.getLinkPrefix(Author.BIBLE) + BibleBook.values()[i].getBookFileName() + "\">" +
+                            preparePlatform.getLinkPrefix(Author.BIBLE) + BibleBook.values()[i].getTargetFilename() + "\">" +
                             BibleBook.values()[i].getNameWithSpaces() + "</a></div>");
 
                     // if i+1 is less than the number of new testament books
                     if (i < BibleBook.getNumNewTestamentBooks()) {
                         pw.println("\t\t\t<div class=\"col-xs-6\"><a href=\"" + preparePlatform.getLinkPrefix(Author.BIBLE) +
-                                BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getBookFileName() + "\">" +
+                                BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getTargetFilename() + "\">" +
                                 BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getNameWithSpaces() + "</a></div>");
                     } else {
                         pw.println("\t\t\t<div class=\"col-xs-6\"></div>");
@@ -303,13 +302,13 @@ public class Preparer {
             File f;
 
             // the path of the input
-            String hymnsPath = cfg.getResDir() + Author.HYMNS.getPreparePath();
+            String hymnsPath = Author.HYMNS.getPreparePath(platform);
             f = new File(hymnsPath);
             f.mkdirs();
             System.out.print("\r\tReading Hymns from: " + f.getCanonicalPath());
 
             // the path of the output
-            String hymnsOutPath = cfg.getResDir() + FileHelper.getTargetPath(Author.HYMNS, platform);
+            String hymnsOutPath = FileHelper.getTargetPath(Author.HYMNS, platform);
             f = new File(hymnsOutPath);
             f.mkdirs();
             System.out.print("\r\tWriting Hymns to: " + f.getCanonicalPath());
@@ -325,11 +324,11 @@ public class Preparer {
             for (HymnBook nextHymnBook : HymnBook.values()) {
 
                 System.out.print("\r\tPreparing " + nextHymnBook.getName() + " ");
-                String inputFileName = hymnsPath + nextHymnBook.getInputFilename();
+                String inputFileName = hymnsPath + nextHymnBook.getSourceFilename();
 
                 // make the reader and writer
                 BufferedReader brHymns = new BufferedReader(new FileReader(inputFileName));
-                PrintWriter pwHymns = new PrintWriter(new FileWriter(hymnsOutPath + nextHymnBook.getOutputFilename()));
+                PrintWriter pwHymns = new PrintWriter(new FileWriter(hymnsOutPath + nextHymnBook.getTargetFilename()));
 
                 // read the first line of the hymn book
                 hymnLine = brHymns.readLine();
@@ -419,7 +418,7 @@ public class Preparer {
             System.out.println(ioe.getMessage());
         }
 
-        System.out.println("\rFinished preparing Hymns");
+        System.out.println("\rFinished preparing Hymns:" + FileHelper.getTargetPath(Author.HYMNS, platform));
     }
 
     public static void createHymnsContents(Config cfg, PreparePlatform platform) {
@@ -431,13 +430,13 @@ public class Preparer {
             File f;
 
             // the path of the input
-            String hymnsPath = cfg.getResDir() + Author.HYMNS.getPreparePath();
+            String hymnsPath = Author.HYMNS.getPreparePath(platform);
             f = new File(hymnsPath);
             f.mkdirs();
             System.out.print("\r\tReading Hymns from: " + f.getCanonicalPath());
 
             // the path of the output
-            String hymnsOutPath = cfg.getResDir() + FileHelper.getTargetPath(Author.HYMNS, platform);
+            String hymnsOutPath = FileHelper.getTargetPath(Author.HYMNS, platform);
             f = new File(hymnsOutPath);
             f.mkdirs();
             System.out.print("\r\tWriting Hymns to: " + f.getCanonicalPath());
@@ -463,7 +462,7 @@ public class Preparer {
                 HtmlHelper.writeStart(pwSingleHymnBookContents);
 
                 System.out.print("\r\tScanning " + nextHymnBook.getName() + " ");
-                String inputFileName = hymnsPath + nextHymnBook.getInputFilename();
+                String inputFileName = hymnsPath + nextHymnBook.getSourceFilename();
 
                 // make the reader and writer
                 BufferedReader brHymns = new BufferedReader(new FileReader(inputFileName));
@@ -503,7 +502,7 @@ public class Preparer {
                                     "\n\t\t\t\t<div class=\"btn-group btn-group-lg btn-group-justified btn-group-fill-height\">");
                         }
 
-                        printSingleHymnToContents(pwSingleHymnBookContents, nextHymnBook.getOutputFilename(), hymnNumber);
+                        printSingleHymnToContents(pwSingleHymnBookContents, nextHymnBook.getTargetFilename(), hymnNumber);
 
                         if (hymnNum % 5 == 0) {
                             // if it is the last hymn in a large column
@@ -569,12 +568,12 @@ public class Preparer {
 
             // set up readers/writers
             File f;
-            String sourceFolder = cfg.getResDir() + File.separator + author.getPreparePath();
+            String sourceFolder = author.getPreparePath(platform);
             f = new File(sourceFolder);
             f.mkdirs();
             System.out.print("\r\tReading from " + f.getCanonicalPath());
 
-            String targetFolder = cfg.getResDir() + File.separator + FileHelper.getTargetPath(author, platform);
+            String targetFolder = FileHelper.getTargetPath(author, platform);
             f = new File(targetFolder);
             f.mkdirs();
             System.out.print("\r\tWriting to " + f.getCanonicalPath());
@@ -698,7 +697,7 @@ public class Preparer {
                     apc.messages = apc.messages.replaceFirst("\n", "");
                     System.out.println("\r" + apc.messages);
                 }
-                System.out.println("\rFinished preparing " + author.getName());
+                System.out.println("\rFinished preparing " + author.getName() + ": " + targetFolder);
             }
         } catch (IOException ioe) {
             System.out.println("\n!*** Error with " + author.getName() + " volume: " + apc.volNum);
@@ -768,7 +767,7 @@ public class Preparer {
         MinistryLine mLine = new MinistryLine(outputLine.toString());
 
         // for each character in the line
-        while ((charPosition < outputLine.length()) && (apc.cssClass.equals(""))) {
+        while ((charPosition < outputLine.length())) {
             char currentCharacter = outputLine.charAt(charPosition);
 
             // add italics
@@ -861,6 +860,11 @@ public class Preparer {
 
     private static int addScriptureLink(int charPosition, StringBuilder outputLine, AuthorPrepareCache apc) {
 
+        // check if the scripture link if new format
+        if (outputLine.charAt(charPosition + 1) == '{') {
+            return getNewFormatLink(charPosition, outputLine, apc);
+        }
+
         int startOfBookName = charPosition + 1;
         int endOfBookName = startOfBookName;
 
@@ -888,6 +892,14 @@ public class Preparer {
         if (bookName.equalsIgnoreCase("Psalm")) {
 //            System.out.println("Malformed link " + apc.author.getCode() + " " + apc.volNum + ":" + apc.pageNum);
             bookName = "Psalms";
+        }
+
+        // convert the bookname to a book
+        BibleBook book = BibleBook.getBookFromString(bookName);
+
+        if (book == null) {
+            apc.addMessage("Malformed Scripture link " + apc.author + " " + apc.volNum + ":" + apc.pageNum);
+            return charPosition;
         }
 
         int startOfChapter = endOfBookName;
@@ -960,14 +972,95 @@ public class Preparer {
         int endOfReference;
         if (verse.length() > 0) {
             // if the reference has a verse
-            reference = HtmlHelper.getBibleHtmlLink(bookName, chapter, verse);
+            reference = HtmlHelper.getBibleHtmlLink(book, Integer.parseInt(chapter), Integer.parseInt(verse));
             endOfReference = endOfVerse;
         } else {
-            reference = HtmlHelper.getBibleHtmlLink(bookName, chapter);
+            reference = HtmlHelper.getBibleHtmlLink(book, Integer.parseInt(chapter));
             endOfReference = endOfChapter;
         }
         outputLine.replace(charPosition, endOfReference, reference);
         return charPosition + reference.length() - 1;
+
+        // end scripture reference
+    }
+
+    /**
+     * Get the link from the new format @{Book:chapter:verse} where chapter and verse are optional eg: @{Book}
+     * @param charPosition
+     * @param outputLine
+     * @param apc
+     * @return
+     */
+    private static int getNewFormatLink(int charPosition, StringBuilder outputLine, AuthorPrepareCache apc) {
+
+        int startBrace = charPosition + 1;
+        int endBrace = startBrace;
+
+        // find end brace
+        while (endBrace < outputLine.length() && (outputLine.charAt(endBrace) != '}')) {
+            endBrace++;
+        }
+        endBrace++;
+
+        // get the parts of the link
+        String[] linkText = outputLine.substring(startBrace +1, endBrace -1).split(":");
+
+        // get the book name
+        String bookName = linkText[0];
+        if (bookName.length() < 1) {
+            apc.addMessage("Malformed Scripture link " + apc.author + " " + apc.volNum + ":" + apc.pageNum);
+        }
+
+        // convert the book name to a book
+        BibleBook book;
+        if (bookName.equalsIgnoreCase("Psalm")) {
+//            System.out.println("Malformed link " + apc.author.getCode() + " " + apc.volNum + ":" + apc.pageNum);
+            book = BibleBook.PSALMS;
+        } else {
+            book = BibleBook.getBookFromString(bookName);
+        }
+
+        if (book == null) {
+            apc.addMessage("Malformed Scripture link " + apc.author + " " + apc.volNum + ":" + apc.pageNum);
+            return charPosition;
+        }
+
+        // if there is a chapter get it
+        int chapter = 0;
+        if (linkText.length>1) {
+            try {
+                chapter = Integer.parseInt(linkText[1]);
+            } catch (Exception e) {
+                apc.addMessage("Malformed Scripture link " + apc.author + " " + apc.volNum + ":" + apc.pageNum);
+            }
+        }
+
+        // if there is a verse get it
+        int verse = 0;
+        if (linkText.length>1) {
+            try {
+                verse = Integer.parseInt(linkText[1]);
+            } catch (Exception e) {
+                apc.addMessage("Malformed Scripture link " + apc.author + " " + apc.volNum + ":" + apc.pageNum);
+            }
+        }
+
+        // get relevant HTML link
+        String link;
+        if (verse > 0) {
+            // with chapter and verse
+            link = HtmlHelper.getBibleHtmlLink(book, chapter, verse);
+        } else if (chapter > 0) {
+            // with just chapter
+            link = HtmlHelper.getBibleHtmlLink(book, chapter);
+        } else {
+            // with just book
+            link = HtmlHelper.getBibleHtmlLink(book);
+        }
+
+        // update the link
+        outputLine.replace(charPosition, endBrace, link);
+        return charPosition + link.length() - 1;
 
         // end scripture reference
     }
@@ -993,12 +1086,12 @@ public class Preparer {
                     apc.pageNum, apc.unresolvedFootnotes, apc.unresolvedFootnoteIdentifier);
 
             outputLine.replace(charPosition, charPosition + 1, footnoteLink);
-            return charPosition + footnoteLink.length();
+            return charPosition + footnoteLink.length() - 1;
 
         } else {
             apc.resolvedFootnotes++;
             apc.resolvedFootnoteIdentifier += "+";
-            footnoteLink = String.format("<a class=\"footnote\" name=\"#%d:f%d\"><sup>%s</sup></a>",
+            footnoteLink = String.format("<a name=%d:f%d class=\"footnote\"><sup>%s</sup></a>",
                     apc.pageNum, apc.resolvedFootnotes, apc.resolvedFootnoteIdentifier);
 
             // set css class
@@ -1006,7 +1099,7 @@ public class Preparer {
         }
 
         outputLine.replace(charPosition, charPosition + 1, footnoteLink);
-        return charPosition + footnoteLink.length();
+        return charPosition + footnoteLink.length() - 1;
     }
 
     private static boolean isPageNumber(String line) {

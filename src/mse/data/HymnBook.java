@@ -6,7 +6,7 @@
 package mse.data;
 
 /**
- * @author mj_pu_000
+ * @author Michael Purdy
  */
 public enum HymnBook {
 
@@ -24,11 +24,7 @@ public enum HymnBook {
         this.filename = filename;
     }
 
-    public String getCode() {
-        return filename;
-    }
-
-    public String getInputFilename() {
+    public String getSourceFilename() {
         return filename + ".txt";
     }
 
@@ -36,11 +32,23 @@ public enum HymnBook {
         return name;
     }
 
-    public String getOutputFilename() {
+    public String getTargetFilename() {
         return filename + ".html";
     }
 
     public String getContentsName() {
-        return filename + "-Contents.html";
+        return filename + "-contents.html";
+    }
+
+    public static int getIndexFromString(String bookName) {
+        for (HymnBook nextBook :values()) {
+            if (nextBook.filename.equalsIgnoreCase(bookName)) {
+                return nextBook.ordinal();
+            }
+        }
+        for (HymnBook nextBook : values()) {
+            if (nextBook.getName().equalsIgnoreCase(bookName)) return nextBook.ordinal();
+        }
+        return -1;
     }
 }

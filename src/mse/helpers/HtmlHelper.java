@@ -165,12 +165,16 @@ public class HtmlHelper {
 
     // endregion
 
-    public static String getBibleHtmlLink(String bookName, String chapter, String verse) {
-        return String.format("<a href=\"../bible/%s.html#%s:%s\">%s %s:%s</a>",
-                bookName.replaceAll("\\s", ""), chapter, verse, bookName, chapter, verse);
+    public static String getBibleHtmlLink(BibleBook book, int chapter, int verse) {
+        return String.format("<a href=\"../bible/%s#%s:%s\">%s %s:%s</a>",
+                book.getTargetFilename(), chapter, verse, book.getNameWithSpaces(), chapter, verse);
     }
 
-    public static String getBibleHtmlLink(String bookName, String chapter) {
-        return String.format("<a href=\"../bible/%s.html#%s\">%s %s</a>", bookName.replaceAll("\\s", ""), chapter, bookName, chapter);
+    public static String getBibleHtmlLink(BibleBook book, int chapter) {
+        return String.format("<a href=\"../bible/%s#%s\">%s %s</a>", book.getTargetFilename(), chapter, book.getNameWithSpaces(), chapter);
+    }
+
+    public static String getBibleHtmlLink(BibleBook book) {
+        return String.format("<a href=\"../bible/%s\">%s</a>", book.getTargetFilename(), book.getNameWithSpaces());
     }
 }

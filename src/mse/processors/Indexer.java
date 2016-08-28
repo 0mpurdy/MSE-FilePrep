@@ -20,17 +20,11 @@ public class Indexer {
 
         AuthorIndex authorIndex = new AuthorIndex(author);
 
-        // source file path
-        String sourcePath = cfg.getResDir();
-
-        if (author == Author.BIBLE) {
-            sourcePath += "target" + File.separator + "bibleText" + File.separator;
-        } else {
-            sourcePath += author.getPreparePath();
-        }
+        // source file path for text to index
+        String sourcePath = author.getIndexPreparePath(platform);
 
         // destination file path
-        String destinationPath = cfg.getResDir() + File.separator + FileHelper.getTargetPath(author, platform);
+        String destinationPath = FileHelper.getTargetPath(author, platform);
 
         int volumeNumber = 1;
 
@@ -155,7 +149,7 @@ public class Indexer {
         String filename;
         if (author == Author.HYMNS) {
             if (volumeNumber - 1 >= HymnBook.values().length) return null;
-            filename = sourcePath + HymnBook.values()[volumeNumber - 1].getInputFilename();
+            filename = sourcePath + HymnBook.values()[volumeNumber - 1].getSourceFilename();
         } else {
             filename = sourcePath + author.getCode() + volumeNumber + ".txt";
         }
