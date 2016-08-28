@@ -28,13 +28,13 @@ public class Indexer {
 
         int volumeNumber = 1;
 
-        File inputVolume = getVolumeName(sourcePath, author, volumeNumber);
+        File inputVolume = getVolumeName(platform, author, volumeNumber);
 
         // for all the volumes
         while (inputVolume != null) {
             indexVolume(authorIndex, inputVolume, volumeNumber, referenceQueue, messages);
             volumeNumber++;
-            inputVolume = getVolumeName(sourcePath, author, volumeNumber);
+            inputVolume = getVolumeName(platform, author, volumeNumber);
         }
 
     } // indexAuthor
@@ -145,13 +145,20 @@ public class Indexer {
 
     }
 
-    private static File getVolumeName(String sourcePath, Author author, int volumeNumber) {
+    /**
+     * Get the next file to index for the author
+     *
+     * @param author       The author being indexed
+     * @param volumeNumber The volume number being indexed
+     * @return The file to be indexed
+     */
+    private static File getVolumeName(PreparePlatform platform, Author author, int volumeNumber) {
         String filename;
         if (author == Author.HYMNS) {
             if (volumeNumber - 1 >= HymnBook.values().length) return null;
-            filename = sourcePath + HymnBook.values()[volumeNumber - 1].getSourceFilename();
+            filename = author.getPreparePath(platform) + HymnBook.values()[volumeNumber - 1].getSourceFilename();
         } else {
-            filename = sourcePath + author.getCode() + volumeNumber + ".txt";
+            filename = author.getIndexPreparePath(platform) + author.getPrepareSourceName(volumeNumber);
         }
         File file = new File(filename);
         if (file.exists()) return file;
