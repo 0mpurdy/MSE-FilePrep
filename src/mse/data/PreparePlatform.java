@@ -6,7 +6,7 @@ import mse.helpers.FileHelper;
 import java.io.File;
 
 /**
- * Created by Michael on 12/12/2015.
+ * Created by Michael Purdy
  */
 public enum PreparePlatform {
 

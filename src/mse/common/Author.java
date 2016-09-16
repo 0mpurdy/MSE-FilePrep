@@ -71,7 +71,7 @@ public enum Author {
      * @return The path to the source text for the bible index
      */
     public String getIndexPreparePath(PreparePlatform platform) {
-        if (this.equals(BIBLE)) return platform.getResDir() + File.separator + FileConstants.PC_TARGET + File.separator + FileConstants.BIBLE_TEXT_OUTPUT_FOLDER + File.separator;
+        if (this.equals(BIBLE)) return platform.getTargetPath() + File.separator + FileConstants.BIBLE_TEXT_OUTPUT_FOLDER + File.separator;
         return platform.getSourcePath() + getCode().toLowerCase() + File.separator;
     }
 
