@@ -1,9 +1,11 @@
 package mse.menu;
 
+import mse.hymn.HymnTextReader;
 import mse.common.Author;
 import mse.common.AuthorIndex;
 import mse.common.Config;
 import mse.data.PreparePlatform;
+import mse.hymn.Hymn;
 import mse.processors.*;
 
 import java.io.*;
@@ -46,6 +48,12 @@ public class MenuAction {
             case 8:
                 MenuPrinter.printMenu(MenuPrinter.otherMainMenuOptions);
                 doOtherMenuOption(cfg, sc.nextInt());
+                break;
+            case 9:
+                HymnTextReader hymnTextReader = new HymnTextReader();
+                PreparePlatform platform = chooseSystem(sc);
+                ArrayList<ArrayList<Hymn>> allHymnBooks;
+                if (platform != null) allHymnBooks = hymnTextReader.readAllHymnBooks(platform);
                 break;
             default:
                 System.out.println("Invalid choice");
