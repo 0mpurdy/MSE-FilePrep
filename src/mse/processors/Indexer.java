@@ -1,7 +1,7 @@
 package mse.processors;
 
 import mse.data.BibleBook;
-import mse.data.HymnBook;
+import mse.hymn.HymnBookEnum;
 import mse.common.Author;
 import mse.common.AuthorIndex;
 import mse.common.Config;
@@ -155,8 +155,8 @@ public class Indexer {
     private static File getVolumeName(PreparePlatform platform, Author author, int volumeNumber) {
         String filename;
         if (author == Author.HYMNS) {
-            if (volumeNumber - 1 >= HymnBook.values().length) return null;
-            filename = author.getPreparePath(platform) + HymnBook.values()[volumeNumber - 1].getSourceFilename();
+            if (volumeNumber - 1 >= HymnBookEnum.values().length) return null;
+            filename = author.getPreparePath(platform) + HymnBookEnum.values()[volumeNumber - 1].getSourceFilename();
         } else {
             filename = author.getIndexPreparePath(platform) + author.getPrepareSourceName(volumeNumber);
         }
@@ -171,7 +171,7 @@ public class Indexer {
         } else if (author.equals(Author.BIBLE)) {
             return BibleBook.values()[volNum - 1].getNameWithSpaces() + " chapter " + pageNum + ":" + verseNum;
         } else if (author.equals(Author.HYMNS)) {
-            return HymnBook.values()[volNum - 1].getName() + " " + pageNum;
+            return HymnBookEnum.values()[volNum - 1].getName() + " " + pageNum;
         }
 
         return "";

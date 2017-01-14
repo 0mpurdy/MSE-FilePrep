@@ -5,6 +5,7 @@ import mse.helpers.FileHelper;
 import mse.helpers.HtmlHelper;
 import mse.common.Author;
 import mse.common.Config;
+import mse.hymn.HymnBookEnum;
 import mse.processors.prepare.MinistryLine;
 
 import java.io.*;
@@ -208,13 +209,13 @@ public class Preparer {
                 for (int i = 0; i < BibleBook.getNumOldTestamentBooks(); i++) {
 
                     pw.println("\t\t<div class=\"row bible-contents-row\">\n\t\t\t<div class=\"col-xs-6\"><a href=\"" +
-                            preparePlatform.getLinkPrefix(Author.BIBLE) + BibleBook.values()[i].getTargetFilename() + "\">" +
+                            preparePlatform.getLinkPrefix(Author.BIBLE) + BibleBook.values()[i].getTargetHtmlFilename() + "\">" +
                             BibleBook.values()[i].getNameWithSpaces() + "</a></div>");
 
                     // if i+1 is less than the number of new testament books
                     if (i < BibleBook.getNumNewTestamentBooks()) {
                         pw.println("\t\t\t<div class=\"col-xs-6\"><a href=\"" + preparePlatform.getLinkPrefix(Author.BIBLE) +
-                                BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getTargetFilename() + "\">" +
+                                BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getTargetHtmlFilename() + "\">" +
                                 BibleBook.values()[i + BibleBook.getNumOldTestamentBooks()].getNameWithSpaces() + "</a></div>");
                     } else {
                         pw.println("\t\t\t<div class=\"col-xs-6\"></div>");
@@ -321,20 +322,20 @@ public class Preparer {
             String bufferOutTxt;
 
             // prepare html for each hymn book
-            for (HymnBook nextHymnBook : HymnBook.values()) {
+            for (HymnBookEnum nextHymnBookEnum : HymnBookEnum.values()) {
 
-                System.out.print("\r\tPreparing " + nextHymnBook.getName() + " ");
-                String inputFileName = hymnsPath + nextHymnBook.getSourceFilename();
+                System.out.print("\r\tPreparing " + nextHymnBookEnum.getName() + " ");
+                String inputFileName = hymnsPath + nextHymnBookEnum.getSourceFilename();
 
                 // make the reader and writer
                 BufferedReader brHymns = new BufferedReader(new FileReader(inputFileName));
-                PrintWriter pwHymns = new PrintWriter(new FileWriter(hymnsOutPath + nextHymnBook.getTargetFilename()));
+                PrintWriter pwHymns = new PrintWriter(new FileWriter(hymnsOutPath + nextHymnBookEnum.getTargetHtmlFilename()));
 
                 // read the first line of the hymn book
                 hymnLine = brHymns.readLine();
 
                 // print the html header
-                HtmlHelper.writeHtmlHeader(pwHymns, nextHymnBook.getName(), platform.getStylesLink());
+                HtmlHelper.writeHtmlHeader(pwHymns, nextHymnBookEnum.getName(), platform.getStylesLink());
                 HtmlHelper.writeStart(pwHymns);
 
                 // read the second line of the hymn book
@@ -452,17 +453,17 @@ public class Preparer {
             HtmlHelper.writeStart(pwOverallHymnBooksContents);
 
             // prepare html for each hymn book
-            for (HymnBook nextHymnBook : HymnBook.values()) {
+            for (HymnBookEnum nextHymnBookEnum : HymnBookEnum.values()) {
 
                 // create a print writer for the hymnbook
-                PrintWriter pwSingleHymnBookContents = new PrintWriter(new File(hymnsOutPath + nextHymnBook.getContentsName()));
+                PrintWriter pwSingleHymnBookContents = new PrintWriter(new File(hymnsOutPath + nextHymnBookEnum.getContentsName()));
 
                 // print the html header for the single book contents page
                 HtmlHelper.writeHtmlHeader(pwSingleHymnBookContents, "Hymn Contents", platform.getStylesLink());
                 HtmlHelper.writeStart(pwSingleHymnBookContents);
 
-                System.out.print("\r\tScanning " + nextHymnBook.getName() + " ");
-                String inputFileName = hymnsPath + nextHymnBook.getSourceFilename();
+                System.out.print("\r\tScanning " + nextHymnBookEnum.getName() + " ");
+                String inputFileName = hymnsPath + nextHymnBookEnum.getSourceFilename();
 
                 // make the reader and writer
                 BufferedReader brHymns = new BufferedReader(new FileReader(inputFileName));
@@ -470,8 +471,8 @@ public class Preparer {
                 // read the first line of the hymn book
                 hymnLine = brHymns.readLine();
 
-                pwOverallHymnBooksContents.println("\t<h1 class=\"volume-title\"><a href=\"" + nextHymnBook.getContentsName() + "\">" + nextHymnBook.getName() + "</a></h1>");
-                pwSingleHymnBookContents.println("\t<h1 class=\"volume-title\">" + nextHymnBook.getName() + "</h1>");
+                pwOverallHymnBooksContents.println("\t<h1 class=\"volume-title\"><a href=\"" + nextHymnBookEnum.getContentsName() + "\">" + nextHymnBookEnum.getName() + "</a></h1>");
+                pwSingleHymnBookContents.println("\t<h1 class=\"volume-title\">" + nextHymnBookEnum.getName() + "</h1>");
 
                 // read the second line of the hymn book
                 hymnLine = brHymns.readLine();
@@ -502,7 +503,7 @@ public class Preparer {
                                     "\n\t\t\t\t<div class=\"btn-group btn-group-lg btn-group-justified btn-group-fill-height\">");
                         }
 
-                        printSingleHymnToContents(pwSingleHymnBookContents, nextHymnBook.getTargetFilename(), hymnNumber);
+                        printSingleHymnToContents(pwSingleHymnBookContents, nextHymnBookEnum.getTargetHtmlFilename(), hymnNumber);
 
                         if (hymnNum % 5 == 0) {
                             // if it is the last hymn in a large column

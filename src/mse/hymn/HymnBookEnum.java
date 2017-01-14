@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mse.data;
+package mse.hymn;
 
 /**
  * @author Michael Purdy
  */
-public enum HymnBook {
+public enum HymnBookEnum {
 
     h1973("1973 Hymn Book", "hymns1973"),
     h1962("1962 Hymn Book", "hymns1962"),
@@ -19,7 +19,7 @@ public enum HymnBook {
     private String name;
     private String filename;
 
-    HymnBook(String name, String filename) {
+    HymnBookEnum(String name, String filename) {
         this.name = name;
         this.filename = filename;
     }
@@ -32,8 +32,12 @@ public enum HymnBook {
         return name;
     }
 
-    public String getTargetFilename() {
+    public String getTargetHtmlFilename() {
         return filename + ".html";
+    }
+
+    public String getTargetJsonFilename() {
+        return filename + ".json";
     }
 
     public String getContentsName() {
@@ -41,12 +45,12 @@ public enum HymnBook {
     }
 
     public static int getIndexFromString(String bookName) {
-        for (HymnBook nextBook :values()) {
+        for (HymnBookEnum nextBook :values()) {
             if (nextBook.filename.equalsIgnoreCase(bookName)) {
                 return nextBook.ordinal();
             }
         }
-        for (HymnBook nextBook : values()) {
+        for (HymnBookEnum nextBook : values()) {
             if (nextBook.getName().equalsIgnoreCase(bookName)) return nextBook.ordinal();
         }
         return -1;
