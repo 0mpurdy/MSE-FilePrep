@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 /**
- * Created by michaelpurdy on 28/12/2015.
+ * Created by Michael Purdy on 28/12/2015.
  */
 public class BiblePrepareCache {
 
@@ -56,7 +56,7 @@ public class BiblePrepareCache {
     }
 
     public String getBibleOutput() {
-        return bibleDestinationPath + File.separator + book.getTargetFilename();
+        return bibleDestinationPath + File.separator + book.getTargetHtmlFilename();
     }
 
     public void nextBook(BibleBook nextBook) {

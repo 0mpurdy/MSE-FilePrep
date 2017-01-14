@@ -108,7 +108,7 @@ public enum BibleBook {
         return -1;
     }
 
-    public String getTargetFilename() {
+    public String getTargetHtmlFilename() {
         return getDashCaseName() + ".html";
     }
 
