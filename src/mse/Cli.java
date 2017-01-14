@@ -8,7 +8,7 @@ import mse.menu.MenuPrinter;
 import java.util.Scanner;
 
 /**
- * Created by michaelpurdy on 27/10/2016.
+ * Created by Michael Purdy on 27/10/2016.
  */
 public class Cli {
 
@@ -27,7 +27,7 @@ public class Cli {
         Scanner sc = new Scanner(System.in);
 
         while (mainMenuChoice != 0) {
-            MenuPrinter.printMenu(MenuPrinter.otherMainMenuOptions);
+            MenuPrinter.printMenu(MenuPrinter.mainMenuOptions);
 
             mainMenuChoice = sc.nextInt();
             sc.nextLine();

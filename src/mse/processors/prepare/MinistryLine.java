@@ -1,7 +1,7 @@
 package mse.processors.prepare;
 
 /**
- * Created by michaelpurdy on 08/02/2016.
+ * Created by Michael Purdy on 08/02/2016.
  */
 public class MinistryLine {
 

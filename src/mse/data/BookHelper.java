@@ -1,7 +1,7 @@
 //package mse.data;
 //
 ///**
-// * Created by michaelpurdy on 26/08/2016.
+// * Created by Michael Purdy on 26/08/2016.
 // */
 //public class BookHelper {
 //
