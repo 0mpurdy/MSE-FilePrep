@@ -4,7 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Created by Michael Purdy on 12/01/2017.
+ * Hymn
+ *
+ * @author MichaelPurdy
  */
 public class Hymn implements Serializable {
 

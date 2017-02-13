@@ -19,11 +19,11 @@ public class HymnTextReader {
      * @param platform platform being generated
      * @return all the hymn books
      */
-    public ArrayList<ArrayList<Hymn>> readAllHymnBooks(PreparePlatform platform) {
+    public ArrayList<HymnBook> readAllHymnBooks(PreparePlatform platform) {
 
         System.out.print("Reading Hymns");
 
-        ArrayList<ArrayList<Hymn>> allHymnBooks = new ArrayList<>();
+        ArrayList<HymnBook> allHymnBooks = new ArrayList<>();
 
         // folder for input
         String hymnsPath = Author.HYMNS.getPreparePath(platform);
@@ -56,14 +56,14 @@ public class HymnTextReader {
      * Read a single hymnbook into cache
      *
      * @param nextHymnBookEnum Next hymn book to be read in
-     * @param hymnsPath    Folder to read the hymnbook from
+     * @param hymnsPath        Folder to read the hymnbook from
      * @return all the hymns in the hymnbook
      * @throws IOException
      */
-    private ArrayList<Hymn> readSingleHymnBook(HymnBookEnum nextHymnBookEnum, String hymnsPath) throws IOException {
+    private HymnBook readSingleHymnBook(HymnBookEnum nextHymnBookEnum, String hymnsPath) throws IOException {
 
         // static buffers for performance
-        ArrayList<Hymn> allHymns = new ArrayList<>();
+        HymnBook currentHymnBook = new HymnBook();
         String hymnLine;
 //        String verseNumber;
         Hymn currentHymn = new Hymn();
@@ -77,6 +77,8 @@ public class HymnTextReader {
 
         // read the first line of the hymn book (title eg {#Hymns (1973)}
         hymnLine = brHymns.readLine();
+        currentHymnBook.setName(hymnLine.substring(hymnLine.indexOf('#') + 1, hymnLine.indexOf('}')));
+        currentHymnBook.setYear(hymnLine.substring(hymnLine.indexOf('(') + 1, hymnLine.indexOf(')')));
         hymnLine = brHymns.readLine();
 
         // if there are still more lines
@@ -88,7 +90,7 @@ public class HymnTextReader {
                 // add the previous non-empty verse to the hymn
                 verse = addAndClearVerse(currentHymn, verse);
 
-                allHymns.add(currentHymn);
+                currentHymnBook.addHymn(currentHymn);
                 currentHymn = new Hymn();
 
                 // get the hymn number
@@ -130,7 +132,7 @@ public class HymnTextReader {
 
         System.out.print(" - Done");
 
-        return allHymns;
+        return currentHymnBook;
 
     }
 

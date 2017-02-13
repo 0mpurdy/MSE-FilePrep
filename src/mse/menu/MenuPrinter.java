@@ -18,6 +18,7 @@ public class MenuPrinter {
             "Create super index",
             "Check author index",
             "Check all author indexes",
+            "Serialize hymn books",
             "Other"
     };
 

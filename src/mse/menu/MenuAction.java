@@ -1,11 +1,15 @@
 package mse.menu;
 
+import com.google.gson.Gson;
+import mse.helpers.FileHelper;
+import mse.helpers.Serializer;
+import mse.hymn.HymnBook;
+import mse.hymn.HymnBookHelper;
 import mse.hymn.HymnTextReader;
 import mse.common.Author;
 import mse.common.AuthorIndex;
 import mse.common.Config;
 import mse.data.PreparePlatform;
-import mse.hymn.Hymn;
 import mse.processors.*;
 
 import java.io.*;
@@ -20,6 +24,9 @@ import java.util.Scanner;
 public class MenuAction {
 
     public static void executeMenuChoice(int mainMenuChoice, Scanner sc, Config cfg) {
+
+        PreparePlatform platform;
+
         switch (mainMenuChoice) {
             case 0:
                 System.out.println("Closing ...");
@@ -46,14 +53,36 @@ public class MenuAction {
                 checkAllIndexes(sc);
                 break;
             case 8:
+                HymnTextReader hymnTextReader = new HymnTextReader();
+                platform = chooseSystem(sc);
+                ArrayList<HymnBook> allHymnBooks = null;
+                if (platform != null) allHymnBooks = hymnTextReader.readAllHymnBooks(platform);
+                if (allHymnBooks != null)
+                    Serializer.serializeHymnBooks(FileHelper.getTargetPath(Author.HYMNS, platform), allHymnBooks);
+                break;
+            case 9:
                 MenuPrinter.printMenu(MenuPrinter.otherMainMenuOptions);
                 doOtherMenuOption(cfg, sc.nextInt());
                 break;
-            case 9:
-                HymnTextReader hymnTextReader = new HymnTextReader();
-                PreparePlatform platform = chooseSystem(sc);
-                ArrayList<ArrayList<Hymn>> allHymnBooks;
-                if (platform != null) allHymnBooks = hymnTextReader.readAllHymnBooks(platform);
+            case 10:
+                platform = chooseSystem(sc);
+                System.out.print("Reading serialized hymns");
+                ArrayList<HymnBook> hymnBooks = Serializer.readHymnBooks(FileHelper.getTargetPath(Author.HYMNS, platform), HymnBookHelper.HYMN_BOOK_FILE_NAMES);
+                Gson gson = new Gson();
+                System.out.print("\rWriting hymns json");
+                for (HymnBook hymnBook : hymnBooks) {
+                    System.out.printf("\rWriting %s json", hymnBook.getName());
+                    try {
+                        File jsonFile = new File(FileHelper.getTargetPath(Author.HYMNS, platform) + HymnBookHelper.getTargetJsonFilename(hymnBook));
+                        jsonFile.createNewFile();
+                        PrintWriter jsonPrinter = new PrintWriter(jsonFile);
+                        jsonPrinter.println(gson.toJson(hymnBook));
+                        jsonPrinter.close();
+                    } catch (IOException ioe) {
+                        ioe.printStackTrace();
+                    }
+                }
+                System.out.println("\rFinished writing hymns json");
                 break;
             default:
                 System.out.println("Invalid choice");
